@@ -1,2 +1,5 @@
 # ICPC
-Coding future
+
+> Coding future
+
+ACM-ICPC Training Code Set.
