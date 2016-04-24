@@ -1,28 +1,9 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Mac OS:
+.DS_Store
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
+# C++:
 *.out
-*.app
+
+# Sublime text:
+*.sublime-project
+*.sublime-workspace
