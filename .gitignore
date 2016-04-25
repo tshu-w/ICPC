@@ -1,9 +1,16 @@
 # Mac OS:
+
 .DS_Store
+*/.DS_Store
+*/*/.DS_Store
+
 
 # C++:
+
 *.out
 
+
 # Sublime text:
+
 *.sublime-project
 *.sublime-workspace
