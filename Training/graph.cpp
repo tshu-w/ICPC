@@ -1,4 +1,3 @@
-// test
 #include <cctype>
 #include <cfloat>
 #include <climits>

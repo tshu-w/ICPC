@@ -28,6 +28,8 @@ typedef unsigned long ul;
 typedef long double ld;
 typedef pair<int, int > Pii;
 
+const double pi = acos(-1.0);
+
 const int INF = INT_MAX;
 const int MAX_N = 50005;
 const int MAX_V = MAX_N;
@@ -168,9 +170,10 @@ bool isPrime(int n) {
 vector<int> divisor(int n) {
     vector<int> res;
     for (int i = 1; i * i <= n; ++i) {
-        if (n % i == 0) 
+        if (n % i == 0) {
             res.push_back(i);
-        if (i != n / i) res.push_back(n / i);
+            if (i != n / i) res.push_back(n / i);
+        }
     }
     return res;
 }
