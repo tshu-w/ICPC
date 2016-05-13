@@ -201,26 +201,22 @@ int seive(int n) {
         }
     return p;
 }
-// bool seg_prime_small[MAX_L];
-// bool seg_prime[MAX_SQRT_R];
-// // the number of prime in [L, r)
-// // 对区间 [l, r）内的整数执行筛法，prime[i - l] = true <=> i 是素数
-// void segmentSieve(ll l, ll r) {
-//     for (int i = 0; (ll)i * i < r; ++i) seg_prime_small[i] = true;
-//     for (int i = 0; i < r - l; ++i) seg_prime[i] = true;
-//     for (int i = 2; (ll)i * i < r; ++i) {
-//         if (seg_prime_small[i]) {
-//             for (int j = 2 * i; (ll)j * j <= r; j += i) seg_prime_small[j] = false;
-//             for (ll j = max(2LL, (l + i - 1) / i) * i; j < r; j += i) seg_prime[j - l] = false;
-//         }
-//     }
-// }
+const int MAX_L = 1e5, MAX_SQRT_R = 1e3;
+bool seg_prime_small[MAX_L];
+bool seg_prime[MAX_SQRT_R];
+// the number of prime in [L, r)
+// 对区间 [l, r）内的整数执行筛法，prime[i - l] = true <=> i 是素数
+void segmentSieve(ll l, ll r) {
+    for (int i = 0; (ll)i * i < r; ++i) seg_prime_small[i] = true;
+    for (int i = 0; i < r - l; ++i) seg_prime[i] = true;
+    for (int i = 2; (ll)i * i < r; ++i) {
+        if (seg_prime_small[i]) {
+            for (int j = 2 * i; (ll)j * j <= r; j += i) seg_prime_small[j] = false;
+            for (ll j = max(2LL, (l + i - 1) / i) * i; j < r; j += i) seg_prime[j - l] = false;
+        }
+    }
+}
 int main(void) {
-    int a = 0;
-    // bool flag = (a = 1)? 1 : (a = 2)? 3 : 4;
-    bool flg = true;
-    flg ? cout << "1 ", cout << "2 " : cout << "3 ", cout << "4 "<< endl; 
-    // cout << a << endl;
-    // cout << (-9 % 5) + 5lr<< endl;
+    
     return 0;
 }
