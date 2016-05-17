@@ -38,12 +38,8 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < n; ++i) {
         scanf("%d", &a);
         s += (ll)a;
-        if (m.count(s) == 0)
-            m.insert(make_pair(s, 1));
-        else {
-            ++m[s];
-            imax = max(imax, m[s]);
-        }
+        ++m[s];
+        imax = max(imax, m[s]);
     }
     cout << n - imax << endl;
     return 0;
