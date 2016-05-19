@@ -45,6 +45,17 @@ bool vis[MAX_V];
 int d[MAX_N], V, E, pre[MAX_V];
 int cost[MAX_V][MAX_V];
 
+class Point {
+public:
+    double x, y;
+    friend double dis(Point A, Point B) {
+        return sqrt(sqr(A.x - B.x) + sqr(A.y - B.y));
+    }
+    void print() {
+        printf("(%.2f, %.2f)\n", x, y);
+    }
+};
+
 void dijkstra(int s) {
     //
     // fill(d, d + V, INF);
