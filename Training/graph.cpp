@@ -161,7 +161,6 @@ bool cmp(edge &e1, edge &e2) {
 //     return res;
 // }
 int main(void) {
-    int a = 10;
-    cout << "Hello World" << endl;
+    
 	return 0;
 }

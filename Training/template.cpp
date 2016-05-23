@@ -35,6 +35,9 @@ const int MAX_N = 50005;
 const int MAX_V = MAX_N;
 const int MAX_E = 100010;
 
+template <typename T>
+inline T sqr(T a) { return a * a;};
+
 struct edge {
     int u, v;
     int dis;
@@ -227,7 +230,159 @@ void segmentSieve(ll l, ll r) {
         }
     }
 }
-int main(void) {
+int getMaxString(const string &str) {
+    int len = (int)str.length();
+    int i = 0, j = 1, k = 0;
+    while (i < len && j < len && k < len) {
+        int t = str[(i + k) % len] - str[(j + k) % len];
+        if (t == 0) ++k;
+        else { 
+            if (t > 0) j += k + 1;
+            else i += k + 1;
+            if (i == j) ++j;
+            k = 0;
+        }
+    }
+    return min(i, j);
+}
+int nxt[MAX_N];
+void getNext(const string &str) {
+    int j = 0, k, len = str.length();
+    nxt[0] = k = -1;
+    while (j < len) {
+        if (k == -1 || str[j] == str[k])
+            nxt[++j] = ++k;
+        else k = nxt[k];
+    }
+}
+int kmp(const string &tar, const string &pat) {
+    getNext(pat);
+    int j, k, res;
+    int lenT = tar.length(), lenP = pat.length();
+    res = j = k = 0;
+    while (j < lenT) {
+        if (k == -1 || tar[j] == pat[k])
+            ++j, ++k;
+        else k = nxt[k];
+        if (k == lenP) {
+            res = max(res, j - lenP + 1);
+            k = nxt[k];
+        }
+    }
+    return res;
+}
+
+// int extNext[MAX_N];
+// void getExtNext(const string &str) {
+//     int j = 0, k, len = str.length();
+//     k = exNext[0] = -1;
+//     while (j < len) {
+//         while (k != -1 && str[j] != str[k])
+//             k = exNext[k];
+//         ++j, ++k;
+//         if (str[j] == str[k])
+//             exNext[j] = exNext[k];
+//         else exNext[j] = k;
+//     }
+// }
+// int extKmp(const string &tar, const string &pat) {
+//     getExtNext(pat);
+//     int l, r, j, k;
+//     int lenT = tar.length(), lenP = pat.length();
+//     while (j < lenT) {
+
+//     }
+// }
+
+// void Cal_next (const char *pattern,int len)  //改进写法,next[]有多个-1    
+// {    
+//     int i=0,j=-1;    
+//     next[0]=-1;    
+//     while (i<len)    
+//     {    
+//         while (j>=0 && pattern[i]!=pattern[j])    
+//             j=next[j];    
+//         j++,i++;    
+//         if (pattern[j]==pattern[i])    
+//             next[i]=next[j];    
+//         else    
+//             next[i]=j;    
+//     }    
+// } 
+// void exKMP (char s[],char t[]) //s为主串，t为模板串  
+// {  
+//     int i,j=0,p,L;  
+//     int lens=strlen(s);  
+//     int lent=strlen(t);  
+//     next[0]=lent;  
+      
+//     while (j+1<lent && t[j]==t[j+1])  
+//         j++;  
+//     next[1]=j;  
+      
+//     int a=1;  
+//     for (i=2;i<lent;i++)  
+//     {  
+//         p=next[a]+a-1;  
+//         L=next[i-a];  
+//         if (i+L<p+1) next[i]=L;  
+//         else  
+//         {  
+//             j=max(0,p-i+1);  
+//             while (i+j<lent && t[i+j]==t[j])  
+//                 j++;  
+//             next[i]=j;  
+//             a=i;  
+//         }  
+//     }  
+  
+//     j=0;  
+//     while (j<lens && j<lent && s[j]==t[j])  
+//         j++;  
+//     extend[0]=j;  
+//     a=0;  
+//     for (i=1;i<lens;i++)  
+//     {  
+//         p=extend[a]+a-1;  
+//         L=next[i-a];  
+//         if (L+i<p+1) extend[i]=L;  
+//         else  
+//         {  
+//             j=max(0,p-i+1);  
+//             while (i+j<lens && j<lent && s[i+j]==t[j])  
+//                 j++;  
+//             extend[i]=j;  
+//             a=i;  
+//         }  
+//     }  
+// }  
+// void GetExtand(const EleType str[], int strLen, int extand[], const EleType mode[], int modeLen, int next[])
+// {
+//     int i, a, p, j(-1);
     
+//     for (i = 0; i < strLen; ++i, --j)
+//     {
+//         if (j < 0 || i + next[i - a] >= p)
+//         {
+//             if (j < 0) j = 0, p = i;
+//             while (p < strLen && j < modeLen && str[p] == mode[j])
+//                 ++p, ++j;
+//             extand[i] = j, a = i;
+//         }
+//         else extand[i] = next[i - a];
+//     }
+// }
+
+int lis[MAX_N], a[MAX_N];
+void solve(int n) {
+    int dp[MAX_N];
+    fill(dp, dp + n, INF);
+    for (int i = 0; i < n; ++i)
+        *lower_bound(dp, dp + n, a[i]) = a[i];// lds: -a[i]
+    printf("%ld\n", lower_bound(dp, dp + n, INF) - dp);
+}
+
+int main(void) {
+
     return 0;
 }
