@@ -31,7 +31,7 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 1000 + 10;
+const int MAX_N = 50005;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
@@ -39,22 +39,15 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int n, a, ans = 0, mark[MAX_N];
-	memset(mark, 0, sizeof mark);
-	cin >> n;
-	for (int i = 0; i < n; ++i) 
-		cin >> a, ++mark[a];
-	bool flag;
-	do {
-		flag = false;
-		for (int i = 1; i < MAX_N; ++i)
-			if (mark[i]) {
-				if (flag) 
-					++ans;
-				--mark[i];
-				flag = true;
-			}
-	} while (flag);
-	cout << ans << endl;
+	int n, a, b;
+	cin >> n >> a >> b;
+	a = a + b;
+	while (a <= 0) {
+		a += n;
+	}
+	while (a > n) {
+		a -= n;
+	}
+	cout << a << endl;
 	return 0;
 }

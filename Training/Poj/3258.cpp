@@ -31,30 +31,40 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 1000 + 10;
+const int MAX_N = 50000 + 5;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
+int L, N, M, a;
+vector<int> v;
 
-
+bool find(int d) {
+	int last = 0;
+	for (int i = 1; i < N - M; ++i) {
+		int crt = last + 1;
+		while (crt < N && v[crt] - v[last] < d) {
+			++crt;
+		}
+		if (crt == N) return false;
+		last = crt;
+	}
+	return true;
+}
 int main(int argc, char const *argv[])
 {
-	int n, a, ans = 0, mark[MAX_N];
-	memset(mark, 0, sizeof mark);
-	cin >> n;
-	for (int i = 0; i < n; ++i) 
-		cin >> a, ++mark[a];
-	bool flag;
-	do {
-		flag = false;
-		for (int i = 1; i < MAX_N; ++i)
-			if (mark[i]) {
-				if (flag) 
-					++ans;
-				--mark[i];
-				flag = true;
-			}
-	} while (flag);
-	cout << ans << endl;
-	return 0;
+    scanf("%d%d%d", &L, &N, &M);
+    v.push_back(0);
+    for (int i = 0; i < N; ++i)
+        scanf("%d", &a), v.push_back(a);
+    v.push_back(L);
+    ++N; ++N;
+    sort(v.begin(), v.end());
+    int l = 0, r = L + 1;
+    while (l + 1 < r) {
+    	int mid = l + (r - l) / 2;
+    	if (find(mid)) l = mid;
+    	else r = mid;
+    }
+    printf("%d\n", l);
+    return 0;
 }
