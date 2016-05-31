@@ -44,7 +44,7 @@ struct edge {
 };
 vector<edge> g[MAX_V];
 vector<edge> es;
-bool vis[MAX_V];
+bool vis[MAX_N];
 int d[MAX_N], V, E, pre[MAX_V];
 int cost[MAX_V][MAX_V];
 
@@ -380,6 +380,25 @@ void solve(int n) {
     for (int i = 0; i < n; ++i)
         *lower_bound(dp, dp + n, a[i]) = a[i];// lds: -a[i]
     printf("%ld\n", lower_bound(dp, dp + n, INF) - dp);
+}
+
+int mu[MAX_N];
+void moebius() {
+    int cnt = 0; mu[1] = 1;
+    memset(vis, 0, sizeof vis);
+    for (int i = 2; i < MAX_N; ++i) {
+        if (!vis[i]) {
+            prime[cnt++] = i;
+            mu[i] = -1;
+        }
+        for (int j = 0; j < cnt && i * prime[j] < MAX_N; ++j) {
+            vis[i * prime[j]] = true;
+            if (i % prime[j])
+                mu[i * prime[j]] = -mu[i];
+            else 
+                mu[i * prime[j]] = 0, break;
+        }
+    }
 }
 
 int main(void) {
