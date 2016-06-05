@@ -378,7 +378,7 @@ void solve(int n) {
     int dp[MAX_N];
     fill(dp, dp + n, INF);
     for (int i = 0; i < n; ++i)
-        *lower_bound(dp, dp + n, a[i]) = a[i];// lds: -a[i]
+        *lower_bound(dp, dp + n, a[i]) = a[i];// lds: -a[i]; lni: upper_bound
     printf("%ld\n", lower_bound(dp, dp + n, INF) - dp);
 }
 
@@ -395,13 +395,14 @@ void moebius() {
             vis[i * prime[j]] = true;
             if (i % prime[j])
                 mu[i * prime[j]] = -mu[i];
-            else 
-                mu[i * prime[j]] = 0, break;
+            else {
+                mu[i * prime[j]] = 0;break;
+            }
         }
     }
 }
 
 int main(void) {
-    
+    cout << seive(1000000000) << endl;
     return 0;
 }
