@@ -95,11 +95,11 @@ public:
 					dp[j] = 1;
 				}
 		if (dp[k]) {
-			cout << "Possible" << endl;
+			// cout << "Possible" << endl;
 			return "Possible";
 		}
 		else {
-			cout << "Impossible" << endl;
+			// cout << "Impossible" << endl;
 			return "Impossible";
 		}
 	}
