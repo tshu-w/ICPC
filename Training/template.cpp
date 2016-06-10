@@ -1,3 +1,4 @@
+// #include <bits/stdc++.h>
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -18,6 +19,8 @@
 #include <stack>
 #include <vector>
 #include <utility>
+
+#define IOS std::cin.sync_with_stdio(false);std::cin.tie(nullptr);
 
 using namespace std;
 
@@ -378,7 +381,7 @@ void solve(int n) {
     int dp[MAX_N];
     fill(dp, dp + n, INF);
     for (int i = 0; i < n; ++i)
-        *lower_bound(dp, dp + n, a[i]) = a[i];// lds: -a[i]; lni: upper_bound
+        *lower_bound(dp, dp + n, a[i]) = a[i];// lds: -a[i]; ln: upper_bound
     printf("%ld\n", lower_bound(dp, dp + n, INF) - dp);
 }
 
@@ -403,6 +406,6 @@ void moebius() {
 }
 
 int main(void) {
-    cout << seive(1000000000) << endl;
+    
     return 0;
 }
