@@ -77,15 +77,11 @@ int main(int argc, char const *argv[])
 	IOS;
 	cin >> n >> q;
 	int v;
-	for (int i = 1; i < n; ++i) {
-		cin >> v;
-		graph[v].push_back(i + 1);
-	}
+	for (int i = 1; i < n; ++i)
+		cin >> v, graph[v].push_back(i + 1);
 	dfs_size(1, 0);
 	dfs_centroid(1);
-	for (int i = 0; i < q; ++i) {
-		cin >> v;
-		cout << centroid[v] << endl;
-	}
+	for (int i = 0; i < q; ++i)
+		cin >> v, cout << centroid[v] << endl;
 	return 0;
 }
