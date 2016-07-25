@@ -41,30 +41,31 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 20000 + 5;
+const int MAX_N = 1000 + 5;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N;
-priority_queue<int, vector<int>, greater<int> > q;
-
+int N, R, X[MAX_N];
 void solve() {
-	ll ans = 0;
-	while (q.size() > 1) {
-		int t = 0;
-		t += q.top(); q.pop();
-		t += q.top(); q.pop();  
-		q.push(t);
-		ans += t;
+	sort(X, X + N);
+
+	int i = 0, ans = 0;
+	while (i < N) {
+		int s = X[i++];
+		while (i < N && X[i] <= R + s) ++i;
+		int t = X[i - 1];
+		while (i < N && X[i] <= R + t) ++i;
+		++ans;
 	}
 	cout << ans << endl;
 }
 int main(int argc, char const *argv[])
 {
-	cin >> N;
-	for (int i = 0, x; i < N; ++i)
-		cin >> x, q.push(x);	
-	solve();
+	while (cin >> R >> N && N + 1 && R + 1) {
+		for (int i = 0; i < N; ++i)
+			cin >> X[i];
+		solve();
+	}	
 	return 0;
 }
