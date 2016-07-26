@@ -41,41 +41,55 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 1e4 + 5;
+const int MAX_N = 65000 + 5;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, L, P;
-Pii A[MAX_N];
+ll N;
+bool isPrime[MAX_N + 1];
+int seive(int n) {
+    int p = 0;
+    fill(isPrime, isPrime + n + 1, true);
+    isPrime[0] = isPrime[1] = false;
+    for (int i = 2; i <= n; ++i) 
+        if (isPrime[i]) {
+            for (int j = 2 * i; j <= n; j += i) isPrime[j] = false;
+        }
+    return p;
+}
+
+ll mod_pow(ll x, ll n, ll mod) { 
+    ll res = 1;
+    while (n > 0) {
+        if (n & 1) res = res * x % mod;
+        x = x * x % mod;
+        n >>= 1;
+    }
+    return res;
+    // return b ? qpow(a * a % mod, b >> 1, mod) * (b & 1 ? a : 1) % mod : 1;
+}
 
 int main(int argc, char const *argv[])
 {
-	cin >> N;
-	for (int i = 0; i < N; ++i) 
-		scanf("%d%d", &A[i].first, &A[i].second);
+	seive(MAX_N);
+	while(~scanf("%lld", &N) && N) {
+		if (isPrime[N]) {
+			printf("%lld is normal.\n",N); 
+		} else {
+			bool flag = true;
+			for (ll i  = 2LL; i < N; ++i) {
+				if (mod_pow(i, N, N) != i) {
+					flag = false;
+					break;
+				}
+			}
+			if (flag) 
+				printf("The number %lld is a Carmichael number.\n", N); 
+			else 
+				printf("%lld is normal.\n", N);
 
-	cin >> L >> P;
-	for (int i = 0; i < N; ++i)
-		A[i].first = L - A[i].first;
-
-	sort(A, A + N);
-
-	priority_queue<int> heap;
-	heap.push(P);
-	
-	int dis, index, cnt;
-	dis = index = cnt = 0;
-	while (dis < L && !heap.empty()) {
-		dis += heap.top();
-		heap.pop();
-		++cnt;
-		while (index < N && A[index].first <= dis) 
-			heap.push(A[index++].second);
+		}	
 	}
-	if (dis < L) 
-		cout << -1 << endl;
-	else
-		cout << cnt - 1 << endl;
 	return 0;
 }
