@@ -45,7 +45,7 @@ struct edge {
     int u, v;
     int dis;
 };
-vector<edge> g[MAX_V];
+vector<edge> G[MAX_V];
 vector<edge> es;
 bool vis[MAX_N];
 int d[MAX_N], V, E, pre[MAX_V];
@@ -63,31 +63,15 @@ public:
 };
 
 void dijkstra(int s) {
-    //
-    // fill(d, d + V, INF);
-    // fill(vis, vis + V, false);
-    // d[s] = 0;
-    // while (true) {
-    //     int v = -1;
-    //     for (int u = 0; u < V; ++u) 
-    //         if (!vis[u] && (v == -1 || d[u] < d[v])) v = u;
-    //     if (v == -1) break;
-    //     vis[v] = true;
-    //     for (int u = 0; u < V; ++u) {
-    //         d[u] = min(d[v] + cost[v][u], d[u]);
-    //     }
-    // }
-    //
     priority_queue<Pii, vector<Pii>, greater<Pii> > que;// fisrt 是最短距离，second 是顶点编号
     fill(d, d + V, INF);
-    d[s] = 0;
-    que.push(Pii(0, s));
+    d[s] = 0; que.push(Pii(0, s));
     while (!que.empty()) {
-        Pii p = que.top();que.pop();
+        Pii p = que.top(); que.pop();
         int u = p.second;
         if (d[u] < p.first) continue;
-        for (int i = 0; i < g[u].size(); i++) {
-            edge e = g[u][i];
+        for (int i = 0; i < G[u].size(); i++) {
+            edge e = G[u][i];
             if (d[e.v] > d[u] + e.dis) {
                 d[e.v] = d[u] + e.dis;
                 que.push(Pii(d[e.v], e.v));
@@ -98,18 +82,6 @@ void dijkstra(int s) {
 void bellman_ford(int s) {
     fill(d, d + V, INF);
     d[s] = 0;
-    //
-    // for (int i = 0; i < V; ++i
-    //     for (int j = 0; j < E; ++j) {
-    //         int u, v;
-    //         u = es[j].u;
-    //         v = es[j].v;
-    //         if (d[u] != INF)
-    //             d[v] = min(d[u] + es[j].dis, d[v]);
-    //         if (d[v] != INF)
-    //             d[u] = min(d[v] + es[j].dis, d[u]);
-    //     }
-    //
     while (true) {
         bool update = false;
         for (int i = 0; i < E; ++i) {
@@ -126,17 +98,14 @@ void spfa(int s) {
     queue<int> que;
     fill(d, d + V, INF);
     fill(vis, vis + V, false);
-    d[s] = 0;
-    que.push(s);
-    vis[s] = true;
+    d[s] = 0; que.push(s); vis[s] = true;
     while (!que.empty()) {
-        int u = que.front();
-        que.pop();
+        int u = que.front(); que.pop();
         vis[u] = false;
-        for (int i = 0; i < g[u].size(); ++i) {
-            int v = g[u][i].v;
-            if (d[v] > d[u] + g[u][i].dis) {
-                d[v] = d[u] + g[u][i].dis;
+        for (int i = 0; i < G[u].size(); ++i) {
+            int v = G[u][i].v;
+            if (d[v] > d[u] + G[u][i].dis) {
+                d[v] = d[u] + G[u][i].dis;
                 if (!vis[v]) {
                     que.push(v);
                     vis[v] = true;
@@ -406,6 +375,6 @@ void moebius() {
 }
 
 int main(void) {
-    
+     
     return 0;
 }

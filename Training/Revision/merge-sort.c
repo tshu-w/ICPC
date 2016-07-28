@@ -2,48 +2,58 @@
 #include <stdlib.h>
 #include <time.h>
 
-int n, a[10000], b[10000];
-int merge_sort(int l, int r) {
-	if (l == r) 
-		return 0;
-	int mid = (l + r) / 2;
+int n, A[] = {8, 10, 4, 3, 1, 6, 5, 9, 2, 7}, B[10000], cnt[10000];
+void merge_sort(int l, int r) {
+	if (l >= r) return ;
+	int mid = (r - l) / 2 + l;
 	merge_sort(l, mid);
 	merge_sort(mid + 1, r);
+
 	int i, j, k;
-	i = l; j = mid + 1; k = l;
+	i = l, j = mid + 1, k = l;
 	while (i <= mid && j <= r) {
-		if (a[i] < a[j]) {
-			b[k] = a[i++];
+		if (A[i] > A[j]) {
+			B[k] = A[i];
+			cnt[A[i]] += r - j + 1;
+			++i;
+		} else {
+			B[k] = A[j];
+			++j;
 		}
-		else {
-			b[k] = a[j++];
-		}
-		k++;
+		++k;
 	}
 	while (i <= mid) {
-		b[k] = a[i++];
-		k++;
+		B[k] = A[i++];
+		++k;
 	}
 	while (j <= r) {
-		b[k] = a[j++];
-		k++;
+		B[k] = A[j++];
+		++j;
 	}
-	for (int i = l; i <= r; i++)
-		a[i] = b[i];
-	return 0;
+	for (int i = l; i <= r; ++i)
+		A[i] = B[i];
+	return ;
 }
 int main(int argc, char const *argv[])
 {
-	n = 200;
+	n = 10;
 	srand(time(NULL));
-	for (int i = 0; i < n; i++)
-		a[i] = rand() % (n * 10);
+
+	for (int i = 0; i < n; i++) {
+		printf("%d ", A[i]);
+	};
+	printf("\n");
 
 	merge_sort(0, n - 1);
 	
 	for (int i = 0; i < n; i++) {
-		printf("%d ", a[i]);
+		printf("%d ", A[i]);
 	};
+	printf("\n");
+	for (int i = 1; i <= n; i++) {
+		printf("%d ", cnt[i]);
+	};
+	printf("\n");
 	printf("\n");
 
 	return 0;

@@ -40,56 +40,54 @@ typedef long double ld;
 typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
-const int INF = INT_MAX;
-const int MAX_V = 5000 + 5;
+const ll INF = LONG_LONG_MAX;
+const int MAX_N = 43;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-struct edge
-{
-	int u, v, dis;	
-};
-vector<edge> G[MAX_V]; 
-int N, R, dist[MAX_V], dist2[MAX_V];
+int n, W;
+ll w[MAX_N], v[MAX_N];
+pair<ll, ll> ps[1 << (MAX_N / 2)];
 
 void solve() {
-	priority_queue<Pii, vector<Pii>, greater<Pii> > que;
-	fill(dist, dist + N, INF);
-	fill(dist2, dist2 + N, INF);
-	dist[0] = 0;
-	que.push(Pii(0, 0));
+	int n2 = n / 2;
+	for (int i = 0; i < 1 << n2; ++i) {
+		ll sw = 0, sv = 0;
+		for (int j = 0; j < n2; ++j)
+			if (i >> j & 1) {
+				sw += w[j];
+				sv += v[j];
+			}
+		ps[i] = make_pair(sw, sv);
+	}	
 
-	while (!que.empty()) {
-		Pii p = que.top(); que.pop();
-		int u = p.second, d = p.first;
-		if (dist2[u] < d) continue;
-		for (int i = 0; i < G[u].size(); ++i) {
-			edge e = G[u][i];
-			int d2 = d + e.dis;
-			if (d2 < dist[e.v]) {
-				swap(d2, dist[e.v]);
-				que.push(Pii(dist[e.v], e.v));
+	sort(ps, ps + (1 << n2));
+	int m = 1;
+	for (int i = 1; i < 1 << n2; ++i) {
+		if (ps[m - 1].second < ps[i].second)
+			ps[m++] = ps[i];
+	}
+
+	ll res = 0;
+	for (int i = 0; i < 1 << (n - n2); ++i) {
+		ll sw = 0, sv = 0;
+		for (int j = 0; j < (n - n2); ++j) 
+			if (i >> j & 1) {
+				sw += w[j];
+				sv += v[j];
 			}
-			if (d2 < dist2[e.v] && d2 > dist[e.v]) {
-				dist2[e.v] = d2;
-				que.push(Pii(dist2[e.v], e.v));
-			}
+		if (sw <= W) {
+			ll tv = (lower_bound(ps, ps + m, make_pair(W - sw, INF)) - 1)->second;
+			res = max(res, sv + tv);
 		}
 	}
-	printf("%d\n", dist2[N - 1]);
+
+	cout << res << endl;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &N, &R);
-	for (int i = 0; i < R; ++i) {
-		int a, b, d;
-		scanf("%d%d%d", &a, &b, &d);
-		--a; --b;
-		G[a].push_back(edge{a, b, d});
-		G[b].push_back(edge{b, a, d});
-	}
-	solve();	
+	
 	return 0;
 }
