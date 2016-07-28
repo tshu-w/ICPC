@@ -82,6 +82,17 @@ ll cal(vector<int> &v) {
     }
     return count(X, Y, M, res);
 }
+ll CRT(vector<ll> &a, vector<ll> &m) {
+    ll M = 1LL, res = 0;
+    for (int i = 0; i < m.size(); ++i)
+        M *= m[i];
+    for (int i = 0; i < m.size(); ++i) {
+        ll Mi, Ti;
+        Mi = M / m[i]; Ti = mod_inverse(Mi, mi);
+        res = (res + a[i] * (Mi * Ti) % M) % M;
+    }
+    return res;
+}
 
 int main(int argc, char const *argv[])
 {
