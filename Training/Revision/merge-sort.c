@@ -28,7 +28,7 @@ void merge_sort(int l, int r) {
 	}
 	while (j <= r) {
 		B[k] = A[j++];
-		++j;
+		++k;
 	}
 	for (int i = l; i <= r; ++i)
 		A[i] = B[i];
