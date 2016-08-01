@@ -1,187 +1,187 @@
 
-=============================ÒÔÏÂÊÇ×îĞ¡Éú³ÉÊ÷+²¢²é¼¯======================================
-¡¾HDU¡¿
-1213 		How Many Tables			»ù´¡²¢²é¼¯¡ï
-1272 		Ğ¡Ï£µÄÃÔ¹¬			»ù´¡²¢²é¼¯¡ï
-1325&&poj1308 	Is It A Tree?			»ù´¡²¢²é¼¯¡ï
-1856 		More is better			»ù´¡²¢²é¼¯¡ï
-1102 		Constructing Roads		»ù´¡×îĞ¡Éú³ÉÊ÷¡ï
-1232 		³©Í¨¹¤³Ì			»ù´¡²¢²é¼¯¡ï
-1233 		»¹ÊÇ³©Í¨¹¤³Ì			»ù´¡×îĞ¡Éú³ÉÊ÷¡ï
-1863 		³©Í¨¹¤³Ì			»ù´¡×îĞ¡Éú³ÉÊ÷¡ï
-1875 		³©Í¨¹¤³ÌÔÙĞø			»ù´¡×îĞ¡Éú³ÉÊ÷¡ï
-1879 		¼ÌĞø³©Í¨¹¤³Ì			»ù´¡×îĞ¡Éú³ÉÊ÷¡ï
-3371    	Connect the Cities  		¼òµ¥×îĞ¡Éú³ÉÊ÷¡ï
-1301 		Jungle Roads			»ù´¡×îĞ¡Éú³ÉÊ÷¡ï
-1162 		Eddy's picture			»ù´¡×îĞ¡Éú³ÉÊ÷¡ï
-1198 		Farm Irrigation			»ù´¡×îĞ¡Éú³ÉÊ÷¡ï
-1598 		find the most comfortable road	Ã¶¾Ù+×îĞ¡Éú³ÉÊ÷¡ï¡ï
-1811 		Rank of Tetris			²¢²é¼¯+ÍØÆËÅÅĞò¡ï¡ï
-3926 		Hand in Hand			Í¬¹¹Í¼¡ï
-3938 		Portal  			ÀëÏß+²¢²é¼¯¡ï¡ï
-2489    	Minimal Ratio Tree 		dfsÃ¶¾Ù×éºÏÇé¿ö+×îĞ¡Éú³ÉÊ÷¡ï
-4081    	Qin Shi Huang's National Road System ×îĞ¡Éú³ÉÊ÷+DFS¡ï¡ï
-4126    	Genghis Khan the Conqueror 	Ã¶¾Ù+×îĞ¡Éú³ÉÊ÷+DFS(ÄÑ)¡ï¡ï¡ï¡ï
+=============================ä»¥ä¸‹æ˜¯æœ€å°ç”Ÿæˆæ ‘+å¹¶æŸ¥é›†======================================
+ã€HDUã€‘
+1213 		How Many Tables			åŸºç¡€å¹¶æŸ¥é›†â˜…
+1272 		å°å¸Œçš„è¿·å®«			åŸºç¡€å¹¶æŸ¥é›†â˜…
+1325&&poj1308 	Is It A Tree?			åŸºç¡€å¹¶æŸ¥é›†â˜…
+1856 		More is better			åŸºç¡€å¹¶æŸ¥é›†â˜…
+1102 		Constructing Roads		åŸºç¡€æœ€å°ç”Ÿæˆæ ‘â˜…
+1232 		ç•…é€šå·¥ç¨‹			åŸºç¡€å¹¶æŸ¥é›†â˜…
+1233 		è¿˜æ˜¯ç•…é€šå·¥ç¨‹			åŸºç¡€æœ€å°ç”Ÿæˆæ ‘â˜…
+1863 		ç•…é€šå·¥ç¨‹			åŸºç¡€æœ€å°ç”Ÿæˆæ ‘â˜…
+1875 		ç•…é€šå·¥ç¨‹å†ç»­			åŸºç¡€æœ€å°ç”Ÿæˆæ ‘â˜…
+1879 		ç»§ç»­ç•…é€šå·¥ç¨‹			åŸºç¡€æœ€å°ç”Ÿæˆæ ‘â˜…
+3371    	Connect the Cities  		ç®€å•æœ€å°ç”Ÿæˆæ ‘â˜…
+1301 		Jungle Roads			åŸºç¡€æœ€å°ç”Ÿæˆæ ‘â˜…
+1162 		Eddy's picture			åŸºç¡€æœ€å°ç”Ÿæˆæ ‘â˜…
+1198 		Farm Irrigation			åŸºç¡€æœ€å°ç”Ÿæˆæ ‘â˜…
+1598 		find the most comfortable road	æšä¸¾+æœ€å°ç”Ÿæˆæ ‘â˜…â˜…
+1811 		Rank of Tetris			å¹¶æŸ¥é›†+æ‹“æ‰‘æ’åºâ˜…â˜…
+3926 		Hand in Hand			åŒæ„å›¾â˜…
+3938 		Portal  			ç¦»çº¿+å¹¶æŸ¥é›†â˜…â˜…
+2489    	Minimal Ratio Tree 		dfsæšä¸¾ç»„åˆæƒ…å†µ+æœ€å°ç”Ÿæˆæ ‘â˜…
+4081    	Qin Shi Huang's National Road System æœ€å°ç”Ÿæˆæ ‘+DFSâ˜…â˜…
+4126    	Genghis Khan the Conqueror 	æšä¸¾+æœ€å°ç”Ÿæˆæ ‘+DFS(éš¾)â˜…â˜…â˜…â˜…
 
-1829&&poj2492 	A Bug's Life			»ù´¡ÖÖÀà²¢²é¼¯¡ï
-1558 		Segment set			¼ÆËã¼¸ºÎ+²¢²é¼¯¡ï
-3461 		Code Lock			²¢²é¼¯(ÓĞµãÄÑÏëµ½)¡ï¡ï
-3367 		Pseudoforest			×î´óÉú³ÉÊ÷¡ï
-2473 		Junk-Mail Filter		²¢²é¼¯+ÉèÁ¢Ğé¸¸½Úµã(Âí¼×)¡ï¡ï
-3172 		Virtual Friends			´øÈ¨²¢²é¼¯¡ï
-3635 		Dragon Balls			´øÈ¨²¢²é¼¯¡ï
-3047 		Zjnu Stadium			´øÈ¨²¢²é¼¯¡ï
-3038 		How Many Answers Are Wrong	ÖÖÀà²¢²é¼¯¡ï¡ï
-2818 		Building Block			´øÈ¨²¢²é¼¯¡ï
-3234 		Exclusive-OR			Òì»ò²¢²é¼¯(ÄÑ)¡ï¡ï¡ï
-2121    	Ice_cream¡¯s world II  		×îĞ¡Ê÷ĞÎÍ¼(ÒªÊä³ö¸ùÓĞµã¶ñĞÄ)¡ï¡ï
-4009    	Transfer water 			×îĞ¡Ê÷ĞÎÍ¼(Ä£°åÌâ)¡ï
-3311  		Dig The Wells		  	Ë¹Ì¹ÄÉÊ÷(×´Ñ¹DP)(Ä£°åÌâ)¡ï¡ï
-4085		Peach Blossom Spring		Ë¹Ì¹ÄÉÊ÷(×´Ñ¹DP)(ÓĞ¿ÉÄÜÊÇÉ­ÁÖ...)¡ï¡ï¡ï
+1829&&poj2492 	A Bug's Life			åŸºç¡€ç§ç±»å¹¶æŸ¥é›†â˜…
+1558 		Segment set			è®¡ç®—å‡ ä½•+å¹¶æŸ¥é›†â˜…
+3461 		Code Lock			å¹¶æŸ¥é›†(æœ‰ç‚¹éš¾æƒ³åˆ°)â˜…â˜…
+3367 		Pseudoforest			æœ€å¤§ç”Ÿæˆæ ‘â˜…
+2473 		Junk-Mail Filter		å¹¶æŸ¥é›†+è®¾ç«‹è™šçˆ¶èŠ‚ç‚¹(é©¬ç”²)â˜…â˜…
+3172 		Virtual Friends			å¸¦æƒå¹¶æŸ¥é›†â˜…
+3635 		Dragon Balls			å¸¦æƒå¹¶æŸ¥é›†â˜…
+3047 		Zjnu Stadium			å¸¦æƒå¹¶æŸ¥é›†â˜…
+3038 		How Many Answers Are Wrong	ç§ç±»å¹¶æŸ¥é›†â˜…â˜…
+2818 		Building Block			å¸¦æƒå¹¶æŸ¥é›†â˜…
+3234 		Exclusive-OR			å¼‚æˆ–å¹¶æŸ¥é›†(éš¾)â˜…â˜…â˜…
+2121    	Ice_creamâ€™s world II  		æœ€å°æ ‘å½¢å›¾(è¦è¾“å‡ºæ ¹æœ‰ç‚¹æ¶å¿ƒ)â˜…â˜…
+4009    	Transfer water 			æœ€å°æ ‘å½¢å›¾(æ¨¡æ¿é¢˜)â˜…
+3311  		Dig The Wells		  	æ–¯å¦çº³æ ‘(çŠ¶å‹DP)(æ¨¡æ¿é¢˜)â˜…â˜…
+4085		Peach Blossom Spring		æ–¯å¦çº³æ ‘(çŠ¶å‹DP)(æœ‰å¯èƒ½æ˜¯æ£®æ—...)â˜…â˜…â˜…
 
-2586 		How far away £¿			LCA¡ï
-2874 		Connections between cities	LCA¡ï
-3486 		Interviewe			RMQ¡ï
-2888 		Check Corners			¶şÎ¬RMQ¡ï
-3183		A Magic Lamp			RMQ(ÓĞµãÄÑÏëµ½,ÓĞµãÄÑÁªÏµµ½RMQ)¡ï¡ï
+2586 		How far away ï¼Ÿ			LCAâ˜…
+2874 		Connections between cities	LCAâ˜…
+3486 		Interviewe			RMQâ˜…
+2888 		Check Corners			äºŒç»´RMQâ˜…
+3183		A Magic Lamp			RMQ(æœ‰ç‚¹éš¾æƒ³åˆ°,æœ‰ç‚¹éš¾è”ç³»åˆ°RMQ)â˜…â˜…
 
-¡¾POJ¡¿
-1258 						×î¾­µäµÄMST¡ï
-1789 		Truck History 			×îĞ¡Éú³ÉÊ÷¡ï
-1287 		Networking 			¼òµ¥¡ï
-2349 		Arctic Network			¼òµ¥¡ï
-1611 		The Suspects 			²¢²é¼¯¡ï
-2377 						kruskal¡ï
-2524 		Ubiquitous Religions 		²¢²é¼¯¡ï
-2236 		Wireless Network 		²¢²é¼¯+¼ÆËã¼¸ºÎ¡ï
-2560 						Kruskal ²¢²é¼¯¡ï
-1861 						Kruskal ¡ï
-3625 						prim¡ï
-1679 - 		The Unique MST(»ù´¡)  		ÅĞ¶ÏMSTÊÇ·ñÎ¨Ò»¡ï
-3522 - 		Slim Span(»ù´¡)  		ÇóÒ»¿ÅÉú³ÉÊ÷£¬ÈÃ×î´ó±ß×îĞ¡±ß²îÖµ×îĞ¡¡ï
-2485 		Highways 			MSTÖĞµÄ×î³¤±ß¡ï
-2395 						×îĞ¡Éú³ÉÊ÷µÄ×î³¤±ß¡ï
-1751 		Highways 			Çó³ö·½°¸¡ï
-POJ-1182 	Ê³ÎïÁ´ 				ÖÖÀà²¢²é¼¯¡ï¡ï
-POJ 1456 	Supermarket			Ì°ĞÄ+Çø¼äºÏ²¢¡ï
-POJ-1703 					ÖÖÀà²¢²é¼¯¡ï
-POJ-1988 					ÖÖÀà²¢²é¼¯¡ï
-POJ-1733 	Parity game 			ÖÖÀà²¢²é¼¯£¬ÏÈÒªÀëÉ¢»¯Ò»ÏÂ£¬²»Ó°Ïì½á¹û¡ï
-POJ-1417 	True Liars(ÄÑ) 			²¢²é¼¯+DP ÖÖÀà²¢²é¼¯¡ï¡ï
-POJ-2912 	Rochambeau(ÄÑ) 			baiduµÄÌâ,ºÜ²»´í...ÊÇÊ³ÎïÁ´µÄ¼ÓÇ¿°æ.ÅĞ¶Ï²ÃÅĞ±È½ÏÄÑÏë.¡ï¡ï¡ï
-POJ 2728 	Desert King(ÖĞµÈ)  		×îÓÅ±ÈÂÊÉú³ÉÊ÷¡ï¡ï
-POJ 1639 	Picnic Planning(½ÏÄÑ) 		¶¥µã¶ÈÊıÓĞÏŞÖÆµÄ×îĞ¡Éú³ÉÊ÷¡ï¡ï
-POJ 3164 	Command Network(ÄÑ) 		×îĞ¡Ê÷ĞÎÍ¼¡ï¡ï
+ã€POJã€‘
+1258 						æœ€ç»å…¸çš„MSTâ˜…
+1789 		Truck History 			æœ€å°ç”Ÿæˆæ ‘â˜…
+1287 		Networking 			ç®€å•â˜…
+2349 		Arctic Network			ç®€å•â˜…
+1611 		The Suspects 			å¹¶æŸ¥é›†â˜…
+2377 						kruskalâ˜…
+2524 		Ubiquitous Religions 		å¹¶æŸ¥é›†â˜…
+2236 		Wireless Network 		å¹¶æŸ¥é›†+è®¡ç®—å‡ ä½•â˜…
+2560 						Kruskal å¹¶æŸ¥é›†â˜…
+1861 						Kruskal â˜…
+3625 						primâ˜…
+1679 - 		The Unique MST(åŸºç¡€)  		åˆ¤æ–­MSTæ˜¯å¦å”¯ä¸€â˜…
+3522 - 		Slim Span(åŸºç¡€)  		æ±‚ä¸€é¢—ç”Ÿæˆæ ‘ï¼Œè®©æœ€å¤§è¾¹æœ€å°è¾¹å·®å€¼æœ€å°â˜…
+2485 		Highways 			MSTä¸­çš„æœ€é•¿è¾¹â˜…
+2395 						æœ€å°ç”Ÿæˆæ ‘çš„æœ€é•¿è¾¹â˜…
+1751 		Highways 			æ±‚å‡ºæ–¹æ¡ˆâ˜…
+POJ-1182 	é£Ÿç‰©é“¾ 				ç§ç±»å¹¶æŸ¥é›†â˜…â˜…
+POJ 1456 	Supermarket			è´ªå¿ƒ+åŒºé—´åˆå¹¶â˜…
+POJ-1703 					ç§ç±»å¹¶æŸ¥é›†â˜…
+POJ-1988 					ç§ç±»å¹¶æŸ¥é›†â˜…
+POJ-1733 	Parity game 			ç§ç±»å¹¶æŸ¥é›†ï¼Œå…ˆè¦ç¦»æ•£åŒ–ä¸€ä¸‹ï¼Œä¸å½±å“ç»“æœâ˜…
+POJ-1417 	True Liars(éš¾) 			å¹¶æŸ¥é›†+DP ç§ç±»å¹¶æŸ¥é›†â˜…â˜…
+POJ-2912 	Rochambeau(éš¾) 			baiduçš„é¢˜,å¾ˆä¸é”™...æ˜¯é£Ÿç‰©é“¾çš„åŠ å¼ºç‰ˆ.åˆ¤æ–­è£åˆ¤æ¯”è¾ƒéš¾æƒ³.â˜…â˜…â˜…
+POJ 2728 	Desert King(ä¸­ç­‰)  		æœ€ä¼˜æ¯”ç‡ç”Ÿæˆæ ‘â˜…â˜…
+POJ 1639 	Picnic Planning(è¾ƒéš¾) 		é¡¶ç‚¹åº¦æ•°æœ‰é™åˆ¶çš„æœ€å°ç”Ÿæˆæ ‘â˜…â˜…
+POJ 3164 	Command Network(éš¾) 		æœ€å°æ ‘å½¢å›¾â˜…â˜…
 
-poj3723						ºÃÌâ!!! ¡ï¡ï
-poj3228						ºÃºÃÌâ!!! ¡ï¡ï
+poj3723						å¥½é¢˜!!! â˜…â˜…
+poj3228						å¥½å¥½é¢˜!!! â˜…â˜…
 
-¡¾ZOJ¡¿
-ZOJ-3261 ÄæÏò²¢²é¼¯ ¡ï¡ï
+ã€ZOJã€‘
+ZOJ-3261 é€†å‘å¹¶æŸ¥é›† â˜…â˜…
 
 
-===============================ÒÔÏÂÊÇ×î¶ÌÂ·ÏµÁĞ====================================
-¡¾HDU¡¿
-1548    	A strange lift			»ù´¡×î¶ÌÂ·(»òbfs)¡ï
-2544    	×î¶ÌÂ·	 			»ù´¡×î¶ÌÂ·¡ï
-3790   		×î¶ÌÂ·¾¶ÎÊÌâ			»ù´¡×î¶ÌÂ·¡ï
-2066   		 Ò»¸öÈËµÄÂÃĞĞ			»ù´¡×î¶ÌÂ·(¶àÔ´¶à»ã,¿ÉÒÔ½¨Á¢³¬¼¶Ô´µãºÍÖÕµã)¡ï
-2112    	HDU Today			»ù´¡×î¶ÌÂ·¡ï
-1874    	³©Í¨¹¤³ÌĞø			»ù´¡×î¶ÌÂ·¡ï
-1217    	Arbitrage   			»õ±Ò½»»» Floyd (»òÕß Bellman-Ford ÅĞ»·)¡ï
-1245    	Saving James Bond		¼ÆËã¼¸ºÎ+×î¶ÌÂ·¡ï
-1317    	XYZZY  				Bellman-FordÅĞ»·,ÓĞ¸ºÈ¨¡ï
-1535    	Invitation Cards   		ÓĞÏòÍ¼µÄÀ´»Ø×î¶ÌÂ·,(·´Ïò½¨Í¼)¡ï
-1546    	Idiomatic Phrases Game  	×î¶ÌÂ·¡ï
-2680    	Choose the best route   	×î¶ÌÂ·¡ï
-2923    	Einbahnstrasse			×î¶ÌÂ·¡ï
-3339    	In Action  			×î¶ÌÂ·+±³°ü¡ï
-2224    	The shortest path		Ë«µ÷ÂÃĞĞÉÌÎÊÌâ¡ï¡ï
-2807    	The Shortest Path		¾ØÕóÔËËã+×î¶ÌÂ·(floyd)¡ï¡ï
-1595    	find the longest of the shortestÃ¶¾Ù+×î¶ÌÂ·(É¾µôÈÎÒâÒ»Ìõ±ßµÄ×î³¤×î¶ÌÂ·)¡ï¡ï
-3986    	Harry Potter and the Final Battle Ã¶¾Ù+×î¶ÌÂ·(É¾µôÈÎÒâÒ»Ìõ±ßµÄ×î³¤×î¶ÌÂ·)¡ï¡ï
-1599    	find the mincost route		floydÇó×îĞ¡»·¡ï
-1839		Delay Constrained...		¶ş·ÖÏÂÏŞ+×î¶ÌÂ·(´øÏŞÖÆ×î¶ÌÂ·)¡ï¡ï	
-3631 		Shortest Path                   Floyd²åµã·¨¡ï¡ï
-4114		Disney's FastPass		×î¶ÌÂ·+¶şÎ¬×´Ñ¹DP(ÄÑ)¡ï¡ï¡ï
-3832    	Earth Hour			ÈıµãÁ¬Í¨(Ë¹Ì¹ÄÉÊ÷)¡ï
-3873    	Invade the Mars			Dij±äÌå(ºÃÌâ!,´øÏŞÖÆ×î¶ÌÂ·)¡ï¡ï¡ï
-4063 		Aircraft			¼¸ºÎ¹¹Í¼+×î¶ÌÂ·¡ï¡ï¡ï¡ï
+===============================ä»¥ä¸‹æ˜¯æœ€çŸ­è·¯ç³»åˆ—====================================
+ã€HDUã€‘
+1548    	A strange lift			åŸºç¡€æœ€çŸ­è·¯(æˆ–bfs)â˜…
+2544    	æœ€çŸ­è·¯	 			åŸºç¡€æœ€çŸ­è·¯â˜…
+3790   		æœ€çŸ­è·¯å¾„é—®é¢˜			åŸºç¡€æœ€çŸ­è·¯â˜…
+2066   		 ä¸€ä¸ªäººçš„æ—…è¡Œ			åŸºç¡€æœ€çŸ­è·¯(å¤šæºå¤šæ±‡,å¯ä»¥å»ºç«‹è¶…çº§æºç‚¹å’Œç»ˆç‚¹)â˜…
+2112    	HDU Today			åŸºç¡€æœ€çŸ­è·¯â˜…
+1874    	ç•…é€šå·¥ç¨‹ç»­			åŸºç¡€æœ€çŸ­è·¯â˜…
+1217    	Arbitrage   			è´§å¸äº¤æ¢ Floyd (æˆ–è€… Bellman-Ford åˆ¤ç¯)â˜…
+1245    	Saving James Bond		è®¡ç®—å‡ ä½•+æœ€çŸ­è·¯â˜…
+1317    	XYZZY  				Bellman-Fordåˆ¤ç¯,æœ‰è´Ÿæƒâ˜…
+1535    	Invitation Cards   		æœ‰å‘å›¾çš„æ¥å›æœ€çŸ­è·¯,(åå‘å»ºå›¾)â˜…
+1546    	Idiomatic Phrases Game  	æœ€çŸ­è·¯â˜…
+2680    	Choose the best route   	æœ€çŸ­è·¯â˜…
+2923    	Einbahnstrasse			æœ€çŸ­è·¯â˜…
+3339    	In Action  			æœ€çŸ­è·¯+èƒŒåŒ…â˜…
+2224    	The shortest path		åŒè°ƒæ—…è¡Œå•†é—®é¢˜â˜…â˜…
+2807    	The Shortest Path		çŸ©é˜µè¿ç®—+æœ€çŸ­è·¯(floyd)â˜…â˜…
+1595    	find the longest of the shortestæšä¸¾+æœ€çŸ­è·¯(åˆ æ‰ä»»æ„ä¸€æ¡è¾¹çš„æœ€é•¿æœ€çŸ­è·¯)â˜…â˜…
+3986    	Harry Potter and the Final Battle æšä¸¾+æœ€çŸ­è·¯(åˆ æ‰ä»»æ„ä¸€æ¡è¾¹çš„æœ€é•¿æœ€çŸ­è·¯)â˜…â˜…
+1599    	find the mincost route		floydæ±‚æœ€å°ç¯â˜…
+1839		Delay Constrained...		äºŒåˆ†ä¸‹é™+æœ€çŸ­è·¯(å¸¦é™åˆ¶æœ€çŸ­è·¯)â˜…â˜…	
+3631 		Shortest Path                   Floydæ’ç‚¹æ³•â˜…â˜…
+4114		Disney's FastPass		æœ€çŸ­è·¯+äºŒç»´çŠ¶å‹DP(éš¾)â˜…â˜…â˜…
+3832    	Earth Hour			ä¸‰ç‚¹è¿é€š(æ–¯å¦çº³æ ‘)â˜…
+3873    	Invade the Mars			Dijå˜ä½“(å¥½é¢˜!,å¸¦é™åˆ¶æœ€çŸ­è·¯)â˜…â˜…â˜…
+4063 		Aircraft			å‡ ä½•æ„å›¾+æœ€çŸ­è·¯â˜…â˜…â˜…â˜…
 
-hdu4179		Difficult Routes		dis[][]¿ª¶şÎ¬×´Ì¬µÄ×î¶ÌÂ·(´øÏŞÖÆ×î¶ÌÂ·)¡ï¡ï
+hdu4179		Difficult Routes		dis[][]å¼€äºŒç»´çŠ¶æ€çš„æœ€çŸ­è·¯(å¸¦é™åˆ¶æœ€çŸ­è·¯)â˜…â˜…
 
-1869 		Áù¶È·ÖÀë 			Floyd×î¶ÌÂ·¡ï
-1385    	Minimum Transport Cost    	×î¶ÌÂ·+Êä³öÂ·¾¶(Êä³ö×ÖµäĞò×îĞ¡Â·¾¶,ÓĞµã¶ñĞÄ)¡ï¡ï	
-1224    	free DIY Tour 			×î¶ÌÂ·+Êä³öÂ·¾¶¡ï
-1142    	A Walk Through the Forest  	×î¶ÌÂ·+¼ÇÒäËÑË÷¡ï¡ï
-1596    	find the safest road   		³Ë»ı×îĞ¡µÄ×î¶ÌÂ·¡ï
-1598    	find the most comfortable road	¶ş·ÖËÙ¶È²î+×î¶ÌÂ·(´øÏŞÖÆ×î¶ÌÂ·)¡ï¡ï
-2722    	Here We Go(relians) Again	×î¶ÌÂ·¡ï
-2962    	Trucking  			¶ş·Ö+×î¶ÌÂ·(´øÏŞÖÆ×î¶ÌÂ·)¡ï¡ï
-1690    	Bus System 			×î¶ÌÂ·¡ï
-2433    	Travel				É¾±ß+×î¶ÌÂ·Ö®ºÍ(Ô¤´¦ÀíÇÅ±ß)¡ï¡ï¡ï			
-2363    	Cycling				¶ş·Ö+×î¶ÌÂ·(´øÏŞÖÆ×î¶ÌÂ·)¡ï¡ï
-2377    	Bus Pass			×î¶ÌÂ·(Ñ°ÕÒÒ»¸öµãµÄ×î³¤×î¶ÌÂ·×îĞ¡)¡ï¡ï
-2833    	WuKong				×î¶ÌÂ·+¼ÇÒä»¯ËÑË÷(ÇóÁ½Ìõ×î¶ÌÂ·µÄ×î¶à¹«¹²µã)¡ï¡ï
-1688    	Sightseeing			×î¶Ì´Î¶ÌÂ·ÌõÊı¡ï¡ï
-3191    	How Many Paths Are There	´Î¶ÌÂ·ÌõÊı¡ï¡ï
-2482    	Transit search			×î¶ÌÂ·¡ï¡ï¡ï
-3768 		Shopping			×î¶ÌÂ·+dfs(»ò×î¶ÌÂ·+×´Ñ¹DP)¡ï¡ï
-3035    	War				Æ½ÃæÍ¼×îĞ¡¸î(½¨Í¼Âé·³)¡ï¡ï
-3870    	Catch the Theves 		Æ½ÃæÍ¼×îĞ¡¸î(½¨Í¼Âé·³)¡ï¡ï
-3860		Circuit Board			Æ½ÃæÍ¼×îĞ¡¸î(½¨Í¼Âé·³)¡ï¡ï
+1869 		å…­åº¦åˆ†ç¦» 			Floydæœ€çŸ­è·¯â˜…
+1385    	Minimum Transport Cost    	æœ€çŸ­è·¯+è¾“å‡ºè·¯å¾„(è¾“å‡ºå­—å…¸åºæœ€å°è·¯å¾„,æœ‰ç‚¹æ¶å¿ƒ)â˜…â˜…	
+1224    	free DIY Tour 			æœ€çŸ­è·¯+è¾“å‡ºè·¯å¾„â˜…
+1142    	A Walk Through the Forest  	æœ€çŸ­è·¯+è®°å¿†æœç´¢â˜…â˜…
+1596    	find the safest road   		ä¹˜ç§¯æœ€å°çš„æœ€çŸ­è·¯â˜…
+1598    	find the most comfortable road	äºŒåˆ†é€Ÿåº¦å·®+æœ€çŸ­è·¯(å¸¦é™åˆ¶æœ€çŸ­è·¯)â˜…â˜…
+2722    	Here We Go(relians) Again	æœ€çŸ­è·¯â˜…
+2962    	Trucking  			äºŒåˆ†+æœ€çŸ­è·¯(å¸¦é™åˆ¶æœ€çŸ­è·¯)â˜…â˜…
+1690    	Bus System 			æœ€çŸ­è·¯â˜…
+2433    	Travel				åˆ è¾¹+æœ€çŸ­è·¯ä¹‹å’Œ(é¢„å¤„ç†æ¡¥è¾¹)â˜…â˜…â˜…			
+2363    	Cycling				äºŒåˆ†+æœ€çŸ­è·¯(å¸¦é™åˆ¶æœ€çŸ­è·¯)â˜…â˜…
+2377    	Bus Pass			æœ€çŸ­è·¯(å¯»æ‰¾ä¸€ä¸ªç‚¹çš„æœ€é•¿æœ€çŸ­è·¯æœ€å°)â˜…â˜…
+2833    	WuKong				æœ€çŸ­è·¯+è®°å¿†åŒ–æœç´¢(æ±‚ä¸¤æ¡æœ€çŸ­è·¯çš„æœ€å¤šå…¬å…±ç‚¹)â˜…â˜…
+1688    	Sightseeing			æœ€çŸ­æ¬¡çŸ­è·¯æ¡æ•°â˜…â˜…
+3191    	How Many Paths Are There	æ¬¡çŸ­è·¯æ¡æ•°â˜…â˜…
+2482    	Transit search			æœ€çŸ­è·¯â˜…â˜…â˜…
+3768 		Shopping			æœ€çŸ­è·¯+dfs(æˆ–æœ€çŸ­è·¯+çŠ¶å‹DP)â˜…â˜…
+3035    	War				å¹³é¢å›¾æœ€å°å‰²(å»ºå›¾éº»çƒ¦)â˜…â˜…
+3870    	Catch the Theves 		å¹³é¢å›¾æœ€å°å‰²(å»ºå›¾éº»çƒ¦)â˜…â˜…
+3860		Circuit Board			å¹³é¢å›¾æœ€å°å‰²(å»ºå›¾éº»çƒ¦)â˜…â˜…
 
-¡¾POJ¡¿
-1062 		°º¹óµÄÆ¸Àñ			¾¹È»¿ÉÒÔºÍ×î¶ÌÂ·ÁªÏµÆğÀ´¡ï¡ï
-1094 		Sorting It All Out		FloydÅĞ»·+ÍØÆËÅÅĞò¡ï
-1125		Stockbroker Grapevine		Floyd¡ï
-1135 		Domino Effect			×î¶ÌÂ·,±È½ÏÓĞÒâË¼¡ï¡ï
-1161 		Walls				×î¶ÌÂ·(Í¼Ì«¶ñĞÄÁË)¡ï¡ï
-1502 		MPI Maelstrom			Floyd¡ï
-1511    	Invitation Cards		À´»Ø×î¶ÌÂ·¡ï
-1556		The Doors  			¼ÆËã¼¸ºÎ+×î¶ÌÂ·¡ï¡ï
-1724 		ROADS				´øÏŞÖÆµÄ×î¶ÌÂ·,dis[][]¿ª¶şÎ¬À´¼ÇÂ¼ĞÅÏ¢(»ò¹ãËÑ)¡ï¡ï
-1734 		Sightseeing trip		floyd×îĞ¡»·Â·¾¶¡ï
-1797 		Heavy Transportation		¶ş·ÖÃ¶¾Ù+×î¶ÌÂ·¡ï
-1847 		Tram				¼òµ¥×î¶ÌÂ·¡ï
-1860		Currency Exchange		»õ±Ò¶Ò»»¡ï
-1949 		Chores				·´Ïò½¨±ß,Çó×î³¤Â·¡ï¡ï
-2139 		Six Degrees of Cowvin Bacon	Floyd¡ï
-2240		Arbitrage			»õ±Ò¶Ò»»¡ï
-2253		Frogger				¶ş·Ö+×î¶ÌÂ·¡ï
-2312 		Ì¹¿Ë´óÕ½			spfa×î¶ÌÂ·±¾ÖÊ±äĞÎ-->¹ãËÑ¡ï
-2387 		Til the Cows Come Home		»ù´¡×î¶ÌÂ·¡ï
-2394		Checking an Alibi		×î¶ÌÂ·¡ï
-2449		Remmarguts' Date		A*ÇóµÚK¶ÌÂ·¡ï¡ï
-2457 		Part Acquisition		×î¶ÌÂ· (Êä³öÂ·¾¶)¡ï¡ï
-2472 		106 miles to Chicago		³Ë»ı×î¶ÌÂ·(logÒ»ÏÂ,³Ë±ä¼Ó)¡ï¡ï
+ã€POJã€‘
+1062 		æ˜‚è´µçš„è˜ç¤¼			ç«Ÿç„¶å¯ä»¥å’Œæœ€çŸ­è·¯è”ç³»èµ·æ¥â˜…â˜…
+1094 		Sorting It All Out		Floydåˆ¤ç¯+æ‹“æ‰‘æ’åºâ˜…
+1125		Stockbroker Grapevine		Floydâ˜…
+1135 		Domino Effect			æœ€çŸ­è·¯,æ¯”è¾ƒæœ‰æ„æ€â˜…â˜…
+1161 		Walls				æœ€çŸ­è·¯(å›¾å¤ªæ¶å¿ƒäº†)â˜…â˜…
+1502 		MPI Maelstrom			Floydâ˜…
+1511    	Invitation Cards		æ¥å›æœ€çŸ­è·¯â˜…
+1556		The Doors  			è®¡ç®—å‡ ä½•+æœ€çŸ­è·¯â˜…â˜…
+1724 		ROADS				å¸¦é™åˆ¶çš„æœ€çŸ­è·¯,dis[][]å¼€äºŒç»´æ¥è®°å½•ä¿¡æ¯(æˆ–å¹¿æœ)â˜…â˜…
+1734 		Sightseeing trip		floydæœ€å°ç¯è·¯å¾„â˜…
+1797 		Heavy Transportation		äºŒåˆ†æšä¸¾+æœ€çŸ­è·¯â˜…
+1847 		Tram				ç®€å•æœ€çŸ­è·¯â˜…
+1860		Currency Exchange		è´§å¸å…‘æ¢â˜…
+1949 		Chores				åå‘å»ºè¾¹,æ±‚æœ€é•¿è·¯â˜…â˜…
+2139 		Six Degrees of Cowvin Bacon	Floydâ˜…
+2240		Arbitrage			è´§å¸å…‘æ¢â˜…
+2253		Frogger				äºŒåˆ†+æœ€çŸ­è·¯â˜…
+2312 		å¦å…‹å¤§æˆ˜			spfaæœ€çŸ­è·¯æœ¬è´¨å˜å½¢-->å¹¿æœâ˜…
+2387 		Til the Cows Come Home		åŸºç¡€æœ€çŸ­è·¯â˜…
+2394		Checking an Alibi		æœ€çŸ­è·¯â˜…
+2449		Remmarguts' Date		A*æ±‚ç¬¬KçŸ­è·¯â˜…â˜…
+2457 		Part Acquisition		æœ€çŸ­è·¯ (è¾“å‡ºè·¯å¾„)â˜…â˜…
+2472 		106 miles to Chicago		ä¹˜ç§¯æœ€çŸ­è·¯(logä¸€ä¸‹,ä¹˜å˜åŠ )â˜…â˜…
 
 2502		Subway
 2570 		Fiber Network floyd
-3013 		Ê¥µ®Ê÷
+3013 		åœ£è¯æ ‘
 3037		Skiing
 3072 		Robot
-3114 		Countries in War 		Ç¿ÁªÍ¨+×î¶ÌÂ·
-3160 		Father Christmas flymouse 	Ç¿ÁªÍ¨+×î³¤Â·
+3114 		Countries in War 		å¼ºè”é€š+æœ€çŸ­è·¯
+3160 		Father Christmas flymouse 	å¼ºè”é€š+æœ€é•¿è·¯
 3255 		Roadblock
-3259 		Wormholes			£¨Ñ°ÕÒ¸ºÈ¨»ØÂ·£©
+3259 		Wormholes			ï¼ˆå¯»æ‰¾è´Ÿæƒå›è·¯ï¼‰
 3268 		Silver Cow Part
-3311 		Hie with the Pie 		floyd+×´Ñ¹
+3311 		Hie with the Pie 		floyd+çŠ¶å‹
 3328 		Cliff Climbing
 3439 		Server Relocation
-3463 		Sightseeing 			´Î¶ÌÂ·ÌõÊı
+3463 		Sightseeing 			æ¬¡çŸ­è·¯æ¡æ•°
 3159	
-3521		Geometric Map			¼ÆËã¼¸ºÎ+×î¶ÌÂ·
-3549		GSM phone 			¼ÆËã¼¸ºÎ+×î¶ÌÂ·
+3521		Geometric Map			è®¡ç®—å‡ ä½•+æœ€çŸ­è·¯
+3549		GSM phone 			è®¡ç®—å‡ ä½•+æœ€çŸ­è·¯
 3594 		Escort of Dr. Who How
-3613 		Cow Relays  			¾­¹ıNÌõ±ßµÄ×î¶ÌÂ· // floyd + ¶ş·Ö¾ØÕó
+3613 		Cow Relays  			ç»è¿‡Næ¡è¾¹çš„æœ€çŸ­è·¯ // floyd + äºŒåˆ†çŸ©é˜µ
 3615 		Cow Hurdles
-3621 		×îÓÅ±ÈÂÊ»·
+3621 		æœ€ä¼˜æ¯”ç‡ç¯
 3635 		full tank?
-3660 		´«µİ±Õ°ü
+3660 		ä¼ é€’é—­åŒ…
 3662 		Telephone Lines
-============================ÒÔÏÂÊÇ²î·ÖÔ¼ÊøÏµÁĞ============================
-¡¾HDU¡¿
+============================ä»¥ä¸‹æ˜¯å·®åˆ†çº¦æŸç³»åˆ—============================
+ã€HDUã€‘
 1384 		Intervals
 1529 		Cashier Employment
 1531 		King
@@ -190,7 +190,7 @@ hdu4179		Difficult Routes		dis[][]¿ª¶şÎ¬×´Ì¬µÄ×î¶ÌÂ·(´øÏŞÖÆ×î¶ÌÂ·)¡ï¡ï
 3592 		World Exhibition
 3666 		THE MATRIX PROBLEM
 
-¡¾POJ¡¿
+ã€POJã€‘
 1201
 1275
 1364
@@ -201,73 +201,73 @@ hdu4179		Difficult Routes		dis[][]¿ª¶şÎ¬×´Ì¬µÄ×î¶ÌÂ·(´øÏŞÖÆ×î¶ÌÂ·)¡ï¡ï
 3169
 3687
 
-============================ÒÔÏÂÊÇ¶ş·ÖÆ¥ÅäÏµÁĞ============================
-ÆÕÍ¨Æ¥Åä,¶àÖØÆ¥Åä
+============================ä»¥ä¸‹æ˜¯äºŒåˆ†åŒ¹é…ç³»åˆ—============================
+æ™®é€šåŒ¹é…,å¤šé‡åŒ¹é…
 
-¡¾HDU¡¿
+ã€HDUã€‘
 
 1068		Girls and Boys
 1150		Machine Schedule
 1151		Air Raid
 1179		Ollivanders: Makers of Fine Wands since 382 BC.
-1281		ÆåÅÌÓÎÏ·
+1281		æ£‹ç›˜æ¸¸æˆ
 1498		50 years, 50 colors
 1507		Uncle Tom's Inherited Land*
 1528		Card Game Cheater
-1845		Jimmy¡¯s Assignment
-2063		¹ıÉ½³µ
+1845		Jimmyâ€™s Assignment
+2063		è¿‡å±±è½¦
 2119		Matrix
 2444		The Accomodation of Students
 2768		Cat vs. Dog
 3081		Marriage Match II
 3360		National Treasures
-1045		Ò²¿ÉËÑË÷
-1350		×îĞ¡Â·¾¶¸²¸Ç
-3118		ÀàËÆ¶ş·ÖÆ¥Åä
+1045		ä¹Ÿå¯æœç´¢
+1350		æœ€å°è·¯å¾„è¦†ç›–
+3118		ç±»ä¼¼äºŒåˆ†åŒ¹é…
 3729
 2389
 1054
-2819		ÍêÈ«Æ¥Åä
-1668 		¶ş·Ö+¶àÖØÆ¥Åä
-3605		¶àÖØÆ¥Åä
-3861		Ç¿Á¬Í¨+¶ş·ÖÆ¥Åä
-2236		ÎŞÌâII
+2819		å®Œå…¨åŒ¹é…
+1668 		äºŒåˆ†+å¤šé‡åŒ¹é…
+3605		å¤šé‡åŒ¹é…
+3861		å¼ºè¿é€š+äºŒåˆ†åŒ¹é…
+2236		æ— é¢˜II
 
 hdu3468
-hdu4185	ÆæÅ¼Æ¥Åä
+hdu4185	å¥‡å¶åŒ¹é…
 
 
-¡¾POJ¡¿
+ã€POJã€‘
 1087		A Plug for UNIX
 1274 		The Perfect Stall
 1469		COURSES
-1486 		Sorting Slides 			¶ş·ÖÍ¼µÄ±ØĞë±ß
+1486 		Sorting Slides 			äºŒåˆ†å›¾çš„å¿…é¡»è¾¹
 1548		Robots
 1698		Alice's Chance
 1719		Shooting Contest
-1904 		King's Quest 			Çó¶ş·ÖÍ¼ËùÓĞ¿ÉÄÜµÄÆ¥Åä±ß
-2060 		Taxi Cab Scheme 		×îĞ¡Â·¾¶¸²¸Ç
-2112 		Optimal Milking 		¶ş·Ö+¶àÖØÆ¥Åä
-2226 		Muddy Fields 			ĞĞÁĞµÄ¸²¸Ç
+1904 		King's Quest 			æ±‚äºŒåˆ†å›¾æ‰€æœ‰å¯èƒ½çš„åŒ¹é…è¾¹
+2060 		Taxi Cab Scheme 		æœ€å°è·¯å¾„è¦†ç›–
+2112 		Optimal Milking 		äºŒåˆ†+å¤šé‡åŒ¹é…
+2226 		Muddy Fields 			è¡Œåˆ—çš„è¦†ç›–
 2239 		Selecting Courses
-2289 		Jamie's Contact Groups		 ¶ş·Ö+¶àÖØÆ¥Åä
+2289 		Jamie's Contact Groups		 äºŒåˆ†+å¤šé‡åŒ¹é…
 2446 		Chessboard
 2536 		Gopher II
 2584		T-Shirt Gumbo
-2594 		Treasure Exploration 		¿ÉÏà½»×îĞ¡Â·¾¶¸²¸Ç
+2594 		Treasure Exploration 		å¯ç›¸äº¤æœ€å°è·¯å¾„è¦†ç›–
 2672		Hotkeys
 2724 		Purifying Machine
 3020 		Antenna Placement
-3041 		Asteroids 			¼òµ¥ĞĞÁĞÆ¥Åä 
-3189		Steady Cow Assignment 		¶ş·Ö+¶àÖØÆ¥Åä
+3041 		Asteroids 			ç®€å•è¡Œåˆ—åŒ¹é… 
+3189		Steady Cow Assignment 		äºŒåˆ†+å¤šé‡åŒ¹é…
 3207 		Ikki's Story IV - Panda's Trick
 3216 		Repairing Company
 3343 		Against Mammoths
 3692 		Kindergarten
-2771						×î´ó¶ÀÁ¢¼¯
-============================ÒÔÏÂÊÇKMËã·¨ÏµÁĞ============================
-¡¾HDU¡¿
-2255		±¼Ğ¡¿µ×¬´óÇ®
+2771						æœ€å¤§ç‹¬ç«‹é›†
+============================ä»¥ä¸‹æ˜¯KMç®—æ³•ç³»åˆ—============================
+ã€HDUã€‘
+2255		å¥”å°åº·èµšå¤§é’±
 1533		Going Home
 1853		Cyclic Tour
 3488		Tour
@@ -283,83 +283,83 @@ hdu4185	ÆæÅ¼Æ¥Åä
 3315		My Brute
 3523		Image copy detection
 
-¡¾POJ¡¿
-2195 		Going Home 			×îĞ¡È¨ÖµÆ¥Åä
-2400 		Supervisor, Supervisee 		Êä³öËùÓĞ×îĞ¡È¨Æ¥Åä
-2516 		Minimum Cost 			×îĞ¡È¨ÖµÆ¥Åä»ò×îĞ¡·ÑÓÃÁ÷
+ã€POJã€‘
+2195 		Going Home 			æœ€å°æƒå€¼åŒ¹é…
+2400 		Supervisor, Supervisee 		è¾“å‡ºæ‰€æœ‰æœ€å°æƒåŒ¹é…
+2516 		Minimum Cost 			æœ€å°æƒå€¼åŒ¹é…æˆ–æœ€å°è´¹ç”¨æµ
 3565		Ants
-3686 		The Windy's 			×îĞ¡È¨ÖµÆ¥Åä
+3686 		The Windy's 			æœ€å°æƒå€¼åŒ¹é…
 	
-============================ÒÔÏÂÊÇ×î´óÍÅ&ÎÈ¶¨»éÒöÏµÁĞ============================
-¡¾HDU¡¿
+============================ä»¥ä¸‹æ˜¯æœ€å¤§å›¢&ç¨³å®šå©šå§»ç³»åˆ—============================
+ã€HDUã€‘
 
 1530		Maximum Clique
 1435		Stable Match
-3585		maximum shortest distance 	¶ş·Ö+×î´óÍÅ
+3585		maximum shortest distance 	äºŒåˆ†+æœ€å¤§å›¢
 1522		Marriage is Stable
 1914		The Stable Marriage Problem
 
-¡¾POJ¡¿
+ã€POJã€‘
 
-1129		ËÄÉ«¶¨Àí ×ÅÉ«ÎÊÌâ
-1419		×î´ó¶ÀÁ¢¼¯
-2989		¼«´óÍÅ
-3487 		The Stable Marriage Problem ÎÈ¶¨»éÒö
-============================ÒÔÏÂÊÇÇ¿Ë«ÁªÍ¨ÏµÁĞ============================
-¡¾HDU¡¿
-Ç¿Á¬Í¨:
-1269  		ÃÔ¹¬³Ç±¤  			ÅĞ¶ÏÊÇ·ñÊÇÒ»¸öÇ¿Á¬Í¨
-2767		Proving Equivalences  		ÖÁÉÙ¼Ó¼¸Ìõ±ßÈÃÕû¸öÍ¼±ä³ÉÇ¿Á¬Í¨
-3836 		Equivalent Sets  		ÖÁÉÙ¼Ó¼¸Ìõ±ßÈÃÕû¸öÍ¼±ä³ÉÇ¿Á¬Í¨
-1827   		Summer Holiday  		´«µİµÄ×îĞ¡·ÑÓÃ
-3072    	Intelligence System  		´«µİµÄ×îĞ¡·ÑÓÃ
-3861		The King¡¯s Problem 		Ç¿Á¬Í¨+¶ş·ÖÆ¥Åä
-3639		Hawk-and-Chicken  		Ç¿Á¬Í¨Ëõµã + Ê÷ĞÎdp£¨ÀÛ¼Ó×Ó½ÚµãµÄ×ÜÈ¨Öµ£©
-3594 		Cactus 				ÏÉÈËÕÆÍ¼
+1129		å››è‰²å®šç† ç€è‰²é—®é¢˜
+1419		æœ€å¤§ç‹¬ç«‹é›†
+2989		æå¤§å›¢
+3487 		The Stable Marriage Problem ç¨³å®šå©šå§»
+============================ä»¥ä¸‹æ˜¯å¼ºåŒè”é€šç³»åˆ—============================
+ã€HDUã€‘
+å¼ºè¿é€š:
+1269  		è¿·å®«åŸå ¡  			åˆ¤æ–­æ˜¯å¦æ˜¯ä¸€ä¸ªå¼ºè¿é€š
+2767		Proving Equivalences  		è‡³å°‘åŠ å‡ æ¡è¾¹è®©æ•´ä¸ªå›¾å˜æˆå¼ºè¿é€š
+3836 		Equivalent Sets  		è‡³å°‘åŠ å‡ æ¡è¾¹è®©æ•´ä¸ªå›¾å˜æˆå¼ºè¿é€š
+1827   		Summer Holiday  		ä¼ é€’çš„æœ€å°è´¹ç”¨
+3072    	Intelligence System  		ä¼ é€’çš„æœ€å°è´¹ç”¨
+3861		The Kingâ€™s Problem 		å¼ºè¿é€š+äºŒåˆ†åŒ¹é…
+3639		Hawk-and-Chicken  		å¼ºè¿é€šç¼©ç‚¹ + æ ‘å½¢dpï¼ˆç´¯åŠ å­èŠ‚ç‚¹çš„æ€»æƒå€¼ï¼‰
+3594 		Cactus 				ä»™äººæŒå›¾
 
-Ë«Á¬Í¨:
-2242		¿¼ÑĞÂ·Ã£Ã£¡ª¡ª¿Õµ÷½ÌÊÒ  	Ë«ÁªÍ¨Ëõµã+Ê÷ĞÎDP
-2460		Network				 ±ßË«Á¬Í¨
-3849		By Recognizing These Guys, We Find Social Networks Useful  Ë«Á¬Í¨ÇóÇÅ
-3896		Greatest TC  			Ë«Á¬Í¨
-4005 		The war  			±ßË«Á¬Í¨
+åŒè¿é€š:
+2242		è€ƒç ”è·¯èŒ«èŒ«â€•â€•ç©ºè°ƒæ•™å®¤  	åŒè”é€šç¼©ç‚¹+æ ‘å½¢DP
+2460		Network				 è¾¹åŒè¿é€š
+3849		By Recognizing These Guys, We Find Social Networks Useful  åŒè¿é€šæ±‚æ¡¥
+3896		Greatest TC  			åŒè¿é€š
+4005 		The war  			è¾¹åŒè¿é€š
 
 LCA:
-2586		How far away £¿
+2586		How far away ï¼Ÿ
 2874		Connections between cities
-3078		Network  			LCA+ÅÅĞò
-3830		Checkers  			¶ş·Ö+LCA
+3078		Network  			LCA+æ’åº
+3830		Checkers  			äºŒåˆ†+LCA
 
-¡¾POJ¡¿
-Ç¿Á¬Í¨:
+ã€POJã€‘
+å¼ºè¿é€š:
 1236		Network of Schools
-2553 		The Bottom of a Graph  		ºÃÌâ£¡ ÕÒ³ö¶ÈÎª0µÄ¼¯ºÏ
-2186    	Popular Cows  			ºÃÌâ£¡ ÕÒ³ö¶ÈÎª0µÄ£¬ÆäËû·ÖÁ¿¶¼Ö¸ÏòËüµÄ¼¯ºÏ
-2375		Cow Ski Area 			Ç¿Á¬Í¨
-2762    	Going from u to v or from v to u?  Ëõµã+ÍØÆËÅÅĞò
-3160   		Father Christmas flymouse  	Ç¿Á¬Í¨+×î¶ÌÂ·
-3180 		The Cow Prom  			ÅĞ¶ÏÓĞ¼¸¸ö»·£¬ ·ÖÁ¿ÖĞÔªËØ´óÓÚ1µÄ¸öÊı
-3114		Countries in War  		Ç¿Á¬Í¨+×î¶ÌÂ·
-3592		Instantaneous Transference  	Ç¿Á¬Í¨·ÖÁ¿+×î³¤Â·
-1904		King's Quest  			Ç¿Á¬Í¨+²¢²é¼¯ 
+2553 		The Bottom of a Graph  		å¥½é¢˜ï¼ æ‰¾å‡ºåº¦ä¸º0çš„é›†åˆ
+2186    	Popular Cows  			å¥½é¢˜ï¼ æ‰¾å‡ºåº¦ä¸º0çš„ï¼Œå…¶ä»–åˆ†é‡éƒ½æŒ‡å‘å®ƒçš„é›†åˆ
+2375		Cow Ski Area 			å¼ºè¿é€š
+2762    	Going from u to v or from v to u?  ç¼©ç‚¹+æ‹“æ‰‘æ’åº
+3160   		Father Christmas flymouse  	å¼ºè¿é€š+æœ€çŸ­è·¯
+3180 		The Cow Prom  			åˆ¤æ–­æœ‰å‡ ä¸ªç¯ï¼Œ åˆ†é‡ä¸­å…ƒç´ å¤§äº1çš„ä¸ªæ•°
+3114		Countries in War  		å¼ºè¿é€š+æœ€çŸ­è·¯
+3592		Instantaneous Transference  	å¼ºè¿é€šåˆ†é‡+æœ€é•¿è·¯
+1904		King's Quest  			å¼ºè¿é€š+å¹¶æŸ¥é›† 
 			
-Ë«Á¬Í¨£º
-3694 		Network  			±ßË«Á¬Í¨ (Í¬hdu2460)
-3177 		Redundant Paths   		¹¹Ôì±ßË«Á¬Í¨
-3352 		Road Construction   		¹¹Ôì±ßË«Á¬Í¨
-2942 		Knights of the Round Table	 (µãË«Á¬Í¨¾­µäÌâ)
-1515 		Street Directions 		(ÎŞÏòÍ¼¸ÄÓĞÏòÍ¼)
-1438 		One-way Traffic  		(»ìºÏÍ¼¸ÄÓĞÏòÍ¼)
+åŒè¿é€šï¼š
+3694 		Network  			è¾¹åŒè¿é€š (åŒhdu2460)
+3177 		Redundant Paths   		æ„é€ è¾¹åŒè¿é€š
+3352 		Road Construction   		æ„é€ è¾¹åŒè¿é€š
+2942 		Knights of the Round Table	 (ç‚¹åŒè¿é€šç»å…¸é¢˜)
+1515 		Street Directions 		(æ— å‘å›¾æ”¹æœ‰å‘å›¾)
+1438 		One-way Traffic  		(æ··åˆå›¾æ”¹æœ‰å‘å›¾)
 
 LCA:
 1330		Nearest Common Ancestors
 1470		Closest Common Ancestors
 1986		Distance Queries
 3417		Network
-3728		The merchant  			LCA+²¢²é¼¯,¸üĞÂÑ¯ÎÊ
-2763		Housewife Wind 			LCA+Ê÷×´Êı×é
-============================ÒÔÏÂÊÇ2-SATÏµÁĞ============================
-¡¾HDU¡¿
+3728		The merchant  			LCA+å¹¶æŸ¥é›†,æ›´æ–°è¯¢é—®
+2763		Housewife Wind 			LCA+æ ‘çŠ¶æ•°ç»„
+============================ä»¥ä¸‹æ˜¯2-SATç³»åˆ—============================
+ã€HDUã€‘
 3062 		Party
 1824 		Let's go home
 3622 		Bomb Game
@@ -371,7 +371,7 @@ LCA:
 4115 		Eliminate the Conflict
 
 
-¡¾POJ¡¿
+ã€POJã€‘
 2296 		Map Labeler
 2723 		Get Luffy Out
 2749  		Building roads
@@ -380,149 +380,149 @@ LCA:
 3678 		Katu Puzzle
 3683  		Priest John's Busiest Day
 3905 		Perfect Election
-============================ÒÔÏÂÊÇÅ·À­»ØÂ·ÏµÁĞ============================
-¡¾HDU¡¿
-1878		Å·À­»ØÂ·  ÅĞ¶Ï
-3018		Ant Trip Ò»±Ê»­ÎÊÌâ
+============================ä»¥ä¸‹æ˜¯æ¬§æ‹‰å›è·¯ç³»åˆ—============================
+ã€HDUã€‘
+1878		æ¬§æ‹‰å›è·¯  åˆ¤æ–­
+3018		Ant Trip ä¸€ç¬”ç”»é—®é¢˜
 1116
-2894		×È¹ÄÅ·À­»ØÂ·
+2894		å…¹é¼“æ¬§æ‹‰å›è·¯
 1956
-3472		»ìºÏÅ·À­
+3472		æ··åˆæ¬§æ‹‰
 
-¡¾POJ¡¿
-2513  						Å·À­Â·
-1041  		John's trip  			Å·À­»ØÂ·
-1386 		Play on Words  			µ¥´Ê½ÓÁú
-2230		Watchcow  			Å·À­»ØÂ·
-2513 		Colored Sticks  		ÎŞÏòÍ¼Å·À­Â·
-2337 		Catenyms  			Å·À­Â·¾¶
-1392 		Ouroboros Snake  		×È¹ÄÅ·À­»ØÂ·
+ã€POJã€‘
+2513  						æ¬§æ‹‰è·¯
+1041  		John's trip  			æ¬§æ‹‰å›è·¯
+1386 		Play on Words  			å•è¯æ¥é¾™
+2230		Watchcow  			æ¬§æ‹‰å›è·¯
+2513 		Colored Sticks  		æ— å‘å›¾æ¬§æ‹‰è·¯
+2337 		Catenyms  			æ¬§æ‹‰è·¯å¾„
+1392 		Ouroboros Snake  		å…¹é¼“æ¬§æ‹‰å›è·¯
 1780  		code
-1637  						»ìºÏÅ·À­
+1637  						æ··åˆæ¬§æ‹‰
 
-¡¾zoj¡¿
+ã€zojã€‘
 1992
-============================ÒÔÏÂÊÇÍØÆËÅÅĞòÏµÁĞ============================
-¡¾HDU¡¿	
-1285		È·¶¨±ÈÈüÃû´Î
-2094		²úÉú¹Ú¾ü
+============================ä»¥ä¸‹æ˜¯æ‹“æ‰‘æ’åºç³»åˆ—============================
+ã€HDUã€‘	
+1285		ç¡®å®šæ¯”èµ›åæ¬¡
+2094		äº§ç”Ÿå† å†›
 2647		Reward
 3342		Legal or Not
-1811		Rank of Tetris  		ÍØÆË+²¢²é¼¯
-3231 						ÈıÎ¬ÍØÆË
+1811		Rank of Tetris  		æ‹“æ‰‘+å¹¶æŸ¥é›†
+3231 						ä¸‰ç»´æ‹“æ‰‘
 
-¡¾POJ¡¿
-1094 		Sorting It All Out  		Floyd+ÍØÆË
+ã€POJã€‘
+1094 		Sorting It All Out  		Floyd+æ‹“æ‰‘
 2367 		Genealogical tree
 3660 		Cow Contest
-3687 		Labeling Balls 			ÉñÆæµÄÍØÆË
-1128		Frame Stacking  		DFS°æÍØÆË
-1270		Following Orders  		ÍØÆË+»ØËİ
-1420		Spreadsheet  			Ä£ÄâÍØÆË
-2762		Going from u to v or from v to u?  Ç¿Á¬Í¨+ÍØÆË
+3687 		Labeling Balls 			ç¥å¥‡çš„æ‹“æ‰‘
+1128		Frame Stacking  		DFSç‰ˆæ‹“æ‰‘
+1270		Following Orders  		æ‹“æ‰‘+å›æº¯
+1420		Spreadsheet  			æ¨¡æ‹Ÿæ‹“æ‰‘
+2762		Going from u to v or from v to u?  å¼ºè¿é€š+æ‹“æ‰‘
 3553		Task schedule
-============================ÒÔÏÂÊÇ¾ºÈüÍ¼ÏµÁĞ============================
-¾ºÈüÍ¼ÏÂµÄ¹şÃÜ¶ÙÎÊÌâ
+============================ä»¥ä¸‹æ˜¯ç«èµ›å›¾ç³»åˆ—============================
+ç«èµ›å›¾ä¸‹çš„å“ˆå¯†é¡¿é—®é¢˜
 
 Strange Country II	ZOJ-3332
 Task Sequences	POJ-1776
 The book	SGU-122
 Tour Route	POJ-3780
 Tour Route	HDOJ-3414
-============================ÒÔÏÂÊÇÍøÂçÁ÷ÏµÁĞ============================
-¡¾HDU¡¿
+============================ä»¥ä¸‹æ˜¯ç½‘ç»œæµç³»åˆ—============================
+ã€HDUã€‘
 
 
-1532		Drainage Ditches(»ù´¡)		[×î´óÁ÷]
-3549		Flow Problem(»ù´¡)		[×î´óÁ÷]
-3572		Task Schedule			[×î´óÁ÷]ÈÎÎñ·ÖÅä,ÅĞ¶ÏÂúÁ÷	
-2732		Leapin' Lizards(ÄÑ)		[×î´óÁ÷]
-3338		Kakuro Extension		[×î´óÁ÷][ÊıºÍ]ÉñÆæ×î´óÁ÷ĞĞ½øÁĞ³ö
-2883		kebab				[×î´óÁ÷]ÅĞ¶ÏÂúÁ÷
-3605		Escape				[×î´óÁ÷](¶àÖØÆ¥Åä
-3081		Marriage Match II		[¶ş·Ö×î´óÁ÷]+²¢²é¼¯
-3277		Marriage Match III		[¶ş·Ö×î´óÁ÷]Í¬ÉÏ,¶àÁË²ğµã
-3416		Marriage Match IV		[×î´óÁ÷]×î¶ÌÂ·+×î´óÁ÷
-2485		Destroying the bus stations	[×î´óÁ÷]×î¶ÌÂ·+×î´óÁ÷
-3468		Treasure Hunting		[×î´óÁ÷](¶ş·ÖÆ¥Åä)+×î¶ÌÂ·
-3551		Hard Problem			[×î´óÁ÷]
-3998		Sequence(ÄÑ)			[DP+×î´óÁ÷]×î³¤ÉÏÉı×ÓĞòÁĞ
-3917		Road constructions		[×î´óÈ¨±Õ°ü]
-3879		Base Station			[×î´óÈ¨±Õ°ü]
-3061		Battle				[×î´óÈ¨±Õ°ü]
-3996		Gold Mine			[×î´óÈ¨±Õ°ü]
-3472		HS BDC				[»ìºÏÅ·À­]
-hdu4183	À´»Ø×ß²»ÖØ¸´µãµÄÍøÂçÁ÷.
+1532		Drainage Ditches(åŸºç¡€)		[æœ€å¤§æµ]
+3549		Flow Problem(åŸºç¡€)		[æœ€å¤§æµ]
+3572		Task Schedule			[æœ€å¤§æµ]ä»»åŠ¡åˆ†é…,åˆ¤æ–­æ»¡æµ	
+2732		Leapin' Lizards(éš¾)		[æœ€å¤§æµ]
+3338		Kakuro Extension		[æœ€å¤§æµ][æ•°å’Œ]ç¥å¥‡æœ€å¤§æµè¡Œè¿›åˆ—å‡º
+2883		kebab				[æœ€å¤§æµ]åˆ¤æ–­æ»¡æµ
+3605		Escape				[æœ€å¤§æµ](å¤šé‡åŒ¹é…
+3081		Marriage Match II		[äºŒåˆ†æœ€å¤§æµ]+å¹¶æŸ¥é›†
+3277		Marriage Match III		[äºŒåˆ†æœ€å¤§æµ]åŒä¸Š,å¤šäº†æ‹†ç‚¹
+3416		Marriage Match IV		[æœ€å¤§æµ]æœ€çŸ­è·¯+æœ€å¤§æµ
+2485		Destroying the bus stations	[æœ€å¤§æµ]æœ€çŸ­è·¯+æœ€å¤§æµ
+3468		Treasure Hunting		[æœ€å¤§æµ](äºŒåˆ†åŒ¹é…)+æœ€çŸ­è·¯
+3551		Hard Problem			[æœ€å¤§æµ]
+3998		Sequence(éš¾)			[DP+æœ€å¤§æµ]æœ€é•¿ä¸Šå‡å­åºåˆ—
+3917		Road constructions		[æœ€å¤§æƒé—­åŒ…]
+3879		Base Station			[æœ€å¤§æƒé—­åŒ…]
+3061		Battle				[æœ€å¤§æƒé—­åŒ…]
+3996		Gold Mine			[æœ€å¤§æƒé—­åŒ…]
+3472		HS BDC				[æ··åˆæ¬§æ‹‰]
+hdu4183	æ¥å›èµ°ä¸é‡å¤ç‚¹çš„ç½‘ç»œæµ.
 -------------------------
-1533		Going Home(»ù´¡)		[·ÑÓÃÁ÷]
-3488		Tour				[·ÑÓÃÁ÷]È¦
-3435		A new Graph Game		[·ÑÓÃÁ÷]È¦
-1853		Cyclic Tour			[·ÑÓÃÁ÷]È¦
-2686		Matrix				[·ÑÓÃÁ÷]
-3376		Matrix Again			[·ÑÓÃÁ÷]
-3667		Transportation			[·ÑÓÃÁ÷]²ğ±ß
-3315		My Brute			[·ÑÓÃÁ÷](¿ÉÓÃKM)
-3395		Special Fish			[·ÑÓÃÁ÷](¿ÉÓÃKMÆ¥Åä)
-2448		Mining Station on the Sea	[·ÑÓÃÁ÷](¿ÉÓÃ×î¶ÌÂ·+KMÆ¥Åä)
-4067		Random Maze(ÄÑ)			[·ÑÓÃÁ÷]
-3947		River Problem(ÄÑ)		[·ÑÓÃÁ÷]ÉñÆæ·ÑÓÃÁ÷,Á÷Á¿²»µÈÊ½½¨Í¼
-3046		Pleasant sheep and big big wolf [×îĞ¡¸î]
-1565		·½¸ñÈ¡Êı(1)			[×îĞ¡¸î]
-1569		·½¸ñÈ¡Êı(2)			[×îĞ¡¸î]
-3820		Golden Eggs			[×îĞ¡¸î]·½¸ñ¼ÓÇ¿
-3491		Thieves				[×îĞ¡¸î]×îĞ¡µã¸î¼¯
-3657		Game				[×îĞ¡¸î]×î´óµãÈ¨¶ÀÁ¢¼¯
-3313		Key Vertex			[×îĞ¡¸î]
-3251		Being a Hero			[×îĞ¡¸î]	
-3157		Crazy Circuits			[ÉÏÏÂÁ÷]
-3002		King of Destruction		[È«¾Ö×îĞ¡¸î]
-3691		Nubulsa Expo			[È«¾Ö×îĞ¡¸î]
-¡¾POJ¡¿
-1087		A Plug for UNIX  		[×î´óÁ÷](¿ÉÓÃ¶ş·ÖÆ¥Åä)
-1274		The Perfect Stall 		[×î´óÁ÷](¿ÉÓÃ¶ş·ÖÆ¥Åä)
-1325		Machine Schedule		[×î´óÁ÷](¿ÉÓÃ¶ş·ÖÆ¥Åä)
-1698		Alice's Chance			[×î´óÁ÷](¿ÉÓÃ¶ş·ÖÆ¥Åä)
-2239		Selecting Courses		[×î´óÁ÷](¿ÉÓÃ¶ş·ÖÆ¥Åä)
-2446		Chessboard			[×î´óÁ÷](¿ÉÓÃ¶ş·ÖÆ¥Åä) ºÃÌâ°¡
-2536		Gopher II			[×î´óÁ÷](¿ÉÓÃ¶ş·ÖÆ¥Åä)
-2771		Guardian of Decency		[×î´óÁ÷]¶ş·ÖÆ¥Åä×î´ó¶ÀÁ¢¼¯
-3041 		Asteroids 			[×î´óÁ÷](¼òµ¥¶ş·ÖÆ¥Åä)
-2584 		T-Shirt Gumbo 			[×î´óÁ÷](¶àÖØÆ¥Åä)
-3189 		Steady Cow Assignment(ÖĞµÈ)	[¶ş·Ö×î´óÁ÷](¶àÖØÆ¥Åä)
-1149 		PIGS  				[×î´óÁ÷] ¾ø¶Ô¾­µäµÄ¹¹Í¼Ìâ
-1273 		Drainage Ditches  		[×î´óÁ÷](»ù´¡)
-1459 		Power Network(»ù´¡)		[×î´óÁ÷]
-3281 		Dining 				[×î´óÁ÷]
-2112 		Optimal Milking(»ù´¡)  		[¶ş·Ö×î´óÁ÷]
-2289 		Jamie's Contact Groups 		[¶ş·Ö×î´óÁ÷]
-2391 		Ombrophobic Bovines(ÖĞµÈ) 	[¶ş·Ö×î´óÁ÷]
-2455 		Secret Milking Machine(»ù´¡) 	[¶ş·Ö×î´óÁ÷]
-3228 		Gold Transportation 		[¶ş·Ö×î´óÁ÷](²¢²é¼¯)
-2699 		The Maximum Number of Strong Kings(½ÏÄÑ)  [Ã¶¾ÙÈËÊı + ×î´óÁ÷]
-3498		March of the Penguins(ÖĞµÈ)  	[×î´óÁ÷]Ã¶¾Ù»ãµã,Âú×ãµãÈİÁ¿ÏŞÖÆµÄÍøÂçÁ÷
-2987 		Firing(½ÏÄÑ)  			[×î´óÈ¨±Õ°ü]
-1637 		Sightseeing tour(Crazy)  	[»ìºÏÅ·À­]
-2135 		Farm Tour  			[·ÑÓÃÁ÷] (À´»Ø×î¶ÌÂ·)
-2175		Evacuation Plan(ÖĞµÈ) 		[·ÑÓÃÁ÷] ÏûÈ¦
-2195		Going Home			[·ÑÓÃÁ÷]
-2516 		Minimum Cost 			[·ÑÓÃÁ÷]
-3422 		Kaka's Matrix Travels(ÖĞµÈ)  	[·ÑÓÃÁ÷]²ğµã
-3680 		Intervals(½ÏÄÑ)  		[·ÑÓÃÁ÷]¾­µä,·ÑÓÃÁ÷+ÀëÉ¢»¯
-3686		The Windy's			[·ÑÓÃÁ÷](KMÆ¥Åä)
-3762		The Bonus Salary!		[·ÑÓÃÁ÷]
-1815 		Friendship(ÖĞµÈ)  		[×îĞ¡¸î]×îĞ¡µã¸î¼¯
-1966  		Cable TV Network(ÖĞµÈ)  	[×îĞ¡¸î]×îĞ¡µã¸î¼¯
-2125 		Destroying The Graph(ÄÑ)  	[×îĞ¡¸î]×îĞ¡µãÈ¨¸²¸Ç
-3084 		Panic Room(ÖĞµÈ£¬ºÃÌâ)  	[×îĞ¡¸î]±ßÁ¬Í¨¶È
-3204 		Ikki's Story I - Road Reconstruction(»ù´¡) [×îĞ¡¸î]Çó¹Ø¼ü±ß
-3308 		Paratroopers(½ÏÄÑ) 		[×îĞ¡¸î]³Ë»ıÈ¡¶ÔÊı,×îĞ¡µãÈ¨¸²¸Ç
-3436		ACM Computer Factory		[×îĞ¡¸î]ÊÕ¼¯Á÷,²ĞÁôËÑ¼¯ÕÒ±ß
-3469 		Dual Core CPU(ÖĞµÈ)  		[×îĞ¡¸î]ÊÕ¼¯Á÷
-3921		Destroying the bus stations	[×îĞ¡¸î]µãÁ¬Í¨
-2396 		Budget(ÖĞµÈ)  			[ÓĞÔ´»ãµÄÉÏÏÂ½ç¿ÉĞĞÁ÷]
-3155 		Hard Life(ºÜÌôÕ½Ò»Ìâ)  		[×î´óÃÜ¶È×ÓÍ¼]
-2914		Minimum Cut			[ÎŞÏòÍ¼×îĞ¡¸î]
-============================ÒÔÏÂÊÇdancing linksÏµÁĞ============================
+1533		Going Home(åŸºç¡€)		[è´¹ç”¨æµ]
+3488		Tour				[è´¹ç”¨æµ]åœˆ
+3435		A new Graph Game		[è´¹ç”¨æµ]åœˆ
+1853		Cyclic Tour			[è´¹ç”¨æµ]åœˆ
+2686		Matrix				[è´¹ç”¨æµ]
+3376		Matrix Again			[è´¹ç”¨æµ]
+3667		Transportation			[è´¹ç”¨æµ]æ‹†è¾¹
+3315		My Brute			[è´¹ç”¨æµ](å¯ç”¨KM)
+3395		Special Fish			[è´¹ç”¨æµ](å¯ç”¨KMåŒ¹é…)
+2448		Mining Station on the Sea	[è´¹ç”¨æµ](å¯ç”¨æœ€çŸ­è·¯+KMåŒ¹é…)
+4067		Random Maze(éš¾)			[è´¹ç”¨æµ]
+3947		River Problem(éš¾)		[è´¹ç”¨æµ]ç¥å¥‡è´¹ç”¨æµ,æµé‡ä¸ç­‰å¼å»ºå›¾
+3046		Pleasant sheep and big big wolf [æœ€å°å‰²]
+1565		æ–¹æ ¼å–æ•°(1)			[æœ€å°å‰²]
+1569		æ–¹æ ¼å–æ•°(2)			[æœ€å°å‰²]
+3820		Golden Eggs			[æœ€å°å‰²]æ–¹æ ¼åŠ å¼º
+3491		Thieves				[æœ€å°å‰²]æœ€å°ç‚¹å‰²é›†
+3657		Game				[æœ€å°å‰²]æœ€å¤§ç‚¹æƒç‹¬ç«‹é›†
+3313		Key Vertex			[æœ€å°å‰²]
+3251		Being a Hero			[æœ€å°å‰²]	
+3157		Crazy Circuits			[ä¸Šä¸‹æµ]
+3002		King of Destruction		[å…¨å±€æœ€å°å‰²]
+3691		Nubulsa Expo			[å…¨å±€æœ€å°å‰²]
+ã€POJã€‘
+1087		A Plug for UNIX  		[æœ€å¤§æµ](å¯ç”¨äºŒåˆ†åŒ¹é…)
+1274		The Perfect Stall 		[æœ€å¤§æµ](å¯ç”¨äºŒåˆ†åŒ¹é…)
+1325		Machine Schedule		[æœ€å¤§æµ](å¯ç”¨äºŒåˆ†åŒ¹é…)
+1698		Alice's Chance			[æœ€å¤§æµ](å¯ç”¨äºŒåˆ†åŒ¹é…)
+2239		Selecting Courses		[æœ€å¤§æµ](å¯ç”¨äºŒåˆ†åŒ¹é…)
+2446		Chessboard			[æœ€å¤§æµ](å¯ç”¨äºŒåˆ†åŒ¹é…) å¥½é¢˜å•Š
+2536		Gopher II			[æœ€å¤§æµ](å¯ç”¨äºŒåˆ†åŒ¹é…)
+2771		Guardian of Decency		[æœ€å¤§æµ]äºŒåˆ†åŒ¹é…æœ€å¤§ç‹¬ç«‹é›†
+3041 		Asteroids 			[æœ€å¤§æµ](ç®€å•äºŒåˆ†åŒ¹é…)
+2584 		T-Shirt Gumbo 			[æœ€å¤§æµ](å¤šé‡åŒ¹é…)
+3189 		Steady Cow Assignment(ä¸­ç­‰)	[äºŒåˆ†æœ€å¤§æµ](å¤šé‡åŒ¹é…)
+1149 		PIGS  				[æœ€å¤§æµ] ç»å¯¹ç»å…¸çš„æ„å›¾é¢˜
+1273 		Drainage Ditches  		[æœ€å¤§æµ](åŸºç¡€)
+1459 		Power Network(åŸºç¡€)		[æœ€å¤§æµ]
+3281 		Dining 				[æœ€å¤§æµ]
+2112 		Optimal Milking(åŸºç¡€)  		[äºŒåˆ†æœ€å¤§æµ]
+2289 		Jamie's Contact Groups 		[äºŒåˆ†æœ€å¤§æµ]
+2391 		Ombrophobic Bovines(ä¸­ç­‰) 	[äºŒåˆ†æœ€å¤§æµ]
+2455 		Secret Milking Machine(åŸºç¡€) 	[äºŒåˆ†æœ€å¤§æµ]
+3228 		Gold Transportation 		[äºŒåˆ†æœ€å¤§æµ](å¹¶æŸ¥é›†)
+2699 		The Maximum Number of Strong Kings(è¾ƒéš¾)  [æšä¸¾äººæ•° + æœ€å¤§æµ]
+3498		March of the Penguins(ä¸­ç­‰)  	[æœ€å¤§æµ]æšä¸¾æ±‡ç‚¹,æ»¡è¶³ç‚¹å®¹é‡é™åˆ¶çš„ç½‘ç»œæµ
+2987 		Firing(è¾ƒéš¾)  			[æœ€å¤§æƒé—­åŒ…]
+1637 		Sightseeing tour(Crazy)  	[æ··åˆæ¬§æ‹‰]
+2135 		Farm Tour  			[è´¹ç”¨æµ] (æ¥å›æœ€çŸ­è·¯)
+2175		Evacuation Plan(ä¸­ç­‰) 		[è´¹ç”¨æµ] æ¶ˆåœˆ
+2195		Going Home			[è´¹ç”¨æµ]
+2516 		Minimum Cost 			[è´¹ç”¨æµ]
+3422 		Kaka's Matrix Travels(ä¸­ç­‰)  	[è´¹ç”¨æµ]æ‹†ç‚¹
+3680 		Intervals(è¾ƒéš¾)  		[è´¹ç”¨æµ]ç»å…¸,è´¹ç”¨æµ+ç¦»æ•£åŒ–
+3686		The Windy's			[è´¹ç”¨æµ](KMåŒ¹é…)
+3762		The Bonus Salary!		[è´¹ç”¨æµ]
+1815 		Friendship(ä¸­ç­‰)  		[æœ€å°å‰²]æœ€å°ç‚¹å‰²é›†
+1966  		Cable TV Network(ä¸­ç­‰)  	[æœ€å°å‰²]æœ€å°ç‚¹å‰²é›†
+2125 		Destroying The Graph(éš¾)  	[æœ€å°å‰²]æœ€å°ç‚¹æƒè¦†ç›–
+3084 		Panic Room(ä¸­ç­‰ï¼Œå¥½é¢˜)  	[æœ€å°å‰²]è¾¹è¿é€šåº¦
+3204 		Ikki's Story I - Road Reconstruction(åŸºç¡€) [æœ€å°å‰²]æ±‚å…³é”®è¾¹
+3308 		Paratroopers(è¾ƒéš¾) 		[æœ€å°å‰²]ä¹˜ç§¯å–å¯¹æ•°,æœ€å°ç‚¹æƒè¦†ç›–
+3436		ACM Computer Factory		[æœ€å°å‰²]æ”¶é›†æµ,æ®‹ç•™æœé›†æ‰¾è¾¹
+3469 		Dual Core CPU(ä¸­ç­‰)  		[æœ€å°å‰²]æ”¶é›†æµ
+3921		Destroying the bus stations	[æœ€å°å‰²]ç‚¹è¿é€š
+2396 		Budget(ä¸­ç­‰)  			[æœ‰æºæ±‡çš„ä¸Šä¸‹ç•Œå¯è¡Œæµ]
+3155 		Hard Life(å¾ˆæŒ‘æˆ˜ä¸€é¢˜)  		[æœ€å¤§å¯†åº¦å­å›¾]
+2914		Minimum Cut			[æ— å‘å›¾æœ€å°å‰²]
+============================ä»¥ä¸‹æ˜¯dancing linksç³»åˆ—============================
 1001		Easy Finding			POJ-3740
 1002		Power Stations			HDOJ-3663
 1003		Treasure Map			ZOJ-3209
@@ -548,10 +548,10 @@ hdu4183	À´»Ø×ß²»ÖØ¸´µãµÄÍøÂçÁ÷.
 1023		Triangle War II			ZOJ-3038
 1024		A Puzzling Problem		HDOJ-1603
 1025		Maximum Clique			HDOJ-1530
-hust1017 					¾«È·¸²¸Ç¡£
-fzu1686,nuaa1507 				ÖØ¸´¸²¸Ç¡£
-hit2199,2882,2959 				¾«È·¸²¸Ç(Êı¶À)¡£
-SPOJ1771					¾«È·¸²¸Ç(N»ÊºóÎÊÌâ)¡£
+hust1017 					ç²¾ç¡®è¦†ç›–ã€‚
+fzu1686,nuaa1507 				é‡å¤è¦†ç›–ã€‚
+hit2199,2882,2959 				ç²¾ç¡®è¦†ç›–(æ•°ç‹¬)ã€‚
+SPOJ1771					ç²¾ç¡®è¦†ç›–(Nçš‡åé—®é¢˜)ã€‚
 poj3435
 
 
