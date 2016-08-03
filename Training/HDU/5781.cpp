@@ -53,14 +53,14 @@ double E[MAX_K][MAX_W];
 int main(int argc, char const *argv[])
 {
 	for (int i = 0; i < MAX_K; ++i)
-		for (int j = 0; j < MAX_W; ++j)
-			if (i == 0) E[i][j] = 0.;
-			else if (j == 1) E[i][j] = i * 1.;
-			else E[i][j] = 20.;
-	for (int i = 1; i <= MAX_K; ++i)
-		for (int j = 1; j <= MAX_W; ++j)
-			for (int m = 1; m <= i; ++m)	
-				E[i][j] = min(E[i][j], (i - m + 1.) / (i + 1.) * E[i - m][j] + (m) / (i + 1.) * E[m - 1][j - 1] + 1.);
+		for (int j = 0; j < MAX_W; ++j)  
+			if (i == 0) E[i][j] = 0;
+			else E[i][j] = DBL_MAX;
+	for (int i = 1; i < MAX_K; ++i)
+		for (int j = 1; j < MAX_W; ++j)
+			for (int k = 1; k <= i; ++k) {
+				E[i][j] = min(E[i][j], (i - k + 1.) / (i + 1.) * E[i - k][j] + (k * 1.) / (i + 1.) * E[k - 1][j - 1] + 1.);
+			}
 	while (~scanf("%d%d", &K, &W)) {
 		W = min(W, 13);
 		printf("%.6f\n", E[K][W]);
