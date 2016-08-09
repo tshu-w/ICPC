@@ -39,25 +39,53 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 30;
+const int MAX_N = 1000 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, A[MAX_N];
+int N, M;
+int par[MAX_N], rnk[MAX_N];
+bool flag[MAX_N];
+
+void init(int n) {
+	for (int i = 0; i < n; ++i)
+		par[i] = i, rnk[i] = 0;
+}
+int find(int x) {
+	return x == par[x] ? x : par[x] = find(par[x]);
+}
+bool same(int x, int y) {
+	return find(x) == find(y);
+}
+void unite(int x, int y) {
+	x = find(x);
+	y = find(y);
+	if (x == y) return;
+	if (rnk[x] < rnk[y]) {
+		par[x] = y;
+	} else {
+		par[y] = x;
+		if (rnk[x] == rnk[y]) ++rnk[x];
+	}
+}
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	for (int i = 0; i < N; ++i)
-		scanf("%d", A + i);
-	int last = INF;
-	ll ans = 0;
-	sort(A, A + N);
-	for (int i = N - 1; i >= 0 && last; --i) {
-		if (last > A[i]) ans += A[i], last = A[i];
-		else ans += --last;
-	}
-	cout << ans << endl;
+	while (~scanf("%d", &N) && N) {
+		init(N + 1);
+		scanf("%d", &M);
+		for (int i = 0, a, b; i < M; ++i) {
+			scanf("%d%d", &a, &b);
+			unite(a, b);
+		}
+		int ans = 0;
+		memset(flag, false, sizeof flag);
+		for (int i = 1; i <= N; ++i) 
+			flag[find(i)] = true;
+		for (int i = 1; i <= N; ++i)
+			if (flag[i]) ++ans;
+		printf("%d\n", ans - 1);
+	}	
 	return 0;
 }

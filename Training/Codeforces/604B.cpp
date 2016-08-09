@@ -39,25 +39,23 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 30;
+const int MAX_N = 1e5 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, A[MAX_N];
+int N, K, A[MAX_N], ans = 0;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	for (int i = 0; i < N; ++i)
+	scanf("%d%d", &N, &K);
+	K = N - K;
+	for (int i = 0; i < N; ++i) {
 		scanf("%d", A + i);
-	int last = INF;
-	ll ans = 0;
-	sort(A, A + N);
-	for (int i = N - 1; i >= 0 && last; --i) {
-		if (last > A[i]) ans += A[i], last = A[i];
-		else ans += --last;
+		ans = max(ans, A[i]);
 	}
-	cout << ans << endl;
+	for (int i = 0; i < K; ++i)
+		ans = max(ans, A[i] + A[2 * K - i - 1]);
+	printf("%d\n", ans);
 	return 0;
 }

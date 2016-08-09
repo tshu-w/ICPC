@@ -39,25 +39,52 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 30;
+const int MAX_N = 50000 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, A[MAX_N];
+int N, A[MAX_N], bit[MAX_N];
+
+int sum(int i) {
+	int s = 0;
+	while (i > 0) {
+		s += bit[i];
+		i -= i & -i;
+	}
+	return s;
+}
+void add(int i, int x) {
+	while (i <= N) {
+		bit[i] += x;
+		i += i & -i;
+	}
+}
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	for (int i = 0; i < N; ++i)
-		scanf("%d", A + i);
-	int last = INF;
-	ll ans = 0;
-	sort(A, A + N);
-	for (int i = N - 1; i >= 0 && last; --i) {
-		if (last > A[i]) ans += A[i], last = A[i];
-		else ans += --last;
+	int t, cas = 0;
+	scanf("%d", &t);
+	while (t--) {
+		memset(bit, 0, sizeof bit);
+		scanf("%d", &N);
+		for (int i = 1; i <= N; ++i) {
+			scanf("%d", A + i);
+			add(i, A[i]);
+		}
+		char opt[10];
+		int a, b;
+		printf("Case %d:\n", ++cas);
+		while (scanf("%s", opt)) {
+			if (opt[0] == 'E') break;
+			scanf("%d%d", &a, &b);
+			if (opt[0] == 'A') 
+				add(a, b);
+			if (opt[0] == 'S')
+				add(a, -b);
+			if (opt[0] == 'Q')
+				printf("%d\n", sum(b) - sum(a - 1)); 
+		}	
 	}
-	cout << ans << endl;
 	return 0;
 }
