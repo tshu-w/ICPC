@@ -39,28 +39,46 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 50005;
+const int MAX_N = 1e5 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-bool is_prime(ll n) {
-    for (ll i = 2; i * i <= n; ++i)
-        if (n % i == 0) { 
-        	printf("%lld", i);
-        	return false;
-        }
-    return n != 1;
-}
+int N, C;
+ll F, l[MAX_N], r[MAX_N];
+Pii A[MAX_N];
+priority_queue<int> q, qq;
 
 int main(int argc, char const *argv[])
 {
-	int t;
-	ll n;
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%lld", &n);
-		if (is_prime(n)) printf("Prime\n");
+	scanf("%d%d%lld", &N, &C, &F);
+	N /= 2;
+	for (int i = 0; i < C; ++i) 
+		scanf("%d%d", &A[i].first, &A[i].second);
+	sort(A, A + C, greater<Pii>());
+	ll sum = 0;
+	for (int i = 0; i < C; ++i) {
+		l[i] = q.size() == N? sum : INF;
+		q.push(A[i].second);
+		sum += A[i].second;
+		if (q.size() > N) {
+			sum -= q.top(); q.pop();
+		} 
 	}
+	sum = 0;
+	for (int i = C - 1; i >= 0; --i) {
+		r[i] = qq.size() == N? sum : INF;
+		qq.push(A[i].second);
+		sum += A[i].second;
+		if (qq.size() > N) {
+			sum -= qq.top(); qq.pop();
+		} 
+	}
+	for (int i = 0; i < C; ++i)
+		if (l[i] + r[i] + A[i].second <= F) {
+			printf("%d\n", A[i].first);
+			return 0;
+		}
+	printf("-1\n");
 	return 0;
 }

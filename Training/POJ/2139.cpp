@@ -32,46 +32,46 @@
 
 using namespace std;
 
-typedef long l;
 typedef long long ll;
 typedef unsigned long long ull;
-typedef unsigned long ul;
 typedef long double ld;
 typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 10;
+const int MAX_V = 300;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, K, ans;
-bool line[MAX_N];
-char maze[MAX_N][MAX_N];
-void dfs(int k, int cur) {
-	if (k == K) {
-		++ans;
-		return ;
-	}
-	int res = 0;
-	for (int i = cur; i < N; ++i)
-		for (int j = 0; j < N; ++j)
-			if (maze[i][j] == '#' && !line[j]) {
-				line[j] = true;
-				dfs(k + 1, i + 1);
-				line[j] = false;
-			}
-}
+int V, E, ans = INF, q[MAX_V];
+int G[MAX_V][MAX_V], f[MAX_V][MAX_V];
+
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d%d%*c", &N, &K) && N != -1 && K != -1) {
-		for (int i = 0; i < N; ++i) 
-			gets(maze[i]);
-		ans = 0;
-		memset(line, false, sizeof line);
-		dfs(0, 0);		
-		printf("%d\n", ans);
+	scanf("%d%d", &V, &E);
+	for (int i = 0; i < V; ++i)
+		for (int j = 0; j < V; ++j)
+			G[i][j] = i == j? 0 : INF / 3;
+	for (int i = 0, k, v; i < E; ++i) {
+		scanf("%d", &k);
+		for (int j = 0; j < k; ++j) {
+			scanf("%d", q + j); q[j]--;
+		}
+		for (int j = 0; j < k; ++j)
+			for (int l = j + 1; l < k; ++l) 
+				G[q[j]][q[l]] = G[q[l]][q[j]] = 1; 
 	}
+	for (int k = 0; k < V; ++k)
+		for (int i = 0; i < V; ++i)
+			for (int j = 0; j < V; ++j) 
+				G[i][j] = min(G[i][j], G[i][k] + G[k][j]);
+	for (int i = 0; i < V; ++i) { 
+		int res = 0;
+		for (int j = 0; j < V; ++j) if (i != j)
+			res += G[i][j];
+		ans = min(ans, res);
+	} 
+	printf("%d\n", 100 * ans / (V - 1));
 	return 0;
 }
