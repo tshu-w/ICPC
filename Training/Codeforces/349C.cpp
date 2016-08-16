@@ -1,4 +1,4 @@
-// #include <bits/stdc++.h>
+//#include <bits/stdc++.h>
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -19,47 +19,43 @@
 #include <stack>
 #include <vector>
 #include <utility>
-#include <bitset>
+
+#define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
+// #define __DEBUG__
+#ifdef __DEBUG__
+	#define DEBUG(...) printf(__VA_ARGS__)
+#else
+	#define DEBUG(...)
+#endif	
+#define filename ""
+#define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
 using namespace std;
 
-typedef long L;
-typedef long long LL;
-typedef unsigned long long ULL;
-typedef unsigned long UL;
-typedef long double LD;
+typedef long long ll;
+typedef unsigned long long ull;
+typedef long double ld;
+typedef pair<int, int > Pii;
 
+const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 10000 + 10;
+const int MAX_N = 1e5 + 10;
 
-bool flag[MAX_N][5];
+template <typename T>
+inline T sqr(T a) { return a * a;};
+
+int N;
+ll sum = 0, ans = 0, lmax = 0, A[MAX_N];
+
 int main(int argc, char const *argv[])
 {
-	int len;
-	string s;
-	set<string> ans;
-	cin >> s;
-	len = (int)s.length();
-	flag[len][2] = flag[len][3] = true;
-	for (int i = len - 1; i > 4; --i) 
-		for (int j = 2; j <= 3; ++j) {
-			if (i + j > len) continue;
-			// cout << s.substr(i, j) << endl;
-			string nxt;
-			if (i + j == len)
-				nxt = "";
-			else nxt = s.substr(i + j, j);
-			if (flag[i + j][5 - j] || (flag[i + j][j] && nxt != s.substr(i, j)))
-				flag[i][j] = true;
-		}
-	for (int i = 5; i < len; ++i)
-		for (int j = 2; j <= 3; ++j)
-			if (i + j <= len &&  flag[i][j])
-				ans.insert(s.substr(i, j));
-
-	cout << ans.size() << endl;
-	set<string>::iterator it;
-	for (it = ans.begin(); it != ans.end(); ++it)
-		cout << *it << endl;
+	cin >> N;
+	for (int i = 0; i < N; ++i) {
+		cin >> A[i];
+		sum += A[i];
+		lmax = max(A[i], lmax);
+	}
+	ans = sum / (N - 1) + (sum % (N - 1)? 1 : 0);
+	cout << max(ans, lmax) << endl;
 	return 0;
 }
