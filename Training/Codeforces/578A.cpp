@@ -53,6 +53,9 @@ int main(int argc, char const *argv[])
 	if (a < b)
 		printf("%.12f\n", -1.);
 	else
-		printf("%.12f\n", min( (a - b) / (2. * ((a - b) / (2 * b))) , (a + b) / (2. * ( (a + b) / (2 * b) ) ) ) ); 
+		if (a == b)
+			printf("%.12f\n", (double)a);
+		else 
+			printf("%.12f\n", min( (a - b) / (2. * ((a - b) / (2 * b))) , (a + b) / (2. * ( (a + b) / (2 * b) ) ) ) ); 
 	return 0;
 }

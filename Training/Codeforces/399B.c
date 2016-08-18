@@ -1,4 +1,4 @@
-//位移范围是 int 
+//位移大小较小
 #include <stdio.h>
 #include <math.h>
 
