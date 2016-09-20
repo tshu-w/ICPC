@@ -375,6 +375,6 @@ void moebius() {
 }
 
 int main(void) {
-     
+    
     return 0;
 }
