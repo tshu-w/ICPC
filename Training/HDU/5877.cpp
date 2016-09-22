@@ -76,17 +76,17 @@ int compress(int *A) {
 
     v.clear();
     for (int i = 1; i <= N; ++i)
-	    v.push_back(A[i]);
+        v.push_back(A[i]);
     sort(v.begin(), v.end());
     for (int i = 1; i <= N; ++i)
-    	if (A[i] == 0) 
-    		b[i] = N;
-    	else 
-		    b[i] = upper_bound(v.begin(), v.end(), k / A[i]) - v.begin();
+        if (A[i] == 0) 
+            b[i] = N;
+        else 
+            b[i] = upper_bound(v.begin(), v.end(), k / A[i]) - v.begin();
     
-	for (int i = 1; i <= N; ++i)
-		A[i] = a[i];
-	sort(A + 1, A + 1 + N);
+    for (int i = 1; i <= N; ++i)
+        A[i] = a[i];
+    sort(A + 1, A + 1 + N);
 
     return v.size() + 1;
 }
