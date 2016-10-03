@@ -19,6 +19,7 @@
 #include <stack>
 #include <vector>
 #include <utility>
+#include <bitset>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
@@ -35,42 +36,45 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
-typedef pair<int, int> Pii;
+typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 100;
-const int gap = 1e5;
+const int MAX_N = 300;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, S, F, dp[2 * gap + 10];
+int n, outmax, incnt;
+char s[MAX_N]; 
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &N)) {
-		for (int i = 0; i <= 2 * gap; ++i)
-			dp[i] = -INF;
-		dp[gap] = 0;
-
-		for (int i = 0; i < N; ++i) {
-			scanf("%d%d", &S, &F);
-			if (S > 0) {
-				for (int j = 2 * gap; j >= S; --j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			} else {
-				for (int j = S; j <= 2 * gap + S; ++j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			}
+	scanf("%d", &n);
+	scanf("%s", s);
+	s[n++] = '_';
+	int status = 0, last = 0;
+	for (int i = 0; i < n; ++i) {
+		if (s[i] == '(') {
+			outmax = max(outmax, i - last);
+			status = 1;
+			last = i + 1;
 		}
-		int ans = 0;
-		for (int i = gap; i <= 2 * gap; ++i)
-			if (dp[i] >= 0)
-				ans = max(ans, dp[i] + i - gap);
-		printf("%d\n", ans);
+		if (s[i] == ')') {
+			if (i - last > 0) ++incnt;
+			status = 0;
+			last = i + 1;
+		}
+		if (s[i] == '_') {
+			if (status) {
+				if (i - last > 0)
+					++incnt;
+			}
+			else outmax = max(outmax, i - last);
+			last = i + 1;
+		}
+		// printf("%d %d %d\n", i, outmax, incnt);
 	}
-    return 0;
+	printf("%d %d\n", outmax, incnt);
+	return 0;
 }

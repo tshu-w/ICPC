@@ -19,6 +19,8 @@
 #include <stack>
 #include <vector>
 #include <utility>
+#include <bitset>
+#include <numeric>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
@@ -35,42 +37,49 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
-typedef pair<int, int> Pii;
+typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 100;
-const int gap = 1e5;
+const int MAX_N = 50005;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, S, F, dp[2 * gap + 10];
+int n, len;
+ull num;
+
+vector<int> prime_factor(int n) {
+    vector<int> res;
+    for (int i = 2; i * i <= n; ++i) {
+    	int tmp = 0;
+        while (n % i == 0) {
+        	++tmp;
+            n /= i;
+        }
+        res.push_back(tmp);
+    }
+    if (n != 1) res.push_back(1);
+    return res;
+}
+
+ull factor(int n) {
+	ull res = 1;
+	for (int i = 1; i <= n; ++i)
+		res *= i;
+	return res;
+}
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &N)) {
-		for (int i = 0; i <= 2 * gap; ++i)
-			dp[i] = -INF;
-		dp[gap] = 0;
-
-		for (int i = 0; i < N; ++i) {
-			scanf("%d%d", &S, &F);
-			if (S > 0) {
-				for (int j = 2 * gap; j >= S; --j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			} else {
-				for (int j = S; j <= 2 * gap + S; ++j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			}
+	while (cin >> n) {
+		vector<int> fac = prime_factor(n);
+		len = accumulate(fac.begin(), fac.end(), 0);
+		num = factor(len);
+		for (int i = 0; i < fac.size(); ++i) {
+			num /= factor(fac[i]);
 		}
-		int ans = 0;
-		for (int i = gap; i <= 2 * gap; ++i)
-			if (dp[i] >= 0)
-				ans = max(ans, dp[i] + i - gap);
-		printf("%d\n", ans);
-	}
-    return 0;
+		cout << len << " " << num << "\n";
+	}	
+	return 0;
 }

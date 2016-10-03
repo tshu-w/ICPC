@@ -19,6 +19,7 @@
 #include <stack>
 #include <vector>
 #include <utility>
+#include <bitset>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
@@ -35,42 +36,45 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
-typedef pair<int, int> Pii;
+typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 100;
-const int gap = 1e5;
+const int MAX_N = 20000 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, S, F, dp[2 * gap + 10];
+int N, A[MAX_N], B[MAX_N], dp[2][MAX_N], ans;
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &N)) {
-		for (int i = 0; i <= 2 * gap; ++i)
-			dp[i] = -INF;
-		dp[gap] = 0;
-
-		for (int i = 0; i < N; ++i) {
-			scanf("%d%d", &S, &F);
-			if (S > 0) {
-				for (int j = 2 * gap; j >= S; --j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			} else {
-				for (int j = S; j <= 2 * gap + S; ++j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			}
+	scanf("%d", &N);
+	for (int i = 0; i < N; ++i)
+		scanf("%d", A + i);
+	memcpy(B, A, sizeof A);
+	sort(B, B + N);
+	for (int j = 0; j < N; ++j)
+		dp[0 & 1][j] = abs(A[0] - B[j]);
+	for (int i = 1; i < N; ++i) {
+		int minpre = dp[(i - 1) & 1][0];
+		for (int j = 0; j < N; ++j) {
+			minpre = min(minpre, dp[(i - 1) & 1][j]);
+			dp[i & 1][j] = minpre + abs(A[i] - B[j]);
 		}
-		int ans = 0;
-		for (int i = gap; i <= 2 * gap; ++i)
-			if (dp[i] >= 0)
-				ans = max(ans, dp[i] + i - gap);
-		printf("%d\n", ans);
 	}
-    return 0;
+	ans = *min_element(dp[(N - 1) & 1], dp[(N - 1) & 1] + N);
+	sort(B, B + N, greater<int>());
+	for (int j = 0; j < N; ++j)
+		dp[0 & 1][j] = abs(A[0] - B[j]);
+	for (int i = 1; i < N; ++i) {
+		int minpre = dp[(i - 1) & 1][0];
+		for (int j = 0; j < N; ++j) {
+			minpre = min(minpre, dp[(i - 1) & 1][j]);
+			dp[i & 1][j] = minpre + abs(A[i] - B[j]);
+		}
+	}	
+	ans = min(ans, *min_element(dp[(N - 1) & 1], dp[(N - 1) & 1] + N));
+	printf("%d\n", ans);
+	return 0;
 }

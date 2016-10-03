@@ -19,6 +19,7 @@
 #include <stack>
 #include <vector>
 #include <utility>
+#include <bitset>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
@@ -35,42 +36,38 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
-typedef pair<int, int> Pii;
+typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 100;
-const int gap = 1e5;
+const int MAX_N = 1e5 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, S, F, dp[2 * gap + 10];
+int n, d, a, b, s, P[MAX_N], in, de, cnt;
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &N)) {
-		for (int i = 0; i <= 2 * gap; ++i)
-			dp[i] = -INF;
-		dp[gap] = 0;
-
-		for (int i = 0; i < N; ++i) {
-			scanf("%d%d", &S, &F);
-			if (S > 0) {
-				for (int j = 2 * gap; j >= S; --j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			} else {
-				for (int j = S; j <= 2 * gap + S; ++j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			}
+	scanf("%d%d%d%d", &n, &d, &a, &b);	
+	for (int i = 0; i < n; ++i)
+		scanf("%d", P + i);
+	in = de = 0;
+	for (int i = 1; i < n; ++i) {
+		if (P[i] > P[i - 1]) {
+			++in; de = 0;
+			cnt = min(in * a, d / P[i]);
+			s += cnt;
+			d -= P[i] * cnt;
 		}
-		int ans = 0;
-		for (int i = gap; i <= 2 * gap; ++i)
-			if (dp[i] >= 0)
-				ans = max(ans, dp[i] + i - gap);
-		printf("%d\n", ans);
+		else if (P[i] < P[i - 1]) {
+			++de; in = 0;
+			cnt = min(de * b, s);
+			s -= cnt;
+			d += P[i] * cnt;
+		}
+		// printf("%d %d\n", d, s);
 	}
-    return 0;
+	printf("%d %d\n", d, s);
+	return 0;
 }

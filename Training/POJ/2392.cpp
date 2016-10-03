@@ -19,6 +19,7 @@
 #include <stack>
 #include <vector>
 #include <utility>
+#include <bitset>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
@@ -35,42 +36,43 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
-typedef pair<int, int> Pii;
+typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 100;
-const int gap = 1e5;
+const int MAX_N = 500;
+const int MAX_H = 50000;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, S, F, dp[2 * gap + 10];
+int N, f[MAX_H], ans;
+struct Block {
+	int h, a, c;
+	bool operator < (const Block &b) const {
+		return a < b.a;
+	}
+}B[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &N)) {
-		for (int i = 0; i <= 2 * gap; ++i)
-			dp[i] = -INF;
-		dp[gap] = 0;
-
-		for (int i = 0; i < N; ++i) {
-			scanf("%d%d", &S, &F);
-			if (S > 0) {
-				for (int j = 2 * gap; j >= S; --j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
-			} else {
-				for (int j = S; j <= 2 * gap + S; ++j)
-					if (dp[j - S] != -INF)
-						dp[j] = max(dp[j], dp[j - S] + F);
+	scanf("%d", &N);
+	for (int i = 0; i < N; ++i)
+		scanf("%d%d%d", &B[i].h, &B[i].a, &B[i].c);
+	sort(B, B + N);
+	f[0] = 1;
+	for (int i = 0; i < N; ++i) {
+		int num = B[i].c;
+		for (int k = 1; num > 0; k <<= 1) {
+			int mul = min(k, num);
+			for (int j = B[i].a; j >= B[i].h * mul; --j) {
+				f[j] |= f[j - B[i].h * mul];
+				if (f[j]) ans = max(ans, j);
 			}
+			num -= mul;
 		}
-		int ans = 0;
-		for (int i = gap; i <= 2 * gap; ++i)
-			if (dp[i] >= 0)
-				ans = max(ans, dp[i] + i - gap);
-		printf("%d\n", ans);
+		// cout << ans << endl;
 	}
-    return 0;
+	printf("%d", ans);
+	return 0;
 }
