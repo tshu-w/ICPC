@@ -40,34 +40,34 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 1e5 + 10;
+const int MAX_N = 1e9 + 2;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int n, d, a, b, s, P[MAX_N], in, de, cnt;
+int n, m;
+char s[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d%d%d", &n, &d, &a, &b);	
-	for (int i = 0; i < n; ++i)
-		scanf("%d", P + i);
-	in = de = 0;
-	for (int i = 1; i < n; ++i) {
-		if (P[i] > P[i - 1]) {
-			++in; de = 0;
-			cnt = min(in * a, d / P[i]);
-			s += cnt;
-			d -= P[i] * cnt;
-		}
-		else if (P[i] < P[i - 1]) {
-			++de; in = 0;
-			cnt = min(de * b, s);
-			s -= cnt;
-			d += P[i] * cnt;
-		}
-		// printf("%d %d\n", d, s);
+	scanf("%d", &n);
+	while (m * (m + 1) <= 2 * n) ++m;
+	--m;
+	// cout << m << endl;
+	int p = 0, i;
+	for (i = 0; i < n - m * (m + 1) / 2; ++i) {
+		s[p + i] = ')';
 	}
-	printf("%d %d\n", d, s);
+	p += i;
+	// puts(s);
+	if (m * (m + 1) != 2 * n) { s[p++] = '('; s[p++] = ')';}
+	// puts(s);
+	for (i = 0; i < m - (n - m * (m + 1) / 2); ++i)
+		s[p + i] = ')';
+	p += i;
+	for (int i = 0;i < m; ++i)
+		s[p + i] = '(';
+	p += i;
+	puts(s);
 	return 0;
 }
