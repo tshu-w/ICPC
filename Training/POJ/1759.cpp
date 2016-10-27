@@ -27,7 +27,7 @@
 	#define DEBUG(...) printf(__VA_ARGS__)
 #else
 	#define DEBUG(...)
-#endif	
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -40,38 +40,37 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 50000;
+const int MAX_N = 1000 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, M, L, D[MAX_N];
+int N;
+double A, B, H[MAX_N];
 
-bool C(int dis) {
-	int last = 0;
-	for (int i = 1; i < N - M; ++i) {
-		int crt = last + 1;
-		while (crt < N && D[crt] - D[last] < dis)
-			++crt;
-		if (crt == N) return false;
-		last = crt;
+bool C(double H2) {
+	H[2] = H2;
+	for (int i = 3; i <= N; ++i) {
+		H[i] = 2 * H[i - 1] + 2.0 - H[i - 2];
+		if (H[i] < 0.) return false;
 	}
-	return true;
+	if (H[N] <= B) {
+		B = H[N];
+		return true;
+	} else return false;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d%d", &L, &N, &M);
-	for (int i = 1; i <= N; ++i)
-		scanf("%d", D + i);
-	D[0] = 0; D[++N] = L; ++N;
-	sort(D, D + N);
-	int lb = 0, ub = L + 1;
-	while (ub - lb > 1) {
-		int mid = (ub - lb) / 2 + lb;
-		if (C(mid)) lb = mid;
-		else ub = mid;
+	scanf("%d%lf", &N, &A);
+	H[1] = A;
+	double lb = -1e-5, ub = A;
+	B = 1000000.;
+	while (ub - lb > 1e-6) {
+		double mid = (ub - lb) / 2. + lb;
+		if (C(mid)) ub = mid;
+		else lb = mid;
 	}
-	printf("%d\n", lb);
+	printf("%.2f\n", B);
 	return 0;
 }

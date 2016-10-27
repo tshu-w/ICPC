@@ -27,7 +27,7 @@
 	#define DEBUG(...) printf(__VA_ARGS__)
 #else
 	#define DEBUG(...)
-#endif	
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -39,39 +39,45 @@ typedef long double ld;
 typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
-const int INF = INT_MAX;
-const int MAX_N = 50000;
+const ll INF = (ll)INT_MAX * 1000;
+const int MAX_N = 50005;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, M, L, D[MAX_N];
+int t;
+ll N, M;
 
-bool C(int dis) {
-	int last = 0;
-	for (int i = 1; i < N - M; ++i) {
-		int crt = last + 1;
-		while (crt < N && D[crt] - D[last] < dis)
-			++crt;
-		if (crt == N) return false;
-		last = crt;
+ll f(ll i, ll j) {
+	return i * i + 100000 * i + j * j - 100000 * j + i * j;
+}
+
+bool C(ll k) {
+	ll cnt = 0;
+	for (int j = 1; j <= N; ++j) {
+		int lb = 0, ub = N + 1;
+		while (ub - lb > 1) {
+			int i = (ub - lb) / 2 + lb;
+			if (f(i, j) < k) lb = i;
+			else ub = i;
+		}
+		cnt += lb;
 	}
-	return true;
+	return cnt < M;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d%d", &L, &N, &M);
-	for (int i = 1; i <= N; ++i)
-		scanf("%d", D + i);
-	D[0] = 0; D[++N] = L; ++N;
-	sort(D, D + N);
-	int lb = 0, ub = L + 1;
-	while (ub - lb > 1) {
-		int mid = (ub - lb) / 2 + lb;
-		if (C(mid)) lb = mid;
-		else ub = mid;
-	}
-	printf("%d\n", lb);
+	scanf("%d", &t);
+	while (t--) {
+		scanf("%lld%lld", &N, &M);
+		ll lb = -INF, ub = INF;
+		while (ub - lb > 1) {
+			ll mid = (ub - lb) / 2 + lb;
+			if (C(mid)) lb = mid;
+			else ub = mid;
+		}
+		printf("%lld\n", lb);
+	}	
 	return 0;
 }

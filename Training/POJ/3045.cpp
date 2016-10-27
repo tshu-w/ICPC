@@ -27,7 +27,7 @@
 	#define DEBUG(...) printf(__VA_ARGS__)
 #else
 	#define DEBUG(...)
-#endif	
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -40,38 +40,27 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 50000;
+const int MAX_N = 50005;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, M, L, D[MAX_N];
-
-bool C(int dis) {
-	int last = 0;
-	for (int i = 1; i < N - M; ++i) {
-		int crt = last + 1;
-		while (crt < N && D[crt] - D[last] < dis)
-			++crt;
-		if (crt == N) return false;
-		last = crt;
-	}
-	return true;
-}
+int N, sum, ans;
+vector<pair<int, Pii> > v;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d%d", &L, &N, &M);
-	for (int i = 1; i <= N; ++i)
-		scanf("%d", D + i);
-	D[0] = 0; D[++N] = L; ++N;
-	sort(D, D + N);
-	int lb = 0, ub = L + 1;
-	while (ub - lb > 1) {
-		int mid = (ub - lb) / 2 + lb;
-		if (C(mid)) lb = mid;
-		else ub = mid;
+	scanf("%d", &N);
+	for (int i = 0, w, s; i < N; ++i) {
+		scanf("%d%d", &w, &s);
+		v.push_back(make_pair(w + s, Pii(w, s)));
 	}
-	printf("%d\n", lb);
+	sort(v.begin(), v.end());
+	ans = INT_MIN;
+	for (int i = 0; i < N; ++i) {
+		ans = max(sum - v[i].second.second, ans);
+		sum += v[i].second.first;
+	}
+	printf("%d\n", ans);
 	return 0;
 }

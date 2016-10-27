@@ -40,38 +40,42 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 50000;
+const int MAX_N = 1e5 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, M, L, D[MAX_N];
+int N;
+ll K, A[MAX_N];
 
-bool C(int dis) {
-	int last = 0;
-	for (int i = 1; i < N - M; ++i) {
-		int crt = last + 1;
-		while (crt < N && D[crt] - D[last] < dis)
-			++crt;
-		if (crt == N) return false;
-		last = crt;
+bool C(ll times) {
+	ll cnt = 0;
+	for (int i = 0; i < N; ++i) {
+		ll t = 0;
+		if (K == 1) {
+			if (A[i] > times) return false;
+		} else {
+			if (A[i] > times)
+				t = (A[i] - times) / (K - 1) + ((A[i] - times) % (K - 1)? 1 : 0);
+		}
+		cnt += t;
 	}
-	return true;
+	return cnt <= times;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d%d", &L, &N, &M);
-	for (int i = 1; i <= N; ++i)
-		scanf("%d", D + i);
-	D[0] = 0; D[++N] = L; ++N;
-	sort(D, D + N);
-	int lb = 0, ub = L + 1;
+	scanf("%d", &N);
+	for (int i = 0; i < N; ++i)
+		scanf("%lld", A + i);
+	scanf("%lld", &K);
+	ll lb = 0, ub = INF;
 	while (ub - lb > 1) {
-		int mid = (ub - lb) / 2 + lb;
-		if (C(mid)) lb = mid;
-		else ub = mid;
+		// cout << lb << " " << ub << endl;
+		ll mid = (ub - lb) / 2 + lb;
+		if (C(mid)) ub = mid;
+		else lb = mid;
 	}
-	printf("%d\n", lb);
+	printf("%lld\n", ub);
 	return 0;
 }
