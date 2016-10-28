@@ -31,7 +31,7 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 50005;
+const int MAX_N = 10000 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
@@ -54,12 +54,20 @@ int main(int argc, char const *argv[])
 	p = seive(MAX_N);
 	while (~scanf("%d", &n) && n) {
 		int ans = 0;
-		for (int i = 0; i < p && prime[i] <= n; ++i) {
-			int sum = 0;
-			for (int j = i; j < p && sum <= n; sum += prime[j], ++j)
-				if (sum == n) 
-					++ans;
+		int s = 0, t = 0, sum = 0;
+		for(;;) {
+			while (t < p && sum < n)
+				sum += prime[t++];
+			if (t == p) break;
+			if (sum == n) ++ans;
+			sum -= prime[s++];
 		}
+		// for (int i = 0; i < p && prime[i] <= n; ++i) {
+		// 	int sum = 0;
+		// 	for (int j = i; j < p && sum <= n; sum += prime[j], ++j)
+		// 		if (sum == n) 
+		// 			++ans;
+		// }
 		printf("%d\n", ans);
 	}
 	return 0;
