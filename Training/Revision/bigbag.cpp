@@ -72,10 +72,10 @@ void solve() {
 	ll res = 0;
 	for (int i = 0; i < 1 << (n - n2); ++i) {
 		ll sw = 0, sv = 0;
-		for (int j = 0; j < (n - n2); ++j) 
+		for (int j = 0; j < n - n2; ++j) 
 			if (i >> j & 1) {
-				sw += w[j];
-				sv += v[j];
+				sw += w[n2 + j];
+				sv += v[n2 + j];
 			}
 		if (sw <= W) {
 			ll tv = (lower_bound(ps, ps + m, make_pair(W - sw, INF)) - 1)->second;
