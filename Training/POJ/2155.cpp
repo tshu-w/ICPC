@@ -73,9 +73,9 @@ int main(int argc, char const *argv[])
 				int x1, x2, y1, y2;
 				scanf("%d%d%d%d", &x1, &y1, &x2, &y2);
 				add(x1, y1, 1);
-				add(x2 + 1, y1, 1);
-				add(x1, y2 + 1, 1);
 				add(x2 + 1, y2 + 1, 1);
+				add(x1, y2 + 1, -1);
+				add(x2 + 1, y1, -1);
 			} else {
 				int x, y;
 				scanf("%d%d", &x, &y);
