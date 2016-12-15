@@ -1,25 +1,4 @@
-//#include <bits/stdc++.h>
-#include <cctype>
-#include <cfloat>
-#include <climits>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <algorithm>
-#include <complex>
-#include <deque>
-#include <list>
-#include <map>
-#include <queue>
-#include <set>
-#include <stack>
-#include <vector>
-#include <utility>
-#include <bitset>
+#include <bits/stdc++.h>
 
 using namespace std;
 
