@@ -1,4 +1,25 @@
-#include <bits/stdc++.h>
+// written at 15:49 on 25 Dec 2016 
+#include <cctype>
+#include <cfloat>
+#include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <complex>
+#include <deque>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+#include <utility>
+#include <bitset>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
@@ -54,14 +75,13 @@ void solve() {
     mat B(n * 2, vec(n * 2));
     for (int i = 0; i < n; ++i) {
     	for (int j = 0; j < n; ++j)
-    		B[i][j] = A[i][j];
-    	B[n + i][i] = B[n + i][n + i] = 1;
+    		B[i][j + n] = B[i + n][j + n] = A[i][j];
+        B[i][i] = 1;
     }
-    B = pow(B, k + 1);
+    B = pow(B, k);
     for (int i = 0; i < n; ++i)
     	for (int j = 0; j < n; ++j) {
-    		int a = B[n + i][j] % MOD;
-    		if (i == j) a = (a + MOD - 1) % MOD;
+    		int a = B[i][j + n] % MOD;
     		printf("%d%c", a, j + 1 == n? '\n' : ' '); 
     	}
 }
