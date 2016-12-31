@@ -11,64 +11,84 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 1e5 + 5;
+const int MAX_N = 50005;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-Pii p[MAX_N];
-int C[MAX_N];
-int n;
-
-void modify(int p,int delta) {
-    while (p <= n) {
-        C[p] += delta;
-        p += p & -p;//lowbit(p);
+int getMaxString(const string &str) {
+    int len = (int)str.length();
+    int i = 0, j = 1, k = 0;
+    while (i < len && j < len && k < len) {
+        int t = str[(i + k) % len] - str[(j + k) % len];
+        if (t == 0) ++k;
+        else { 
+            if (t > 0) j += k + 1;
+            else i += k + 1;
+            if (i == j) ++j;
+            k = 0;
+        }
+    }
+    return min(i, j);
+}
+int nxt[MAX_N];
+void getNext(const string &str) {
+    int j = 0, k, len = str.length();
+    nxt[0] = k = -1;
+    while (j < len) {
+        if (k == -1 || str[j] == str[k])
+            nxt[++j] = ++k;
+        else k = nxt[k];
     }
 }
-int sum(int p) {
-    int res = 0;
-    while (p) {
-        res += C[p];
-        p -= p & -p;//lowbit(p);
+int kmp(const string &tar, const string &pat) {
+    getNext(pat);
+    int j, k, res;
+    int lenT = tar.length(), lenP = pat.length();
+    res = j = k = 0;
+    while (j < lenT) {
+        if (k == -1 || tar[j] == pat[k])
+            ++j, ++k;
+        else k = nxt[k];
+        if (k == lenP) {
+            res = max(res, j - lenP + 1);
+            k = nxt[k];
+        }
     }
     return res;
 }
 int main(int argc, char const *argv[])
 {
-	int t, tt = 0, ans[MAX_N];
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%d", &n);
-		for (int i = 1; i <= n; ++i)
-			scanf("%d%d", &p[i].first, &p[i].second);
-		memset(C, 0, sizeof C);
-		sort(p + 1, p + n + 1);
-		bool flag = true;
-		for (int i = 1; i <= n; ++i) {
-			int k = min(p[i].second, n - i - p[i].second);
-			if (n - i - p[i].second < 0) {
-				flag = false;
-				break;
-			}
-			++k;
-			int l = 1, r = n, mid;
-			while (l < r) {
-				mid = (l + r) / 2;
-				if (mid - sum(mid) >= k) 
-					r = mid;
-				else l = mid + 1;
-			}
-			modify(l, 1);
-			ans[l] = p[i].first;
-		}
-		printf("Case #%d:", ++tt);
-		if (flag) {
-			for (int i = 1; i <= n; ++i)
-				printf(" %d", ans[i]);
-			printf("\n");
-		} else 
-			printf(" impossible\n");
-	}
-	return 0;
+    int t, n, a, b;
+    string s, s0, s1;
+    cin >> t;
+    while (t--) {
+        s0.clear();s1.clear();
+        cin >> n;
+        cin >> s;
+        a = getMaxString(s);
+        for (int i = 0; i < n; ++i) 
+            s0 += (s[(a + i) % n]);
+        reverse(s.begin(), s.end());
+        b = getMaxString(s);
+        for (int i = 0; i < n; ++i) 
+            s1 += (s[(b + i) % n]);
+
+        for (int i = 0; i < n - 1; ++i)
+            s += s[i];
+        // b = n - s.rfind(s1) - 1;
+        b = n - kmp(s, s1);
+        if (s0.compare(s1) == 0) {
+            if (a <= b)
+                cout << a + 1 << " 0" << endl;
+            else
+                cout << b + 1 << " 1" << endl;
+        } else {
+            if (s0.compare(s1) > 0)
+                cout << a + 1 << " 0" << endl;
+            else 
+                cout << b + 1 << " 1" << endl;
+        }
+    }    
+    return 0;
 }

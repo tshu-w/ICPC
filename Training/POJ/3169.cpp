@@ -48,27 +48,14 @@ int cost[MAX_V][MAX_V];
 void bellman_ford(int s) {
     fill(d, d + V, INF);
     d[s] = 0;
-    // for (int i = 0; i < V; ++i)
-    //     for (int j = 0; j < E; ++j) {
-    //         int u, v;
-    //         u = es[j].u;
-    //         v = es[j].v;
-    //         if (d[u] != INF)
-    //             d[v] = min(d[u] + es[j].dis, d[v]);
-    //         if (d[v] != INF)
-    //             d[u] = min(d[v] + es[j].dis, d[u]);
-    //     }
-    while (true) {
-        bool update = false;
-        for (int i = 0; i < E; ++i) {
-            edge e = es[i];
-            if (d[e.u] != INF && d[e.u] + e.dis < d[e.v]) {
-                update = true;
-                d[e.v] = d[e.u] + e.dis;
-            }
+    for (int i = 0; i < V; ++i)
+        for (int j = 0; j < E; ++j) {
+            int u, v;
+            u = es[j].u;
+            v = es[j].v;
+            if (d[u] != INF)
+                d[v] = min(d[u] + es[j].dis, d[v]);
         }
-        if (!update) break;
-    }
 }
 void spfa(int s) {
     queue<int> que;

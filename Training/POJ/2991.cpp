@@ -1,4 +1,24 @@
-#include <bits/stdc++.h>
+#include <cctype>
+#include <cfloat>
+#include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <complex>
+#include <deque>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+#include <utility>
+#include <bitset>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
@@ -48,10 +68,10 @@ void change(int s, double a, int k, int l, int r) {
 		int ch1 = 2 * k + 1, ch2 = 2 * k + 2, m = (l + r) / 2;
 		change(s, a, ch1, l, m);
 		change(s, a, ch2, m, r);
+		if (s < m) ang[k] += a;
 		double s = sin(ang[k]), c = cos(ang[k]);
 		vx[k] = vx[ch1] + vx[ch2] * c - vy[ch2] * s;
 		vy[k] = vy[ch1] + vx[ch2] * s + vy[ch2] * c;
-		cout << vx[k] << " " << vy[k] << endl;
 	}
 }
 

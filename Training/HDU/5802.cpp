@@ -36,7 +36,7 @@ int dfs(int p, int q, int s) {
 	if (p == q) return step;
 	// cout << p << " " << q << endl;
 	// cout << step << endl;
-	int pp = max(0, p - 2 * x), ss = min(q - pp, s);	
+	int pp = max(0, p - 2 * x), ss = min(q - pp, s);
 	return min(step + 1 + q - pp - ss, dfs(p, q, s + 1) + step + 1);
 }
 int main(int argc, char const *argv[])

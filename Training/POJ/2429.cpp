@@ -1,12 +1,32 @@
-#include <bits/stdc++.h>
+#include <cctype>
+#include <cfloat>
+#include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <complex>
+#include <deque>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+#include <utility>
+#include <bitset>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif  
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -52,9 +72,9 @@ template<typename T> T mod_mult(T a, T b, T mod) {
   T res = 0;
   while (b) {
     if (b & 1) {
-        res = (res + a) % mod;
-        // res += a;
-        // if (res >= mod) res -= mod;
+      res += a;
+      if (res >= mod) res -= mod;
+      // res = (res + a) % mod;
     }
     a = (a + a) % mod;
     // a <<= 1;
@@ -141,36 +161,36 @@ void find_factor(ll n) {
 int main(int argc, char const *argv[])
 {
     seive(MAX_N);
-	while (~scanf("%lld%lld", &d, &m)) {
-		ll c = m / d;
-		a = 1; b = c;
-		factor.clear();
-		find_factor(c);
-		sort(factor.begin(), factor.end());
-		factor.erase(unique(factor.begin(), factor.end()), factor.end());
-		for (int i = 0; i < factor.size(); ++i) {
-			ll k = 0, mul = 1;
-			while (c % factor[i] == 0) {
-				++k;
-				c /= factor[i];
-			}
-			while (k) {
-				mul *= factor[i];
-				--k;
-			}
-			factor[i] = mul;
-		}
-		for (ll i = 1; i < (1 << factor.size()); ++i) {
-			ll ta = 1, tb = 1;
-			for (int j = 0; j < factor.size(); ++j)
-				if (i >> j & 1) ta *= factor[j];
-				else tb *= factor[j];
-			if (ta < tb && ta + tb < a + b) {
-				a = ta;
-				b = tb;
-			}
-		}
-		printf("%lld %lld\n", a * d, b * d);
-	}
-	return 0;
+    while (~scanf("%lld%lld", &d, &m)) {
+        ll c = m / d;
+        a = 1; b = c;
+        factor.clear();
+        find_factor(c);
+        sort(factor.begin(), factor.end());
+        factor.erase(unique(factor.begin(), factor.end()), factor.end());
+        for (int i = 0; i < factor.size(); ++i) {
+            ll k = 0, mul = 1;
+            while (c % factor[i] == 0) {
+                ++k;
+                c /= factor[i];
+            }
+            while (k) {
+                mul *= factor[i];
+                --k;
+            }
+            factor[i] = mul;
+        }
+        for (ll i = 1; i < (1 << factor.size()); ++i) {
+            ll ta = 1, tb = 1;
+            for (int j = 0; j < factor.size(); ++j)
+                if (i >> j & 1) ta *= factor[j];
+                else tb *= factor[j];
+            if (ta < tb && ta + tb < a + b) {
+                a = ta;
+                b = tb;
+            }
+        }
+        printf("%lld %lld\n", a * d, b * d);
+    }
+    return 0;
 }
