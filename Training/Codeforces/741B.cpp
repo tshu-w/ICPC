@@ -77,10 +77,9 @@ int main(int argc, char const *argv[])
 	rep(k, 0, K) {
 		irep(j, W + 1, 0) rep(i, 0, v[k].size()) if (j >= v[k][i].first)
 			dp[j] = max(dp[j], dp[j - v[k][i].first] + v[k][i].second);
-		rep(i, 0, W + 1) cout << dp[i] << " "; cout << endl;
 	}
 	ans = 0;
-	irep(i, W + 1, 0) ans = max(ans, dp[i]);//, cout << dp[i] << " "; cout << endl;
+	irep(i, W + 1, 0) ans = max(ans, dp[i]);
 	printf("%d\n", ans);
 	return 0;
 }

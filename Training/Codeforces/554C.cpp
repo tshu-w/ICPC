@@ -21,27 +21,42 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 2e5 + 10;
+const int MAX_N = 1000 + 10;
+const int MOD = 1000000007;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, K, X, A[MAX_N], L[MAX_N], R[MAX_N];
+int sum = 0, M, K, C[MAX_N];
+ll fact[MAX_N];
+
+ll mod_pow(ll x, ll n, ll mod) { 
+    ll res = 1;
+    while (n > 0) {
+        if (n & 1) res = res * x % mod;
+        x = x * x % mod;
+        n >>= 1;
+    }
+    return res;
+    // return b ? qpow(a * a % mod, b >> 1, mod) * (b & 1 ? a : 1) % mod : 1;
+}
 
 int main(int argc, char const *argv[])
 {
-	cin >> N >> K >> X;
-	for (int i = 0; i < N; ++i)
-		scanf("%d", A + i);
-	for (int i = 0; i < N; ++i)
-		L[i + 1] = L[i] | A[i];
-	for (int i = N - 1; i >= 0; --i)
-		R[i] = R[i + 1] | A[i];
-	ll mul = 1LL, ans = 0;
-	while (K--)
-		mul = mul * X;
-	for (int i = 0; i < N; ++i)
-		ans = max(ans, L[i] | A[i] * mul | R[i + 1]);
+	ll ans = 1;
+	fact[0] = 1;
+	for (int i = 1; i < MAX_N; ++i)
+		fact[i] = fact[i - 1] * i % MOD;
+	cin >> K;
+	for (int i = 0; i < K; ++i) {
+		cin >> C[i];
+		sum += C[i];
+	}
+	for (int i = K - 1; i >= 0; --i) {
+		ans *= fact[sum - 1] * mod_pow(fact[C[i] - 1] * fact[sum - C[i]] % MOD, MOD - 2, MOD) % MOD;
+		ans %= MOD;
+		sum -= C[i];
+	}
 	cout << ans << endl;
 	return 0;
 }

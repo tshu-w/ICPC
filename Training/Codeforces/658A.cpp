@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 		x += t[i];
 		score1 += max(0, p[i] - c * x); 
 	}
-	int score2;
+	int score2 = 0;
 	x = 0;
 	for (int i = n - 1; i >= 0; --i) {
 		x += t[i];

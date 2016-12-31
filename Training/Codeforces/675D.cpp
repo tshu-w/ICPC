@@ -58,7 +58,7 @@ int main(int argc, char const *argv[])
 				set<int>::iterator fa;
 				fa = (deep[*lp] > deep[*rp])? lp : rp;
 				cout << *fa << " ";
-				deep[a] = deep[*fa] + 1;			
+				deep[a] = deep[*fa] + 1;
 			}
 		}
 		tree.insert(a);

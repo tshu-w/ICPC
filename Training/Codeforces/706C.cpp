@@ -31,7 +31,6 @@ string s[MAX_N], ss, sc;
 int main(int argc, char const *argv[])
 {
 	IOS;
-	cout << LONG_MAX << endl;
 	cin >> N;
 	for (int i = 0; i < N; ++i) 
 		cin >> A[i];

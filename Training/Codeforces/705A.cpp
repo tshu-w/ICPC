@@ -27,7 +27,7 @@ inline T sqr(T a) { return a * a;};
 int main(int argc, char const *argv[])
 {
 	int n;
-	scanf("%d", &n);	
+	scanf("%d", &n);
 	cout << "I";
 	for (int i = 1; i <= n; ++i) {
 		if (i & 1) {
@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 			cout << " love";
 		}
 		if (i != n)
-			cout << " that ";
+			cout << " that I";
 	}
 	cout << " it" << endl;
 	return 0;
