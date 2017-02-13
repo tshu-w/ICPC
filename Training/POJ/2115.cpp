@@ -71,7 +71,7 @@ int main(int argc, char const *argv[])
 		ll d = modular_linear(c, b - a, 1LL << k);
 		if (d == -1) 
 			printf("FOREVER\n");
-		else printf("%lld\n", d);	
+		else printf("%lld\n", d);
 	}	
 	return 0;
 }
