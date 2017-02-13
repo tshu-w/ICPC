@@ -52,9 +52,6 @@ int main(int argc, char const *argv[])
 		scanf("%s", s);
 		int len = strlen(s);
 		getNext(s);
-		// for (int i = 0; i <= len; ++i)
-		// 	cout << nxt[i] << " ";
-		// cout << endl;
 		dp[0][0] = 1;
 		for (int i = 0; i < M; ++i)
 			for (int j = 0; j < len; ++j) {
@@ -65,11 +62,6 @@ int main(int argc, char const *argv[])
 					dp[i + 1][pos] += dp[i][j] * p[k];
 				}
 			}
-		// for (int i = 0; i <= M; ++i) {
-		// 	for (int j = 0; j <= len; ++j)
-		// 		cout << dp[i][j] << " ";
-		// 	cout << endl;
-		// }
 		double ans = 0.;
 		for (int i = 0; i <= M; ++i) ans += dp[i][len];
 		printf("%.2lf%%\n", ans * 100);	

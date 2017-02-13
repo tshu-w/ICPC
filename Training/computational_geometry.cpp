@@ -18,7 +18,7 @@ struct Point {
     double x, y;
     Point (double x = 0, double y = 0): x(x), y(y) {}
     void read () { scanf("%lf%lf", &x, &y); }
-    void write () { printf("%lf %lf", x, y); }
+    void write () { printf("%f %f", x, y); }
 
     bool operator == (const Point& u) const { return dcmp(x - u.x) == 0 && dcmp(y - u.y) == 0; }
     bool operator != (const Point& u) const { return !(*this == u); }
