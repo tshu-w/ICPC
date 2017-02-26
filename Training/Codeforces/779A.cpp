@@ -1,4 +1,4 @@
-// written at 17:50 on 24 Feb 2017 
+// written at 15:46 on 26 Feb 2017 
 #include <bits/stdc++.h>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
@@ -27,44 +27,25 @@ typedef pair<int, int > Pii;
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
 const ll LLINF = LLONG_MAX;
-const int MAX_N = 1e3 + 10;
+const int MAX_N = 1e2 + 10;
 
-int N, A[MAX_N], B[MAX_N], ans1, ans2;
-bool flag[MAX_N];
-string s;
+int N, A[10], B[10], C[10], ans;
 
 int main(int argc, char const *argv[])
 {
     cin >> N;
-    cin >> s;
-    rep(i, 0, N) B[i] = s[i] - '0';
-    cin >> s;
-    rep(i, 0, N) A[i] = s[i] - '0';
-    sort(A, A + N); sort(B, B + N);
-    memset(flag, false, sizeof flag);
     rep(i, 0, N) {
-        bool ff = false;
-        rep(j, 0, N) if (!flag[j] && A[j] >= B[i]) {
-            ff = true; flag[j] = true;
-            break;
-        }
-        if (!ff) {
-            ++ans1;
-            rep(j, 0, N) if (!flag[i]) flag[i] = true;
-        }
+        int a;
+        scanf("%d", &a);
+        ++A[a]; ++C[a];
     }
-    memset(flag, false, sizeof flag);
     rep(i, 0, N) {
-        bool ff = false;
-        rep(j, 0, N) if (!flag[j] && A[j] > B[i]) {
-            ++ans2;
-            ff = true; flag[j] = true;
-            break;
-        }
-        if (!ff) {
-            rep(j, 0, N) if (!flag[j]) flag[j] = true;
-        }
+        int a;
+        scanf("%d", &a);
+        ++B[a]; ++C[a];
     }
-    cout << ans1 << endl << ans2 << endl;
+    rep(i, 1, 6) if (C[i] & 1) return printf("-1\n"), 0;
+    else ans += abs(C[i] / 2 - A[i]);
+    printf("%d\n", ans / 2);
     return 0;
 }
