@@ -27,12 +27,11 @@ typedef pair<int, int > Pii;
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
 const ll LLINF = LLONG_MAX;
-const int MAX_V = 2e3 + 10;
+const int MAX_V = 1e3 + 10;
 
-string s1, s2;
-int N;
-set<string> flag, ban;
-vector<string> ans;
+string s1, s2, name[MAX_V][2];
+int N, ans[MAX_V];
+map<string, int> mp, vis;
 
 
 int main(int argc, char const *argv[])
@@ -40,21 +39,27 @@ int main(int argc, char const *argv[])
     scanf("%d", &N);
     for (int i  = 0; i < N; i++) {
         cin >> s1 >> s2;
-        string a = s1.substr(0, 3);
-        string b = s1.substr(0, 2) + s2[0];
-        if (flag.count(b)) {
-            if (ban.count(a) || flag.count(a)) 
-                return printf("NO\n"), 0;
-            ans.push_back(a);
-            flag.insert(a); ban.insert(a);
-        } else {
-            ans.push_back(b);
-            flag.insert(b);
-            ban.insert(a);
-        }
+        name[i][0] = s1.substr(0, 3);
+        name[i][1] = s1.substr(0, 2) + s2[0];
+        mp[name[i][0]]++;
     }
+    bool flag;
+    do {
+        flag = false;
+        for (int i = 0; i < N; i++) 
+            if (mp[name[i][ans[i]]] > 1 || (vis[name[i][ans[i]]] && ans[i] == 0)) {
+                if (ans[i] == 1) continue;
+                flag = true;
+                mp[name[i][0]]--; mp[name[i][1]]++;
+                ans[i] = 1;
+                vis[name[i][0]] = 1;
+            }
+    } while (flag);
+    for (int i = 0; i < N; i++)
+        if (mp[name[i][ans[i]]] > 1)
+            return printf("NO\n"), 0;
     printf("YES\n");
-    for (auto s : ans)
-        cout << s << "\n";
+    for (int i = 0; i < N; i++)
+        cout << name[i][ans[i]] << "\n";
     return 0;
 }
