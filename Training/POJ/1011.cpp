@@ -61,7 +61,7 @@ bool dfs(int i, int res, int tot) {
             flag[i] = false;
         } else {
             for (int j = i; j < N; ++j) {
-                if (j && A[j] == A[j - 1] && !flag[j - 1]) continue;
+                if (A[j] == A[j - 1] && !flag[j - 1]) continue;
                 if (!flag[j] && res >= A[j]) {
                     flag[j] = true;
                     if (dfs(j, res - A[j], tot)) return true;
