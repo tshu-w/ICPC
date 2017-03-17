@@ -18,6 +18,19 @@
         "map": "cpp",
         "set": "cpp",
         "string": "cpp",
-        "rope": "cpp"
+        "rope": "cpp",
+        "iterator": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "hash_map": "cpp",
+        "forward_list": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp",
+        "locale": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     }
 }

@@ -1,0 +1,52 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "sh",
+    "isShellCommand": true,
+    "showOutput": "never",
+    // "_runner": "terminal",
+    "tasks": [
+        {
+            "taskName": "build",
+            "command": "g++",
+            "args": ["-o", "${fileDirname}/${fileBasenameNoExtension}.out", "${file}"],
+            "problemMatcher":{
+                "owner": "cpp",
+                "fileLocation": "absolute",
+                "pattern": {
+                            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "severity": 4,
+                            "message": 5
+                }
+            }
+        },
+        {
+            "taskName": "test",
+            "command": "sh",
+            "args": ["-c", "g++ -o ${fileDirname}/${fileBasenameNoExtension}.out ${file} && open ${fileDirname}/${fileBasenameNoExtension}.out"],
+            // "args": ["${fileDirname}/${fileBasenameNoExtension}.out"],
+            "showOutput": "silent"
+        },
+        {
+            "taskName": "debug",
+            "command": "g++",
+            "args": ["-g", "${file}" ,"-o", "${fileDirname}/${fileBasenameNoExtension}.out"],
+            "problemMatcher":{
+                "owner": "cpp",
+                "fileLocation": "absolute",
+                "pattern": {
+                            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "severity": 4,
+                            "message": 5
+                }
+            }
+        }
+    ]
+}
