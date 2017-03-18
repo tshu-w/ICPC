@@ -4,13 +4,13 @@
     "version": "0.1.0",
     "command": "sh",
     "isShellCommand": true,
-    "showOutput": "never",
     // "_runner": "terminal",
     "tasks": [
         {
             "taskName": "build",
+            "suppressTaskName": false,            
             "command": "g++",
-            "args": ["-o", "${fileDirname}/${fileBasenameNoExtension}.out", "${file}"],
+            "args": ["-std=c++11", "-o", "${fileDirname}/${fileBasenameNoExtension}.out", "${file}"],
             "problemMatcher":{
                 "owner": "cpp",
                 "fileLocation": "absolute",
@@ -22,19 +22,23 @@
                             "severity": 4,
                             "message": 5
                 }
-            }
+            },
+            "showOutput": "silent"
         },
         {
-            "taskName": "test",
+            "taskName": "run",
+            "isTestCommand": true,
+            "suppressTaskName": false,            
             "command": "sh",
-            "args": ["-c", "g++ -o ${fileDirname}/${fileBasenameNoExtension}.out ${file} && open ${fileDirname}/${fileBasenameNoExtension}.out"],
+            "args": ["-c", "g++ -std=c++11 -o ${fileDirname}/${fileBasenameNoExtension}.out ${file} && open ${fileDirname}/${fileBasenameNoExtension}.out"],
             // "args": ["${fileDirname}/${fileBasenameNoExtension}.out"],
             "showOutput": "silent"
         },
         {
             "taskName": "debug",
+            "suppressTaskName": false,
             "command": "g++",
-            "args": ["-g", "${file}" ,"-o", "${fileDirname}/${fileBasenameNoExtension}.out"],
+            "args": ["-std=c++11", "-g", "${file}" ,"-o", "${fileDirname}/${fileBasenameNoExtension}.out"],
             "problemMatcher":{
                 "owner": "cpp",
                 "fileLocation": "absolute",
@@ -47,6 +51,13 @@
                             "message": 5
                 }
             }
+        },
+        {
+            "taskName": "clean",
+            "suppressTaskName": false,
+            "command": "sh",
+            "args": ["-c", "rm -rv *.out */*.out *.out.dSYM */*.out.dSYM 2> /dev/null"],
+            "showOutput": "silent"
         }
     ]
 }
