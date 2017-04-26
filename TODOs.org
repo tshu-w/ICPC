@@ -1,0 +1,14 @@
+* Tasks
+** TODO 队伍训练安排
+SCHEDULED: <2017-04-26 Wed>
+** TODO SRM 713 Div2
+SCHEDULED: <2017-04-27 Thu 09:00-11:00>
+** TODO 算法竞赛入门经典（第二版)
+** TODO [[https://zhuanlan.zhihu.com/p/26001155?utm_source=com.ideashower.readitlater.pro&utm_medium=social][九章算法高频算法题 & 题解]]
+** TODO 周报
+   DEADLINE: <2017-05-01 Mon +1w> SCHEDULED: <2017-05-01 Mon ++1w>
+   :PROPERTIES:
+   :LAST_REPEAT: [2017-04-25 Tue 10:52]
+   :END:
+   - State "DONE"       from "TODO"       [2017-04-25 Tue 10:52]
+   - State "DONE"       from "TODO"       [2017-04-17 Mon 16:47]
