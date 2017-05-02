@@ -1,4 +1,4 @@
-// written at 17:08 on 27 Feb 2017 
+// written at 17:08 on 27 Feb 2017
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 #include <numeric>
@@ -77,6 +77,6 @@ int main(int argc, char const *argv[])
         sum[0] = 0;
         rep(i, 0, N) sum[i + 1] = sum[i] + w[i];
         solve();
-    } 
+    }
     return 0;
 }

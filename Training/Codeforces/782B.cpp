@@ -1,4 +1,4 @@
-// written at 20:57 on 5 Mar 2017 
+// written at 20:57 on 5 Mar 2017
 #include <bits/stdc++.h>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);

@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 	char s[10];
 	memset(tm, 0, sizeof(tm));
 	scanf("%d", &k);
-	for (int i = 0; i < 4; ++i) { 
+	for (int i = 0; i < 4; ++i) {
 		scanf("%s", s);
 		for (int j = 0; j < 4; ++j) {
 			if (s[j] != '.')
@@ -21,9 +21,9 @@ int main(int argc, char const *argv[])
 			break;
 		}
 	}
-	if (flag) 
+	if (flag)
 		printf("YES\n");
-	else 
+	else
 		printf("NO\n");
 	return 0;
 }

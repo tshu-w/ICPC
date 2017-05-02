@@ -1,7 +1,6 @@
 // written at 18:42 on 18 Apr 2017
 #include <bits/stdc++.h>
 
-#define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
 #define DEBUG(...) printf(__VA_ARGS__)

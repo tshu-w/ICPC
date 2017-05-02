@@ -26,7 +26,7 @@
 	#define DEBUG(...) printf(__VA_ARGS__)
 #else
 	#define DEBUG(...)
-#endif	
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 

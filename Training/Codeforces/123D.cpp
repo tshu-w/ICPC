@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-    #define DEBUG(...) printf(__VA_ARGS__)
+	#define DEBUG(...) printf(__VA_ARGS__)
 #else
-    #define DEBUG(...)
+	#define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -77,14 +77,14 @@ int main() {
     cin >> S;
     construct_sa(S, sa);
     construct_lcp(S, sa, lcp);
-    for (int i = 0; i <= n + 1; i++) 
-        cout << S.substr(sa[i]) << endl;
-    for (int i = 0; i <= n + 1; i++)
-        cout << sa[i] << " ";
-    cout << endl;
-    for (int i = 0; i <= n + 1; i++) 
-        cout << lcp[i] << " ";
-    cout << endl;
+    // for (int i = 0; i <= n; i++)
+    //     cout << S.substr(sa[i]) << endl;
+    // for (int i = 0; i <= n; i++)
+    //     cout << sa[i] << " ";
+    // cout << endl;
+    // for (int i = 0; i <= n; i++)
+    //     cout << lcp[i] << " ";
+    // cout << endl;
     vector<pair<Pii, int> > v; // height, len, id;
     ll ans = 0;
     for (int i = 1; i <= n + 1; i++) {
@@ -97,7 +97,7 @@ int main() {
                 ans += (end.first.second - end.first.first) * cnt(i - end.second);
                 v.pop_back();
             }
-        } 
+        }
         v.push_back({{lcp[i - 1], n - sa[i]}, i});
     }
     cout << ans << endl;

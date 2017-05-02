@@ -1,4 +1,24 @@
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
+#include <cctype>
+#include <cfloat>
+#include <climits>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <complex>
+#include <deque>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+#include <utility>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
@@ -19,35 +39,23 @@ typedef pair<int, int > Pii;
 
 const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const int MAX_N = 50005;
+const int MAX_N = 1e5 + 10;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-int N, cnt[5], a;
+int N;
+ll sum = 0, ans = 0, lmax = 0, A[MAX_N];
 
 int main(int argc, char const *argv[])
 {
 	cin >> N;
-	bool flag = true;
-	for (int i = 0; flag && i < N; ++i) {
-		cin >> a;
-		if (a == 25) ++cnt[0];
-		else if (a == 50) {
-			--cnt[0];++cnt[1];
-			if (cnt[0] < 0) flag = false;
-		} else {
-			if (cnt[1] > 0) {
-				--cnt[1]; --cnt[0];
-			} else {
-				cnt[0] -= 3;
-			}
-			++cnt[2];
-			if (cnt[0] < 0 || cnt[1] < 0) flag = false;
-		}
+	for (int i = 0; i < N; ++i) {
+		cin >> A[i];
+		sum += A[i];
+		lmax = max(A[i], lmax);
 	}
-	if (flag) cout << "YES" << endl;
-	else cout << "NO" << endl;
-
+	ans = sum / (N - 1) + (sum % (N - 1)? 1 : 0);
+	cout << max(ans, lmax) << endl;
 	return 0;
 }
