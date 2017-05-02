@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
 	scanf("%llu", &n);
 	if (n % 3 == 0)
 		printf("%llu\n",  2 * n / 3);
-	else 
-		printf("%llu\n", (n / 3)* 2 + 1);
+	else
+		printf("%llu\n", (n / 3) * 2 + 1);
 	return 0;
 }

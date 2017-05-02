@@ -6,21 +6,21 @@ int main(int argc, char const *argv[])
 	scanf("%d%d%d", &n, &p, &k);
 	left = p - k;
 	right = p + k;
-	if (left > 1) 
+	if (left > 1)
 		printf("<<");
-	else 
+	else
 		left = 1;
 	for (int i = left; i <= right && i <= n; ++i) {
-		if (i != 1) 
+		if (i != 1)
 			printf(" ");
-		if (i == p) 
+		if (i == p)
 			printf("(%d)", i);
-		else 
+		else
 			printf("%d", i);
 	}
-	if (right < n) 
+	if (right < n)
 		printf(" >>");
-	else 
+	else
 		right = n;
 	printf("\n");
 	return 0;

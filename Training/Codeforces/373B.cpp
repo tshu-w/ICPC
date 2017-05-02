@@ -13,17 +13,17 @@ int main(int argc, char const *argv[])
 		long long tmp;
 		if (pw > m)
 			tmp = pw * 9;
-		else 
+		else
 			tmp = pw * 10 - m;
 		tmp *= i;
 		//cout << tmp << ' ' << w << ' ' << pow(10, i - 1) << endl;
-		if (w > tmp) 
+		if (w > tmp)
 			w -= tmp;
 		else {
 			long long ans;
 			if (pw > m)
 				ans = w / i + pw - m;
-			else 
+			else
 				ans = w / i;
 			cout << ans << endl;
 			break;

@@ -6,7 +6,7 @@
 	#define DEBUG(...) printf(__VA_ARGS__)
 #else
 	#define DEBUG(...)
-#endif	
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -44,7 +44,7 @@ int main(int argc, char const *argv[])
 			}
 			++cnt[2];
 			if (cnt[0] < 0 || cnt[1] < 0) flag = false;
-		}	
+		}
 	}
 	if (flag) cout << "YES" << endl;
 	else cout << "NO" << endl;

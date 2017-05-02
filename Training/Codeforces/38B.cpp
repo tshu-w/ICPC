@@ -6,7 +6,7 @@
 	#define DEBUG(...) printf(__VA_ARGS__)
 #else
 	#define DEBUG(...)
-#endif	
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -55,10 +55,10 @@ int main(int argc, char const *argv[])
 		if (0 <= xx && xx < 8 && 0 <= yy && yy < 8)
 			flag[xx][yy] = true;
 	}
-	int ans = 0;	
+	int ans = 0;
 	for (int i = 0; i < 8; ++i)
 		for (int j = 0; j < 8; ++j)
-			if (!flag[i][j]) 
+			if (!flag[i][j])
 				++ans;
 	cout << ans << endl;
 	return 0;

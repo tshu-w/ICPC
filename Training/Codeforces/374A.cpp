@@ -6,7 +6,7 @@
 	#define DEBUG(...) printf(__VA_ARGS__)
 #else
 	#define DEBUG(...)
-#endif	
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -46,7 +46,7 @@ int main(int argc, char const *argv[])
 		ans = min(ans, cnt(N, M));
 	if (0 >= X - a && X + a > N && Y != m && Y != M) ans = INF;
 	if (0 >= Y - b && Y + b > M && X != n && X != N) ans = INF;
-	if (ans == INF) 
+	if (ans == INF)
 		cout << "Poor Inna and pony!" << endl;
 	else
 		cout << ans << endl;
