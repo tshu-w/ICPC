@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -26,22 +26,22 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int n;	
-	set<int> X, Y;
-	cin >> n;
-	for (int i = 0, x, y; i < n; ++i) {
-		cin >> x >> y;	
-		X.insert(x); Y.insert(y);
-	}
-	if (X.size() <= 1 || Y.size() <= 1) 
-		cout << -1 << endl;
-	else {
-		int a, b, c, d;
-		auto xit = X.begin();
-		a = *xit; ++xit; b = *xit;
-		auto yit = Y.begin();
-		c = *yit; ++yit; d = *yit;
-		cout << (b - a) * (d - c) << endl;	
-	}
-	return 0;
+    int n;    
+    set<int> X, Y;
+    cin >> n;
+    for (int i = 0, x, y; i < n; ++i) {
+        cin >> x >> y;    
+        X.insert(x); Y.insert(y);
+    }
+    if (X.size() <= 1 || Y.size() <= 1) 
+        cout << -1 << endl;
+    else {
+        int a, b, c, d;
+        auto xit = X.begin();
+        a = *xit; ++xit; b = *xit;
+        auto yit = Y.begin();
+        c = *yit; ++yit; d = *yit;
+        cout << (b - a) * (d - c) << endl;    
+    }
+    return 0;
 }

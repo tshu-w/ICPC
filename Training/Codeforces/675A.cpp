@@ -33,18 +33,18 @@ const int MAX_N = 50005;
 
 int main(int argc, char const *argv[])
 {
-	int a, b, c;
-	scanf("%d%d%d", &a, &b, &c);
-	if (c == 0) {
-		if (a == b)
-			printf("YES\n");
-		else 
-			printf("NO\n");
-	} else {
-		if ((b - a) % c == 0 && (b - a) / c >= 0)
-			printf("YES\n");
-		else 
-			printf("NO\n");
-	}
-	return 0;
+    int a, b, c;
+    scanf("%d%d%d", &a, &b, &c);
+    if (c == 0) {
+        if (a == b)
+            printf("YES\n");
+        else 
+            printf("NO\n");
+    } else {
+        if ((b - a) % c == 0 && (b - a) / c >= 0)
+            printf("YES\n");
+        else 
+            printf("NO\n");
+    }
+    return 0;
 }

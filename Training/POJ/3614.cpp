@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -49,26 +49,26 @@ vector<Pii> cow, bottle;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &C, &L);
-	int a, b;
-	for (int i = 0; i < C; ++i) {
-		scanf("%d%d", &a, &b);
-		cow.push_back(Pii(b, a));
-	}
-	for (int i = 0; i < L; ++i) {
-		scanf("%d%d", &a, &b);
-		bottle.push_back(Pii(a, b));
-	}
-	sort(cow.begin(), cow.end());
-	sort(bottle.begin(), bottle.end());
-	int ans = 0;
-	for (int i = 0; i < C; ++i)
-		for (int j = 0; j < L; ++j)
-			if (bottle[j].second && cow[i].first >= bottle[j].first && cow[i].second <= bottle[j].first) {
-				bottle[j].second--;
-				++ans;
-				break;
-			}
-	printf("%d\n", ans);
-	return 0;
+    scanf("%d%d", &C, &L);
+    int a, b;
+    for (int i = 0; i < C; ++i) {
+        scanf("%d%d", &a, &b);
+        cow.push_back(Pii(b, a));
+    }
+    for (int i = 0; i < L; ++i) {
+        scanf("%d%d", &a, &b);
+        bottle.push_back(Pii(a, b));
+    }
+    sort(cow.begin(), cow.end());
+    sort(bottle.begin(), bottle.end());
+    int ans = 0;
+    for (int i = 0; i < C; ++i)
+        for (int j = 0; j < L; ++j)
+            if (bottle[j].second && cow[i].first >= bottle[j].first && cow[i].second <= bottle[j].first) {
+                bottle[j].second--;
+                ++ans;
+                break;
+            }
+    printf("%d\n", ans);
+    return 0;
 }

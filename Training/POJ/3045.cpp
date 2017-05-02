@@ -23,9 +23,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
@@ -49,17 +49,17 @@ vector<pair<int, Pii> > v;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	for (int i = 0, w, s; i < N; ++i) {
-		scanf("%d%d", &w, &s);
-		v.push_back(make_pair(w + s, Pii(w, s)));
-	}
-	sort(v.begin(), v.end());
-	ans = INT_MIN;
-	for (int i = 0; i < N; ++i) {
-		ans = max(sum - v[i].second.second, ans);
-		sum += v[i].second.first;
-	}
-	printf("%d\n", ans);
-	return 0;
+    scanf("%d", &N);
+    for (int i = 0, w, s; i < N; ++i) {
+        scanf("%d%d", &w, &s);
+        v.push_back(make_pair(w + s, Pii(w, s)));
+    }
+    sort(v.begin(), v.end());
+    ans = INT_MIN;
+    for (int i = 0; i < N; ++i) {
+        ans = max(sum - v[i].second.second, ans);
+        sum += v[i].second.first;
+    }
+    printf("%d\n", ans);
+    return 0;
 }

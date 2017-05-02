@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -51,18 +51,18 @@ const int MAX_N = 1e5 + 10;
 const double EPS = 1e-8;
 
 struct P {
-	double x, y;
-	inline bool read() { return ~scanf("%lf%lf", &x, &y);}
-	inline void write() { printf("(%lf, %lf)\n", x, y);}
-	P(double x = 0, double y = 0): x(x), y(y) {}
-	P operator + (P p) { return P(x + p.x, y + p.y);}
-	P operator - (P p) { return P(x - p.x, y - p.y);}
-	double det(P p) {return x * p.y - y * p.x;}
-	double dot(P p) {return x * p.x + y * p.y;}
-	bool operator < (const P & p) const {
-		if (p.x == x) return y < p.y;
-		else return x < p.x;
-	}
+    double x, y;
+    inline bool read() { return ~scanf("%lf%lf", &x, &y);}
+    inline void write() { printf("(%lf, %lf)\n", x, y);}
+    P(double x = 0, double y = 0): x(x), y(y) {}
+    P operator + (P p) { return P(x + p.x, y + p.y);}
+    P operator - (P p) { return P(x - p.x, y - p.y);}
+    double det(P p) {return x * p.y - y * p.x;}
+    double dot(P p) {return x * p.x + y * p.y;}
+    bool operator < (const P & p) const {
+        if (p.x == x) return y < p.y;
+        else return x < p.x;
+    }
 };
 
 int N;
@@ -70,41 +70,41 @@ P ps[MAX_N], p, q;
 double angle[MAX_N];
 
 vector<P> convex_hull(P *ps, int n) {
-	sort(ps, ps + n);
-	vector<P> qs(2 * n);
-	int k = 0;
-	rep(i, 0, n) {
-		while (k > 1 && (qs[k - 1] - qs[k - 2]).det(ps[i] - qs[k - 1]) <= 0) --k;
-		qs[k++] = ps[i];
-	}	
-	int t = k;
-	irep(i, n - 1, 0) {
-		while (k > t && (qs[k - 1] - qs[k - 2]).det(ps[i] - qs[k - 1]) <= 0) --k;
-		qs[k++] = ps[i];
-	}
-	if (k >= 1) qs.resize(k - 1);
-	return qs;
+    sort(ps, ps + n);
+    vector<P> qs(2 * n);
+    int k = 0;
+    rep(i, 0, n) {
+        while (k > 1 && (qs[k - 1] - qs[k - 2]).det(ps[i] - qs[k - 1]) <= 0) --k;
+        qs[k++] = ps[i];
+    }    
+    int t = k;
+    irep(i, n - 1, 0) {
+        while (k > t && (qs[k - 1] - qs[k - 2]).det(ps[i] - qs[k - 1]) <= 0) --k;
+        qs[k++] = ps[i];
+    }
+    if (k >= 1) qs.resize(k - 1);
+    return qs;
 }
 
 inline double atan(P p) {
-	double res = atan2(p.y, p.x);
-	return res < -pi / 2. ? res + 2. * pi : res; // 使得凸包有序
+    double res = atan2(p.y, p.x);
+    return res < -pi / 2. ? res + 2. * pi : res; // 使得凸包有序
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	rep(i, 0, N) ps[i].read();
-	vector<P> qs = convex_hull(ps, N);
-	int n = qs.size(); if (n) qs.push_back(qs[0]);
-	rep(i, 0, n) angle[i] = atan(qs[i + 1] - qs[i]);
-	sort(angle, angle + n);
-	while (p.read()) {
-		q.read();
-		if (!n) { puts("GOOD"); continue;}
-		int i = upper_bound(angle, angle + n, atan(q - p)) - angle;
-		int j = upper_bound(angle, angle + n, atan(p - q)) - angle;
-		puts((q - p).det(qs[i] - p) * (q - p).det(qs[j] - p) > 0? "GOOD" : "BAD");
-	}
-	return 0;
+    scanf("%d", &N);
+    rep(i, 0, N) ps[i].read();
+    vector<P> qs = convex_hull(ps, N);
+    int n = qs.size(); if (n) qs.push_back(qs[0]);
+    rep(i, 0, n) angle[i] = atan(qs[i + 1] - qs[i]);
+    sort(angle, angle + n);
+    while (p.read()) {
+        q.read();
+        if (!n) { puts("GOOD"); continue;}
+        int i = upper_bound(angle, angle + n, atan(q - p)) - angle;
+        int j = upper_bound(angle, angle + n, atan(p - q)) - angle;
+        puts((q - p).det(qs[i] - p) * (q - p).det(qs[j] - p) > 0? "GOOD" : "BAD");
+    }
+    return 0;
 }

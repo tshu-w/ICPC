@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -49,26 +49,26 @@ char s[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d%d", &N, &NC)) {
-		scanf("%s", s);
-		memset(c, 0, sizeof c);
-		memset(hsh, 0, sizeof hsh);
-		len = strlen(s);
-		for (int i = 0, j = 0; i < len; ++i)
-			if (!c[s[i]]) c[s[i]] = j++;
+    while (~scanf("%d%d", &N, &NC)) {
+        scanf("%s", s);
+        memset(c, 0, sizeof c);
+        memset(hsh, 0, sizeof hsh);
+        len = strlen(s);
+        for (int i = 0, j = 0; i < len; ++i)
+            if (!c[s[i]]) c[s[i]] = j++;
 
-		int t = 1, hs = 0, cnt = 0;
-		for (int i = 0; i < N; ++i) t *= NC;
+        int t = 1, hs = 0, cnt = 0;
+        for (int i = 0; i < N; ++i) t *= NC;
 
-		for (int i = 0; i < N; ++i) hs = hs * NC + c[s[i]];
-		for (int i = 0; i + N <= len; ++i) {
-			if (!hsh[hs]) {
-				hsh[hs] = 1;
-				++cnt;
-			}
-			if (i + N < len) hs = hs * NC + c[s[i + N]] - c[s[i]] * t;
-		}
-		printf("%d\n", cnt);
-	}
-	return 0;
+        for (int i = 0; i < N; ++i) hs = hs * NC + c[s[i]];
+        for (int i = 0; i + N <= len; ++i) {
+            if (!hsh[hs]) {
+                hsh[hs] = 1;
+                ++cnt;
+            }
+            if (i + N < len) hs = hs * NC + c[s[i + N]] - c[s[i]] * t;
+        }
+        printf("%d\n", cnt);
+    }
+    return 0;
 }

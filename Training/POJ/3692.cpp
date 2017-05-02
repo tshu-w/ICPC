@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -54,42 +54,42 @@ int match[MAX_V];
 bool used[MAX_V], mp[MAX_V][MAX_V];
 
 void add_edge(int v, int u) {
-	Graph[u].push_back(v); Graph[v].push_back(u);
+    Graph[u].push_back(v); Graph[v].push_back(u);
 }
 bool dfs(int v) {
-	used[v] = true;
-	rep(i, 0, Graph[v].size()) {
-		int u = Graph[v][i], w = match[u];
-		if (w < 0 || (!used[w] && dfs(w))) {
-			match[v] = u; match[u] = v;
-			return true;
-		}
-	}
-	return false;
+    used[v] = true;
+    rep(i, 0, Graph[v].size()) {
+        int u = Graph[v][i], w = match[u];
+        if (w < 0 || (!used[w] && dfs(w))) {
+            match[v] = u; match[u] = v;
+            return true;
+        }
+    }
+    return false;
 }
 int bipartite_match() {
-	int res = 0;
-	memset(match, -1, sizeof match);
-	rep(v, 0, V) if (match[v] < 0) {
-		memset(used, false, sizeof used);
-		if (dfs(v)) ++res;
-	}
-	return res;
+    int res = 0;
+    memset(match, -1, sizeof match);
+    rep(v, 0, V) if (match[v] < 0) {
+        memset(used, false, sizeof used);
+        if (dfs(v)) ++res;
+    }
+    return res;
 }
 
 int main(int argc, char const *argv[])
 {
-	while (scanf("%d%d%d", &G, &B, &E) && G + B + E) {
-		V = G + B;
-		int g, b;
-		memset(mp, 0, sizeof mp);
-		rep(i, 0, E) {
-			scanf("%d%d", &g, &b); --g, --b;
-			mp[g][b + G] = mp[b + G][g] = true;
-		}
-		rep(i, 0, V) Graph[i].clear();
-		rep(i, 0, G) rep(j, G, V) if (!mp[i][j]) add_edge(i, j);
-		printf("Case %d: %d\n", ++t, V - bipartite_match());
-	}
-	return 0;
+    while (scanf("%d%d%d", &G, &B, &E) && G + B + E) {
+        V = G + B;
+        int g, b;
+        memset(mp, 0, sizeof mp);
+        rep(i, 0, E) {
+            scanf("%d%d", &g, &b); --g, --b;
+            mp[g][b + G] = mp[b + G][g] = true;
+        }
+        rep(i, 0, V) Graph[i].clear();
+        rep(i, 0, G) rep(j, G, V) if (!mp[i][j]) add_edge(i, j);
+        printf("Case %d: %d\n", ++t, V - bipartite_match());
+    }
+    return 0;
 }

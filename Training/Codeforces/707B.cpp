@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -30,22 +30,22 @@ vector<pair<int, Pii> > es;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d%d", &N, &M, &K);
-	for (int i = 0, u, v, l; i < M; ++i) {
-		scanf("%d%d%d", &u, &v, &l);
-		es.emplace_back(l, Pii(u, v));
-	}
-	for (int i = 0, a; i < K; ++i) {
-		scanf("%d", &a);
-		flag[a] = true;
-	}
-	sort(es.begin(), es.end());
-	for (int i = 0; i < M; ++i)
-		if (flag[es[i].second.first] ^ flag[es[i].second.second]) {
-			ans = min(ans, es[i].first);
-		}
-	if (ans == INF)
-		printf("-1\n");
-	else printf("%d\n", ans);
-	return 0;
+    scanf("%d%d%d", &N, &M, &K);
+    for (int i = 0, u, v, l; i < M; ++i) {
+        scanf("%d%d%d", &u, &v, &l);
+        es.emplace_back(l, Pii(u, v));
+    }
+    for (int i = 0, a; i < K; ++i) {
+        scanf("%d", &a);
+        flag[a] = true;
+    }
+    sort(es.begin(), es.end());
+    for (int i = 0; i < M; ++i)
+        if (flag[es[i].second.first] ^ flag[es[i].second.second]) {
+            ans = min(ans, es[i].first);
+        }
+    if (ans == INF)
+        printf("-1\n");
+    else printf("%d\n", ans);
+    return 0;
 }

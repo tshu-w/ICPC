@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -53,41 +53,41 @@ int n;
 double x[MAX_N], y[MAX_N], r[MAX_N];
 
 bool inside(int i, int j) {
-	double dx = x[i] - x[j], dy = y[i] - y[j];
-	return sqr(dx) + sqr(dy) <= sqr(r[j]) + sqr(r[i]) - 2 * r[i] * r[j];
+    double dx = x[i] - x[j], dy = y[i] - y[j];
+    return sqr(dx) + sqr(dy) <= sqr(r[j]) + sqr(r[i]) - 2 * r[i] * r[j];
 }
 
 void solve() {
-	vector<Pdi > events;
-	rep(i, 0, n) {
-		events.push_back(Pdi(x[i] - r[i], i));
-		events.push_back(Pdi(x[i] + r[i], i + n));
-	}
-	sort(events.begin(), events.end());
+    vector<Pdi > events;
+    rep(i, 0, n) {
+        events.push_back(Pdi(x[i] - r[i], i));
+        events.push_back(Pdi(x[i] + r[i], i + n));
+    }
+    sort(events.begin(), events.end());
 
-	set<Pdi > outers;
-	vector<int> res;
-	rep(i, 0, events.size()) {
-		int id = events[i].second % n;
-		if (events[i].second < n) {
-			set<Pdi>::iterator it = outers.lower_bound(Pdi(y[id], id));
-			if (it != outers.end() && inside(id, it->second)) continue;
-			if (it != outers.begin() && inside(id, (--it)->second)) continue;
-			res.push_back(id);
-			outers.insert(Pdi(y[id], id));
-		} else outers.erase(Pdi(y[id], id));
-	}
-	sort(res.begin(), res.end());
-	printf("%d\n", (int)res.size());
-	rep(i, 0, res.size())
-		printf("%d%c", res[i] + 1, i + 1 == res.size() ? '\n' : ' ');
+    set<Pdi > outers;
+    vector<int> res;
+    rep(i, 0, events.size()) {
+        int id = events[i].second % n;
+        if (events[i].second < n) {
+            set<Pdi>::iterator it = outers.lower_bound(Pdi(y[id], id));
+            if (it != outers.end() && inside(id, it->second)) continue;
+            if (it != outers.begin() && inside(id, (--it)->second)) continue;
+            res.push_back(id);
+            outers.insert(Pdi(y[id], id));
+        } else outers.erase(Pdi(y[id], id));
+    }
+    sort(res.begin(), res.end());
+    printf("%d\n", (int)res.size());
+    rep(i, 0, res.size())
+        printf("%d%c", res[i] + 1, i + 1 == res.size() ? '\n' : ' ');
 }
 
 int main(int argc, char const *argv[])
 {
-	while(~scanf("%d", &n)) {
-		rep(i, 0, n) scanf("%lf%lf%lf", r + i, x + i, y + i);
-		solve();
-	}
-	return 0;
+    while(~scanf("%d", &n)) {
+        rep(i, 0, n) scanf("%lf%lf%lf", r + i, x + i, y + i);
+        solve();
+    }
+    return 0;
 }

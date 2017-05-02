@@ -35,20 +35,20 @@ const int MAX_N = 1000;
 
 int main(int argc, char const *argv[])
 {
-	int t, n, x[MAX_N], y[MAX_N], cases = 0;
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%d", &n);
-		for (int i = 0; i < n; ++i)
-			scanf("%d", &x[i]);
-		for (int i = 0; i < n; ++i)
-			scanf("%d", &y[i]);
-		sort(x, x + n);
-		sort(y, y + n);
-		LL ans = 0LL;
-		for (int i = 0; i < n; ++i) 
-			ans += (LL)x[i] * y[n - i - 1];
-		printf("Case #%d: %lld\n", ++cases, ans);
-	}
-	return 0;
+    int t, n, x[MAX_N], y[MAX_N], cases = 0;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d", &n);
+        for (int i = 0; i < n; ++i)
+            scanf("%d", &x[i]);
+        for (int i = 0; i < n; ++i)
+            scanf("%d", &y[i]);
+        sort(x, x + n);
+        sort(y, y + n);
+        LL ans = 0LL;
+        for (int i = 0; i < n; ++i) 
+            ans += (LL)x[i] * y[n - i - 1];
+        printf("Case #%d: %lld\n", ++cases, ans);
+    }
+    return 0;
 }

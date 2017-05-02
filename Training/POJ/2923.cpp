@@ -92,6 +92,6 @@ int main(int argc, char const *argv[])
                 if (!(j & v[i]) && dp[j] != INF)
                     dp[j | v[i]] = min(dp[j] + 1, dp[j | v[i]]);
         printf("Scenario #%d:\n%d\n\n", ++cases, dp[(1 << N) - 1]);
-    }	
+    }    
     return 0;
 }

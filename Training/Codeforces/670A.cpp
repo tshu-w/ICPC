@@ -18,18 +18,18 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int n, imax, imin;
-	cin >> n;
-	imax = imin = n / 7 * 2;
-	n  = n % 7;
-	if (n <= 2) {
-		imax += n;
-	}
-	else {
-		imax += 2;
-		if (n >= 6)
-			imin += 7 - n;
-	}
-	cout << imin << " " << imax << endl;
-	return 0;
+    int n, imax, imin;
+    cin >> n;
+    imax = imin = n / 7 * 2;
+    n  = n % 7;
+    if (n <= 2) {
+        imax += n;
+    }
+    else {
+        imax += 2;
+        if (n >= 6)
+            imin += 7 - n;
+    }
+    cout << imin << " " << imax << endl;
+    return 0;
 }

@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -43,20 +43,20 @@ ll mod_pow(ll x, ll n, ll mod) {
 
 int main(int argc, char const *argv[])
 {
-	ll ans = 1;
-	fact[0] = 1;
-	for (int i = 1; i < MAX_N; ++i)
-		fact[i] = fact[i - 1] * i % MOD;
-	cin >> K;
-	for (int i = 0; i < K; ++i) {
-		cin >> C[i];
-		sum += C[i];
-	}
-	for (int i = K - 1; i >= 0; --i) {
-		ans *= fact[sum - 1] * mod_pow(fact[C[i] - 1] * fact[sum - C[i]] % MOD, MOD - 2, MOD) % MOD;
-		ans %= MOD;
-		sum -= C[i];
-	}
-	cout << ans << endl;
-	return 0;
+    ll ans = 1;
+    fact[0] = 1;
+    for (int i = 1; i < MAX_N; ++i)
+        fact[i] = fact[i - 1] * i % MOD;
+    cin >> K;
+    for (int i = 0; i < K; ++i) {
+        cin >> C[i];
+        sum += C[i];
+    }
+    for (int i = K - 1; i >= 0; --i) {
+        ans *= fact[sum - 1] * mod_pow(fact[C[i] - 1] * fact[sum - C[i]] % MOD, MOD - 2, MOD) % MOD;
+        ans %= MOD;
+        sum -= C[i];
+    }
+    cout << ans << endl;
+    return 0;
 }

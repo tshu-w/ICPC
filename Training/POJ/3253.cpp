@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -50,21 +50,21 @@ int N;
 priority_queue<int, vector<int>, greater<int> > q;
 
 void solve() {
-	ll ans = 0;
-	while (q.size() > 1) {
-		int t = 0;
-		t += q.top(); q.pop();
-		t += q.top(); q.pop();  
-		q.push(t);
-		ans += t;
-	}
-	cout << ans << endl;
+    ll ans = 0;
+    while (q.size() > 1) {
+        int t = 0;
+        t += q.top(); q.pop();
+        t += q.top(); q.pop();  
+        q.push(t);
+        ans += t;
+    }
+    cout << ans << endl;
 }
 int main(int argc, char const *argv[])
 {
-	cin >> N;
-	for (int i = 0, x; i < N; ++i)
-		cin >> x, q.push(x);	
-	solve();
-	return 0;
+    cin >> N;
+    for (int i = 0, x; i < N; ++i)
+        cin >> x, q.push(x);    
+    solve();
+    return 0;
 }

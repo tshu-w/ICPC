@@ -20,23 +20,23 @@ const int dy[] = {1, 0, -1, 0};
 class Cross
 {
 public:
-	string exist(vector <string> board) {
-		bool flag = false;
-		rep(i, 1, board.size())
-			rep(j, 1, board[i].size()) if (board[i][j] == '#') {
-				bool f = true;
-				rep(d, 0, 4) {
-					int x = i + dx[d], y = j + dy[d];
-					if (board[x][y] != '#') f = false;
-				}
-				flag |= f;
-			}
-		return flag? "Exist" : "Does not exist";
-	}
+    string exist(vector <string> board) {
+        bool flag = false;
+        rep(i, 1, board.size())
+            rep(j, 1, board[i].size()) if (board[i][j] == '#') {
+                bool f = true;
+                rep(d, 0, 4) {
+                    int x = i + dx[d], y = j + dy[d];
+                    if (board[x][y] != '#') f = false;
+                }
+                flag |= f;
+            }
+        return flag? "Exist" : "Does not exist";
+    }
 };
 
 int main(int argc, char const *argv[])
 {
-	
-	return 0;
+    
+    return 0;
 }

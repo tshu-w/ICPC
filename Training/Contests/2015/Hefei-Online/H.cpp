@@ -17,36 +17,36 @@ template <typename T>
 inline T sqr(T a) { return a * a;};
 
 int cnt(ll n) {
-	int res = 0;
-	while (n) {
-		if (n & 1) ++res;
-		n >>= 1;
-	}
-	return res;
+    int res = 0;
+    while (n) {
+        if (n & 1) ++res;
+        n >>= 1;
+    }
+    return res;
 }
 int main(int argc, char const *argv[])
 {
-	int t, tt = 0, l, r;
-	ll d;
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%lld%d%d", &d, &l, &r);
-		++d;
-		while (true) {
-			int n = cnt(d);
-			if (l <= n && n <= r)
-				break;
-			if (n < l) {
-				int x = 0;
-				while (d & (1ll << x)) ++x;
-				d |= 1ll << x;
-			} else {
-				int x = 0;
-				while (!(d & (1ll << x))) ++x;
-				d += 1ll << x;
-			}
-		}
-		printf("Case #%d: %lld\n", ++tt, d);
-	}
-	return 0;
+    int t, tt = 0, l, r;
+    ll d;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%lld%d%d", &d, &l, &r);
+        ++d;
+        while (true) {
+            int n = cnt(d);
+            if (l <= n && n <= r)
+                break;
+            if (n < l) {
+                int x = 0;
+                while (d & (1ll << x)) ++x;
+                d |= 1ll << x;
+            } else {
+                int x = 0;
+                while (!(d & (1ll << x))) ++x;
+                d += 1ll << x;
+            }
+        }
+        printf("Case #%d: %lld\n", ++tt, d);
+    }
+    return 0;
 }

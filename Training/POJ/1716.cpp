@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -75,20 +75,20 @@ void spfa(int s) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	V = 0; s = INF;
-	for (int i = 0, a, b; i < N; ++i) {
-		scanf("%d%d", &a, &b);
-		G[b + 1].push_back(edge{b + 1, a, -2});
-		V = max(V, b + 1);
+    scanf("%d", &N);
+    V = 0; s = INF;
+    for (int i = 0, a, b; i < N; ++i) {
+        scanf("%d%d", &a, &b);
+        G[b + 1].push_back(edge{b + 1, a, -2});
+        V = max(V, b + 1);
         s = min(s, a);
-	}
+    }
     ++V;
-	for (int i = 0; i + 1 < V; ++i) {
-		G[i].push_back(edge{i, i + 1, 1});
+    for (int i = 0; i + 1 < V; ++i) {
+        G[i].push_back(edge{i, i + 1, 1});
         G[i + 1].push_back(edge{i + 1, i, 0});
-	}
-	spfa(V - 1);
-	printf("%d\n", dist[V - 1] - dist[s]);
-	return 0;
+    }
+    spfa(V - 1);
+    printf("%d\n", dist[V - 1] - dist[s]);
+    return 0;
 }

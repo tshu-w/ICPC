@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -28,15 +28,15 @@ int N, A[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	for (int i = 0; i < N; ++i)
-		scanf("%d", A + i);
-	int ans = 1;
-	for (int i = 0; i < N; ++i)	{
-		if (A[i] & 1)
-			ans ^= 0;
-		else ans ^= 1;
-		printf("%d\n", ans + 1);
-	}
-	return 0;
+    scanf("%d", &N);
+    for (int i = 0; i < N; ++i)
+        scanf("%d", A + i);
+    int ans = 1;
+    for (int i = 0; i < N; ++i)    {
+        if (A[i] & 1)
+            ans ^= 0;
+        else ans ^= 1;
+        printf("%d\n", ans + 1);
+    }
+    return 0;
 }

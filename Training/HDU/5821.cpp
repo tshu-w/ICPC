@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -29,32 +29,32 @@ bool vis[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%d%d", &N, &M);
-		bool flag = true;
-		for (int i = 0; i < N; ++i)
-			scanf("%d", A + i);
-		for (int i = 0; i < N; ++i)
-			scanf("%d", B + i);
-		memset(vis, false, sizeof vis);
-		for (int i = 0; i < N; ++i)
-			for (int j = 0; j < N; ++j)
-				if (!vis[j] && A[i] == B[j]) {
-					// cout << i << " " << j << endl;
-					vis[j] = true;
-					C[i] = j;
-					break;
-				}
-		for (int i = 0; i < N; ++i)
-			flag &= vis[i];
-		for (int i = 0, l, r; i < M; ++i) {
-			scanf("%d%d", &l, &r); --l; --r;
-			if (flag) sort(C + l, C + r + 1);
-		}
-		for (int i = 0; flag && i < N; ++i)
-			if (C[i] != i) flag = false;
-		printf("%s\n", flag ? "Yes" : "No");
-	}	
-	return 0;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d%d", &N, &M);
+        bool flag = true;
+        for (int i = 0; i < N; ++i)
+            scanf("%d", A + i);
+        for (int i = 0; i < N; ++i)
+            scanf("%d", B + i);
+        memset(vis, false, sizeof vis);
+        for (int i = 0; i < N; ++i)
+            for (int j = 0; j < N; ++j)
+                if (!vis[j] && A[i] == B[j]) {
+                    // cout << i << " " << j << endl;
+                    vis[j] = true;
+                    C[i] = j;
+                    break;
+                }
+        for (int i = 0; i < N; ++i)
+            flag &= vis[i];
+        for (int i = 0, l, r; i < M; ++i) {
+            scanf("%d%d", &l, &r); --l; --r;
+            if (flag) sort(C + l, C + r + 1);
+        }
+        for (int i = 0; flag && i < N; ++i)
+            if (C[i] != i) flag = false;
+        printf("%s\n", flag ? "Yes" : "No");
+    }    
+    return 0;
 }

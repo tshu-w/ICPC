@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -53,41 +53,41 @@ int V, match[MAX_V];
 bool used[MAX_V];
 
 void add_edge(int v, int u) {
-	G[v].push_back(u); G[u].push_back(v);
+    G[v].push_back(u); G[u].push_back(v);
 }
 bool dfs(int v) {
-	used[v] = true;
-	rep(i, 0, G[v].size()) {
-		int u = G[v][i], w = match[u];
-		if (w < 0 || (!used[w] && dfs(w))) {
-			match[u] = v;
-			match[v] = u;
-			return true;
-		}
-	}
-	return false;
+    used[v] = true;
+    rep(i, 0, G[v].size()) {
+        int u = G[v][i], w = match[u];
+        if (w < 0 || (!used[w] && dfs(w))) {
+            match[u] = v;
+            match[v] = u;
+            return true;
+        }
+    }
+    return false;
 }
 int bipartite_match() {
-	int res = 0;
-	memset(match, -1, sizeof match);
-	rep(v, 0, V)
-		if (match[v] < 0) {
-			memset(used, false, sizeof used);
-			if (dfs(v)) ++res;
-		}
-	return res;
+    int res = 0;
+    memset(match, -1, sizeof match);
+    rep(v, 0, V)
+        if (match[v] < 0) {
+            memset(used, false, sizeof used);
+            if (dfs(v)) ++res;
+        }
+    return res;
 }
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &V)) {
-		rep(i, 0, V) G[i].clear();
-		rep(i, 0, V) {
-			int v, u, k;
-			scanf("%d: (%d)", &v, &k);
-			rep(i, 0, k) scanf("%d", &u), add_edge(v, u);
-		}
-		printf("%d\n", V - bipartite_match());
-	}
-	return 0;
+    while (~scanf("%d", &V)) {
+        rep(i, 0, V) G[i].clear();
+        rep(i, 0, V) {
+            int v, u, k;
+            scanf("%d: (%d)", &v, &k);
+            rep(i, 0, k) scanf("%d", &u), add_edge(v, u);
+        }
+        printf("%d\n", V - bipartite_match());
+    }
+    return 0;
 }

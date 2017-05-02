@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -51,56 +51,56 @@ const int MAX_N = 1e5 + 10;
 
 struct P
 {
-	double x, y;
-	void read() { scanf("%lf%lf", &x, &y); }
-	void write() { printf("(%lf, %lf)\n", x, y);}
-	P(double x = 0, double y = 0) : x(x), y(y) {}
-	P operator + (P p) { return P(x + p.x, y + p.y); }
-	P operator - (P p) { return P(x - p.x, y - p.y); }
-	double dot(P p) { return x * p.x + y * p.y; }
-	double det(P p) { return x * p.y - y * p.x; }
-	bool operator < (const P &p) const {
-		return (x == p.x)? y < p.y : x < p.x;
-	}
+    double x, y;
+    void read() { scanf("%lf%lf", &x, &y); }
+    void write() { printf("(%lf, %lf)\n", x, y);}
+    P(double x = 0, double y = 0) : x(x), y(y) {}
+    P operator + (P p) { return P(x + p.x, y + p.y); }
+    P operator - (P p) { return P(x - p.x, y - p.y); }
+    double dot(P p) { return x * p.x + y * p.y; }
+    double det(P p) { return x * p.y - y * p.x; }
+    bool operator < (const P &p) const {
+        return (x == p.x)? y < p.y : x < p.x;
+    }
 }ps[MAX_N];
 
 int N;
 
 int convex_hull(P p[], int n) {
-	sort(p, p + n);
-	vector<P> tmp(2 * n);
-	int k = 0;
-	rep(i, 0, n) {
-		while (k > 1 && (tmp[k - 1] - tmp[k - 2]).det(p[i] - tmp[k - 1]) <= 0) --k;
-		tmp[k++] = ps[i];
-	}
-	int t = k;
-	irep(i, n - 1, 0) {
-		while (k > t && (tmp[k - 1] - tmp[k - 2]).det(p[i] - tmp[k - 1]) <= 0) --k;
-		tmp[k++] = ps[i];
-	}
-	rep(i, 0, k - 1) p[i] = tmp[i]; p[k - 1] = p[0];
-	return k - 1;
+    sort(p, p + n);
+    vector<P> tmp(2 * n);
+    int k = 0;
+    rep(i, 0, n) {
+        while (k > 1 && (tmp[k - 1] - tmp[k - 2]).det(p[i] - tmp[k - 1]) <= 0) --k;
+        tmp[k++] = ps[i];
+    }
+    int t = k;
+    irep(i, n - 1, 0) {
+        while (k > t && (tmp[k - 1] - tmp[k - 2]).det(p[i] - tmp[k - 1]) <= 0) --k;
+        tmp[k++] = ps[i];
+    }
+    rep(i, 0, k - 1) p[i] = tmp[i]; p[k - 1] = p[0];
+    return k - 1;
 }
 
 void solve() {
-	N = convex_hull(ps, N);
-	double ans = 0;
-	rep(i, 0, N) {
-		int k = 2;
-		rep(j, i + 1, N) {
-			while ((ps[j] - ps[i]).det(ps[k] - ps[i]) < (ps[j] - ps[i]).det(ps[k + 1] - ps[i])) k = (k + 1) % N;
-			ans = max(ans, (ps[j] - ps[i]).det(ps[k] - ps[i]) / 2.);
-		}
-	}
-	printf("%.2f\n", ans);
+    N = convex_hull(ps, N);
+    double ans = 0;
+    rep(i, 0, N) {
+        int k = 2;
+        rep(j, i + 1, N) {
+            while ((ps[j] - ps[i]).det(ps[k] - ps[i]) < (ps[j] - ps[i]).det(ps[k + 1] - ps[i])) k = (k + 1) % N;
+            ans = max(ans, (ps[j] - ps[i]).det(ps[k] - ps[i]) / 2.);
+        }
+    }
+    printf("%.2f\n", ans);
 }
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &N) && N > 0) {
-		rep(i, 0, N) ps[i].read();
-		solve();
-	}
-	return 0;
+    while (~scanf("%d", &N) && N > 0) {
+        rep(i, 0, N) ps[i].read();
+        solve();
+    }
+    return 0;
 }

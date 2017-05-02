@@ -55,10 +55,10 @@ ll cal(vector<int> &v) {
     for (int i = 0; i < v.size(); ++i)
         M *= P[v[i]];
     for (int i = 0; i < v.size(); ++i) {
-    	ll Mi, Ti, y;
-    	Mi = M / P[v[i]];
-    	Ti = mod_inverse(Mi, P[v[i]]);
-    	res = (res + A[v[i]] * Mi * Ti) % M;
+        ll Mi, Ti, y;
+        Mi = M / P[v[i]];
+        Ti = mod_inverse(Mi, P[v[i]]);
+        res = (res + A[v[i]] * Mi * Ti) % M;
     }
     return count(X, Y, M, res);
 }

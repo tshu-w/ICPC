@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -31,32 +31,32 @@ multiset<ll> sum;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &n);
-	for (int i = 0; i < n; ++i) {
-		scanf("%I64d", A + i);
-		s += A[i];
-		ps[i + 1] = ps[i] + A[i];
-	}
-	sum.insert(s);
-	qu.insert(Pii(n, 0));
-	for (int i = 0, p; i < n; ++i) {
-		scanf("%d", &p); --p;
-		auto it = qu.upper_bound(Pii(p, 0));
-		// cout << it->second << " " << it->first << endl;
-		ll tmp = ps[it->first] - ps[it->second];
-		// cout << "tmp " << tmp << endl;
-		sum.erase(sum.lower_bound(tmp));
+    scanf("%d", &n);
+    for (int i = 0; i < n; ++i) {
+        scanf("%I64d", A + i);
+        s += A[i];
+        ps[i + 1] = ps[i] + A[i];
+    }
+    sum.insert(s);
+    qu.insert(Pii(n, 0));
+    for (int i = 0, p; i < n; ++i) {
+        scanf("%d", &p); --p;
+        auto it = qu.upper_bound(Pii(p, 0));
+        // cout << it->second << " " << it->first << endl;
+        ll tmp = ps[it->first] - ps[it->second];
+        // cout << "tmp " << tmp << endl;
+        sum.erase(sum.lower_bound(tmp));
 
-		tmp = ps[p] - ps[it->second];
-		// cout << "tmp " << tmp << endl;
-		sum.insert(tmp); qu.insert(Pii(p, it->second));
+        tmp = ps[p] - ps[it->second];
+        // cout << "tmp " << tmp << endl;
+        sum.insert(tmp); qu.insert(Pii(p, it->second));
 
-		tmp = ps[it->first] - ps[p + 1];
-		// cout << "tmp " << tmp << endl;
-		sum.insert(tmp); qu.insert(Pii(it->first, p + 1));
+        tmp = ps[it->first] - ps[p + 1];
+        // cout << "tmp " << tmp << endl;
+        sum.insert(tmp); qu.insert(Pii(it->first, p + 1));
 
-		qu.erase(it);
-		printf("%I64d\n", *sum.rbegin());
-	}
-	return 0;
+        qu.erase(it);
+        printf("%I64d\n", *sum.rbegin());
+    }
+    return 0;
 }

@@ -33,28 +33,28 @@ int t, n, dir[MAX_N], f[MAX_N], k;
 string s;
 
 int cal(int k) {
-	memset(f, 0, sizeof f);
-	int sum = 0, res = 0;
+    memset(f, 0, sizeof f);
+    int sum = 0, res = 0;
 
-	for (int i = 0; i + k <= n; ++i) {
-		if ((dir[i] + sum) % 2 != 0) {
-			++res;
-			f[i] = 1;
-		}
-		sum += f[i];
-		if (i - k + 1 >= 0) 
-			sum -= f[i - k + 1];
-	}	
+    for (int i = 0; i + k <= n; ++i) {
+        if ((dir[i] + sum) % 2 != 0) {
+            ++res;
+            f[i] = 1;
+        }
+        sum += f[i];
+        if (i - k + 1 >= 0) 
+            sum -= f[i - k + 1];
+    }    
 
-	for (int i = n - k + 1; i < n; ++i) {
-		if ((dir[i] + sum) % 2 != 0) {
-			return -1;
-		}
-		if (i - k + 1 >= 0) 
-			sum -= f[i - k + 1];
-	}
+    for (int i = n - k + 1; i < n; ++i) {
+        if ((dir[i] + sum) % 2 != 0) {
+            return -1;
+        }
+        if (i - k + 1 >= 0) 
+            sum -= f[i - k + 1];
+    }
 
-	return res;
+    return res;
 }
 
 int main() {

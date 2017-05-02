@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -42,19 +42,19 @@ vector<ll> divisor(ll n) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%lld%lld%lld", &a, &b, &N); --a;
-		vector<ll> v = divisor(N);
-		ll ans = 0;
-		int len = v.size();
-		for (int i = 0; i < 1 << len; ++i) {
-			int mul = 1, cnt = 0;
-			for (int j = 0; j < len; ++j)
-				if (i >> j & 1) mul *= v[j], ++cnt;	
-			ans += ((b / mul) - (a / mul)) * (cnt & 1? -1 : 1);
-		}
-		printf("Case #%d: %lld\n", ++cs, ans);
-	}	
-	return 0;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%lld%lld%lld", &a, &b, &N); --a;
+        vector<ll> v = divisor(N);
+        ll ans = 0;
+        int len = v.size();
+        for (int i = 0; i < 1 << len; ++i) {
+            int mul = 1, cnt = 0;
+            for (int j = 0; j < len; ++j)
+                if (i >> j & 1) mul *= v[j], ++cnt;    
+            ans += ((b / mul) - (a / mul)) * (cnt & 1? -1 : 1);
+        }
+        printf("Case #%d: %lld\n", ++cs, ans);
+    }    
+    return 0;
 }

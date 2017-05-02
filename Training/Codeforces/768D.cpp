@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -55,14 +55,14 @@ double dp[MAX_N][MAX_M];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &k, &q);
-	dp[0][0] = 1;
-	rep(i, 1, MAX_M) rep(j, 1, k + 1) 
-		dp[j][i] = dp[j][i - 1] * (double) j / k + dp[j - 1][i - 1]* (double)(k - j + 1) / k;
-	rep(i, 0, q) {
-		scanf("%d", &p);
-		double d = (p - 1e-7) / 2000.;
-		printf("%d\n", (int)(lower_bound(dp[k], dp[k] + MAX_M, d) - dp[k]));
-	}
-	return 0;
+    scanf("%d%d", &k, &q);
+    dp[0][0] = 1;
+    rep(i, 1, MAX_M) rep(j, 1, k + 1) 
+        dp[j][i] = dp[j][i - 1] * (double) j / k + dp[j - 1][i - 1]* (double)(k - j + 1) / k;
+    rep(i, 0, q) {
+        scanf("%d", &p);
+        double d = (p - 1e-7) / 2000.;
+        printf("%d\n", (int)(lower_bound(dp[k], dp[k] + MAX_M, d) - dp[k]));
+    }
+    return 0;
 }

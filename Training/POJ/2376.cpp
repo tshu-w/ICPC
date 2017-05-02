@@ -22,10 +22,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -48,22 +48,22 @@ Pii C[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &N, &T);
-	for (int i = 0; i < N; ++i)
-		scanf("%d%d", &C[i].first, &C[i].second);
-	sort(C, C + N);
-	int s = 0, last = 0, cur = 0, ans = 0;
-	while (s < N) {
-		while (C[s].first <= last + 1) {
-			cur = max(cur, C[s].second);
-			++s;
-		}
-		if (last == cur) break;
-		last = cur;
-		++ans;
-	}
-	if (last >= T) 
-		printf("%d\n", ans);
-	else printf("-1\n");
-	return 0;
+    scanf("%d%d", &N, &T);
+    for (int i = 0; i < N; ++i)
+        scanf("%d%d", &C[i].first, &C[i].second);
+    sort(C, C + N);
+    int s = 0, last = 0, cur = 0, ans = 0;
+    while (s < N) {
+        while (C[s].first <= last + 1) {
+            cur = max(cur, C[s].second);
+            ++s;
+        }
+        if (last == cur) break;
+        last = cur;
+        ++ans;
+    }
+    if (last >= T) 
+        printf("%d\n", ans);
+    else printf("-1\n");
+    return 0;
 }

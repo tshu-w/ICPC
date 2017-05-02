@@ -33,8 +33,8 @@ int main(int argc, char const *argv[])
 {
     cin >> t;
     while (t--) {
-    	scanf("%s%s", a, b);
-    	al = strlen(a); bl = strlen(b);
+        scanf("%s%s", a, b);
+        al = strlen(a); bl = strlen(b);
         ull t = 1;
         for (int i = 0; i < bl; ++i) t *= B;
         
@@ -45,7 +45,7 @@ int main(int argc, char const *argv[])
         memset(dp, 0, sizeof dp); 
         fill(dp, dp + bl, 1);
         for (int i = 0; i + bl <= al; ++i) {
-        	dp[i + bl] = dp[i + bl - 1];
+            dp[i + bl] = dp[i + bl - 1];
             if (ah == bh) dp[i + bl] = (dp[i + bl] + dp[i]) % MOD;
             if (i + bl < al)
                 ah = ah * B + a[i + bl] - t * a[i];

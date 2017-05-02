@@ -117,19 +117,19 @@ void rebuild(int s) {
     memset(vis, false, sizeof vis);
     que.push(s); vis[s] = true;
     while (!que.empty()) {
-    	int v = que.front(); que.pop();
-    	// cout << v << endl;
-    	for (int i = 0; i < G2[v].size(); ++i) {
-    		int u = G2[v][i].to;
-    		if (dist[v] - dist[u] == 1) {
-    			add_edge(v, u, G2[v][i].cap);
-    			// cout << v << "->" << u << endl;
-				if (!vis[u]) {
-	    			que.push(u);
-	    			vis[u] = true;
-	    		}
-    		}
-    	}
+        int v = que.front(); que.pop();
+        // cout << v << endl;
+        for (int i = 0; i < G2[v].size(); ++i) {
+            int u = G2[v][i].to;
+            if (dist[v] - dist[u] == 1) {
+                add_edge(v, u, G2[v][i].cap);
+                // cout << v << "->" << u << endl;
+                if (!vis[u]) {
+                    que.push(u);
+                    vis[u] = true;
+                }
+            }
+        }
     }
 }
 
@@ -139,7 +139,7 @@ int main(void) {
     while (t--) {
         scanf("%d%d", &V, &E);
         for (int i = 0; i < MAX_V; ++i) {
-        	G[i].clear(); G2[i].clear();
+            G[i].clear(); G2[i].clear();
         }
         for (int i = 0, u, v, w; i < E; ++i) {
             scanf("%d%d%d", &u, &v, &w);
@@ -148,7 +148,7 @@ int main(void) {
         }
         spfa(V - 1);
         // for (int i = 0; i < V; ++i)
-        	// cout << dist[i] << endl;
+            // cout << dist[i] << endl;
         rebuild(0);
         // cout << endl;
         printf("%d\n", max_flow(0, V - 1)); 

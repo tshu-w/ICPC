@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -55,31 +55,31 @@ double X[MAX_N], Y[MAX_N], th[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	while (scanf("%d%d%d", &W, &H, &N), N) {
-		rep(i, 0, 2 * N) scanf("%lf%lf", X + i, Y + i);
-		X[2 * N] = W; Y[2 * N] = 0;
-		X[2 * N + 1] = W; Y[2 * N + 1] = H;
-		vector<double> v;
-		rep(i, 0, 2 * N + 2) rep(j, i + 1, 2 * N + 2) {
-			if (fabs(X[i] - X[j]) < EPS) continue;
-			double tmp = Y[i] - X[i] * (Y[i] - Y[j]) / (X[i] - X[j]);
-			if (tmp < 0 || tmp > H) continue;
-			v.push_back(tmp);
-		}
-		v.push_back(0); v.push_back(H);
-		sort(v.begin(), v.end());
-		double ret = 0;
-		rep(i, 0, v.size() - 1) {
-			if (v[i + 1] - v[i] < EPS) continue;
-			double mid = (v[i] + v[i + 1]) / 2;
-			rep(j, 0, 2 * N + 2) th[j] = atan2(Y[j] - mid, X[j]);
-			sort(th, th + 2 * N + 2);
-			double L = max(0., mid + W * tan(th[N]));
-			double R = min((double)H, mid + W * tan(th[N + 1]));
-			ret += max(0.0, R - L) * (v[i + 1] - v[i]);
-		}
-		printf("%.12f\n", ret / H / H);
-	}
-	return 0;
+    while (scanf("%d%d%d", &W, &H, &N), N) {
+        rep(i, 0, 2 * N) scanf("%lf%lf", X + i, Y + i);
+        X[2 * N] = W; Y[2 * N] = 0;
+        X[2 * N + 1] = W; Y[2 * N + 1] = H;
+        vector<double> v;
+        rep(i, 0, 2 * N + 2) rep(j, i + 1, 2 * N + 2) {
+            if (fabs(X[i] - X[j]) < EPS) continue;
+            double tmp = Y[i] - X[i] * (Y[i] - Y[j]) / (X[i] - X[j]);
+            if (tmp < 0 || tmp > H) continue;
+            v.push_back(tmp);
+        }
+        v.push_back(0); v.push_back(H);
+        sort(v.begin(), v.end());
+        double ret = 0;
+        rep(i, 0, v.size() - 1) {
+            if (v[i + 1] - v[i] < EPS) continue;
+            double mid = (v[i] + v[i + 1]) / 2;
+            rep(j, 0, 2 * N + 2) th[j] = atan2(Y[j] - mid, X[j]);
+            sort(th, th + 2 * N + 2);
+            double L = max(0., mid + W * tan(th[N]));
+            double R = min((double)H, mid + W * tan(th[N + 1]));
+            ret += max(0.0, R - L) * (v[i + 1] - v[i]);
+        }
+        printf("%.12f\n", ret / H / H);
+    }
+    return 0;
 }
 

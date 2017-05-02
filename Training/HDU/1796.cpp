@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -37,20 +37,20 @@ template<typename T> T lcm(T a, T b) {
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%lld%d", &N, &M)) {
-		--N; int k = 0;
-		for (int i = 0, x; i < M; ++i) {
-			scanf("%d", &x);
-			if (x) A[k++] = x;
-		}
-		ll ans = 0;
-		for (int i = 1; i < 1 << k; ++i) {
-			int mul = 1, cnt = 0;
-			for (int j = 0; j < k; ++j)
-				if (i >> j & 1) mul = lcm(mul, A[j]), ++cnt;
-			ans += (N / mul) * (cnt & 1? 1 : -1);
-		}
-		printf("%lld\n", ans);
-	}	
-	return 0;
+    while (~scanf("%lld%d", &N, &M)) {
+        --N; int k = 0;
+        for (int i = 0, x; i < M; ++i) {
+            scanf("%d", &x);
+            if (x) A[k++] = x;
+        }
+        ll ans = 0;
+        for (int i = 1; i < 1 << k; ++i) {
+            int mul = 1, cnt = 0;
+            for (int j = 0; j < k; ++j)
+                if (i >> j & 1) mul = lcm(mul, A[j]), ++cnt;
+            ans += (N / mul) * (cnt & 1? 1 : -1);
+        }
+        printf("%lld\n", ans);
+    }    
+    return 0;
 }

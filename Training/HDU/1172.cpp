@@ -76,6 +76,6 @@ int main(int argc, char const *argv[])
         for (int i = 0; i < N; ++i)
             scanf("%d%d%d", A + i, B + i, C + i);
         solve();
-    }	
+    }    
     return 0;
 }

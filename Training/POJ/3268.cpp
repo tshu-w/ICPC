@@ -22,10 +22,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -44,7 +44,7 @@ template <typename T>
 inline T sqr(T a) { return a * a;};
 
 struct edge {
-	int from, to, cost;
+    int from, to, cost;
 };
 vector<edge> G[MAX_V];
 int dist[MAX_V], d[MAX_V][MAX_V];
@@ -70,20 +70,20 @@ void dijkstra(int s) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d%d", &V, &E, &X); --X;	
-	for (int i = 0, v, u, x; i < E; ++i) {
-		scanf("%d%d%d", &v, &u, &x);
-		--v, --u;
-		G[v].push_back(edge{v, u, x});
-	}
-	for (int i = 0; i < V; ++i) {
-		dijkstra(i);
-		for (int j = 0; j < V; ++j)
-			d[i][j] = dist[j];
-	}
-	int ans = 0;
-	for (int i = 0; i < V; ++i)
-		ans = max(ans, d[i][X] + d[X][i]);
-	printf("%d\n", ans);
-	return 0;
+    scanf("%d%d%d", &V, &E, &X); --X;    
+    for (int i = 0, v, u, x; i < E; ++i) {
+        scanf("%d%d%d", &v, &u, &x);
+        --v, --u;
+        G[v].push_back(edge{v, u, x});
+    }
+    for (int i = 0; i < V; ++i) {
+        dijkstra(i);
+        for (int j = 0; j < V; ++j)
+            d[i][j] = dist[j];
+    }
+    int ans = 0;
+    for (int i = 0; i < V; ++i)
+        ans = max(ans, d[i][X] + d[X][i]);
+    printf("%d\n", ans);
+    return 0;
 }

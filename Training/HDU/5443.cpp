@@ -34,20 +34,20 @@ const double PI = acos(-1.0);
 
 int main(int argc, char const *argv[])
 {
-	int n, q, a[MAX_N], t;
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%d", &n);
-		for (int i = 1; i <= n; ++i) 
-			scanf("%d", &a[i]);
-		scanf("%d", &q);
-		for (int i = 0; i < q; ++i) {
-			int ans = 0, l, r;
-			scanf("%d %d", &l, &r);
-			for (int j = l; j <= r; ++j)
-				ans = max(a[j], ans);
-			printf("%d\n", ans);
-		}
-	}
-	return 0;
+    int n, q, a[MAX_N], t;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d", &n);
+        for (int i = 1; i <= n; ++i) 
+            scanf("%d", &a[i]);
+        scanf("%d", &q);
+        for (int i = 0; i < q; ++i) {
+            int ans = 0, l, r;
+            scanf("%d %d", &l, &r);
+            for (int j = l; j <= r; ++j)
+                ans = max(a[j], ans);
+            printf("%d\n", ans);
+        }
+    }
+    return 0;
 }

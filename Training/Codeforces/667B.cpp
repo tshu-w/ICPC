@@ -33,16 +33,16 @@ const int MAX_N = 100000 + 10;
 
 int main(int argc, char const *argv[])
 {
-	int l[MAX_N], n, z;
-	scanf("%d", &n);
-	for (int i = 0; i < n; ++i)
-		scanf("%d", &l[i]);
-	sort(l, l + n);
-	int ans = l[n - 1];
-	for (int i = n - 2; i >= 0; --i)
-		if (ans > 0) 
-			ans -= l[i];
-		else ans += l[i];
-	printf("%d\n", ans + 1);
-	return 0;
+    int l[MAX_N], n, z;
+    scanf("%d", &n);
+    for (int i = 0; i < n; ++i)
+        scanf("%d", &l[i]);
+    sort(l, l + n);
+    int ans = l[n - 1];
+    for (int i = n - 2; i >= 0; --i)
+        if (ans > 0) 
+            ans -= l[i];
+        else ans += l[i];
+    printf("%d\n", ans + 1);
+    return 0;
 }

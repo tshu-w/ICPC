@@ -21,17 +21,17 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int n, a[MAX_N];
-	cin >> n;
-	for (int i = 0; i < n; ++i)
-		cin >> a[i];
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n - i - 1; j++)
-			if (a[j + 1] < a[j]) {
-				int tmp = a[j];
-				a[j] = a[j + 1];
-				a[j + 1] = tmp;
-				cout << j + 1 << " " << j + 2 << endl;
-			}
-	return 0;
+    int n, a[MAX_N];
+    cin >> n;
+    for (int i = 0; i < n; ++i)
+        cin >> a[i];
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n - i - 1; j++)
+            if (a[j + 1] < a[j]) {
+                int tmp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = tmp;
+                cout << j + 1 << " " << j + 2 << endl;
+            }
+    return 0;
 }

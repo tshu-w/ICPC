@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -31,14 +31,14 @@ const int MAX_N = 1e5 + 10;
 
 int N, x;
 int f[3][6] = {
-	0, 1, 1, 2, 2, 0,
-	1, 0, 2, 1, 0, 2,
-	2, 2, 0, 0, 1, 1
+    0, 1, 1, 2, 2, 0,
+    1, 0, 2, 1, 0, 2,
+    2, 2, 0, 0, 1, 1
 };
 
 int main(int argc, char const *argv[])
 {
-	cin >> N >> x;
-	cout << f[x][N % 6] << endl;
-	return 0;
+    cin >> N >> x;
+    cout << f[x][N % 6] << endl;
+    return 0;
 }

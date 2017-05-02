@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -52,24 +52,24 @@ ll mod_pow(ll x, ll n, ll mod) {
 
 int main(int argc, char const *argv[])
 {
-	seive(MAX_N);
-	while(~scanf("%lld", &N) && N) {
-		if (isPrime[N]) {
-			printf("%lld is normal.\n",N); 
-		} else {
-			bool flag = true;
-			for (ll i  = 2LL; i < N; ++i) {
-				if (mod_pow(i, N, N) != i) {
-					flag = false;
-					break;
-				}
-			}
-			if (flag) 
-				printf("The number %lld is a Carmichael number.\n", N); 
-			else 
-				printf("%lld is normal.\n", N);
+    seive(MAX_N);
+    while(~scanf("%lld", &N) && N) {
+        if (isPrime[N]) {
+            printf("%lld is normal.\n",N); 
+        } else {
+            bool flag = true;
+            for (ll i  = 2LL; i < N; ++i) {
+                if (mod_pow(i, N, N) != i) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) 
+                printf("The number %lld is a Carmichael number.\n", N); 
+            else 
+                printf("%lld is normal.\n", N);
 
-		}	
-	}
-	return 0;
+        }    
+    }
+    return 0;
 }

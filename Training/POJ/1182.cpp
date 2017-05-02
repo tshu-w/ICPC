@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -75,13 +75,13 @@ void unite(int x, int y) {
     }
 }
 int main(int argc, char const *argv[])
-{	
-	cin >> N >> K;
-	init(3 * N);
+{    
+    cin >> N >> K;
+    init(3 * N);
 
-	int ans = 0;
-	for (int i = 0; i < K; ++i) {
-		int t, x, y;
+    int ans = 0;
+    for (int i = 0; i < K; ++i) {
+        int t, x, y;
         scanf("%d%d%d", &t, &x, &y);
         --x; --y;
         if (x >= N || y >= N || x < 0 || y < 0) {
@@ -105,7 +105,7 @@ int main(int argc, char const *argv[])
                 unite(x + 2 * N, y);
             }
         }
-	}
-	cout << ans << endl;
-	return 0;
+    }
+    cout << ans << endl;
+    return 0;
 }

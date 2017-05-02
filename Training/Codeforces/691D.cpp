@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -58,29 +58,29 @@ void unite(int x, int y) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &N, &M);
-	init(N);
-	for (int i = 0; i < N; ++i)
-		scanf("%d", A + i);
-	for (int i = 0, l, r; i < M; ++i) {
-		scanf("%d%d", &l, &r); --l; --r;
-		unite(l, r);
-	}
-	int cnt = 0;
-	for (int i = 0; i < N; ++i) 
-		if (m.count(find(i))) {
-			v[m[find(i)]].push_back(A[i]);
-		} else {
-			m[find(i)] = cnt++;
-			v.push_back(vector<int>{A[i]});
-		}
-	for (int i = 0; i < cnt; ++i) {
-		sort(v[i].begin(), v[i].end());
-		sz.push_back(v[i].size());
-	}
-	for (int i = 0; i < N; ++i) {
-		int mp = m[find(i)];
-		printf("%d%c", v[mp][--sz[mp]], i == N - 1? '\n' : ' ');
-	}
-	return 0;
+    scanf("%d%d", &N, &M);
+    init(N);
+    for (int i = 0; i < N; ++i)
+        scanf("%d", A + i);
+    for (int i = 0, l, r; i < M; ++i) {
+        scanf("%d%d", &l, &r); --l; --r;
+        unite(l, r);
+    }
+    int cnt = 0;
+    for (int i = 0; i < N; ++i) 
+        if (m.count(find(i))) {
+            v[m[find(i)]].push_back(A[i]);
+        } else {
+            m[find(i)] = cnt++;
+            v.push_back(vector<int>{A[i]});
+        }
+    for (int i = 0; i < cnt; ++i) {
+        sort(v[i].begin(), v[i].end());
+        sz.push_back(v[i].size());
+    }
+    for (int i = 0; i < N; ++i) {
+        int mp = m[find(i)];
+        printf("%d%c", v[mp][--sz[mp]], i == N - 1? '\n' : ' ');
+    }
+    return 0;
 }

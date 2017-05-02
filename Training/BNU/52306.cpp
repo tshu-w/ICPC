@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -28,26 +28,26 @@ int n, A[MAX_N];
 set<int> s;
 
 bool C(int m) {
-	int last = m % 10;
-	m /= 10;
-	while (m) {
-		if (m % 10 + 1 != last) return false;
-		last = m % 10;
-		m /= 10;
-	}
-	return true;
+    int last = m % 10;
+    m /= 10;
+    while (m) {
+        if (m % 10 + 1 != last) return false;
+        last = m % 10;
+        m /= 10;
+    }
+    return true;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &n);
-	for (int i = 0; i < n; ++i)
-		scanf("%d", A + i);
-	for (int i = 0; i < n; ++i)
-		for (int j = i + 1; j < n; ++j)
-			if (C(A[i] * A[j])) s.insert(A[i] * A[j]);
-	if (s.size())
-		printf("%d\n", *s.rbegin());
-	else printf("%d\n", -1);
-	return 0;
+    scanf("%d", &n);
+    for (int i = 0; i < n; ++i)
+        scanf("%d", A + i);
+    for (int i = 0; i < n; ++i)
+        for (int j = i + 1; j < n; ++j)
+            if (C(A[i] * A[j])) s.insert(A[i] * A[j]);
+    if (s.size())
+        printf("%d\n", *s.rbegin());
+    else printf("%d\n", -1);
+    return 0;
 }

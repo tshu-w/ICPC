@@ -13,11 +13,11 @@ const double PI = acos(-1.);
 
 int main(int argc, char const *argv[])
 {
-	ull n;
-	scanf("%llu", &n);
-	if (n % 3 == 0)
-		printf("%llu\n",  2 * n / 3);
-	else
-		printf("%llu\n", (n / 3) * 2 + 1);
-	return 0;
+    ull n;
+    scanf("%llu", &n);
+    if (n % 3 == 0)
+        printf("%llu\n",  2 * n / 3);
+    else
+        printf("%llu\n", (n / 3) * 2 + 1);
+    return 0;
 }

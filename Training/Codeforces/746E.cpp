@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -34,47 +34,47 @@ set<int> odd, even;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &N, &M);
-	rep(i, 0, N) {
-		scanf("%d", A + i);
-		if (A[i] & 1) { 
-			if (odd.size() < N / 2) odd.insert(A[i]);
-		}
-		else {
-			if (even.size() < N / 2) even.insert(A[i]);
-		}
-	}
-	N /= 2;
-	cnt = 2 * N - odd.size() - even.size();
-	for (int o = 1; o <= M && odd.size() < N; o += 2) 
-		odd.insert(o);
-	for (int e = 2; e <= M && even.size() < N; e += 2)
-		even.insert(e);
-	bool flag;
-	if (odd.size() == N && even.size() == N) flag = true;
-	else flag = false;
-	printf("%d\n", flag? cnt : -1);
-	if (flag) {
-		rep (i, 0, 2 * N) {
-			if (odd.find(A[i]) != odd.end()) {
-				ans[i] = A[i];
-				odd.erase(A[i]);
-			}
-			if (even.find(A[i]) != even.end()) {
-				ans[i] = A[i];
-				even.erase(A[i]);
-			}		
-		}
-		rep(i, 0, 2 * N) if (!ans[i]) {
-			if (odd.size()) {
-				auto it = odd.begin();
-				ans[i] = *it; odd.erase(it);
-			} else if (even.size()) {
-				auto it = even.begin();
-				ans[i] = *it; even.erase(it);
-			}
-		}
-		rep(i, 0, 2 * N) printf("%d%c", ans[i], " \n"[i + 1 == 2 * N]);
-	}
-	return 0;
+    scanf("%d%d", &N, &M);
+    rep(i, 0, N) {
+        scanf("%d", A + i);
+        if (A[i] & 1) { 
+            if (odd.size() < N / 2) odd.insert(A[i]);
+        }
+        else {
+            if (even.size() < N / 2) even.insert(A[i]);
+        }
+    }
+    N /= 2;
+    cnt = 2 * N - odd.size() - even.size();
+    for (int o = 1; o <= M && odd.size() < N; o += 2) 
+        odd.insert(o);
+    for (int e = 2; e <= M && even.size() < N; e += 2)
+        even.insert(e);
+    bool flag;
+    if (odd.size() == N && even.size() == N) flag = true;
+    else flag = false;
+    printf("%d\n", flag? cnt : -1);
+    if (flag) {
+        rep (i, 0, 2 * N) {
+            if (odd.find(A[i]) != odd.end()) {
+                ans[i] = A[i];
+                odd.erase(A[i]);
+            }
+            if (even.find(A[i]) != even.end()) {
+                ans[i] = A[i];
+                even.erase(A[i]);
+            }        
+        }
+        rep(i, 0, 2 * N) if (!ans[i]) {
+            if (odd.size()) {
+                auto it = odd.begin();
+                ans[i] = *it; odd.erase(it);
+            } else if (even.size()) {
+                auto it = even.begin();
+                ans[i] = *it; even.erase(it);
+            }
+        }
+        rep(i, 0, 2 * N) printf("%d%c", ans[i], " \n"[i + 1 == 2 * N]);
+    }
+    return 0;
 }

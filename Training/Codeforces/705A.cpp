@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -26,18 +26,18 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int n;
-	scanf("%d", &n);
-	cout << "I";
-	for (int i = 1; i <= n; ++i) {
-		if (i & 1) {
-			cout << " hate"; 
-		} else {
-			cout << " love";
-		}
-		if (i != n)
-			cout << " that I";
-	}
-	cout << " it" << endl;
-	return 0;
+    int n;
+    scanf("%d", &n);
+    cout << "I";
+    for (int i = 1; i <= n; ++i) {
+        if (i & 1) {
+            cout << " hate"; 
+        } else {
+            cout << " love";
+        }
+        if (i != n)
+            cout << " that I";
+    }
+    cout << " it" << endl;
+    return 0;
 }

@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -29,18 +29,18 @@ string test, pd;
 
 int main(int argc, char const *argv[])
 {
-	cin >> n >> k;
-	for (int i = 0; i < n; ++i) {
-		cin >> test;
-		cnt[test.size()]++;
-	}
-	cin >> pd;
-	for (int i = 1; i < pd.size(); ++i)
-		imin += cnt[i];
-	imax = imin + cnt[pd.size()];
-	++imin;
-	imin = imin + (imin - 1) / k * 5;
-	imax = imax + (imax - 1) / k * 5;
-	cout << imin << " " << imax << endl;
-	return 0;
+    cin >> n >> k;
+    for (int i = 0; i < n; ++i) {
+        cin >> test;
+        cnt[test.size()]++;
+    }
+    cin >> pd;
+    for (int i = 1; i < pd.size(); ++i)
+        imin += cnt[i];
+    imax = imin + cnt[pd.size()];
+    ++imin;
+    imin = imin + (imin - 1) / k * 5;
+    imax = imax + (imax - 1) / k * 5;
+    cout << imin << " " << imax << endl;
+    return 0;
 }

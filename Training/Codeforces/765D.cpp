@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -35,18 +35,18 @@ bool flag;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &n);
-	rep(i, 1, n + 1) scanf("%d", f + i);
-	flag = true;
-	rep(i, 1, n + 1) if (f[i] != f[f[i]]) { cout << -1 << endl; return 0;}
-	rep(i, 1, n + 1) if (i == f[i]) ++m;
-	printf("%d\n", m);
-	int k = 0;
-	rep(i, 1, n + 1) if (f[i] == i) g[i] = ++k;
-	rep(i, 1, n + 1) if (f[i] != i) g[i] = g[f[i]];
-	rep(i, 1, n + 1) printf("%d%c", g[i], " \n"[i == n]);
-	k = 0;
-	rep(i, 1, n + 1) if (f[i] == i) h[++k] = i;
-	rep(i, 1, m + 1) printf("%d%c", h[i], " \n"[i == m]);
-	return 0;
+    scanf("%d", &n);
+    rep(i, 1, n + 1) scanf("%d", f + i);
+    flag = true;
+    rep(i, 1, n + 1) if (f[i] != f[f[i]]) { cout << -1 << endl; return 0;}
+    rep(i, 1, n + 1) if (i == f[i]) ++m;
+    printf("%d\n", m);
+    int k = 0;
+    rep(i, 1, n + 1) if (f[i] == i) g[i] = ++k;
+    rep(i, 1, n + 1) if (f[i] != i) g[i] = g[f[i]];
+    rep(i, 1, n + 1) printf("%d%c", g[i], " \n"[i == n]);
+    k = 0;
+    rep(i, 1, n + 1) if (f[i] == i) h[++k] = i;
+    rep(i, 1, m + 1) printf("%d%c", h[i], " \n"[i == m]);
+    return 0;
 }

@@ -3,9 +3,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -32,10 +32,10 @@ string s;
 
 int main(int argc, char const *argv[])
 {
-	cin >> N >> a >> b; --a, --b;
-	cin >> s;
-	if (s[a] == s[b])
-		printf("0\n");
-	else printf("1\n");
-	return 0;
+    cin >> N >> a >> b; --a, --b;
+    cin >> s;
+    if (s[a] == s[b])
+        printf("0\n");
+    else printf("1\n");
+    return 0;
 }

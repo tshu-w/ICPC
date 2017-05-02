@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -32,18 +32,18 @@ const int MAX_N = 1e5 + 10;
 int N, A[MAX_N];
 
 bool f(int a, int b, int c) {
-	return ((a + b > c) && (a + c > b) && (b + c > a));
+    return ((a + b > c) && (a + c > b) && (b + c > a));
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	rep(i, 0, N) scanf("%d", A + i);
-	sort(A, A + N);
-	rep(i, 0, N - 2) if (f(A[i], A[i + 1], A[i + 2])) {
-		puts("YES");
-		return 0;
-	}
-	puts("NO");
-	return 0;
+    scanf("%d", &N);
+    rep(i, 0, N) scanf("%d", A + i);
+    sort(A, A + N);
+    rep(i, 0, N - 2) if (f(A[i], A[i + 1], A[i + 2])) {
+        puts("YES");
+        return 0;
+    }
+    puts("NO");
+    return 0;
 }

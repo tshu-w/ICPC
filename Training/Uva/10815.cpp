@@ -32,21 +32,21 @@ const int INF = INT_MAX;
 
 int main(int argc, char const *argv[])
 {
-	set<string> dict;
-	string line, word;
-	while(getline(cin, line)) {
-		for (int i = 0; i < line.size(); ++i)
-			if (isalpha(line[i]))
-				line[i] = tolower(line[i]);
-			else 
-				line[i] = ' ';
-		stringstream ss(line);
-		while (ss >> word) {
-			dict.insert(word);
-		}
-	}
-	set<string>::iterator it;
-	for (it = dict.begin(); it != dict.end(); ++it) 
-		cout << *it << endl;
-	return 0;
+    set<string> dict;
+    string line, word;
+    while(getline(cin, line)) {
+        for (int i = 0; i < line.size(); ++i)
+            if (isalpha(line[i]))
+                line[i] = tolower(line[i]);
+            else 
+                line[i] = ' ';
+        stringstream ss(line);
+        while (ss >> word) {
+            dict.insert(word);
+        }
+    }
+    set<string>::iterator it;
+    for (it = dict.begin(); it != dict.end(); ++it) 
+        cout << *it << endl;
+    return 0;
 }

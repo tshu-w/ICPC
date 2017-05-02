@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -49,13 +49,13 @@ ll ans = 0, imin, c, y;
 
 int main(int argc, char const *argv[])
 {
-	cin >> N >> S;
-	for (int i = 0; i < N; ++i) {
-		cin >> c >> y;
-		if (!i) imin = c;
-		else imin = min(imin + S, c);
-		ans += imin * y;
-	}
-	cout << ans << endl;
-	return 0;
+    cin >> N >> S;
+    for (int i = 0; i < N; ++i) {
+        cin >> c >> y;
+        if (!i) imin = c;
+        else imin = min(imin + S, c);
+        ans += imin * y;
+    }
+    cout << ans << endl;
+    return 0;
 }

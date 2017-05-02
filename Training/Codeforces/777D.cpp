@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -34,18 +34,18 @@ string s[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	IOS;
-	cin >> N;
-	rep(i, 0, N) {
-		cin >> s[i];
-	}
-	for (int i = N - 2; i >= 0; --i) {
-		for (int j = 0; j < s[i].size(); ++j) 
-			if (s[i][j] < s[i + 1][j]) break;
-			else if (s[i][j] > s[i + 1][j]) {
-				s[i].resize(j); break;
-			}
-	}
-	rep(i, 0, N) cout << s[i] << endl;
-	return 0;
+    IOS;
+    cin >> N;
+    rep(i, 0, N) {
+        cin >> s[i];
+    }
+    for (int i = N - 2; i >= 0; --i) {
+        for (int j = 0; j < s[i].size(); ++j) 
+            if (s[i][j] < s[i + 1][j]) break;
+            else if (s[i][j] > s[i + 1][j]) {
+                s[i].resize(j); break;
+            }
+    }
+    rep(i, 0, N) cout << s[i] << endl;
+    return 0;
 }

@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -60,23 +60,23 @@ void unite(int x, int y) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &N, &M);
-	init(2 * M);
-	rep(i, 0, N) scanf("%d", r + i);
-	rep(i, 0, M) {
-		scanf("%d", &x);
-		rep(j, 0, x) {
-			scanf("%d", &xi), --xi;
-			s[xi].push_back(i);
-		}
-	}
-	rep(i, 0, N) {
-		int u = s[i][0], v = s[i][1];
-		if (r[i]) unite(u, v), unite(u + M, v + M);
-		else unite(u, v + M), unite(u + M, v);
-	}
-	bool flag = true;
-	rep(i, 0, M) if (same(i, i + M)) { flag = false;break;}
-	puts(flag? "YES" : "NO");
-	return 0;
+    scanf("%d%d", &N, &M);
+    init(2 * M);
+    rep(i, 0, N) scanf("%d", r + i);
+    rep(i, 0, M) {
+        scanf("%d", &x);
+        rep(j, 0, x) {
+            scanf("%d", &xi), --xi;
+            s[xi].push_back(i);
+        }
+    }
+    rep(i, 0, N) {
+        int u = s[i][0], v = s[i][1];
+        if (r[i]) unite(u, v), unite(u + M, v + M);
+        else unite(u, v + M), unite(u + M, v);
+    }
+    bool flag = true;
+    rep(i, 0, M) if (same(i, i + M)) { flag = false;break;}
+    puts(flag? "YES" : "NO");
+    return 0;
 }

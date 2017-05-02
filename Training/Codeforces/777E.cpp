@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -30,8 +30,8 @@ const ll LLINF = LLONG_MAX;
 const int MAX_N = 1e5 + 10;
 
 struct T {
-	int a, b, h;
-	T(int a = 0, int b = 0, int h = 0): a(a), b(b), h(h) { }
+    int a, b, h;
+    T(int a = 0, int b = 0, int h = 0): a(a), b(b), h(h) { }
 };
 
 T t[MAX_N];
@@ -41,24 +41,24 @@ stack<T> st;
 ll res, ans;
 
 bool cmp(T t1, T t2) {
-	return t1.b == t2.b ? t1.a > t2.a : t1.b > t2.b;
+    return t1.b == t2.b ? t1.a > t2.a : t1.b > t2.b;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	rep(i, 0, N)
-		scanf("%d%d%d", &t[i].a, &t[i].b, &t[i].h);
-	sort(t, t + N, cmp);
-	st.push(T(0, INF, 0));
-	int it = 0;
-	while (it < N) {
-		while (st.size() && t[it].b <= st.top().a) {
-			res -= st.top().h; st.pop();
-		}
-		st.push(t[it]); res += t[it].h;++it;
-		ans = max(ans, res);
-	}
-	cout << ans << endl;
-	return 0;
+    scanf("%d", &N);
+    rep(i, 0, N)
+        scanf("%d%d%d", &t[i].a, &t[i].b, &t[i].h);
+    sort(t, t + N, cmp);
+    st.push(T(0, INF, 0));
+    int it = 0;
+    while (it < N) {
+        while (st.size() && t[it].b <= st.top().a) {
+            res -= st.top().h; st.pop();
+        }
+        st.push(t[it]); res += t[it].h;++it;
+        ans = max(ans, res);
+    }
+    cout << ans << endl;
+    return 0;
 }

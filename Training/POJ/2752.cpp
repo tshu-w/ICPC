@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(0); std::cout.tie(0);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -59,17 +59,17 @@ string s;
 
 int main(int argc, char const *argv[])
 {
-	IOS;
-	while (cin >> s) {
-		getNext(s);
-		vector<int> v;
-		int p = s.length();
-		do {
-			v.push_back(p);
-			p = nxt[p];
-		} while (p);
-		for (int i = v.size() - 1; i >= 0; --i)
-			printf("%d%c", v[i], i ? ' ' : '\n');
-	}	
-	return 0;
+    IOS;
+    while (cin >> s) {
+        getNext(s);
+        vector<int> v;
+        int p = s.length();
+        do {
+            v.push_back(p);
+            p = nxt[p];
+        } while (p);
+        for (int i = v.size() - 1; i >= 0; --i)
+            printf("%d%c", v[i], i ? ' ' : '\n');
+    }    
+    return 0;
 }

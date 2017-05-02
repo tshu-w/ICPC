@@ -23,9 +23,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -52,33 +52,33 @@ Pii p[MAX_N];
 
 template <typename T>
 T sum(T *b, int i) {
-	T res = 0;
-	while (i) {
-		res += b[i];
-		i -= i & -i;
-	}
-	return res;
+    T res = 0;
+    while (i) {
+        res += b[i];
+        i -= i & -i;
+    }
+    return res;
 }
 template <typename T>
 void add(T *b, int i, T x) {
-	while (i <= MAX_N) {
-		b[i] += x;
-		i += i & -i;
-	}
+    while (i <= MAX_N) {
+        b[i] += x;
+        i += i & -i;
+    }
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	for (int i = 0; i < N; ++i)
-		scanf("%d%d", &p[i].first, &p[i].second);
-	sort(p, p + N);
-	for (int i = 0; i < N; ++i) {
-		int lcnt = sum(cnt, p[i].second), rcnt = i - lcnt;
-		ll lsum = sum(bit, p[i].second), rsum = sum(bit, MAX_N) - lsum;
-		ans += (((ll)lcnt * p[i].second - lsum) + (rsum - (ll)rcnt * p[i].second)) * p[i].first;
-		add(cnt, p[i].second, 1); add(bit, p[i].second, (ll)p[i].second);
-	}
-	printf("%lld\n", ans);
-	return 0;
+    scanf("%d", &N);
+    for (int i = 0; i < N; ++i)
+        scanf("%d%d", &p[i].first, &p[i].second);
+    sort(p, p + N);
+    for (int i = 0; i < N; ++i) {
+        int lcnt = sum(cnt, p[i].second), rcnt = i - lcnt;
+        ll lsum = sum(bit, p[i].second), rsum = sum(bit, MAX_N) - lsum;
+        ans += (((ll)lcnt * p[i].second - lsum) + (rsum - (ll)rcnt * p[i].second)) * p[i].first;
+        add(cnt, p[i].second, 1); add(bit, p[i].second, (ll)p[i].second);
+    }
+    printf("%lld\n", ans);
+    return 0;
 }

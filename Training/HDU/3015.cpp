@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -29,24 +29,24 @@ Pii T[MAX_N];
 
 struct BIT
 {
-	ll bit[MAX_N];
-	BIT() {
-		memset(bit, 0, sizeof bit);
-	}
-	ll sum(int i) {
-		ll s = 0;
-		while (i > 0) {
-			s += bit[i];
-			i -= i & -i;
-		}
-		return s;
-	}
-	void add(int i, int x) {
-		while (i <= N) {
-			bit[i] += x;
-			i += i & -i;
-		}
-	}	
+    ll bit[MAX_N];
+    BIT() {
+        memset(bit, 0, sizeof bit);
+    }
+    ll sum(int i) {
+        ll s = 0;
+        while (i > 0) {
+            s += bit[i];
+            i -= i & -i;
+        }
+        return s;
+    }
+    void add(int i, int x) {
+        while (i <= N) {
+            bit[i] += x;
+            i += i & -i;
+        }
+    }    
 };
 
 
@@ -75,21 +75,21 @@ void compress(Pii *a) {
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &N)) {
-		BIT cnt, sm;
-		for (int i = 0; i < N; ++i)
-			scanf("%d%d", &T[i].second, &T[i].first);
-		compress(T);
-		sort(T, T + N, greater<Pii>());
-		ll ans = 0, sumX = 0;
-		for (int i = 0; i < N; ++i) {
-			ans += T[i].first * (cnt.sum(T[i].second) * T[i].second - sm.sum(T[i].second));
-			ans += T[i].first * (sumX - sm.sum(T[i].second) - (i - cnt.sum(T[i].second)) * T[i].second);
-			sm.add(T[i].second, T[i].second);
-			cnt.add(T[i].second, 1);
-			sumX += T[i].second;
-		}
-		printf("%I64d\n", ans);
-	}
-	return 0;
+    while (~scanf("%d", &N)) {
+        BIT cnt, sm;
+        for (int i = 0; i < N; ++i)
+            scanf("%d%d", &T[i].second, &T[i].first);
+        compress(T);
+        sort(T, T + N, greater<Pii>());
+        ll ans = 0, sumX = 0;
+        for (int i = 0; i < N; ++i) {
+            ans += T[i].first * (cnt.sum(T[i].second) * T[i].second - sm.sum(T[i].second));
+            ans += T[i].first * (sumX - sm.sum(T[i].second) - (i - cnt.sum(T[i].second)) * T[i].second);
+            sm.add(T[i].second, T[i].second);
+            cnt.add(T[i].second, 1);
+            sumX += T[i].second;
+        }
+        printf("%I64d\n", ans);
+    }
+    return 0;
 }

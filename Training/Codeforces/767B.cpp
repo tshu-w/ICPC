@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename "B"
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -35,25 +35,25 @@ int N;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%I64d%I64d%I64d", &ts, &tf, &t);
-	scanf("%d", &N);
-	rep(i, 0, N) scanf("%I64d", T + i);
-	sort(T, T + N);
-	ll s = 0, f = ts;
-	rep(i, 0, N) {
-		if (f - T[i] + 1 < imin && T[i] - 1 >= 0) {
-			imin = f - T[i] + 1;
-			ans = T[i] - 1;
-		}
-		s = T[i]; if (s > f) break;
-		f = max(s, f) + t;
-		if ((i == N || T[i + 1] != T[i]) && f - T[i] < imin) {
-			imin = max(ts, f) - T[i];
-			ans = T[i];
-		}
-		if (f + t > tf) break;
-	}
-	if (f + t <= tf) ans = f;
-	printf("%I64d\n", ans);
-	return 0;
+    scanf("%I64d%I64d%I64d", &ts, &tf, &t);
+    scanf("%d", &N);
+    rep(i, 0, N) scanf("%I64d", T + i);
+    sort(T, T + N);
+    ll s = 0, f = ts;
+    rep(i, 0, N) {
+        if (f - T[i] + 1 < imin && T[i] - 1 >= 0) {
+            imin = f - T[i] + 1;
+            ans = T[i] - 1;
+        }
+        s = T[i]; if (s > f) break;
+        f = max(s, f) + t;
+        if ((i == N || T[i + 1] != T[i]) && f - T[i] < imin) {
+            imin = max(ts, f) - T[i];
+            ans = T[i];
+        }
+        if (f + t > tf) break;
+    }
+    if (f + t <= tf) ans = f;
+    printf("%I64d\n", ans);
+    return 0;
 }

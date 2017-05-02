@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -33,22 +33,22 @@ int N, M, A[MAX_N], k, l, r, v[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &N, &M);
-	rep(i, 0, N) rep(j, 0, M) scanf("%d", &A[i * M + j]);
-	rep(i, 0, N) v[i] = i + 1;
-	rep(j, 0, M) {
-		int last = 0, cur = 1;
-		while (last < N) {
-			while (cur < N && A[cur * M + j] >= A[(cur - 1) * M + j]) ++cur;
-			rep(i, last, cur) v[i] = max(v[i], cur);
-			last = cur;
-			cur = cur + 1;
-		}
-	}
-	scanf("%d", &k);
-	rep(i, 0, k) {
-		scanf("%d%d", &l, &r);--l;
-		if (v[l] >= r) printf("Yes\n"); else printf("No\n");
-	}
-	return 0;
+    scanf("%d%d", &N, &M);
+    rep(i, 0, N) rep(j, 0, M) scanf("%d", &A[i * M + j]);
+    rep(i, 0, N) v[i] = i + 1;
+    rep(j, 0, M) {
+        int last = 0, cur = 1;
+        while (last < N) {
+            while (cur < N && A[cur * M + j] >= A[(cur - 1) * M + j]) ++cur;
+            rep(i, last, cur) v[i] = max(v[i], cur);
+            last = cur;
+            cur = cur + 1;
+        }
+    }
+    scanf("%d", &k);
+    rep(i, 0, k) {
+        scanf("%d%d", &l, &r);--l;
+        if (v[l] >= r) printf("Yes\n"); else printf("No\n");
+    }
+    return 0;
 }

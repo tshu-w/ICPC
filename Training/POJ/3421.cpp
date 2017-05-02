@@ -24,10 +24,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -51,9 +51,9 @@ ull num;
 vector<int> prime_factor(int n) {
     vector<int> res;
     for (int i = 2; i * i <= n; ++i) {
-    	int tmp = 0;
+        int tmp = 0;
         while (n % i == 0) {
-        	++tmp;
+            ++tmp;
             n /= i;
         }
         res.push_back(tmp);
@@ -63,22 +63,22 @@ vector<int> prime_factor(int n) {
 }
 
 ull factor(int n) {
-	ull res = 1;
-	for (int i = 1; i <= n; ++i)
-		res *= i;
-	return res;
+    ull res = 1;
+    for (int i = 1; i <= n; ++i)
+        res *= i;
+    return res;
 }
 
 int main(int argc, char const *argv[])
 {
-	while (cin >> n) {
-		vector<int> fac = prime_factor(n);
-		len = accumulate(fac.begin(), fac.end(), 0);
-		num = factor(len);
-		for (int i = 0; i < fac.size(); ++i) {
-			num /= factor(fac[i]);
-		}
-		cout << len << " " << num << "\n";
-	}	
-	return 0;
+    while (cin >> n) {
+        vector<int> fac = prime_factor(n);
+        len = accumulate(fac.begin(), fac.end(), 0);
+        num = factor(len);
+        for (int i = 0; i < fac.size(); ++i) {
+            num /= factor(fac[i]);
+        }
+        cout << len << " " << num << "\n";
+    }    
+    return 0;
 }

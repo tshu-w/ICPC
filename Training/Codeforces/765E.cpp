@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -33,26 +33,26 @@ int N, u, v, ans;
 vector<int> G[MAX_N];
 
 int dfs(int v, int p) {
-	set<int> h;
-	for (auto u : G[v]) if (u != p) {
-		int res = dfs(u, v);
-		if (res == -1) return -1;
-		else h.insert(res + 1);
-	}
-	if (!h.size()) return 0;
-	if (h.size() == 1) return *h.begin();
-	if (!p && h.size() == 2) return *h.begin() + *h.rbegin();
-	u = v; return -1;
+    set<int> h;
+    for (auto u : G[v]) if (u != p) {
+        int res = dfs(u, v);
+        if (res == -1) return -1;
+        else h.insert(res + 1);
+    }
+    if (!h.size()) return 0;
+    if (h.size() == 1) return *h.begin();
+    if (!p && h.size() == 2) return *h.begin() + *h.rbegin();
+    u = v; return -1;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	rep(i, 1, N) scanf("%d%d", &u, &v), G[v].push_back(u), G[u].push_back(v);
-	u = 0;
-	ans = dfs(1, 0);
-	if (u) ans = dfs(u, 0);
-	while (~ans && !(ans & 1)) ans /= 2;
-	printf("%d\n", ans);
-	return 0;
+    scanf("%d", &N);
+    rep(i, 1, N) scanf("%d%d", &u, &v), G[v].push_back(u), G[u].push_back(v);
+    u = 0;
+    ans = dfs(1, 0);
+    if (u) ans = dfs(u, 0);
+    while (~ans && !(ans & 1)) ans /= 2;
+    printf("%d\n", ans);
+    return 0;
 }

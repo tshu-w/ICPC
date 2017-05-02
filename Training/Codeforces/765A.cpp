@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -35,24 +35,24 @@ map<string, int> mp;
 
 int main(int argc, char const *argv[])
 {
-	cin >> N;
-	cin >> home;
-	rep(i, 0, N) {
-		cin >> s;
-		ss = s.substr(0, 3);
-		st = s.substr(5);
-		if (st == home) {
-			mp[ss]--;
-			c[i] = ss;
-		} else {
-			mp[st]++;
-			c[i] = st;
-		}
-	}
-	rep(i, 0, N) if (mp[c[i]]) {
-		cout << "contest" << endl;
-		return 0;
-	}
-	cout << "home" << endl;
-	return 0;
+    cin >> N;
+    cin >> home;
+    rep(i, 0, N) {
+        cin >> s;
+        ss = s.substr(0, 3);
+        st = s.substr(5);
+        if (st == home) {
+            mp[ss]--;
+            c[i] = ss;
+        } else {
+            mp[st]++;
+            c[i] = st;
+        }
+    }
+    rep(i, 0, N) if (mp[c[i]]) {
+        cout << "contest" << endl;
+        return 0;
+    }
+    cout << "home" << endl;
+    return 0;
 }

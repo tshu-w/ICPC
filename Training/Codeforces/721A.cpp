@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -30,20 +30,20 @@ string s;
 
 int main(int argc, char const *argv[])
 {
-	cin >> n;
-	cin >> s;
-	s += 'w'; ++n;
-	for (int i = 0; i < n; ++i)
-		if (s[i] != 'B') {
-			if (cnt) v.push_back(cnt);
-			cnt = 0;
-		}
-		else ++cnt;
-	cout << v.size() << endl;
-	for (int i = 0; i < v.size(); ++i) {
-		cout << v[i];
-		if (i + 1 != v.size()) cout << " ";
-		else cout << endl;
-	}
-	return 0;
+    cin >> n;
+    cin >> s;
+    s += 'w'; ++n;
+    for (int i = 0; i < n; ++i)
+        if (s[i] != 'B') {
+            if (cnt) v.push_back(cnt);
+            cnt = 0;
+        }
+        else ++cnt;
+    cout << v.size() << endl;
+    for (int i = 0; i < v.size(); ++i) {
+        cout << v[i];
+        if (i + 1 != v.size()) cout << " ";
+        else cout << endl;
+    }
+    return 0;
 }

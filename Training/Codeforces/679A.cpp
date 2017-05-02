@@ -26,41 +26,41 @@ int seive(int n) {
         if (is_prime[i] && i < 50) {
             prime[p++] = i;
             for (int j = 2 * i; j <= n; j += i) 
-            	is_prime[j] = false;
+                is_prime[j] = false;
         }
     return p;
 }
 int main(int argc, char const *argv[])
 {
-	int p = seive(100), cnt = 0;
-	// for (int i = 0; i < p; ++i)
-		// cout << prime[i] << " ";
-	// cout << endl;
-	// bool isPrime = false;
-	for (int i = 0; i < p; ++i) {
-		printf("%d\n", prime[i]);
-		fflush(stdout);
-		char res[5];
+    int p = seive(100), cnt = 0;
+    // for (int i = 0; i < p; ++i)
+        // cout << prime[i] << " ";
+    // cout << endl;
+    // bool isPrime = false;
+    for (int i = 0; i < p; ++i) {
+        printf("%d\n", prime[i]);
+        fflush(stdout);
+        char res[5];
         scanf("%s", res);
         if (res[0] == 'y') {
-        	if (prime[i] < 10) {
-	        	printf("%d\n", prime[i] * prime[i]);
-	        	fflush(stdout);
-	        	char res[5];
-	        	scanf("%s", res);
-	        	if (res[0] == 'y') {
-	        		cout << "composite" << endl;
-	        		return 0;
-	        	}
-	        }
-        	++cnt;
-        	if (cnt >= 2)
-        		break;
+            if (prime[i] < 10) {
+                printf("%d\n", prime[i] * prime[i]);
+                fflush(stdout);
+                char res[5];
+                scanf("%s", res);
+                if (res[0] == 'y') {
+                    cout << "composite" << endl;
+                    return 0;
+                }
+            }
+            ++cnt;
+            if (cnt >= 2)
+                break;
         }
-	}
-	if (cnt <= 1)
-		cout << "prime" << endl;
-	else 
-		cout << "composite" << endl;
-	return 0;
+    }
+    if (cnt <= 1)
+        cout << "prime" << endl;
+    else 
+        cout << "composite" << endl;
+    return 0;
 }

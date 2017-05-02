@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -73,7 +73,7 @@ int main()
     scanf("%d", &T);
     while(T--)
     {
-    	printf( "Case #%d:\n", ++tt );
+        printf( "Case #%d:\n", ++tt );
         memset(A, 0, sizeof(A));
         int n, M = 0;
         scanf("%d", &n);

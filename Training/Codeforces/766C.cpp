@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -35,21 +35,21 @@ string s;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	cin >> s;
-	rep(i, 0, 26) scanf("%d", A + i);
-	dp[0][0] = 1;
-	rep(i, 1, N + 1) {
-		dp[i][1] = -INF; dp[i][2] = INF;
-		int len = INF;
-		irep(j, i, 0) {
-			len = min(len, A[s[j] - 'a']);
-			if (len < i - j) break;
-			dp[i][0] = (dp[i][0] + dp[j][0]) % MOD;
-			dp[i][1] = max(dp[i][1], max(i - j, dp[j][1]));
-			dp[i][2] = min(dp[i][2], dp[j][2] + 1);
-		}
-	}
-	printf("%d\n%d\n%d\n", dp[N][0], dp[N][1], dp[N][2]);
-	return 0;
+    scanf("%d", &N);
+    cin >> s;
+    rep(i, 0, 26) scanf("%d", A + i);
+    dp[0][0] = 1;
+    rep(i, 1, N + 1) {
+        dp[i][1] = -INF; dp[i][2] = INF;
+        int len = INF;
+        irep(j, i, 0) {
+            len = min(len, A[s[j] - 'a']);
+            if (len < i - j) break;
+            dp[i][0] = (dp[i][0] + dp[j][0]) % MOD;
+            dp[i][1] = max(dp[i][1], max(i - j, dp[j][1]));
+            dp[i][2] = min(dp[i][2], dp[j][2] + 1);
+        }
+    }
+    printf("%d\n%d\n%d\n", dp[N][0], dp[N][1], dp[N][2]);
+    return 0;
 }

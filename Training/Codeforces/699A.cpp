@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -30,15 +30,15 @@ int N, X[MAX_N], ans = INF;
 
 int main(int argc, char const *argv[])
 {
-	string s;
-	scanf("%d", &N);
-	cin >> s;
-	for (int i = 0; i < N; ++i)
-		scanf("%d", X + i);
-	for (int i = 1; i < N; ++i)
-		if (s[i - 1] == 'R' && s[i] == 'L') {
-			ans = min((X[i] - X[i - 1]) / 2, ans);
-		}
-	cout << ((ans == INF)? -1 : ans )<< endl;
-	return 0;
+    string s;
+    scanf("%d", &N);
+    cin >> s;
+    for (int i = 0; i < N; ++i)
+        scanf("%d", X + i);
+    for (int i = 1; i < N; ++i)
+        if (s[i - 1] == 'R' && s[i] == 'L') {
+            ans = min((X[i] - X[i - 1]) / 2, ans);
+        }
+    cout << ((ans == INF)? -1 : ans )<< endl;
+    return 0;
 }

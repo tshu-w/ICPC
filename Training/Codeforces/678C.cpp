@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -35,11 +35,11 @@ template<typename T> T lcm(T a, T b) {
 }
 int main(int argc, char const *argv[])
 {
-	ll n, a, b, p, q;
-	cin >> n >> a >> b >> p >> q;
-	if (p > q)
-		cout << (n / a) * p + (n / b - n / lcm(a, b)) * q << endl;
-	else 
-		cout << (n / b) * q + (n / a - n / lcm(a, b)) * p << endl;
-	return 0;
+    ll n, a, b, p, q;
+    cin >> n >> a >> b >> p >> q;
+    if (p > q)
+        cout << (n / a) * p + (n / b - n / lcm(a, b)) * q << endl;
+    else 
+        cout << (n / b) * q + (n / a - n / lcm(a, b)) * p << endl;
+    return 0;
 }

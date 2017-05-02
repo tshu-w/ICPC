@@ -111,9 +111,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -140,42 +140,42 @@ int n, dp[MAX_S], X[MAX_N], Y[MAX_N];
 vector<Pii> v;
 
 bool in(int a, int b, int c) {
-	return (min(X[b], X[c]) <= X[a] && X[a] <= max(X[b], X[c]) && min(Y[b], Y[c]) <= Y[a] && Y[a] <= max(Y[b], Y[c]));
+    return (min(X[b], X[c]) <= X[a] && X[a] <= max(X[b], X[c]) && min(Y[b], Y[c]) <= Y[a] && Y[a] <= max(Y[b], Y[c]));
 }
 
 void init() {
-	v.clear();
-	rep(i, 0, n)
-		rep(j, i + 1, n) {
-			Pii p = Pii((1 << i | 1 << j), max(1, abs(X[i] - X[j])) * max(1, abs(Y[i] - Y[j])));
-			rep (k, 0, n)
-				if (in(k, i, j))
-					p.first |= 1 << k;
-			v.push_back(p);
-		}
-	// for(auto it : v)
-		// cout << it.first << " " << it.second << endl;
-	// cout << endl;
+    v.clear();
+    rep(i, 0, n)
+        rep(j, i + 1, n) {
+            Pii p = Pii((1 << i | 1 << j), max(1, abs(X[i] - X[j])) * max(1, abs(Y[i] - Y[j])));
+            rep (k, 0, n)
+                if (in(k, i, j))
+                    p.first |= 1 << k;
+            v.push_back(p);
+        }
+    // for(auto it : v)
+        // cout << it.first << " " << it.second << endl;
+    // cout << endl;
 }
 
 void solve() {
-	fill(dp, dp + (1 << n), INF);
-	dp[0] = 0;
-	rep(it, 0, v.size())
-		rep(S, 0, 1 << n) {
-			int T = S | v[it].first;
-			if (dp[S] != INF && T != S)
-				dp[T] = min(dp[T], dp[S] + v[it].second);
-		}
-	printf("%d\n", dp[(1 << n) - 1]);
+    fill(dp, dp + (1 << n), INF);
+    dp[0] = 0;
+    rep(it, 0, v.size())
+        rep(S, 0, 1 << n) {
+            int T = S | v[it].first;
+            if (dp[S] != INF && T != S)
+                dp[T] = min(dp[T], dp[S] + v[it].second);
+        }
+    printf("%d\n", dp[(1 << n) - 1]);
 }
 
 int main(void) {
-	while (scanf("%d", &n) && n) {
-		rep(i, 0, n)
-			scanf("%d%d", X + i, Y + i);
-		init();
-		solve();
-	}
-	return 0;
+    while (scanf("%d", &n) && n) {
+        rep(i, 0, n)
+            scanf("%d%d", X + i, Y + i);
+        init();
+        solve();
+    }
+    return 0;
 }

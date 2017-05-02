@@ -19,15 +19,15 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int n, a, b;
-	cin >> n >> a >> b;
-	a = a + b;
-	while (a <= 0) {
-		a += n;
-	}
-	while (a > n) {
-		a -= n;
-	}
-	cout << a << endl;
-	return 0;
+    int n, a, b;
+    cin >> n >> a >> b;
+    a = a + b;
+    while (a <= 0) {
+        a += n;
+    }
+    while (a > n) {
+        a -= n;
+    }
+    cout << a << endl;
+    return 0;
 }

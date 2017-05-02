@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -32,35 +32,35 @@ const int MAX_N = 1e5 + 10;
 int N, k, a, b;
 
 inline void print(char c, int tm) {
-	rep(i, 0, tm) printf("%c", c);
+    rep(i, 0, tm) printf("%c", c);
 }
 
 void solve() {
-	if (a == b) {
-		rep(i, 0, a) printf("GB"); puts("");
-		return;
-	}
-	if (a < b) {
-		if (b / (a + 1) + (b % (a + 1)? 1 : 0) > k) {puts("NO"); return;}	
-		else {
-			int tmp = b % (a + 1);
-			rep(i, 0, tmp) print('B', b / (a + 1) + 1), print('G', 1);
-			rep(i, 0, a + 1 - tmp) print('B', b / (a + 1)), print(i == a - tmp? '\n' : 'G', 1);
-		}
-	} else {
-		if (a / (b + 1) + (a % (b + 1)? 1 : 0) > k) {puts("NO"); return;}
-		else {
-			int tmp = a % (b + 1);
-			rep(i, 0, tmp) print('G', a / (b + 1) + 1), print('B', 1);
-			rep(i, 0, b + 1 - tmp) print('G', a / (b + 1)), print(i == b - tmp? '\n' : 'B', 1);
-		}
-	}
+    if (a == b) {
+        rep(i, 0, a) printf("GB"); puts("");
+        return;
+    }
+    if (a < b) {
+        if (b / (a + 1) + (b % (a + 1)? 1 : 0) > k) {puts("NO"); return;}    
+        else {
+            int tmp = b % (a + 1);
+            rep(i, 0, tmp) print('B', b / (a + 1) + 1), print('G', 1);
+            rep(i, 0, a + 1 - tmp) print('B', b / (a + 1)), print(i == a - tmp? '\n' : 'G', 1);
+        }
+    } else {
+        if (a / (b + 1) + (a % (b + 1)? 1 : 0) > k) {puts("NO"); return;}
+        else {
+            int tmp = a % (b + 1);
+            rep(i, 0, tmp) print('G', a / (b + 1) + 1), print('B', 1);
+            rep(i, 0, b + 1 - tmp) print('G', a / (b + 1)), print(i == b - tmp? '\n' : 'B', 1);
+        }
+    }
 }
 
 int main(int argc, char const *argv[])
 {
-	while (cin >> N >> k >> a >> b) {
-		solve();
-	}
-	return 0;
+    while (cin >> N >> k >> a >> b) {
+        solve();
+    }
+    return 0;
 }

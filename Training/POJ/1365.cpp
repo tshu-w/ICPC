@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -58,24 +58,24 @@ map<int, int> prime_factor(int n) {
 
 int main(int argc, char const *argv[])
 {
-	string line;
-	while (getline(cin, line)) {
-		if (line[0] == '0') break;
-		stringstream ss(line);
-		int p, e, res = 1;
-		while (ss >> p >> e) {
-			int k = 1;
-			while (e) {
-				if (e & 1) k = k * p;
-				p = p * p;
-				e >>= 1;
-			}
-			res *= k;
-		}
-		map<int, int> m = prime_factor(res - 1);
-		for (map<int, int>::reverse_iterator it = m.rbegin(); it != m.rend(); ++it)
-			printf("%d %d ", it->first, it->second);
-		printf("\n");
-	}
-	return 0;
+    string line;
+    while (getline(cin, line)) {
+        if (line[0] == '0') break;
+        stringstream ss(line);
+        int p, e, res = 1;
+        while (ss >> p >> e) {
+            int k = 1;
+            while (e) {
+                if (e & 1) k = k * p;
+                p = p * p;
+                e >>= 1;
+            }
+            res *= k;
+        }
+        map<int, int> m = prime_factor(res - 1);
+        for (map<int, int>::reverse_iterator it = m.rbegin(); it != m.rend(); ++it)
+            printf("%d %d ", it->first, it->second);
+        printf("\n");
+    }
+    return 0;
 }

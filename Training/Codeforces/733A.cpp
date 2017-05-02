@@ -3,9 +3,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -30,17 +30,17 @@ int ans = 0;
 
 int main(int argc, char const *argv[])
 {
-	cin >> s;
-	int last = -1, cur;
-	for(;;) {
-		cur = last + 1;
-		while (cur < s.size() && (s[cur] != 'A' && s[cur] != 'E' && s[cur] != 'I' && s[cur] != 'O' && s[cur] != 'U' && s[cur] != 'Y'))
-			++cur;
-		// cout << last << " " << cur << endl;
-		ans = max(ans, cur - last);
-		if (cur == s.size()) break;
-		last = cur;
-	}
-	cout << ans << endl;
-	return 0;
+    cin >> s;
+    int last = -1, cur;
+    for(;;) {
+        cur = last + 1;
+        while (cur < s.size() && (s[cur] != 'A' && s[cur] != 'E' && s[cur] != 'I' && s[cur] != 'O' && s[cur] != 'U' && s[cur] != 'Y'))
+            ++cur;
+        // cout << last << " " << cur << endl;
+        ans = max(ans, cur - last);
+        if (cur == s.size()) break;
+        last = cur;
+    }
+    cout << ans << endl;
+    return 0;
 }

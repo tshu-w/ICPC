@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -74,15 +74,15 @@ int CRT(vector<int> &a, vector<int> &m) {
 
 int main(int argc, char const *argv[])
 {
-	vector<int> m(3);
-	m[0] = 23; m[1] = 28; m[2] = 33;
-	int p, e, i, d, cs = 0;
-	while (~scanf("%d%d%d%d", &p, &e, &i, &d) && (p + 1 || e + 1 || i + 1 || d + 1)) {
-		p %= 23;  e %= 28;  i %= 33;
-		vector<int> a(3);
-		a[0] = p; a[1] = e; a[2] = i;
-		int ans = (CRT(a, m) - d + 21252) % 21252;
-		printf("Case %d: the next triple peak occurs in %d days.\n", ++cs, ans? ans : 21252);
-	}
-	return 0;
+    vector<int> m(3);
+    m[0] = 23; m[1] = 28; m[2] = 33;
+    int p, e, i, d, cs = 0;
+    while (~scanf("%d%d%d%d", &p, &e, &i, &d) && (p + 1 || e + 1 || i + 1 || d + 1)) {
+        p %= 23;  e %= 28;  i %= 33;
+        vector<int> a(3);
+        a[0] = p; a[1] = e; a[2] = i;
+        int ans = (CRT(a, m) - d + 21252) % 21252;
+        printf("Case %d: the next triple peak occurs in %d days.\n", ++cs, ans? ans : 21252);
+    }
+    return 0;
 }

@@ -33,16 +33,16 @@ const int MAX_N = 50005;
 int n, a, b, c, d;
 
 bool in(int x) {
-	return ((x >= 1) && (x <= n));
+    return ((x >= 1) && (x <= n));
 }
 int main(int argc, char const *argv[])
 {
 
-	ll ans = 0;
-	scanf("%d%d%d%d%d", &n, &a, &b, &c, &d);
-	for (int i = 1; i <= n; ++i)
-		if (in(i + a - d) && in(i + b - c) && in(i + b - c + a - d))
-			ans += (ll)n;
-	cout << ans << endl;
-	return 0;
+    ll ans = 0;
+    scanf("%d%d%d%d%d", &n, &a, &b, &c, &d);
+    for (int i = 1; i <= n; ++i)
+        if (in(i + a - d) && in(i + b - c) && in(i + b - c + a - d))
+            ans += (ll)n;
+    cout << ans << endl;
+    return 0;
 }

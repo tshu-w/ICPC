@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -32,21 +32,21 @@ const int MAX_N = 1e5 + 10;
 string s;
 
 char trans(char s) {
-	if (s == 'a') return 'z';
-	else return s - 1;
+    if (s == 'a') return 'z';
+    else return s - 1;
 }
 
 int main(int argc, char const *argv[])
 {
-	cin >> s;
-	bool flag = false;
-	rep(i, 0, s.size()) {
-		if (trans(s[i]) >= s[i]) {
-			if (flag) break;
-		}
-		else s[i] = trans(s[i]), flag = true;
-	}
-	if (!flag) s[s.size() - 1] = trans(s[s.size() - 1]);
-	cout << s << endl;
-	return 0;
+    cin >> s;
+    bool flag = false;
+    rep(i, 0, s.size()) {
+        if (trans(s[i]) >= s[i]) {
+            if (flag) break;
+        }
+        else s[i] = trans(s[i]), flag = true;
+    }
+    if (!flag) s[s.size() - 1] = trans(s[s.size() - 1]);
+    cout << s << endl;
+    return 0;
 }

@@ -23,9 +23,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -48,28 +48,28 @@ inline T sqr(T a) { return a * a;};
 int N = 20, ans = INF, A[MAX_N], B[MAX_N];
 
 int cal() {
-	int res = 0;
-	for (int i = 1; i < N; ++i)
-		if (A[i - 1]) {
-			++res;
-			for (int j = i - 1; j <= i + 1; ++j)
-				if (j < N)
-					A[j] = (A[j] + 1) % 2;
-		}
-	if (!A[N - 1]) return res;
-	else return INF;
+    int res = 0;
+    for (int i = 1; i < N; ++i)
+        if (A[i - 1]) {
+            ++res;
+            for (int j = i - 1; j <= i + 1; ++j)
+                if (j < N)
+                    A[j] = (A[j] + 1) % 2;
+        }
+    if (!A[N - 1]) return res;
+    else return INF;
 }
 
 int main(int argc, char const *argv[])
 {
-	for (int i = 0; i < N; ++i)
-		scanf("%d", A + i);
-	memcpy(B, A, sizeof A);
-	ans = min(cal(), ans);
-	memcpy(A, B, sizeof A);
-	A[0] = (A[0] + 1) % 2;
-	A[1] = (A[1] + 1) % 2;
-	ans = min(cal() + 1, ans);
-	printf("%d\n", ans);
-	return 0;
+    for (int i = 0; i < N; ++i)
+        scanf("%d", A + i);
+    memcpy(B, A, sizeof A);
+    ans = min(cal(), ans);
+    memcpy(A, B, sizeof A);
+    A[0] = (A[0] + 1) % 2;
+    A[1] = (A[1] + 1) % 2;
+    ans = min(cal() + 1, ans);
+    printf("%d\n", ans);
+    return 0;
 }

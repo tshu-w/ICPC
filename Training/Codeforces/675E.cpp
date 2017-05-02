@@ -35,22 +35,22 @@ const int MAX_N = 1e5;
 
 int main(int argc, char const *argv[])
 {
-	int n, a[MAX_N];
-	ll ans, sum[MAX_N];
-	deque<int> d;
-	scanf("%d", &n);
-	for (int i = 1; i < n; ++i)
-		scanf("%d", &a[i]);
-	d.push_front(n - 1);sum[n - 1] = ans = 1;
-	for (int i = n - 2; i > 0; --i) {
-		int index = upper_bound(d.begin(), d.end(), a[i]) - d.begin() - 1;
-		ans += sum[i] = (ll)(n - i) + sum[d[index]] - ll(a[i] - d[index]);
-		while (!d.empty() && a[i] >= a[d.front()]) d.pop_front();
-		d.push_front(i);
-	}
-	// for (int i = 1; i < n; ++i)
-	// 	cout << sum[i] << " ";
-	// cout << endl;
-	cout << ans << endl;
-	return 0;
+    int n, a[MAX_N];
+    ll ans, sum[MAX_N];
+    deque<int> d;
+    scanf("%d", &n);
+    for (int i = 1; i < n; ++i)
+        scanf("%d", &a[i]);
+    d.push_front(n - 1);sum[n - 1] = ans = 1;
+    for (int i = n - 2; i > 0; --i) {
+        int index = upper_bound(d.begin(), d.end(), a[i]) - d.begin() - 1;
+        ans += sum[i] = (ll)(n - i) + sum[d[index]] - ll(a[i] - d[index]);
+        while (!d.empty() && a[i] >= a[d.front()]) d.pop_front();
+        d.push_front(i);
+    }
+    // for (int i = 1; i < n; ++i)
+    //     cout << sum[i] << " ";
+    // cout << endl;
+    cout << ans << endl;
+    return 0;
 }

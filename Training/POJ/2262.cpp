@@ -52,14 +52,14 @@ int seive(int n) {
 
 int main(int argc, char const *argv[])
 {
-	int n;
-	int p = seive(1e6 + 5);
-	while (cin >> n && n) {
-		for (int i = 1; i < p; ++i)
-			if (is_prime[n - prime[i]] && n - prime[i] != 2) {
-				printf("%d = %d + %d\n", n, prime[i], n - prime[i]);
-				break;
-			}
-	}	
-	return 0;
+    int n;
+    int p = seive(1e6 + 5);
+    while (cin >> n && n) {
+        for (int i = 1; i < p; ++i)
+            if (is_prime[n - prime[i]] && n - prime[i] != 2) {
+                printf("%d = %d + %d\n", n, prime[i], n - prime[i]);
+                break;
+            }
+    }    
+    return 0;
 }

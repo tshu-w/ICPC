@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -34,16 +34,16 @@ int N, S[MAX_N], sg[MAX_M];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	rep (i, 0, N) scanf("%d", S + i);
-	int s = 0, t = 0;
-	while (s < MAX_M) {
-		for (int k = 0; k < t + 1 && s < MAX_M; ++k) sg[s++] = t;
-		++t;
-	}
-	int x = 0;
-	rep(i, 0, N) x ^= sg[S[i]];
-	if (x != 0) printf("NO\n");
-	else printf("YES\n");
-	return 0;
+    scanf("%d", &N);
+    rep (i, 0, N) scanf("%d", S + i);
+    int s = 0, t = 0;
+    while (s < MAX_M) {
+        for (int k = 0; k < t + 1 && s < MAX_M; ++k) sg[s++] = t;
+        ++t;
+    }
+    int x = 0;
+    rep(i, 0, N) x ^= sg[S[i]];
+    if (x != 0) printf("NO\n");
+    else printf("YES\n");
+    return 0;
 }

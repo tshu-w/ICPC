@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -48,30 +48,30 @@ int n, cnt[MAX_N];
 
 int bit[MAX_N];
 int sum(int i) {
-	int s = 0;
-	while (i > 0) {
-		s += bit[i];
-		i -= i & -i;
-	}
-	return s;
+    int s = 0;
+    while (i > 0) {
+        s += bit[i];
+        i -= i & -i;
+    }
+    return s;
 }
 void add(int i, int x) {
-	while (i <= 32001) {
-		bit[i] += x;
-		i += i & -i;
-	}
+    while (i <= 32001) {
+        bit[i] += x;
+        i += i & -i;
+    }
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &n);
-	for (int i = 0, x, y; i < n; ++i) {
-		scanf("%d%d", &x, &y);
-		cnt[sum(++x)]++;
-		add(x, 1);
-	}	
-	for (int i = 0; i < n; ++i) 
-		printf("%d\n", cnt[i]);
+    scanf("%d", &n);
+    for (int i = 0, x, y; i < n; ++i) {
+        scanf("%d%d", &x, &y);
+        cnt[sum(++x)]++;
+        add(x, 1);
+    }    
+    for (int i = 0; i < n; ++i) 
+        printf("%d\n", cnt[i]);
 
-	return 0;
+    return 0;
 }

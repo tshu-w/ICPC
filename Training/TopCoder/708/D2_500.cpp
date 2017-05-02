@@ -29,35 +29,35 @@ string s;
 class BuildingStrings
 {
 public:
-	vector <string> findAny(int K) {
-		while (K >= 50 * 26) {
-			v.push_back(ss);
-			K -= 50 * 26;
-		}
-		while (K >= 12 * 10) {
-			v.push_back(ss2);
-			K -= 12 * 10;
-		}
-		while (K >= 5 * 14) {
-			v.push_back(ss3);
-			K -= 5 * 14;
-		}
-		if (K < 70 && K >= 50) {
-			v.push_back(ss4);
-			K -= 5 * 10;
-		}
-		if (K <= 50 && K) {
-		    s = "";
-		    rep(i, 0, K) s += 'a';
-		    v.push_back(s);
-		}
-		return v;
-	}
+    vector <string> findAny(int K) {
+        while (K >= 50 * 26) {
+            v.push_back(ss);
+            K -= 50 * 26;
+        }
+        while (K >= 12 * 10) {
+            v.push_back(ss2);
+            K -= 12 * 10;
+        }
+        while (K >= 5 * 14) {
+            v.push_back(ss3);
+            K -= 5 * 14;
+        }
+        if (K < 70 && K >= 50) {
+            v.push_back(ss4);
+            K -= 5 * 10;
+        }
+        if (K <= 50 && K) {
+            s = "";
+            rep(i, 0, K) s += 'a';
+            v.push_back(s);
+        }
+        return v;
+    }
 };
 
 int main(int argc, char const *argv[])
 {
-	BuildingStrings b;
-	b.findAny(50000);
-	return 0;
+    BuildingStrings b;
+    b.findAny(50000);
+    return 0;
 }

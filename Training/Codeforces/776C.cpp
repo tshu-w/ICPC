@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -35,29 +35,29 @@ vector<pair<ll, int> > v;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &N, &k);
-	rep(i, 0, N) {
-		scanf("%d", A + i);
-		s[i + 1] = s[i] + A[i];
-	}
-	rep(i, 0, N + 1) v.push_back(make_pair(s[i], i));
-	sort(v.begin(), v.end());
-	rep(i, 1, N + 1) {
-		ll kk = 1ll;
-		while (llabs(kk) <= llabs(v[i].first - v[0].first)) {
-			if (kk > 0) {
-				int l = lower_bound(v.begin(), v.end(), make_pair(v[i].first - kk, 0)) - v.begin();
-				int r = lower_bound(v.begin(), v.end(), make_pair(v[i].first - kk, v[i].second)) - v.begin();
-				ans += r - l;
-			} else {
-				int l = lower_bound(v.begin(), v.end(), make_pair(v[i].first + kk, v[i].second)) - v.begin();
-				int r = lower_bound(v.begin(), v.end(), make_pair(v[i].first + kk, INF)) - v.begin();
-				ans += r - l;
-			}
-			kk = kk * k;
-			if (kk == 1ll) break;
-		}
-	}
-	cout << ans << endl;
-	return 0;
+    scanf("%d%d", &N, &k);
+    rep(i, 0, N) {
+        scanf("%d", A + i);
+        s[i + 1] = s[i] + A[i];
+    }
+    rep(i, 0, N + 1) v.push_back(make_pair(s[i], i));
+    sort(v.begin(), v.end());
+    rep(i, 1, N + 1) {
+        ll kk = 1ll;
+        while (llabs(kk) <= llabs(v[i].first - v[0].first)) {
+            if (kk > 0) {
+                int l = lower_bound(v.begin(), v.end(), make_pair(v[i].first - kk, 0)) - v.begin();
+                int r = lower_bound(v.begin(), v.end(), make_pair(v[i].first - kk, v[i].second)) - v.begin();
+                ans += r - l;
+            } else {
+                int l = lower_bound(v.begin(), v.end(), make_pair(v[i].first + kk, v[i].second)) - v.begin();
+                int r = lower_bound(v.begin(), v.end(), make_pair(v[i].first + kk, INF)) - v.begin();
+                ans += r - l;
+            }
+            kk = kk * k;
+            if (kk == 1ll) break;
+        }
+    }
+    cout << ans << endl;
+    return 0;
 }

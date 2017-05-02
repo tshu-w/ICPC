@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -33,13 +33,13 @@ int N, A[MAX_N], ans;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	rep(i, 0, N) scanf("%d", A + i);
-	sort(A, A + N);
-	ans = N;
-	ans -= upper_bound(A, A + N, A[0]) - lower_bound(A, A + N, A[0]);
-	if (A[0] != A[N - 1])
-	ans -= upper_bound(A, A + N, A[N - 1]) - lower_bound(A, A + N, A[N - 1]);
-	printf("%d\n", ans);
-	return 0;
+    scanf("%d", &N);
+    rep(i, 0, N) scanf("%d", A + i);
+    sort(A, A + N);
+    ans = N;
+    ans -= upper_bound(A, A + N, A[0]) - lower_bound(A, A + N, A[0]);
+    if (A[0] != A[N - 1])
+    ans -= upper_bound(A, A + N, A[N - 1]) - lower_bound(A, A + N, A[N - 1]);
+    printf("%d\n", ans);
+    return 0;
 }

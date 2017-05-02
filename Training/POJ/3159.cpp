@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -72,13 +72,13 @@ void dijkstra(int s) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &V, &E);
-	for (int i = 0, u, v, w; i < E; ++i) {
-		scanf("%d%d%d", &u, &v, &w);
-		--u; --v;
-		G[u].push_back(edge{u, v, w});
-	}
-	dijkstra(0);
-	printf("%d\n", dist[V - 1]);
-	return 0;
+    scanf("%d%d", &V, &E);
+    for (int i = 0, u, v, w; i < E; ++i) {
+        scanf("%d%d%d", &u, &v, &w);
+        --u; --v;
+        G[u].push_back(edge{u, v, w});
+    }
+    dijkstra(0);
+    printf("%d\n", dist[V - 1]);
+    return 0;
 }

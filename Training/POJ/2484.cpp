@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -51,17 +51,17 @@ const int MAX_N = 1e5 + 10;
 
 int main(int argc, char const *argv[])
 {
-	int a, b;
-	while (scanf("%d%d", &a, &b), a + b) {
-		bool f = true;
-		while (true) {
-			if (a > b) swap(a, b);
-			if (b % a == 0) break;
-			if (b - a > a) break;
-			b -= a;
-			f = !f;
-		}
-		puts(f? "Stan wins" : "Ollie wins");
-	}
-	return 0;
+    int a, b;
+    while (scanf("%d%d", &a, &b), a + b) {
+        bool f = true;
+        while (true) {
+            if (a > b) swap(a, b);
+            if (b % a == 0) break;
+            if (b - a > a) break;
+            b -= a;
+            f = !f;
+        }
+        puts(f? "Stan wins" : "Ollie wins");
+    }
+    return 0;
 }

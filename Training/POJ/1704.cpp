@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -53,16 +53,16 @@ int N, P[MAX_N], t;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%d", &N);
-		rep(i, 0, N) scanf("%d", P + i);
-		if (N & 1) P[N++] = 0;
-		sort(P, P + N);
-		int x = 0;
-		for (int i = 0; i + 1 < N; i += 2)
-			x ^= (P[i + 1] - P[i] - 1);
-		puts(x? "Georgia will win" : "Bob will win");
-	}	
-	return 0;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d", &N);
+        rep(i, 0, N) scanf("%d", P + i);
+        if (N & 1) P[N++] = 0;
+        sort(P, P + N);
+        int x = 0;
+        for (int i = 0; i + 1 < N; i += 2)
+            x ^= (P[i + 1] - P[i] - 1);
+        puts(x? "Georgia will win" : "Bob will win");
+    }    
+    return 0;
 }

@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 {
     scanf("%d", &n);
     char name[30], name2[30], ch[5];
-    for (int i = 0; i < n; ++i)	{
+    for (int i = 0; i < n; ++i)    {
         scanf("%s%d", name, &a);
         P[i] = make_pair(Pii(a, i), name);
         s2p[name] = Pii(a, i);

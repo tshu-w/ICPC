@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -33,23 +33,23 @@ int N, T[MAX_N], sum, p, root;
 vector<int> G[MAX_N], ans;
 
 int dfs(int v) {
-	int res = T[v];
-	rep(i, 0, G[v].size())
-		res += dfs(G[v][i]);
-	if (res == sum / 3 && v != root) ans.push_back(v), res = 0;
-	return res;
+    int res = T[v];
+    rep(i, 0, G[v].size())
+        res += dfs(G[v][i]);
+    if (res == sum / 3 && v != root) ans.push_back(v), res = 0;
+    return res;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	rep(i, 1, N + 1) {
-		scanf("%d%d", &p, T + i);
-		if (p) G[p].push_back(i); else root = i;
-		sum += T[i];
-	}
-	dfs(root);
-	if (sum % 3 || ans.size() < 2) printf("-1\n");
-	else printf("%d %d\n", ans[0], ans[1]);
-	return 0;
+    scanf("%d", &N);
+    rep(i, 1, N + 1) {
+        scanf("%d%d", &p, T + i);
+        if (p) G[p].push_back(i); else root = i;
+        sum += T[i];
+    }
+    dfs(root);
+    if (sum % 3 || ans.size() < 2) printf("-1\n");
+    else printf("%d %d\n", ans[0], ans[1]);
+    return 0;
 }

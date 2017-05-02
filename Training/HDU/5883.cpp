@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -54,41 +54,41 @@ void unite(int x, int y) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	while (t--) {
-		memset(d, 0, sizeof d);
-		scanf("%d%d", &n, &m);
-		init(n);
-		for (int i = 0; i < n; ++i)
-			scanf("%d", A + i);
-		for (int i = 0, u, v; i < m; ++i) {
-			scanf("%d%d", &u, &v);
-			--u; --v;
-			++d[u]; ++d[v];
-			unite(u, v);
-		}
-		int cnt = 0, root = find(0), ans = 0;
-		bool flag = true;
-		for (int i = 0; i < n; ++i) {
-			if (d[i] & 1) {
-				++cnt;
-				ans ^= A[i];
-			}
-			if ((d[i] / 2) % 2) ans ^= A[i];
-			if (root != find(i) && d[i]) flag = false;
+    scanf("%d", &t);
+    while (t--) {
+        memset(d, 0, sizeof d);
+        scanf("%d%d", &n, &m);
+        init(n);
+        for (int i = 0; i < n; ++i)
+            scanf("%d", A + i);
+        for (int i = 0, u, v; i < m; ++i) {
+            scanf("%d%d", &u, &v);
+            --u; --v;
+            ++d[u]; ++d[v];
+            unite(u, v);
+        }
+        int cnt = 0, root = find(0), ans = 0;
+        bool flag = true;
+        for (int i = 0; i < n; ++i) {
+            if (d[i] & 1) {
+                ++cnt;
+                ans ^= A[i];
+            }
+            if ((d[i] / 2) % 2) ans ^= A[i];
+            if (root != find(i) && d[i]) flag = false;
 
-		}
-		if (cnt == 1 || cnt > 2) flag = false;
-		if (flag) {
-			int imax = 0;
-			if (cnt == 0) {
-				for (int i = 0; i < n; ++i)
-					imax = max(A[i] ^ ans, imax);
-			} else imax = ans;
-			printf("%d\n", imax);
-		}
-		else 
-			printf("Impossible\n");
-	}	
-	return 0;
+        }
+        if (cnt == 1 || cnt > 2) flag = false;
+        if (flag) {
+            int imax = 0;
+            if (cnt == 0) {
+                for (int i = 0; i < n; ++i)
+                    imax = max(A[i] ^ ans, imax);
+            } else imax = ans;
+            printf("%d\n", imax);
+        }
+        else 
+            printf("Impossible\n");
+    }    
+    return 0;
 }

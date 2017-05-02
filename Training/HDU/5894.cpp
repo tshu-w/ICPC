@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -92,18 +92,18 @@ ll mod_comb(ll n, ll k, ll p) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	init();
-	while (t--) {
-		scanf("%lld%lld%lld", &n, &m, &k);
-		ll res = n - m - m * k;
-		if (m == 1ll) printf("%lld\n", n);
-		else 
-			if (res < 0) printf("0\n");
-			else {
-				ll ans = mod_comb(m + res - 1, res, MOD) * n % MOD * mod_inverse(m, MOD) % MOD;
-				printf("%lld\n", ans);
-			}
-	}	
-	return 0;
+    scanf("%d", &t);
+    init();
+    while (t--) {
+        scanf("%lld%lld%lld", &n, &m, &k);
+        ll res = n - m - m * k;
+        if (m == 1ll) printf("%lld\n", n);
+        else 
+            if (res < 0) printf("0\n");
+            else {
+                ll ans = mod_comb(m + res - 1, res, MOD) * n % MOD * mod_inverse(m, MOD) % MOD;
+                printf("%lld\n", ans);
+            }
+    }    
+    return 0;
 }

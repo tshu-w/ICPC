@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -33,8 +33,8 @@ int a, b, c;
 
 int main(int argc, char const *argv[])
 {
-	cin >> a >> b >> c;
-	a = min(a, b / 2); a = min(a, c / 4);
-	cout << 7 * a << endl;
-	return 0;
+    cin >> a >> b >> c;
+    a = min(a, b / 2); a = min(a, c / 4);
+    cout << 7 * a << endl;
+    return 0;
 }

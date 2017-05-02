@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -33,20 +33,20 @@ string s;
 
 int main(int argc, char const *argv[])
 {
-	cin >> s;
-	rep(i, 0, s.size()) {
-		if (s[i] == 'R')
-			B[i % 4] = 0;
-		if (s[i] == 'B')
-			B[i % 4] = 1;
-		if (s[i] == 'Y')
-			B[i % 4] = 2;
-		if (s[i] == 'G')
-			B[i % 4] = 3;
-	}
-	rep(i, 0, s.size())
-		if (s[i] == '!') A[B[i % 4]]++;
-	rep(i, 0, 4) 
-		printf("%d%c", A[i], i == 3? '\n' : ' ');
-	return 0;
+    cin >> s;
+    rep(i, 0, s.size()) {
+        if (s[i] == 'R')
+            B[i % 4] = 0;
+        if (s[i] == 'B')
+            B[i % 4] = 1;
+        if (s[i] == 'Y')
+            B[i % 4] = 2;
+        if (s[i] == 'G')
+            B[i % 4] = 3;
+    }
+    rep(i, 0, s.size())
+        if (s[i] == '!') A[B[i % 4]]++;
+    rep(i, 0, 4) 
+        printf("%d%c", A[i], i == 3? '\n' : ' ');
+    return 0;
 }

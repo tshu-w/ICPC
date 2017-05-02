@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -99,31 +99,31 @@ struct Trie {
 Trie ac;
 
 int main(void) {
-	scanf("%d", &t);
-	while (t--) {
+    scanf("%d", &t);
+    while (t--) {
         ac.init();
-		scanf("%d", &n);
-		for (int i = 0; i < n; ++i) {
-			scanf("%s", buf);
-			ac.insert(buf);
-		}
-		getchar();
-		ac.build();
-		gets(buf);
-		memset(ans, 0, sizeof ans);
-		ac.solve(buf);
-		ll res = 0;
-		len = strlen(buf);
-		for (int i = 0; i < len; ++i) {
-			res += ans[i];
-			if (res <= 0)
-				printf("%c", buf[i]);
-			else printf("*");
-		}
-		printf("\n");
-		for (int i = 0; i < len; ++i) 
-			cout << ans[i];
-		cout << endl;
-	}
-	return 0;
+        scanf("%d", &n);
+        for (int i = 0; i < n; ++i) {
+            scanf("%s", buf);
+            ac.insert(buf);
+        }
+        getchar();
+        ac.build();
+        gets(buf);
+        memset(ans, 0, sizeof ans);
+        ac.solve(buf);
+        ll res = 0;
+        len = strlen(buf);
+        for (int i = 0; i < len; ++i) {
+            res += ans[i];
+            if (res <= 0)
+                printf("%c", buf[i]);
+            else printf("*");
+        }
+        printf("\n");
+        for (int i = 0; i < len; ++i) 
+            cout << ans[i];
+        cout << endl;
+    }
+    return 0;
 }

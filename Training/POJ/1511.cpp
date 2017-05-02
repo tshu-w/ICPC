@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -73,29 +73,29 @@ void dijkstra(int s) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%d%d", &V, &E);
-		for (int i = 0; i < E; ++i) {
-			scanf("%d%d%d", X + i, Y + i, Z + i);
-			--X[i]; --Y[i];
-		}
-		for (int i = 0; i < V; ++i)
-			G[i].clear();
-		for (int i = 0; i < E; ++i)
-			G[X[i]].push_back(edge{X[i], Y[i], Z[i]});
-		dijkstra(0);
-		ll ans = 0;
-		for (int i = 1; i < V; ++i)
-			ans += dist[i];
-		for (int i = 0; i < V; ++i)
-			G[i].clear();
-		for (int i = 0; i < E; ++i)
-			G[Y[i]].push_back(edge{Y[i], X[i], Z[i]});
-		dijkstra(0);
-		for (int i = 1; i < V; ++i)
-			ans += dist[i];
-		printf("%lld\n", ans);
-	}	
-	return 0;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d%d", &V, &E);
+        for (int i = 0; i < E; ++i) {
+            scanf("%d%d%d", X + i, Y + i, Z + i);
+            --X[i]; --Y[i];
+        }
+        for (int i = 0; i < V; ++i)
+            G[i].clear();
+        for (int i = 0; i < E; ++i)
+            G[X[i]].push_back(edge{X[i], Y[i], Z[i]});
+        dijkstra(0);
+        ll ans = 0;
+        for (int i = 1; i < V; ++i)
+            ans += dist[i];
+        for (int i = 0; i < V; ++i)
+            G[i].clear();
+        for (int i = 0; i < E; ++i)
+            G[Y[i]].push_back(edge{Y[i], X[i], Z[i]});
+        dijkstra(0);
+        for (int i = 1; i < V; ++i)
+            ans += dist[i];
+        printf("%lld\n", ans);
+    }    
+    return 0;
 }

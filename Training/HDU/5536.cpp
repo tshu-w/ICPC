@@ -19,29 +19,29 @@ int t, n, sumn;
 ll a[MAX_N];
 
 inline ll llmax(ll a, ll b) {
-	if (a > b)
-		return a;
-	else 
-		return b;
+    if (a > b)
+        return a;
+    else 
+        return b;
 }
 int main(int argc, char const *argv[])
 {
 
-	cin >> t;
-	while (t--) {
-		scanf("%d", &n);
-		for (int i = 0; i < n; ++i)
-			scanf("%lld", a + i);
-		sumn = 0;
-		ll ans = 0;
-		for (int i = 0; i < n; ++i)
-			for (int j = i + 1; j < n; ++j)
-				for (int k = j + 1; k < n; ++k) {
-					ans = llmax(ans, (a[i] + a[j]) ^ a[k]);
-					ans = llmax(ans, (a[k] + a[i]) ^ a[j]);
-					ans = llmax(ans, (a[j] + a[k]) ^ a[i]);
-				}
-		printf("%lld\n", ans);
-	}
-	return 0;
+    cin >> t;
+    while (t--) {
+        scanf("%d", &n);
+        for (int i = 0; i < n; ++i)
+            scanf("%lld", a + i);
+        sumn = 0;
+        ll ans = 0;
+        for (int i = 0; i < n; ++i)
+            for (int j = i + 1; j < n; ++j)
+                for (int k = j + 1; k < n; ++k) {
+                    ans = llmax(ans, (a[i] + a[j]) ^ a[k]);
+                    ans = llmax(ans, (a[k] + a[i]) ^ a[j]);
+                    ans = llmax(ans, (a[j] + a[k]) ^ a[i]);
+                }
+        printf("%lld\n", ans);
+    }
+    return 0;
 }

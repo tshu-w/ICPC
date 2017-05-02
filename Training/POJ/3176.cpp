@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -48,17 +48,17 @@ int N, A[MAX_N][MAX_N], ans = 0;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	for (int i = 0; i < N; ++i)
-		for (int j = 0; j <= i; ++j)
-			scanf("%d", &A[i][j]);
-	for (int i = 1; i < N; ++i)
-		for (int j = 0; j <= i; ++j)
-			if (j != i)
-				A[i][j] += max(A[i - 1][j], A[i - 1][j - 1]);
-			else A[i][j] += A[i - 1][j - 1];
-	for (int i = 0; i < N; ++i)
-		ans = max(A[N - 1][i], ans);
-	printf("%d\n", ans);	
-	return 0;
+    scanf("%d", &N);
+    for (int i = 0; i < N; ++i)
+        for (int j = 0; j <= i; ++j)
+            scanf("%d", &A[i][j]);
+    for (int i = 1; i < N; ++i)
+        for (int j = 0; j <= i; ++j)
+            if (j != i)
+                A[i][j] += max(A[i - 1][j], A[i - 1][j - 1]);
+            else A[i][j] += A[i - 1][j - 1];
+    for (int i = 0; i < N; ++i)
+        ans = max(A[N - 1][i], ans);
+    printf("%d\n", ans);    
+    return 0;
 }

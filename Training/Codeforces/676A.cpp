@@ -19,19 +19,19 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int n, ipmax, ipmin, x;
-	cin >> n;
-	for (int i = 0; i < n; ++i) {
-		cin >> x;
-		if (x == 1)
-			ipmin = i;
-		if (x == n)
-			ipmax = i;
-	}
-	int ans;
-	ans = max(ipmin, ipmax);
-	ans = max(ans, n - ipmin - 1);
-	ans = max(ans, n - ipmax - 1);
-	cout << ans << endl;
-	return 0;
+    int n, ipmax, ipmin, x;
+    cin >> n;
+    for (int i = 0; i < n; ++i) {
+        cin >> x;
+        if (x == 1)
+            ipmin = i;
+        if (x == n)
+            ipmax = i;
+    }
+    int ans;
+    ans = max(ipmin, ipmax);
+    ans = max(ans, n - ipmin - 1);
+    ans = max(ans, n - ipmax - 1);
+    cout << ans << endl;
+    return 0;
 }

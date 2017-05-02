@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -49,24 +49,24 @@ int N, M, C[MAX_N], A[MAX_N], dp[MAX_W];
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d%d", &N, &M) && (N + M)) {
-		memset(dp, -1, sizeof dp);
-		dp[0] = 0;
-		for (int i = 0; i < N; ++i)
-			scanf("%d", A + i);
-		for (int i = 0; i < N; ++i)
-			scanf("%d", C + i);
-		for (int i = 0; i < N; ++i)
-			for (int j = 0; j <= M; ++j)
-				if (dp[j] >= 0) 
-					dp[j] = C[i];
-				else if (j < A[i] || dp[j - A[i]] <= 0)
-						dp[j] = -1;
-					else dp[j] = dp[j - A[i]] - 1;	
-		int ans = 0;
-		for (int i = 1; i <= M; ++i)
-			if (dp[i] >= 0) ++ans;	
-		printf("%d\n", ans);
-	}
-	return 0;
+    while (~scanf("%d%d", &N, &M) && (N + M)) {
+        memset(dp, -1, sizeof dp);
+        dp[0] = 0;
+        for (int i = 0; i < N; ++i)
+            scanf("%d", A + i);
+        for (int i = 0; i < N; ++i)
+            scanf("%d", C + i);
+        for (int i = 0; i < N; ++i)
+            for (int j = 0; j <= M; ++j)
+                if (dp[j] >= 0) 
+                    dp[j] = C[i];
+                else if (j < A[i] || dp[j - A[i]] <= 0)
+                        dp[j] = -1;
+                    else dp[j] = dp[j - A[i]] - 1;    
+        int ans = 0;
+        for (int i = 1; i <= M; ++i)
+            if (dp[i] >= 0) ++ans;    
+        printf("%d\n", ans);
+    }
+    return 0;
 }

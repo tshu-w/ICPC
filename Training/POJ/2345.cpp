@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -54,41 +54,41 @@ const int MAX_N = 250 + 10;
 int N, a;
 
 vec gauss_joedan_xor(const mat& A, const vec& b) {
-	int n = A.size();
-	mat B(n, vec(n + 1));
-	rep(i, 0, n) rep(j, 0, n) B[i][j] = A[i][j];
-	rep(i, 0, n) B[i][n] = b[i];
+    int n = A.size();
+    mat B(n, vec(n + 1));
+    rep(i, 0, n) rep(j, 0, n) B[i][j] = A[i][j];
+    rep(i, 0, n) B[i][n] = b[i];
 
-	rep(i, 0, n) {
-		int pivot = i;
-		rep(j, i, n) if (B[j][i]) {
-			pivot = j; break;
-		}
-		if (pivot != i) swap(B[i], B[pivot]);
+    rep(i, 0, n) {
+        int pivot = i;
+        rep(j, i, n) if (B[j][i]) {
+            pivot = j; break;
+        }
+        if (pivot != i) swap(B[i], B[pivot]);
 
-		rep(j, 0, n) if (i != j && B[j][i]) {
-			rep(k, i + 1, n + 1) B[j][k] ^= B[i][k];
-		}
-	}
-	vec x(n);
-	rep(i, 0, n) x[i] = B[i][n];
-	return x;
+        rep(j, 0, n) if (i != j && B[j][i]) {
+            rep(k, i + 1, n + 1) B[j][k] ^= B[i][k];
+        }
+    }
+    vec x(n);
+    rep(i, 0, n) x[i] = B[i][n];
+    return x;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	mat A(N, vec(N, 0));
-	vec b(N, 1);
-	rep(i, 0, N) {
-		while (scanf("%d", &a) && a != -1) {
-			--a;
-			A[a][i] = 1;
-		}
-	}	
-	vec x = gauss_joedan_xor(A, b);
-	vector<int> v;
-	rep(i, 0, N) if (x[i]) v.push_back(i + 1);
-	rep(i, 0, v.size()) printf("%d%c", v[i], " \n"[i + 1 == v.size()]);
-	return 0;
+    scanf("%d", &N);
+    mat A(N, vec(N, 0));
+    vec b(N, 1);
+    rep(i, 0, N) {
+        while (scanf("%d", &a) && a != -1) {
+            --a;
+            A[a][i] = 1;
+        }
+    }    
+    vec x = gauss_joedan_xor(A, b);
+    vector<int> v;
+    rep(i, 0, N) if (x[i]) v.push_back(i + 1);
+    rep(i, 0, v.size()) printf("%d%c", v[i], " \n"[i + 1 == v.size()]);
+    return 0;
 }

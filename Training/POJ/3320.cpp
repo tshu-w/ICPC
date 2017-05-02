@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -48,24 +48,24 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int p, x, s = 0, t = 0, num = 0, a[MAX_N];
-	set<int> all;
-	cin >> p;
-	for (int i = 0; i < p; ++i) {
-		scanf("%d", a + i);
-		all.insert(a[i]);
-	}
-	int n = all.size(), res = p;
-	map<int, int> count;
-	for (;;) {
-		while (t < p && num < n)
-			if (count[a[t++]]++ == 0)
-				num++;
-		if (num < n) break;
-		res = min(res, t - s);
-		if (--count[a[s++]] == 0)
-			num--;
-	}
-	printf("%d\n", res);
-	return 0;
+    int p, x, s = 0, t = 0, num = 0, a[MAX_N];
+    set<int> all;
+    cin >> p;
+    for (int i = 0; i < p; ++i) {
+        scanf("%d", a + i);
+        all.insert(a[i]);
+    }
+    int n = all.size(), res = p;
+    map<int, int> count;
+    for (;;) {
+        while (t < p && num < n)
+            if (count[a[t++]]++ == 0)
+                num++;
+        if (num < n) break;
+        res = min(res, t - s);
+        if (--count[a[s++]] == 0)
+            num--;
+    }
+    printf("%d\n", res);
+    return 0;
 }

@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -29,11 +29,11 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	pair<double, double> p[4];
-	int m, l, r;
-	while (cin >> p[0].first >> p[0].second) {
-		for (int i = 1; i < 4; ++i)
-			cin >> p[i].first >> p[i].second;
+    pair<double, double> p[4];
+    int m, l, r;
+    while (cin >> p[0].first >> p[0].second) {
+        for (int i = 1; i < 4; ++i)
+            cin >> p[i].first >> p[i].second;
 
         if(p[0] == p[3]) {  
             swap(p[0],p[1]);  
@@ -44,6 +44,6 @@ int main(int argc, char const *argv[])
         else if(p[1] == p[3])  
             swap(p[2],p[3]);  
         printf("%.3lf %.3lf\n", p[3].first - p[2].first + p[0].first, p[3].second - p[2].second + p[0].second);  
-	}	
-	return 0;
+    }    
+    return 0;
 }

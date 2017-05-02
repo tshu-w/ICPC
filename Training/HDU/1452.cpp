@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -37,14 +37,14 @@ ll mod_pow(ll x, ll n, ll mod) {
 
 int main(int argc, char const *argv[])
 {
-	int x;
-	ll res;
-	while (~scanf("%d", &x) && x) {
-		res = 1;
-		res *= (mod_pow(2, 2 * x + 1, 29) - 1) % 29;
-		res *= (mod_pow(3, x + 1, 29) - 1) * 15 % 29;
-		res *= (mod_pow(22, x + 1, 29) - 1) * 18 % 29;
-		printf("%lld\n", res % 29);
-	}
-	return 0;
+    int x;
+    ll res;
+    while (~scanf("%d", &x) && x) {
+        res = 1;
+        res *= (mod_pow(2, 2 * x + 1, 29) - 1) % 29;
+        res *= (mod_pow(3, x + 1, 29) - 1) * 15 % 29;
+        res *= (mod_pow(22, x + 1, 29) - 1) * 18 % 29;
+        printf("%lld\n", res % 29);
+    }
+    return 0;
 }

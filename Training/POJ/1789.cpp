@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -80,21 +80,21 @@ int prime() {
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d", &N) && N) {
-		for (int i = 0; i < N; ++i) {
-			G[i].clear();
-			scanf("%s", s[i]);
-		}
-		for (int i = 0; i < N; ++i)
-			for (int j = i + 1; j < N; ++j) {
-				int res = 0;
-				for (int k = 0; k < 7; ++k)
-					if (s[i][k] != s[j][k]) ++res;
-				G[i].push_back(edge{i, j, res});
-				G[j].push_back(edge{j, i, res});
-			}
-		int ans = prime();
-		printf("The highest possible quality is 1/%d.\n", ans);
-	}
-	return 0;
+    while (~scanf("%d", &N) && N) {
+        for (int i = 0; i < N; ++i) {
+            G[i].clear();
+            scanf("%s", s[i]);
+        }
+        for (int i = 0; i < N; ++i)
+            for (int j = i + 1; j < N; ++j) {
+                int res = 0;
+                for (int k = 0; k < 7; ++k)
+                    if (s[i][k] != s[j][k]) ++res;
+                G[i].push_back(edge{i, j, res});
+                G[j].push_back(edge{j, i, res});
+            }
+        int ans = prime();
+        printf("The highest possible quality is 1/%d.\n", ans);
+    }
+    return 0;
 }

@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -42,16 +42,16 @@ int seive(int n) {
 
 int main(int argc, char const *argv[])
 {
-	int t, a, b;
-	cin >> t;
-	int p = seive(1e6);
-	while (t--) {
-		scanf("%d%d", &a, &b);
-		for (int i = 0; i < p; ++i)
-			if (a / b % prime[i] != 0) {
-				printf("%d\n", prime[i] * b);
-				break;
-			}
-	} 
-	return 0;
+    int t, a, b;
+    cin >> t;
+    int p = seive(1e6);
+    while (t--) {
+        scanf("%d%d", &a, &b);
+        for (int i = 0; i < p; ++i)
+            if (a / b % prime[i] != 0) {
+                printf("%d\n", prime[i] * b);
+                break;
+            }
+    } 
+    return 0;
 }

@@ -3,9 +3,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -29,20 +29,20 @@ int T;
 double A, B;
 
 bool equal(double a, double b) {
-	return fabs(a - b) < 1e-6;
+    return fabs(a - b) < 1e-6;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &T);
-	for (int i = 1; i <= T; ++i) {
-		scanf("%lf%lf", &A, &B);
-		if (B == 0.01 || B == 0.1 || B == 1 || B == 10 || B == 100) {
-			if (A == 2 * B)
-				printf("Case #%d: 0.01\n", i);
-			else printf("Case #%d: 0.02\n", i);
-		}
-		else printf("Case #%d: 0.01\n", i);
-	}	
-	return 0;
+    scanf("%d", &T);
+    for (int i = 1; i <= T; ++i) {
+        scanf("%lf%lf", &A, &B);
+        if (B == 0.01 || B == 0.1 || B == 1 || B == 10 || B == 100) {
+            if (A == 2 * B)
+                printf("Case #%d: 0.01\n", i);
+            else printf("Case #%d: 0.02\n", i);
+        }
+        else printf("Case #%d: 0.01\n", i);
+    }    
+    return 0;
 }

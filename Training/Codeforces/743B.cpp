@@ -3,9 +3,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -30,19 +30,19 @@ const int MAX_N = 1e5 + 10;
 ll N, K;
 
 int work(ll N, ll K) {
-	if (K == (1ll << N)) return N + 1;
-	// if (N == 1 && K == 2) return 2;
-	if (K < (1ll << N)) return work(N - 1, K);
-	else return work(N - 1, K - (1ll << N));
-	return -1;
+    if (K == (1ll << N)) return N + 1;
+    // if (N == 1 && K == 2) return 2;
+    if (K < (1ll << N)) return work(N - 1, K);
+    else return work(N - 1, K - (1ll << N));
+    return -1;
 }
 int main(int argc, char const *argv[])
 {
-	cin >> N >> K;
-	if (K & 1) {
-		printf("1\n");
-	} else {
-		printf("%d\n", work(N - 1, K));
-	}
-	return 0;
+    cin >> N >> K;
+    if (K & 1) {
+        printf("1\n");
+    } else {
+        printf("%d\n", work(N - 1, K));
+    }
+    return 0;
 }

@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -48,20 +48,20 @@ int n;
 
 int euler[MAX_N];
 void euler_phi2() {
-	for (int i = 0; i < MAX_N; ++i) euler[i] = i;
-	for (int i = 2; i < MAX_N; ++i) {
-		if (euler[i] == i)
-			for (int j = i; j < MAX_N; j += i) euler[j] = euler[j] / i * (i - 1);
-	}
+    for (int i = 0; i < MAX_N; ++i) euler[i] = i;
+    for (int i = 2; i < MAX_N; ++i) {
+        if (euler[i] == i)
+            for (int j = i; j < MAX_N; j += i) euler[j] = euler[j] / i * (i - 1);
+    }
 }
 
 int main(int argc, char const *argv[])
 {
-	euler_phi2();
-	while (~scanf("%d", &n) && n) {
-		ll ans = 0;
-		for (int i = 2; i <= n; ++i) ans += euler[i];
-		printf("%lld\n", ans);
-	}	
-	return 0;
+    euler_phi2();
+    while (~scanf("%d", &n) && n) {
+        ll ans = 0;
+        for (int i = 2; i <= n; ++i) ans += euler[i];
+        printf("%lld\n", ans);
+    }    
+    return 0;
 }

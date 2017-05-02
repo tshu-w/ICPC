@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -28,25 +28,25 @@ int n, h, m;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &n);
-	scanf("%d:%d", &h, &m);
-	if (n == 24) {
-		if (h > 23)
-			h = h % 10;
-		if (m >= 60)
-			m = m % 10;
-	} else {
-		if (h == 0)
-			h = 1;
-		else
-			if (h > 12) {
-				if (h % 10 != 0)
-					h = h % 10;
-				else h = 10;
-			}
-		if (m >= 60)
-			m = m % 10;
-	}
-	printf("%02d:%02d\n", h, m);
-	return 0;
+    scanf("%d", &n);
+    scanf("%d:%d", &h, &m);
+    if (n == 24) {
+        if (h > 23)
+            h = h % 10;
+        if (m >= 60)
+            m = m % 10;
+    } else {
+        if (h == 0)
+            h = 1;
+        else
+            if (h > 12) {
+                if (h % 10 != 0)
+                    h = h % 10;
+                else h = 10;
+            }
+        if (m >= 60)
+            m = m % 10;
+    }
+    printf("%02d:%02d\n", h, m);
+    return 0;
 }

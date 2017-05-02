@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -32,26 +32,26 @@ const int MAX_N = 1e6 + 10;
 ll a[10];
 
 int solve() {
-	if (a[0] + a[1] + a[2] + a[3] == 0) return puts("0"), 0;
-	ll n, m;
-	if (a[1] || a[2]) n = m = 1; else n = m = 0;
-	while (n * (n - 1) < 2 * a[0]) ++n;
-	while (m * (m - 1) < 2 * a[3]) ++m;
-	if (n * (n - 1) != 2 * a[0] || m * (m - 1) != 2 * a[3] || m * n != a[1] + a[2]) 
-		return puts("Impossible"), 0;
-	while (a[1] || a[2]) {
-		while (a[1] >= m) printf("0"), --n, a[1] -= m; if (!n) break;
-		while (a[2] >= n) printf("1"), --m, a[2] -= n; if (!m) break;
-	}
-	while (n--) printf("0");
-	while (m--) printf("1");
-	puts("");
-	return 0;
+    if (a[0] + a[1] + a[2] + a[3] == 0) return puts("0"), 0;
+    ll n, m;
+    if (a[1] || a[2]) n = m = 1; else n = m = 0;
+    while (n * (n - 1) < 2 * a[0]) ++n;
+    while (m * (m - 1) < 2 * a[3]) ++m;
+    if (n * (n - 1) != 2 * a[0] || m * (m - 1) != 2 * a[3] || m * n != a[1] + a[2]) 
+        return puts("Impossible"), 0;
+    while (a[1] || a[2]) {
+        while (a[1] >= m) printf("0"), --n, a[1] -= m; if (!n) break;
+        while (a[2] >= n) printf("1"), --m, a[2] -= n; if (!m) break;
+    }
+    while (n--) printf("0");
+    while (m--) printf("1");
+    puts("");
+    return 0;
 }
 
 int main(int argc, char const *argv[])
 {
-	rep(i, 0, 4) cin >> a[i];
-	solve();
-	return 0;
+    rep(i, 0, 4) cin >> a[i];
+    solve();
+    return 0;
 }

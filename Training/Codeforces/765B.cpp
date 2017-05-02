@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -35,14 +35,14 @@ int imax = 0;
 
 int main(int argc, char const *argv[])
 {
-	cin >> s;
-	rep(i, 0, s.size()) {
-		ch[imax = max(imax, s[i] - 'a')]++;
-	}
-	rep(i, 0, imax + 1) if (ch[i] == 0) {
-		cout << "NO" << endl;
-		return 0;
-	}
-	cout << "YES" << endl;
-	return 0;
+    cin >> s;
+    rep(i, 0, s.size()) {
+        ch[imax = max(imax, s[i] - 'a')]++;
+    }
+    rep(i, 0, imax + 1) if (ch[i] == 0) {
+        cout << "NO" << endl;
+        return 0;
+    }
+    cout << "YES" << endl;
+    return 0;
 }

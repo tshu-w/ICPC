@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -48,25 +48,25 @@ int n, A[MAX_N], sum[MAX_N], flag[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	cin >> n;
-	memset(flag, 0, sizeof flag);
-	for (int i = 0; i < n; ++i) {
-		cin >> A[i];	
-		sum[i + 1] = sum[i] + A[i];
-	}
-	for (int i = 1; i <= n; ++i) {
-		if (sum[i] % n == 0) {
-			cout << i << endl;
-			for (int j = 0; j < i; ++j)
-				cout << A[j] << endl;
-			return 0;
-		}
-		if (flag[sum[i] % n]) {
-			cout << i - flag[sum[i] % n] << endl;
-			for (int j = flag[sum[i] % n]; j < i; ++j)
-				cout << A[j] << endl;
-			return 0;
-		} else flag[sum[i] % n] = i;
-	}
-	return 0;
+    cin >> n;
+    memset(flag, 0, sizeof flag);
+    for (int i = 0; i < n; ++i) {
+        cin >> A[i];    
+        sum[i + 1] = sum[i] + A[i];
+    }
+    for (int i = 1; i <= n; ++i) {
+        if (sum[i] % n == 0) {
+            cout << i << endl;
+            for (int j = 0; j < i; ++j)
+                cout << A[j] << endl;
+            return 0;
+        }
+        if (flag[sum[i] % n]) {
+            cout << i - flag[sum[i] % n] << endl;
+            for (int j = flag[sum[i] % n]; j < i; ++j)
+                cout << A[j] << endl;
+            return 0;
+        } else flag[sum[i] % n] = i;
+    }
+    return 0;
 }

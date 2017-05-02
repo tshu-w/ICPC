@@ -19,8 +19,8 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int a, b;
-	cin >> a >> b;
-	cout << min(a, b) << " " << ((a + b) - 2 * min(a, b)) / 2 << endl;
-	return 0;
+    int a, b;
+    cin >> a >> b;
+    cout << min(a, b) << " " << ((a + b) - 2 * min(a, b)) / 2 << endl;
+    return 0;
 }

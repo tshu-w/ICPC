@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -56,22 +56,22 @@ template<typename T> T exgcd(T a, T b, T &x, T &y) {
 }
 
 ll modular_linear(ll a, ll b, ll n) {
-	ll d, e, x, y;
-	d = exgcd(a, n, x, y);
-	if (b % d)
-		return -1;
-	e = x * (b / d) % n + n;
-	return e % (n / d);
+    ll d, e, x, y;
+    d = exgcd(a, n, x, y);
+    if (b % d)
+        return -1;
+    e = x * (b / d) % n + n;
+    return e % (n / d);
 }
 
 int main(int argc, char const *argv[])
 {
-	ll a, b, c, k;
-	while (~scanf("%lld%lld%lld%lld", &a, &b, &c, &k) && (a + b + c + k)) {
-		ll d = modular_linear(c, b - a, 1LL << k);
-		if (d == -1) 
-			printf("FOREVER\n");
-		else printf("%lld\n", d);
-	}	
-	return 0;
+    ll a, b, c, k;
+    while (~scanf("%lld%lld%lld%lld", &a, &b, &c, &k) && (a + b + c + k)) {
+        ll d = modular_linear(c, b - a, 1LL << k);
+        if (d == -1) 
+            printf("FOREVER\n");
+        else printf("%lld\n", d);
+    }    
+    return 0;
 }

@@ -36,39 +36,39 @@ int sum(int p) {
 }
 int main(int argc, char const *argv[])
 {
-	int t, tt = 0, ans[MAX_N];
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%d", &n);
-		for (int i = 1; i <= n; ++i)
-			scanf("%d%d", &p[i].first, &p[i].second);
-		memset(C, 0, sizeof C);
-		sort(p + 1, p + n + 1);
-		bool flag = true;
-		for (int i = 1; i <= n; ++i) {
-			int k = min(p[i].second, n - i - p[i].second);
-			if (n - i - p[i].second < 0) {
-				flag = false;
-				break;
-			}
-			++k;
-			int l = 1, r = n, mid;
-			while (l < r) {
-				mid = (l + r) / 2;
-				if (mid - sum(mid) >= k) 
-					r = mid;
-				else l = mid + 1;
-			}
-			modify(l, 1);
-			ans[l] = p[i].first;
-		}
-		printf("Case #%d:", ++tt);
-		if (flag) {
-			for (int i = 1; i <= n; ++i)
-				printf(" %d", ans[i]);
-			printf("\n");
-		} else 
-			printf(" impossible\n");
-	}
-	return 0;
+    int t, tt = 0, ans[MAX_N];
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d", &n);
+        for (int i = 1; i <= n; ++i)
+            scanf("%d%d", &p[i].first, &p[i].second);
+        memset(C, 0, sizeof C);
+        sort(p + 1, p + n + 1);
+        bool flag = true;
+        for (int i = 1; i <= n; ++i) {
+            int k = min(p[i].second, n - i - p[i].second);
+            if (n - i - p[i].second < 0) {
+                flag = false;
+                break;
+            }
+            ++k;
+            int l = 1, r = n, mid;
+            while (l < r) {
+                mid = (l + r) / 2;
+                if (mid - sum(mid) >= k) 
+                    r = mid;
+                else l = mid + 1;
+            }
+            modify(l, 1);
+            ans[l] = p[i].first;
+        }
+        printf("Case #%d:", ++tt);
+        if (flag) {
+            for (int i = 1; i <= n; ++i)
+                printf(" %d", ans[i]);
+            printf("\n");
+        } else 
+            printf(" impossible\n");
+    }
+    return 0;
 }

@@ -21,24 +21,24 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	ll x, a;
-	int d = 0, n;
-	char ch;
-	cin >> n >> x;
-	for (int i = 0; i < n; ++i) {
-		cin >> ch >> a;
-		if (ch == '+') {
-			x += a;
-		}
-		else {
-			if (x >= a) {
-				x -= a;
-			}
-			else {
-				++d;
-			}
-		}
-	}
-	cout << x << ' ' << d << endl;
-	return 0;
+    ll x, a;
+    int d = 0, n;
+    char ch;
+    cin >> n >> x;
+    for (int i = 0; i < n; ++i) {
+        cin >> ch >> a;
+        if (ch == '+') {
+            x += a;
+        }
+        else {
+            if (x >= a) {
+                x -= a;
+            }
+            else {
+                ++d;
+            }
+        }
+    }
+    cout << x << ' ' << d << endl;
+    return 0;
 }

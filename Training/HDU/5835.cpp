@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -28,26 +28,26 @@ int t, N, A[MAX_N], cs = 0;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	while (t--) {
-		int sum = 0;
-		scanf("%d", &N);
-		for (int i = 0; i < N; ++i) {
-			scanf("%d", A + i);
-			sum += A[i];
-		}
-		int p1 = 0, p2 = 1, cnt = 0, nxt = 2;
-		while (cnt < sum / 2) {
-			if (A[p1] > 0) {
-				--A[p1];	
-				++cnt;
-				swap(p1, p2);
-			} else {
-				p1 = nxt;
-				++nxt;
-			}
-		}
-		printf("Case #%d: %d\n", ++cs, cnt);
-	}	
-	return 0;
+    scanf("%d", &t);
+    while (t--) {
+        int sum = 0;
+        scanf("%d", &N);
+        for (int i = 0; i < N; ++i) {
+            scanf("%d", A + i);
+            sum += A[i];
+        }
+        int p1 = 0, p2 = 1, cnt = 0, nxt = 2;
+        while (cnt < sum / 2) {
+            if (A[p1] > 0) {
+                --A[p1];    
+                ++cnt;
+                swap(p1, p2);
+            } else {
+                p1 = nxt;
+                ++nxt;
+            }
+        }
+        printf("Case #%d: %d\n", ++cs, cnt);
+    }    
+    return 0;
 }

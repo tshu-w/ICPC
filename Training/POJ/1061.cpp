@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -65,21 +65,21 @@ template<typename T> T exgcd(T a, T b, T &x, T &y) {
 
 int main(int argc, char const *argv[])
 {
-	ll x, y, m, n, l;
-	cin >> x >> y >> m >> n >> l;
-	if (n < m) {
-		swap(x, y);
-		swap(n, m);
-	}
-	int d = gcd(n - m, l);
-	if ((x - y) % d)
-		cout << "Impossible" << endl;
-	else {
-		ll t, k;
-		exgcd(n - m, l, t, k);
-		t *= (x - y) / d;
-		t = (t % (l / d) + (l / d)) % (l / d);
-		cout << t << endl;
-	}
-	return 0;
+    ll x, y, m, n, l;
+    cin >> x >> y >> m >> n >> l;
+    if (n < m) {
+        swap(x, y);
+        swap(n, m);
+    }
+    int d = gcd(n - m, l);
+    if ((x - y) % d)
+        cout << "Impossible" << endl;
+    else {
+        ll t, k;
+        exgcd(n - m, l, t, k);
+        t *= (x - y) / d;
+        t = (t % (l / d) + (l / d)) % (l / d);
+        cout << t << endl;
+    }
+    return 0;
 }

@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -96,12 +96,12 @@ int prime() {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &V, &E);
-	for (int i = 0, v, u, d; i < E; ++i) {
-		scanf("%d%d%d", &v, &u, &d); --v; --u;
-		G[v].push_back(edge{v, u, d});
-		G[u].push_back(edge{u, v, d});
-	}
-	printf("%d\n", prime());
-	return 0;
+    scanf("%d%d", &V, &E);
+    for (int i = 0, v, u, d; i < E; ++i) {
+        scanf("%d%d%d", &v, &u, &d); --v; --u;
+        G[v].push_back(edge{v, u, d});
+        G[u].push_back(edge{u, v, d});
+    }
+    printf("%d\n", prime());
+    return 0;
 }

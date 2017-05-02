@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -29,15 +29,15 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int a, v1, v2;
-	while (~scanf("%d%d%d", &a, &v1, &v2)) {
-		if (a == 0) 
-			printf("%.10f\n", 0.);
-		else 
-			if (v2 >= v1)  
-				printf("Infinity\n");
-			else 
-				printf("%.10f\n", (double)a * v1 / (double)(v1 * v1 - v2 * v2));
-	}
-	return 0;
+    int a, v1, v2;
+    while (~scanf("%d%d%d", &a, &v1, &v2)) {
+        if (a == 0) 
+            printf("%.10f\n", 0.);
+        else 
+            if (v2 >= v1)  
+                printf("Infinity\n");
+            else 
+                printf("%.10f\n", (double)a * v1 / (double)(v1 * v1 - v2 * v2));
+    }
+    return 0;
 }

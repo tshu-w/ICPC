@@ -26,41 +26,41 @@ int fact[2 * MAX_N];
 vector<Tii> v;
 
 void init_fact() {
-	fact[0] = 1;
-	rep(i, 1, 2 * MAX_N) fact[i] = mul(i, fact[i - 1]);
+    fact[0] = 1;
+    rep(i, 1, 2 * MAX_N) fact[i] = mul(i, fact[i - 1]);
 }
 int inv(int x) {
-	return x == 1? 1 : (MOD - mul((MOD / x), inv(MOD % x)) % MOD) % MOD;
+    return x == 1? 1 : (MOD - mul((MOD / x), inv(MOD % x)) % MOD) % MOD;
 }
 int C(int n, int k) {
-	return mul(mul(fact[n], inv(fact[k])), inv(fact[n - k]));
+    return mul(mul(fact[n], inv(fact[k])), inv(fact[n - k]));
 }
 int cal(Pii p1, Pii p2) {
-	if (p2.first < p1.first || p2.second < p1.second) return 0;
-	return C(p2.first + p2.second - p1.first - p1.second, p2.first - p1.first);
+    if (p2.first < p1.first || p2.second < p1.second) return 0;
+    return C(p2.first + p2.second - p1.first - p1.second, p2.first - p1.first);
 }
 void solve() {
-	memset(dp, 0, sizeof dp);
-	sort(v.begin(), v.end());
-	v.push_back(Tii(Pii(N, M), Pii(N + 1, M + 1)));
-	rep(i, 0, K + 1) {
-		dp[i] = C(v[i].first.first + v[i].first.second, v[i].first.first);
-		rep(j, 0, i) 
-			dp[i] = add(dp[i], mul(dp[j], del(cal(v[j].second, v[i].first), cal(v[j].first, v[i].first))));
-	}
-	printf("%d\n", dp[K]);
+    memset(dp, 0, sizeof dp);
+    sort(v.begin(), v.end());
+    v.push_back(Tii(Pii(N, M), Pii(N + 1, M + 1)));
+    rep(i, 0, K + 1) {
+        dp[i] = C(v[i].first.first + v[i].first.second, v[i].first.first);
+        rep(j, 0, i) 
+            dp[i] = add(dp[i], mul(dp[j], del(cal(v[j].second, v[i].first), cal(v[j].first, v[i].first))));
+    }
+    printf("%d\n", dp[K]);
 }
 int main(int argc, char const *argv[])
 {
-	init_fact();
-	while (scanf("%d%d%d", &N, &M, &K), N + M + K) {
-		--N, --M;
-		v.clear();
-		rep(i, 0, K) {
-			scanf("%d%d%d%d", &a, &b, &c, &d);
-			v.push_back(Tii(Pii(a - 1, b - 1), Pii(c - 1, d - 1)));
-		}
-		solve();
-	}
-	return 0;
+    init_fact();
+    while (scanf("%d%d%d", &N, &M, &K), N + M + K) {
+        --N, --M;
+        v.clear();
+        rep(i, 0, K) {
+            scanf("%d%d%d%d", &a, &b, &c, &d);
+            v.push_back(Tii(Pii(a - 1, b - 1), Pii(c - 1, d - 1)));
+        }
+        solve();
+    }
+    return 0;
 }

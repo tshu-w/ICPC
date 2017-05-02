@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(0); std::cout.tie(0);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -78,11 +78,11 @@ int kmp(const string &tar, const string &pat) {
 
 int main(int argc, char const *argv[])
 {
-	IOS;
-	cin >> t;
-	while (t--) {
-		cin >> s1 >> s2;
-		cout << kmp(s2, s1) << endl;
-	}
-	return 0;
+    IOS;
+    cin >> t;
+    while (t--) {
+        cin >> s1 >> s2;
+        cout << kmp(s2, s1) << endl;
+    }
+    return 0;
 }

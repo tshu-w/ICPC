@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -52,20 +52,20 @@ const int MAX_N = 200 + 10;
 int w, h, g[MAX_N][MAX_N];
 
 int grundy(int w, int h) {
-	if (g[w][h] != -1) return g[w][h];
-	set<int> s;
-	for (int i = 2; i + 2 <= w; ++i) s.insert(grundy(i, h) ^ grundy(w - i, h));
-	for (int i = 2; i + 2 <= h; ++i) s.insert(grundy(w, i) ^ grundy(w, h - i));
-	int res = 0;
-	while (s.count(res++));
-	return g[w][h] = res - 1;
+    if (g[w][h] != -1) return g[w][h];
+    set<int> s;
+    for (int i = 2; i + 2 <= w; ++i) s.insert(grundy(i, h) ^ grundy(w - i, h));
+    for (int i = 2; i + 2 <= h; ++i) s.insert(grundy(w, i) ^ grundy(w, h - i));
+    int res = 0;
+    while (s.count(res++));
+    return g[w][h] = res - 1;
 }
 
 int main(int argc, char const *argv[])
 {
-	memset(g, -1, sizeof g);
-	while (~scanf("%d%d", &w, &h)) {
-		puts(grundy(w, h)? "WIN" : "LOSE");
-	}	
-	return 0;
+    memset(g, -1, sizeof g);
+    while (~scanf("%d%d", &w, &h)) {
+        puts(grundy(w, h)? "WIN" : "LOSE");
+    }    
+    return 0;
 }

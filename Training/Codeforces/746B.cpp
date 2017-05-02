@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -35,21 +35,21 @@ char ss[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	cin >> N >> s;
-	ss[N] = 0;
-	int mid = (N + 1) / 2 - 1;
-	if (N & 1) {
-		ss[mid] = s[0];
-		rep(i, 1, N / 2 + 1) {
-			ss[mid - i] = s[2 * i - 1];
-			ss[mid + i] = s[2 * i];
-		}
-	} else {
-		rep(i, 0, N / 2) {
-			ss[mid - i] = s[2 * i];
-			ss[mid + 1 + i] = s[2 * i + 1];
-		}
-	}
-	puts(ss);
-	return 0;
+    cin >> N >> s;
+    ss[N] = 0;
+    int mid = (N + 1) / 2 - 1;
+    if (N & 1) {
+        ss[mid] = s[0];
+        rep(i, 1, N / 2 + 1) {
+            ss[mid - i] = s[2 * i - 1];
+            ss[mid + i] = s[2 * i];
+        }
+    } else {
+        rep(i, 0, N / 2) {
+            ss[mid - i] = s[2 * i];
+            ss[mid + 1 + i] = s[2 * i + 1];
+        }
+    }
+    puts(ss);
+    return 0;
 }

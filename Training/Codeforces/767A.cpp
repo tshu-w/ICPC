@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -33,16 +33,16 @@ int N, A[MAX_N], flag[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	rep(i, 0, N) scanf("%d", A + i);
-	int cur = N;
-	rep(i, 0, N) {
-		flag[A[i]] = true;
-		if (flag[cur]) {
-			int j;
-			for (j = cur; j > 0 && flag[j]; --j) printf("%d%c", j, " \n"[!flag[j - 1]]);
-			cur = j;
-		} else printf("\n");
-	}
-	return 0;
+    scanf("%d", &N);
+    rep(i, 0, N) scanf("%d", A + i);
+    int cur = N;
+    rep(i, 0, N) {
+        flag[A[i]] = true;
+        if (flag[cur]) {
+            int j;
+            for (j = cur; j > 0 && flag[j]; --j) printf("%d%c", j, " \n"[!flag[j - 1]]);
+            cur = j;
+        } else printf("\n");
+    }
+    return 0;
 }

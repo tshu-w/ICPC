@@ -28,50 +28,50 @@ const int maxn = 2000;
 bool a[maxn], b[maxn];
 int n, t1, t2;
 void init(){
-	scanf("%d%d", &t1, &t2);
-	memset(a, 0, sizeof(a));
-	memset(b, 0, sizeof(b));
-	for (int i = 1; i <= t1; i ++){
-		int x, y;
-		scanf("%d%d", &x, &y);
-		for (int j = x; j < y; j ++)
-			a[j] = 1;
-	}
-	for (int i = 1; i <= t2; i ++){
-		int x, y;
-		scanf("%d%d", &x, &y);
-		for (int j = x; j < y; j ++)
-			b[j] = 1;
-	}
+    scanf("%d%d", &t1, &t2);
+    memset(a, 0, sizeof(a));
+    memset(b, 0, sizeof(b));
+    for (int i = 1; i <= t1; i ++){
+        int x, y;
+        scanf("%d%d", &x, &y);
+        for (int j = x; j < y; j ++)
+            a[j] = 1;
+    }
+    for (int i = 1; i <= t2; i ++){
+        int x, y;
+        scanf("%d%d", &x, &y);
+        for (int j = x; j < y; j ++)
+            b[j] = 1;
+    }
 }
 int f[maxn][maxn][2][2];
 int work(){
-	init();
-	memset(f, 63, sizeof(f));
-	if (!a[0]) f[0][0][0][0] = 1;
-	if (!b[0]) f[0][1][1][1] = 1;
-	for (int i = 1; i < 1440; i ++)
-		for (int j = 0; j <= 720; j ++){
-			if (!a[i]){
-				f[i][j][0][0] = min(f[i - 1][j][0][1] + 1, f[i - 1][j][0][0]);
-				f[i][j][1][0] = min(f[i - 1][j][1][1] + 1, f[i - 1][j][1][0]);
-			}
-			if (!b[i] && j){
-				f[i][j][0][1] = min(f[i - 1][j - 1][0][0] + 1, f[i - 1][j - 1][0][1]);
-				f[i][j][1][1] = min(f[i - 1][j - 1][1][0] + 1, f[i - 1][j - 1][1][1]);
-			}
-	}
-	int ans = 100000;
-	ans = min(ans, f[1439][720][0][0] - 1);
-	ans = min(ans, f[1439][720][1][1] - 1);
-	ans = min(ans, min(f[1439][720][1][0], f[1439][720][0][1]));
-	return ans;
+    init();
+    memset(f, 63, sizeof(f));
+    if (!a[0]) f[0][0][0][0] = 1;
+    if (!b[0]) f[0][1][1][1] = 1;
+    for (int i = 1; i < 1440; i ++)
+        for (int j = 0; j <= 720; j ++){
+            if (!a[i]){
+                f[i][j][0][0] = min(f[i - 1][j][0][1] + 1, f[i - 1][j][0][0]);
+                f[i][j][1][0] = min(f[i - 1][j][1][1] + 1, f[i - 1][j][1][0]);
+            }
+            if (!b[i] && j){
+                f[i][j][0][1] = min(f[i - 1][j - 1][0][0] + 1, f[i - 1][j - 1][0][1]);
+                f[i][j][1][1] = min(f[i - 1][j - 1][1][0] + 1, f[i - 1][j - 1][1][1]);
+            }
+    }
+    int ans = 100000;
+    ans = min(ans, f[1439][720][0][0] - 1);
+    ans = min(ans, f[1439][720][1][1] - 1);
+    ans = min(ans, min(f[1439][720][1][0], f[1439][720][0][1]));
+    return ans;
 }
 int main(){
     setfile();
-	int T; scanf("%d", &T);
-	for (int i = 1; i <= T; i ++)
-		printf("Case #%d: %d\n", i, work());
+    int T; scanf("%d", &T);
+    for (int i = 1; i <= T; i ++)
+        printf("Case #%d: %d\n", i, work());
     resetfile();
-	return 0;
+    return 0;
 }

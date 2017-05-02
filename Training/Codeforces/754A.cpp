@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -32,29 +32,29 @@ int N, A[MAX_N], sum, pre;
 
 int main(int argc, char const *argv[])
 {
-	bool f = false;
-	cin >> N;
-	rep(i, 0, N) {
-		cin >> A[i];
-		if (A[i]) f = true;
-		sum += A[i];
-	}
-	if (f) {
-		puts("YES");
-		if (sum) {
-			printf("1\n");
-			printf("%d %d\n", 1, N);
-		} else {
-			rep(i, 0, N - 1) {
-				pre += A[i];
-				if (pre) {
-					printf("2\n");
-					printf("%d %d\n", 1, i + 1);
-					printf("%d %d\n", i + 2, N);
-					break;
-				}
-			}
-		}
-	} else puts("NO");
-	return 0;
+    bool f = false;
+    cin >> N;
+    rep(i, 0, N) {
+        cin >> A[i];
+        if (A[i]) f = true;
+        sum += A[i];
+    }
+    if (f) {
+        puts("YES");
+        if (sum) {
+            printf("1\n");
+            printf("%d %d\n", 1, N);
+        } else {
+            rep(i, 0, N - 1) {
+                pre += A[i];
+                if (pre) {
+                    printf("2\n");
+                    printf("%d %d\n", 1, i + 1);
+                    printf("%d %d\n", i + 2, N);
+                    break;
+                }
+            }
+        }
+    } else puts("NO");
+    return 0;
 }

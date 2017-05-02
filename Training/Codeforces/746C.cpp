@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -33,26 +33,26 @@ int s, x1, x2, t1, t2, p, d, ans, dd;
 
 int main(int argc, char const *argv[])
 {
-	cin >> s >> x1 >> x2;
-	cin >> t1 >> t2;
-	cin >> p >> d;
-	ans = abs(x1 - x2) * t2;
-	if (x1 < x2) dd = 1; else dd = -1;
-	int dis = 0;
-	if (t1 < t2) {
-		if (d == 1) {
-			if (dd == 1)
-				if (p <= x1) ans = min(ans, (x2 - p) * t1);
-				else ans = min(ans, (x2 + 2 * s - p) * t1);
-			else 
-				ans = min(ans, (2 * s - p - x2) * t1);
-		} else {
-			if (dd == -1)
-				if (p >= x1) ans = min(ans, (p - x2) * t1);
-				else ans = min(ans, (p + 2 * s - x2) * t1);
-			else ans = min(ans, (p + x2) * t1);
-		}
-	}
-	cout << ans << endl;
-	return 0;
+    cin >> s >> x1 >> x2;
+    cin >> t1 >> t2;
+    cin >> p >> d;
+    ans = abs(x1 - x2) * t2;
+    if (x1 < x2) dd = 1; else dd = -1;
+    int dis = 0;
+    if (t1 < t2) {
+        if (d == 1) {
+            if (dd == 1)
+                if (p <= x1) ans = min(ans, (x2 - p) * t1);
+                else ans = min(ans, (x2 + 2 * s - p) * t1);
+            else 
+                ans = min(ans, (2 * s - p - x2) * t1);
+        } else {
+            if (dd == -1)
+                if (p >= x1) ans = min(ans, (p - x2) * t1);
+                else ans = min(ans, (p + 2 * s - x2) * t1);
+            else ans = min(ans, (p + x2) * t1);
+        }
+    }
+    cout << ans << endl;
+    return 0;
 }

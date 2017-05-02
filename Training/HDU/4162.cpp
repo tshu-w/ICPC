@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -44,16 +44,16 @@ int getMinString(char s[], int len) {
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%s", s)) {
-		len = strlen(s);
-		s[len] = s[0];
-		for (int i = 0; i < len; ++i)
-			s[i] = (s[i + 1] - s[i] + 8) % 8 + '0';
-		s[len] = 0;
-		int pos = getMinString(s, len);
-		printf("%s", s + pos);
-		s[pos] = 0;
-		puts(s);
-	}
-	return 0;
+    while (~scanf("%s", s)) {
+        len = strlen(s);
+        s[len] = s[0];
+        for (int i = 0; i < len; ++i)
+            s[i] = (s[i + 1] - s[i] + 8) % 8 + '0';
+        s[len] = 0;
+        int pos = getMinString(s, len);
+        printf("%s", s + pos);
+        s[pos] = 0;
+        puts(s);
+    }
+    return 0;
 }

@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -51,32 +51,32 @@ int N, H, R, T;
 double y[MAX_N];
 
 double calc(int T) {
-	if (T < 0) return H;
-	double t = sqrt(2 * H / g);
-	int k = (int)(T / t);
-	if (k & 1) {
-		double d = k * t + t - T;
-		return H - g * d * d / 2;
-	} else {
-		double d = T - k * t;
-		return H - g * d * d / 2;
-	}
+    if (T < 0) return H;
+    double t = sqrt(2 * H / g);
+    int k = (int)(T / t);
+    if (k & 1) {
+        double d = k * t + t - T;
+        return H - g * d * d / 2;
+    } else {
+        double d = T - k * t;
+        return H - g * d * d / 2;
+    }
 }
 void solve() {
-	for (int i = 0; i < N; ++i)
-		y[i] = calc(T - i);
-	sort(y, y + N);
-	for (int i = 0; i < N; ++i)
-		printf("%.2f%c", y[i] + 2 * R * i / 100.0, i + 1 == N ? '\n' : ' ');
+    for (int i = 0; i < N; ++i)
+        y[i] = calc(T - i);
+    sort(y, y + N);
+    for (int i = 0; i < N; ++i)
+        printf("%.2f%c", y[i] + 2 * R * i / 100.0, i + 1 == N ? '\n' : ' ');
 }
 
 int main(int argc, char const *argv[])
 {
-	int t;
-	cin >> t;
-	while (t--) {
-		cin >> N >> H >> R >> T;
-		solve();
-	}	
-	return 0;
+    int t;
+    cin >> t;
+    while (t--) {
+        cin >> N >> H >> R >> T;
+        solve();
+    }    
+    return 0;
 }

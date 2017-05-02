@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -49,16 +49,16 @@ Pii W[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	while (t--) {
-		scanf("%d", &N);
-		for (int i = 0; i < N; ++i)
-			scanf("%d%d", &W[i].first, &W[i].second);
-		sort(W, W + N);
-		memset(dp, 0, sizeof dp);
-		for (int i = 0; i < N; ++i)
-			*lower_bound(dp, dp + N, W[i].second, greater<int>()) = W[i].second;
-		printf("%d\n", lower_bound(dp, dp + N, 0, greater<int>()) - dp);
-	}
-	return 0;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d", &N);
+        for (int i = 0; i < N; ++i)
+            scanf("%d%d", &W[i].first, &W[i].second);
+        sort(W, W + N);
+        memset(dp, 0, sizeof dp);
+        for (int i = 0; i < N; ++i)
+            *lower_bound(dp, dp + N, W[i].second, greater<int>()) = W[i].second;
+        printf("%d\n", lower_bound(dp, dp + N, 0, greater<int>()) - dp);
+    }
+    return 0;
 }

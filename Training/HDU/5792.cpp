@@ -83,13 +83,13 @@ void solve() {
     }
 
     for (int i = 0; i < N; ++i) {
-    	sum1 += cnt1[i];
-    	sum2 += cnt2[i];
-  	}
+        sum1 += cnt1[i];
+        sum2 += cnt2[i];
+      }
 
-  	sum1 /= 2; sum2 /= 2;
-  	// cout << sum1 << endl;
-  	// cout << sum2 << endl;
+      sum1 /= 2; sum2 /= 2;
+      // cout << sum1 << endl;
+      // cout << sum2 << endl;
 
     for (int i = 0; i < N; ++i)
         res += cnt1[i] * cnt2[i];
@@ -104,6 +104,6 @@ int main(int argc, char const *argv[])
         for (int i = 0; i < N; ++i)
             scanf("%d", A + i);
         solve();
-    }	
+    }    
     return 0;
 }

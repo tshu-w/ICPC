@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename "table"
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -193,20 +193,20 @@ template<typename T> T mod_pow(T x, T n, T mod) {
 
 int main(int argc, char const *argv[])
 {
-	// setfile();
-	// freopen(filename".ans", "w", stdout);
-	// rep(i, 0, 110) f[i][0] = 1;
-	// rep(b, 1, 110) rep(i, 1, 11) f[b][i] = mod_pow((ll)b, f[b][i - 1], MOD);
-	// rep(i, 0, 110) {
-	// 	rep(j, 0, 11) cout << f[i][j] << ",";
-	// 	cout << endl;
-	// }
-	// resetfile();
-	int b, i, n;
-	while (scanf("%d", &b) && b) {
-		scanf("%d%d", &i, &n);
-		if (b % 10) printf("%0*d\n", n, f[b][i > 10? 10 : i] % ten[n]);
-		else printf("%0*d\n", n, i > 2? 0: (f[b][i] % ten[n]));
-	}
-	return 0;
+    // setfile();
+    // freopen(filename".ans", "w", stdout);
+    // rep(i, 0, 110) f[i][0] = 1;
+    // rep(b, 1, 110) rep(i, 1, 11) f[b][i] = mod_pow((ll)b, f[b][i - 1], MOD);
+    // rep(i, 0, 110) {
+    //     rep(j, 0, 11) cout << f[i][j] << ",";
+    //     cout << endl;
+    // }
+    // resetfile();
+    int b, i, n;
+    while (scanf("%d", &b) && b) {
+        scanf("%d%d", &i, &n);
+        if (b % 10) printf("%0*d\n", n, f[b][i > 10? 10 : i] % ten[n]);
+        else printf("%0*d\n", n, i > 2? 0: (f[b][i] % ten[n]));
+    }
+    return 0;
 }

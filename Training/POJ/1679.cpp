@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -97,36 +97,36 @@ int kruskal() {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &t);
-	while (t--) {
-		es.clear();
-		vs.clear();
-		scanf("%d%d", &V, &E);
-		for (int i = 0, x, y, w; i < E; ++i) {
-			scanf("%d%d%d", &x, &y, &w);
-			--x; --y;
-			es.push_back(edge{x, y, w});
-		}
-		int ans = kruskal();
-		// cout << ans << endl;
-		bool flag = false;
-		for (int i = 0; i < vs.size() && !flag; ++i) {
-			init(V);
-			int res = 0, cnt = 0;
-			for (int j = 0; j < E; ++j) {
-			    edge e = es[j];
-			    if (e.from == vs[i].from && e.to == vs[i].to) continue;
-			    if (!same(e.from, e.to)) {
-			        unite(e.from, e.to);
-			        res += e.dis;
-			        ++cnt;
-			    }
-			}
-			if (res == ans && cnt == V - 1) flag = true;
-		}
-		if (flag)
-			printf("Not Unique!\n");
-		else printf("%d\n", ans);
-	}
-	return 0;
+    scanf("%d", &t);
+    while (t--) {
+        es.clear();
+        vs.clear();
+        scanf("%d%d", &V, &E);
+        for (int i = 0, x, y, w; i < E; ++i) {
+            scanf("%d%d%d", &x, &y, &w);
+            --x; --y;
+            es.push_back(edge{x, y, w});
+        }
+        int ans = kruskal();
+        // cout << ans << endl;
+        bool flag = false;
+        for (int i = 0; i < vs.size() && !flag; ++i) {
+            init(V);
+            int res = 0, cnt = 0;
+            for (int j = 0; j < E; ++j) {
+                edge e = es[j];
+                if (e.from == vs[i].from && e.to == vs[i].to) continue;
+                if (!same(e.from, e.to)) {
+                    unite(e.from, e.to);
+                    res += e.dis;
+                    ++cnt;
+                }
+            }
+            if (res == ans && cnt == V - 1) flag = true;
+        }
+        if (flag)
+            printf("Not Unique!\n");
+        else printf("%d\n", ans);
+    }
+    return 0;
 }

@@ -28,21 +28,21 @@ int solve(int n) {
 }
 int main(int argc, char const *argv[])
 {
-	cin >> t;
-	while (t--) {
-		cin >> n;
-		for (int i = 0; i < n; ++i)
-			scanf("%d", a + i);
-		int in, de;
-		in = solve(n);
-		for (int i = 0; i < n; ++i)
-			a[i] = -a[i];
-		de = solve(n);
-		// cout << in << " " << de << endl;
-		if (in >= n - 1 || de >= n - 1) 
-			printf("YES\n");
-		else
-			printf("NO\n");
-	}
-	return 0;
+    cin >> t;
+    while (t--) {
+        cin >> n;
+        for (int i = 0; i < n; ++i)
+            scanf("%d", a + i);
+        int in, de;
+        in = solve(n);
+        for (int i = 0; i < n; ++i)
+            a[i] = -a[i];
+        de = solve(n);
+        // cout << in << " " << de << endl;
+        if (in >= n - 1 || de >= n - 1) 
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+    return 0;
 }

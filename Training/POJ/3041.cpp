@@ -24,9 +24,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -55,38 +55,38 @@ int match[MAX_V];
 int V, N, K;
 
 void add_edge(int v, int u) {
-	G[v].push_back(u); G[u].push_back(v);
+    G[v].push_back(u); G[u].push_back(v);
 }
 bool dfs(int v) {
-	used[v] = true;
-	rep(i, 0, G[v].size()) {
-		int u = G[v][i], w = match[u];
-		if (w < 0 || (!used[w] && dfs(w))) {
-			match[v] = u; match[u] = v;
-			return true;
-		}
-	}
-	return false;
+    used[v] = true;
+    rep(i, 0, G[v].size()) {
+        int u = G[v][i], w = match[u];
+        if (w < 0 || (!used[w] && dfs(w))) {
+            match[v] = u; match[u] = v;
+            return true;
+        }
+    }
+    return false;
 }
 int bipatite_match() {
-	int res = 0;
-	memset(match, -1, sizeof match);
-	rep(i, 0, V) if (match[i] < 0) {
-		memset(used, false, sizeof used);
-		if (dfs(i)) ++res;
-	}
-	return res;
+    int res = 0;
+    memset(match, -1, sizeof match);
+    rep(i, 0, V) if (match[i] < 0) {
+        memset(used, false, sizeof used);
+        if (dfs(i)) ++res;
+    }
+    return res;
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d", &N, &K);
-	rep(i, 0, K) {
-		int a, b;
-		scanf("%d%d", &a, &b); --a, --b;
-		add_edge(a, b + N);
-	}
-	V = 2 * N;
-	printf("%d\n", bipatite_match());
-	return 0;
+    scanf("%d%d", &N, &K);
+    rep(i, 0, K) {
+        int a, b;
+        scanf("%d%d", &a, &b); --a, --b;
+        add_edge(a, b + N);
+    }
+    V = 2 * N;
+    printf("%d\n", bipatite_match());
+    return 0;
 }

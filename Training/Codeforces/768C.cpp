@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -36,25 +36,25 @@ map<ull, int> mp;
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d%d%d", &n, &k, &x);
-	rep(i, 0, n) scanf("%d", A + i), AA[i] = A[i];
-	sort(AA, AA + n);
-	ull h = 0; rep(j, 0, n) h = h * B + (ll)AA[j]; s.insert(h);
-	rep(i, 0, k - 1) {
-		sort(AA, AA + n);
-		for (int j = 0; j < n; j += 2) AA[j] ^= x;
-		ull h = 0; 
-		rep(j, 0, n) h = h * B + (ll)AA[j];
-		if (i && s.find(h) != s.end()) {
-			cnt = i + 1 - mp[h], st = i + 1; break;
-		} else s.insert(h), mp[h] = i + 1;
-	}
-	if (cnt != -1) k = (k - st) % cnt;
-	rep(i, 0, st + k) {
-		sort(A, A + n);
-		for (int j = 0; j < n; j += 2) A[j] ^= x;
-	}
-	sort(A, A + n);
-	printf("%d %d\n", A[n - 1], A[0]);
-	return 0;
+    scanf("%d%d%d", &n, &k, &x);
+    rep(i, 0, n) scanf("%d", A + i), AA[i] = A[i];
+    sort(AA, AA + n);
+    ull h = 0; rep(j, 0, n) h = h * B + (ll)AA[j]; s.insert(h);
+    rep(i, 0, k - 1) {
+        sort(AA, AA + n);
+        for (int j = 0; j < n; j += 2) AA[j] ^= x;
+        ull h = 0; 
+        rep(j, 0, n) h = h * B + (ll)AA[j];
+        if (i && s.find(h) != s.end()) {
+            cnt = i + 1 - mp[h], st = i + 1; break;
+        } else s.insert(h), mp[h] = i + 1;
+    }
+    if (cnt != -1) k = (k - st) % cnt;
+    rep(i, 0, st + k) {
+        sort(A, A + n);
+        for (int j = 0; j < n; j += 2) A[j] ^= x;
+    }
+    sort(A, A + n);
+    printf("%d %d\n", A[n - 1], A[0]);
+    return 0;
 }

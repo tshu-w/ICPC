@@ -3,10 +3,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -26,19 +26,19 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	map<char, char> m;
-	m['A'] = 'A'; m['b'] = 'd'; m['d'] = 'b'; m['H'] = 'H'; m['I'] = 'I'; m['M'] = 'M'; m['O'] = 'O'; m['o'] = 'o';
-	m['p'] = 'q'; m['q'] = 'p'; m['T'] = 'T'; m['U'] = 'U'; m['V'] = 'V'; m['v'] = 'v'; m['W'] = 'W'; m['w'] = 'w';
-	m['X'] = 'X';m['x'] = 'x'; m['Y'] = 'Y'; 
-	string s;
-	cin >> s;
-	int len = s.size();
-	for (int i = 0; i <= len / 2; ++i) {
-		if (m[s[i]] != s[len - i - 1]) {
-			cout << "NIE" << endl;
-			return 0;
-		}
-	}
-	cout << "TAK" << endl;
-	return 0;
+    map<char, char> m;
+    m['A'] = 'A'; m['b'] = 'd'; m['d'] = 'b'; m['H'] = 'H'; m['I'] = 'I'; m['M'] = 'M'; m['O'] = 'O'; m['o'] = 'o';
+    m['p'] = 'q'; m['q'] = 'p'; m['T'] = 'T'; m['U'] = 'U'; m['V'] = 'V'; m['v'] = 'v'; m['W'] = 'W'; m['w'] = 'w';
+    m['X'] = 'X';m['x'] = 'x'; m['Y'] = 'Y'; 
+    string s;
+    cin >> s;
+    int len = s.size();
+    for (int i = 0; i <= len / 2; ++i) {
+        if (m[s[i]] != s[len - i - 1]) {
+            cout << "NIE" << endl;
+            return 0;
+        }
+    }
+    cout << "TAK" << endl;
+    return 0;
 }

@@ -39,29 +39,29 @@ void print(const string &s, int len, char extra) {
 }
 int main(int argc, char const *argv[])
 {
-	int n;
-	string que[MAX_N];
-	while (~scanf("%d", &n)) {
-		int m = 0;
-		string s;
-		for (int i = 0; i < n; ++i) {
-			cin >> que[i];
-			m = max((int)que[i].length(), m);
-		}
-		int cols = (max_col - m) / (m + 2) + 1;
-		int rows = (n - 1) / cols + 1;
-		// cout << cols << " " << rows << endls;
-		sort(que, que + n);
-		print("", 60, '-');
-		printf("\n");
-		for (int i = 0; i < rows; ++i) {
-			for (int j = 0; j < cols; ++j) {
-				int index = j * rows + i;
-				if (index < n) 
-					print(que[index], (j + 1 == cols)? m : m + 2, ' ');
-			}
-			printf("\n");
-		}
-	}
-	return 0;
+    int n;
+    string que[MAX_N];
+    while (~scanf("%d", &n)) {
+        int m = 0;
+        string s;
+        for (int i = 0; i < n; ++i) {
+            cin >> que[i];
+            m = max((int)que[i].length(), m);
+        }
+        int cols = (max_col - m) / (m + 2) + 1;
+        int rows = (n - 1) / cols + 1;
+        // cout << cols << " " << rows << endls;
+        sort(que, que + n);
+        print("", 60, '-');
+        printf("\n");
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                int index = j * rows + i;
+                if (index < n) 
+                    print(que[index], (j + 1 == cols)? m : m + 2, ' ');
+            }
+            printf("\n");
+        }
+    }
+    return 0;
 }

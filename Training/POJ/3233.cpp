@@ -24,10 +24,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -74,24 +74,24 @@ mat pow(mat A, ll n) {
 void solve() {
     mat B(n * 2, vec(n * 2));
     for (int i = 0; i < n; ++i) {
-    	for (int j = 0; j < n; ++j)
-    		B[i][j + n] = B[i + n][j + n] = A[i][j];
+        for (int j = 0; j < n; ++j)
+            B[i][j + n] = B[i + n][j + n] = A[i][j];
         B[i][i] = 1;
     }
     B = pow(B, k);
     for (int i = 0; i < n; ++i)
-    	for (int j = 0; j < n; ++j) {
-    		int a = B[i][j + n] % MOD;
-    		printf("%d%c", a, j + 1 == n? '\n' : ' '); 
-    	}
+        for (int j = 0; j < n; ++j) {
+            int a = B[i][j + n] % MOD;
+            printf("%d%c", a, j + 1 == n? '\n' : ' '); 
+        }
 }
 
 int main(int argc, char const *argv[])
-{	
-	scanf("%d%d%d", &n, &k, &MOD);
-	for (int i = 0; i < n; ++i)
-		for (int j = 0; j < n; ++j)
-			scanf("%d", &A[i][j]);
-	solve();
-	return 0;
+{    
+    scanf("%d%d%d", &n, &k, &MOD);
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            scanf("%d", &A[i][j]);
+    solve();
+    return 0;
 }

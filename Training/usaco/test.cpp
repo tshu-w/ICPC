@@ -8,10 +8,10 @@ LANG: C++11
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename "test"
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -33,11 +33,11 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
-	int a, b;
-	cin >> a >> b;
-	cout << a + b << endl;
-	fclose(stdin);
-	fclose(stdout);
-	return 0;
+    freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
+    int a, b;
+    cin >> a >> b;
+    cout << a + b << endl;
+    fclose(stdin);
+    fclose(stdout);
+    return 0;
 }

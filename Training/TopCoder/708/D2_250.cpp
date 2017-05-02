@@ -24,11 +24,11 @@ class SafeBetting
 {
 public:
     int minRounds(int a, int b, int c) {
-    	int cnt = 0;
-    	while (b < c) {
-    		b += b - a;
-    		++cnt;
-    	}
-    	return cnt;
+        int cnt = 0;
+        while (b < c) {
+            b += b - a;
+            ++cnt;
+        }
+        return cnt;
     }
 };

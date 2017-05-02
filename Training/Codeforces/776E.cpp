@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -44,11 +44,11 @@ ll euler_phi(ll n) {
 
 int main(int argc, char const *argv[])
 {
-	ll n, k;
-	cin >> n >> k; k = (k - 1) / 2;
-	ll ans = euler_phi(n);
-	for (ll i = 0; i < k && ans != 1ll; ++i)
-		ans = euler_phi(ans);
-	cout << ans % MOD << endl;
-	return 0;
+    ll n, k;
+    cin >> n >> k; k = (k - 1) / 2;
+    ll ans = euler_phi(n);
+    for (ll i = 0; i < k && ans != 1ll; ++i)
+        ans = euler_phi(ans);
+    cout << ans % MOD << endl;
+    return 0;
 }

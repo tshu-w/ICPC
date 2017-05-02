@@ -23,9 +23,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
@@ -48,31 +48,31 @@ int N, k, A[MAX_N], B[MAX_N];
 double d[MAX_N];
 
 bool C(double avg) {
-	for (int i = 0; i < N; ++i)
-		d[i] = A[i] - B[i] * avg;
-	sort(d, d + N);
-	double sum = 0.;
-	for (int i = 0; i < k; ++i)
-		sum += d[N - i - 1];
-	return sum >= 0;
+    for (int i = 0; i < N; ++i)
+        d[i] = A[i] - B[i] * avg;
+    sort(d, d + N);
+    double sum = 0.;
+    for (int i = 0; i < k; ++i)
+        sum += d[N - i - 1];
+    return sum >= 0;
 }
 
 int main(int argc, char const *argv[])
 {
-	while (~scanf("%d%d", &N, &k) && (N || k)) {
-		for (int i = 0; i < N; ++i)
-			scanf("%d", A + i);
-		for (int i = 0; i < N; ++i)
-			scanf("%d", B + i);
-		double lb = 0, ub = INF;
-		k = N - k;
-		for (int i = 0; i < 100; ++i) {
-			// cout << lb << " " << ub << endl;
-			double mid = (lb + ub) / 2;
-			if (C(mid)) lb = mid;
-			else ub = mid;
-		}
-		printf("%.0f\n", lb * 100);
-	}
-	return 0;
+    while (~scanf("%d%d", &N, &k) && (N || k)) {
+        for (int i = 0; i < N; ++i)
+            scanf("%d", A + i);
+        for (int i = 0; i < N; ++i)
+            scanf("%d", B + i);
+        double lb = 0, ub = INF;
+        k = N - k;
+        for (int i = 0; i < 100; ++i) {
+            // cout << lb << " " << ub << endl;
+            double mid = (lb + ub) / 2;
+            if (C(mid)) lb = mid;
+            else ub = mid;
+        }
+        printf("%.0f\n", lb * 100);
+    }
+    return 0;
 }

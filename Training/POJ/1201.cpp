@@ -23,9 +23,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -47,10 +47,10 @@ const int MAX_N = 1e5 + 10;
 
 struct Range
 {
-	int l, r, c;
+    int l, r, c;
 };
 bool cmp(const Range a, const Range b) {
-	return a.r < b.r;
+    return a.r < b.r;
 }
 
 int N, bit[MAX_N + 1], ans, maxr;
@@ -58,41 +58,41 @@ bool flag[MAX_N];
 Range P[MAX_N];
 
 void add(int i, int x) {
-	while (i <= maxr) {
-		bit[i] += x;
-		i += i & -i;
-	}
+    while (i <= maxr) {
+        bit[i] += x;
+        i += i & -i;
+    }
 }
 int sum(int i) {
-	int res = 0;
-	while (i > 0) {
-		res += bit[i];
-		i -= i & -i;
-	}
-	return res;
+    int res = 0;
+    while (i > 0) {
+        res += bit[i];
+        i -= i & -i;
+    }
+    return res;
 }
 int sum(int l, int r) {
-	return sum(r) - sum(l - 1);
+    return sum(r) - sum(l - 1);
 }
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	for (int i = 0; i < N; ++i) {
-		scanf("%d%d%d", &P[i].l, &P[i].r, &P[i].c);
-		maxr = max(P[i].r, maxr);
-	}
-	sort(P, P + N, cmp);
-	for (int i = 0; i < N; ++i)
-		if (sum(P[i].l, P[i].r) < P[i].c) {
-			int res = P[i].c - sum(P[i].l, P[i].r), p = P[i].r;
-			ans += res;
-			while (res--) {
-				while (p >= P[i].l && flag[p]) --p;
-				add(p, 1);
-				flag[p--] = true;
-			}
-		}
-	printf("%d\n", ans);
-	return 0;
+    scanf("%d", &N);
+    for (int i = 0; i < N; ++i) {
+        scanf("%d%d%d", &P[i].l, &P[i].r, &P[i].c);
+        maxr = max(P[i].r, maxr);
+    }
+    sort(P, P + N, cmp);
+    for (int i = 0; i < N; ++i)
+        if (sum(P[i].l, P[i].r) < P[i].c) {
+            int res = P[i].c - sum(P[i].l, P[i].r), p = P[i].r;
+            ans += res;
+            while (res--) {
+                while (p >= P[i].l && flag[p]) --p;
+                add(p, 1);
+                flag[p--] = true;
+            }
+        }
+    printf("%d\n", ans);
+    return 0;
 }

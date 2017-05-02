@@ -31,11 +31,11 @@ int N, A[MAX_N], cur[10], dp[MAX_N][1 << 8];
 vector<int> in[MAX_N];
 
 int can(int len) {
-	if (!len) {
-		int res = 0;
-		rep(i, 0, 8) if (in[i].size()) ++res;
-		return res;
-	}
+    if (!len) {
+        int res = 0;
+        rep(i, 0, 8) if (in[i].size()) ++res;
+        return res;
+    }
     rep(i, 0, 8) cur[i] = 0;
     rep(i, 0, N + 1) rep(S, 0, 1 << 8) dp[i][S] = -INF;
     dp[0][0] = 0;

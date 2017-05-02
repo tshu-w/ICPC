@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -51,21 +51,21 @@ ull dp[MAX_K][MAX_N][2];
 
 int main(int argc, char const *argv[])
 {
-	cin >> N >> K;
-	for (int i = 1; i <= K; ++i) {
-		dp[i][0][1] = 1;
-		for (int j = 1; j <= N; ++j)
-			if (j < i) {
-				dp[i][j][0] = dp[i - 1][j][0];
-				dp[i][j][1] = dp[i - 1][j][1];
-			} else {
-				dp[i][j][0] = dp[i][j - i][0] + dp[i - 1][j][0];
-				dp[i][j][1] = dp[i][j - i][1] + dp[i - 1][j][1];
-				dp[i][j][0] += dp[i][j][1] / MOD;
-				dp[i][j][1] = dp[i][j][1] % MOD;
-			}
-	}
-	if (dp[K][N][0]) cout << dp[K][N][0];
-	cout << dp[K][N][1] << endl;
-	return 0;
+    cin >> N >> K;
+    for (int i = 1; i <= K; ++i) {
+        dp[i][0][1] = 1;
+        for (int j = 1; j <= N; ++j)
+            if (j < i) {
+                dp[i][j][0] = dp[i - 1][j][0];
+                dp[i][j][1] = dp[i - 1][j][1];
+            } else {
+                dp[i][j][0] = dp[i][j - i][0] + dp[i - 1][j][0];
+                dp[i][j][1] = dp[i][j - i][1] + dp[i - 1][j][1];
+                dp[i][j][0] += dp[i][j][1] / MOD;
+                dp[i][j][1] = dp[i][j][1] % MOD;
+            }
+    }
+    if (dp[K][N][0]) cout << dp[K][N][0];
+    cout << dp[K][N][1] << endl;
+    return 0;
 }

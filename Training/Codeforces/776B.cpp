@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -47,15 +47,15 @@ int seive(int n) {
 
 int main(int argc, char const *argv[])
 {
-	scanf("%d", &N);
-	seive(N + 1);
+    scanf("%d", &N);
+    seive(N + 1);
 
-	rep(i, 0, N) {
-		if (isPrime[i + 2]) color[i] = 1;
-		else color[i] = 2, ans = 2;
-	}
-	printf("%d\n", ans);
-	rep(i, 0, N) printf("%d ", color[i]);
-	printf("\n");
-	return 0;
+    rep(i, 0, N) {
+        if (isPrime[i + 2]) color[i] = 1;
+        else color[i] = 2, ans = 2;
+    }
+    printf("%d\n", ans);
+    rep(i, 0, N) printf("%d ", color[i]);
+    printf("\n");
+    return 0;
 }

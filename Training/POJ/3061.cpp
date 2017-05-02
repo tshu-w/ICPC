@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -48,24 +48,24 @@ inline T sqr(T a) { return a * a;};
 
 int main(int argc, char const *argv[])
 {
-	int t, n, S, a[MAX_N];
-	cin >> t;
-	while (t--) {
-		cin >> n >> S;
-		for (int i = 0; i < n; ++i)
-			scanf("%d", a + i);
-		int res = n + 1;
-		int s = 0, t = 0, sum = 0;
-		for (;;) {
-			while (t < n && sum < S) 
-				sum += a[t++];
-			if (sum < S) break;
-			res = min(res, t - s);
-			sum -= a[s++];
-		}
-		if (res > n) 
-			res = 0;
-		printf("%d\n", res);
-	}
-	return 0;
+    int t, n, S, a[MAX_N];
+    cin >> t;
+    while (t--) {
+        cin >> n >> S;
+        for (int i = 0; i < n; ++i)
+            scanf("%d", a + i);
+        int res = n + 1;
+        int s = 0, t = 0, sum = 0;
+        for (;;) {
+            while (t < n && sum < S) 
+                sum += a[t++];
+            if (sum < S) break;
+            res = min(res, t - s);
+            sum -= a[s++];
+        }
+        if (res > n) 
+            res = 0;
+        printf("%d\n", res);
+    }
+    return 0;
 }

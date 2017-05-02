@@ -23,10 +23,10 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
-#endif	
+    #define DEBUG(...)
+#endif    
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -49,18 +49,18 @@ pair<Pii, int> A[MAX_N];
 
 int main(int argc, char const *argv[])
 {
-	cin >> N >> M >> R;
-	for (int i = 0; i < M; ++i)
-		cin >> A[i].first.first >> A[i].first.second >> A[i].second;
-	sort(A, A + M);
-	memset(dp, 0, sizeof dp);
-	for (int i = 0; i < M; ++i) {
-		for (int j = 0; j < i; ++j)
-			if (A[j].first.second + R <= A[i].first.first) 
-				dp[i] = max(dp[i], dp[j]);
-		dp[i] += A[i].second;
-		ans = max(ans, dp[i]);	
-	}
-	cout << ans << endl;
-	return 0;
+    cin >> N >> M >> R;
+    for (int i = 0; i < M; ++i)
+        cin >> A[i].first.first >> A[i].first.second >> A[i].second;
+    sort(A, A + M);
+    memset(dp, 0, sizeof dp);
+    for (int i = 0; i < M; ++i) {
+        for (int j = 0; j < i; ++j)
+            if (A[j].first.second + R <= A[i].first.first) 
+                dp[i] = max(dp[i], dp[j]);
+        dp[i] += A[i].second;
+        ans = max(ans, dp[i]);    
+    }
+    cout << ans << endl;
+    return 0;
 }

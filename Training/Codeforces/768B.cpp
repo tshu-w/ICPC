@@ -4,9 +4,9 @@
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
 // #define __DEBUG__
 #ifdef __DEBUG__
-	#define DEBUG(...) printf(__VA_ARGS__)
+    #define DEBUG(...) printf(__VA_ARGS__)
 #else
-	#define DEBUG(...)
+    #define DEBUG(...)
 #endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
@@ -32,18 +32,18 @@ const int MAX_N = 1e5 + 10;
 ll N, l, r;
 
 int dfs(ll N, ll l, ll r) {
-	if (l > r) return 0;
-	if (N == 1) return 1;
-	if (N == 0) return 0;
-	ll mid = 1ll << (64 - __builtin_clzll(N / 2ll));
-	ll res = 0;
-	return dfs(N / 2, l, min(r, mid - 1)) + dfs(N / 2, max(l, mid + 1) - mid, r - mid)
-		+ ((N % 2 && l <= mid && mid <= r)? 1ll : 0ll);
+    if (l > r) return 0;
+    if (N == 1) return 1;
+    if (N == 0) return 0;
+    ll mid = 1ll << (64 - __builtin_clzll(N / 2ll));
+    ll res = 0;
+    return dfs(N / 2, l, min(r, mid - 1)) + dfs(N / 2, max(l, mid + 1) - mid, r - mid)
+        + ((N % 2 && l <= mid && mid <= r)? 1ll : 0ll);
 }
 
 int main(int argc, char const *argv[])
-{	
-	while(cin >> N >> l >> r)
-		cout << dfs(N, l, r) << endl;
-	return 0;
+{    
+    while(cin >> N >> l >> r)
+        cout << dfs(N, l, r) << endl;
+    return 0;
 }

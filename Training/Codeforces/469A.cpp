@@ -13,41 +13,41 @@ const double PI = acos(-1.0);
 
 int main(int argc, char const *argv[])
 {
-	bool flag[MAX_N];
-	string line;
-	int n, x, p, q;
-	scanf("%d", &n);
-	fill(flag + 1, flag + n + 1, false);
-	scanf("%d", &p);
-	for (int i = 0; i < p; ++i) {
-		scanf("%d", &x);
-		flag[x] = true;
-	}
-	scanf("%d", &p);
-	for (int i = 0; i < p; ++i) {
-		scanf("%d", &x);
-		flag[x] = true;
-	}
-	// getline(cin, line);
-	// getline(cin, line);
-	// stringstream ss(line);
+    bool flag[MAX_N];
+    string line;
+    int n, x, p, q;
+    scanf("%d", &n);
+    fill(flag + 1, flag + n + 1, false);
+    scanf("%d", &p);
+    for (int i = 0; i < p; ++i) {
+        scanf("%d", &x);
+        flag[x] = true;
+    }
+    scanf("%d", &p);
+    for (int i = 0; i < p; ++i) {
+        scanf("%d", &x);
+        flag[x] = true;
+    }
+    // getline(cin, line);
+    // getline(cin, line);
+    // stringstream ss(line);
  //    while (ss >> x) {
- //    	flag[x] = true;
- //    	// printf("%d\n", x);
+ //        flag[x] = true;
+ //        // printf("%d\n", x);
  //    }
  //    getline(cin, line);
  //    stringstream st(line);
  //    while (st >> x) {
- //    	flag[x] = true;
- //    	// printf("%d\n", x);
+ //        flag[x] = true;
+ //        // printf("%d\n", x);
  //    }
     // for (int i = 1; i <= n; ++i)
-    	// printf("%d %d\n", i, flag[i]);
-	for (int i = 1; i <= n; ++i)
-		if (!flag[i]) {
-			printf("Oh, my keyboard!\n");
-			return 0;
-		}
-	printf("I become the guy.\n");
-	return 0;
+        // printf("%d %d\n", i, flag[i]);
+    for (int i = 1; i <= n; ++i)
+        if (!flag[i]) {
+            printf("Oh, my keyboard!\n");
+            return 0;
+        }
+    printf("I become the guy.\n");
+    return 0;
 }
