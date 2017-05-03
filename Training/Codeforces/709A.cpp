@@ -1,4 +1,4 @@
-// written at 09:22 on 23 Feb 2017 
+// written at 09:22 on 23 Feb 2017
 #include <bits/stdc++.h>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
     int tmp = 0;
     rep(i, 0, N) {
         scanf("%d", A + i);
-        if (A[i] <= b) 
+        if (A[i] <= b)
             tmp += A[i];
         if (tmp > d) tmp = 0, ++ans;
     }

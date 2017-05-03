@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
         cin >> a;
         if (a > h)
             ans += 2;
-        else 
+        else
             ++ans;
     }
     cout << ans << endl;
