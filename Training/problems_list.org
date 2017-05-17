@@ -1,0 +1,6 @@
+* DP
+** 状压 DP
+[[https://community.topcoder.com/stat?c=problem_statement&pm=14588&rd=16882][DFSCount - TopCoder SRM713 - Problem Statement]]
+* Math
+** 瞎搞
+[[https://community.topcoder.com/stat?c=problem_statement&pm=14573&rd=16882][PowerEquation - TopCoder SRM713 - Problem Statement]]
