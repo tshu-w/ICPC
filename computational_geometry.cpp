@@ -383,24 +383,24 @@ namespace Circular {
     }
 
     /* 三点确定外切圆 */
-    Circle CircumscribedCircle(Point p1, Point p2, Point p3) {  
-        double Bx = p2.x - p1.x, By = p2.y - p1.y;  
-        double Cx = p3.x - p1.x, Cy = p3.y - p1.y;  
-        double D = 2 * (Bx * Cy - By * Cx);  
-        double cx = (Cy * (Bx * Bx + By * By) - By * (Cx * Cx + Cy * Cy)) / D + p1.x;  
-        double cy = (Bx * (Cx * Cx + Cy * Cy) - Cx * (Bx * Bx + By * By)) / D + p1.y;  
-        Point p = Point(cx, cy);  
-        return Circle(p, getLength(p1 - p));  
+    Circle CircumscribedCircle(Point p1, Point p2, Point p3) {
+        double Bx = p2.x - p1.x, By = p2.y - p1.y;
+        double Cx = p3.x - p1.x, Cy = p3.y - p1.y;
+        double D = 2 * (Bx * Cy - By * Cx);
+        double cx = (Cy * (Bx * Bx + By * By) - By * (Cx * Cx + Cy * Cy)) / D + p1.x;
+        double cy = (Bx * (Cx * Cx + Cy * Cy) - Cx * (Bx * Bx + By * By)) / D + p1.y;
+        Point p = Point(cx, cy);
+        return Circle(p, getLength(p1 - p));
     }
 
     /* 三点确定内切圆 */
-    Circle InscribedCircle(Point p1, Point p2, Point p3) {  
-        double a = getLength(p2 - p3);  
-        double b = getLength(p3 - p1);  
-        double c = getLength(p1 - p2);  
-        Point p = (p1 * a + p2 * b + p3 * c) / (a + b + c);  
-        return Circle(p, getDistanceToLine(p, p1, p2));  
-    } 
+    Circle InscribedCircle(Point p1, Point p2, Point p3) {
+        double a = getLength(p2 - p3);
+        double b = getLength(p3 - p1);
+        double c = getLength(p1 - p2);
+        Point p = (p1 * a + p2 * b + p3 * c) / (a + b + c);
+        return Circle(p, getDistanceToLine(p, p1, p2));
+    }
 
     /* 三角形一顶点为圆心 */
     double getPublicAreaToTriangle (Circle O, Point a, Point b) {
