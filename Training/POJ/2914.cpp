@@ -1,4 +1,4 @@
-// written at 17:43 on 17 Jan 2017 
+// written at 17:43 on 17 Jan 2017
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 
@@ -44,7 +44,6 @@ typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<int, int > Pii;
 
-const double pi = acos(-1.0);
 const int INF = INT_MAX;
 const int MAX_V = 500 + 10;
 
@@ -68,7 +67,7 @@ void search() {
         S = T; T = tmp;
         mc = imax;
         vis[tmp] = true;
-        rep(j, 0, V) 
+        rep(j, 0, V)
             if (!cmb[j] && !vis[j])
                 wet[j] += G[tmp][j];
     }
@@ -104,4 +103,3 @@ int main(int argc, char const *argv[])
     }
     return 0;
 }
-

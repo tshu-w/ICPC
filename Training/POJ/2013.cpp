@@ -45,9 +45,9 @@ int main(int argc, char const *argv[])
         for (int i = 0; i < n; ++i)
             cin >> name[i];
         cout << "SET " << ++tt << endl;
-        for (int i = 0; i < n; ++i, ++i) 
+        for (int i = 0; i < n; ++i, ++i)
             cout << name[i] << endl;
-        for (int i = (n & 1)? n - 2 : n - 1; i > 0; --i, --i) 
+        for (int i = (n & 1)? n - 2 : n - 1; i > 0; --i, --i)
             cout << name[i] << endl;
     }
     return 0;

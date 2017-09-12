@@ -26,7 +26,7 @@
     #define DEBUG(...) printf(__VA_ARGS__)
 #else
     #define DEBUG(...)
-#endif    
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -44,14 +44,14 @@ const int MAX_N = 50005;
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-template<typename T> T exgcd(T a, T b, T &x, T &y) { 
-    T d = a; 
-    if (b) { 
-        d = exgcd(b, a % b, y, x); 
-        y -= a / b * x; 
-    } else { 
-        x = 1; y = 0; 
-    } 
+template<typename T> T exgcd(T a, T b, T &x, T &y) {
+    T d = a;
+    if (b) {
+        d = exgcd(b, a % b, y, x);
+        y -= a / b * x;
+    } else {
+        x = 1; y = 0;
+    }
     return d;
 }
 template<typename T> T mod_inverse(T a, T m) {
@@ -72,8 +72,7 @@ int CRT(vector<int> &a, vector<int> &m) {
     return res;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
     vector<int> m(3);
     m[0] = 23; m[1] = 28; m[2] = 33;
     int p, e, i, d, cs = 0;

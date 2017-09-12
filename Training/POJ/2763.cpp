@@ -145,7 +145,7 @@ void solve() {
         G[B[i] - 1].push_back(e2);
     }
     init(n);
-    
+
     int v = s - 1;
     for (int i = 0; i < q; i++) {
         scanf("%d%d", type + i, X + i);

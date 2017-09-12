@@ -6,7 +6,7 @@
     #define DEBUG(...) printf(__VA_ARGS__)
 #else
     #define DEBUG(...)
-#endif    
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -30,7 +30,7 @@ int N, len;
 char s[MAX_N];
 
 void find() {
-    for (int i = 0; i < len; ++i) 
+    for (int i = 0; i < len; ++i)
         for (int j = 0; j < len; ++j) if (i != j)
             for (int k = 0; k < len; ++k) if (i != k && j != k)
                 for (int l = 0; l < len; ++l) if (i != l && j != l && k != l)
