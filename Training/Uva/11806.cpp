@@ -1,4 +1,4 @@
-// written at 14:38 on 11 Mar 2017 
+// written at 14:38 on 11 Mar 2017
 #include <bits/stdc++.h>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
@@ -24,9 +24,6 @@ typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<int, int > Pii;
 
-const double pi = acos(-1.0);
-const int INF = INT_MAX;
-const ll LLINF = LLONG_MAX;
 const int MAX_K = 500 + 10;
 const ll MOD = 1000007;
 
@@ -41,8 +38,7 @@ void init() {
     }
 }
 
-int main(int argc, char const *argv[])
-{
+int main() {
     int t, N, M, K;
     init();
     scanf("%d", &t);
