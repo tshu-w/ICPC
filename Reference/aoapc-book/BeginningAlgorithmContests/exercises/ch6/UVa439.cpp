@@ -1,6 +1,6 @@
 // UVa439 Knight Moves
 // Rujia Liu
-// ÌâÒâ£ºÊäÈë±ê×¼¹ú¼ÊÏóÆåÆåÅÌÉÏµÄÁ½¸ö¸ñ×Ó£¬ÇóÂí×îÉÙÐèÒª¶àÉÙ²½´ÓÆðµãÌøµ½ÖÕµã
+// é¢˜æ„ï¼šè¾“å…¥æ ‡å‡†å›½é™…è±¡æ£‹æ£‹ç›˜ä¸Šçš„ä¸¤ä¸ªæ ¼å­ï¼Œæ±‚é©¬æœ€å°‘éœ€è¦å¤šå°‘æ­¥ä»Žèµ·ç‚¹è·³åˆ°ç»ˆç‚¹
 #include<cstdio>
 #include<cstring>
 #include<queue>

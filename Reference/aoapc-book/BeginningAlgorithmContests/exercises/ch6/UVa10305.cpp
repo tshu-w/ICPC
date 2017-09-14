@@ -1,7 +1,7 @@
 // UVa10305 Ordering Tasks
 // Rujia Liu
-// ���⣺����n��m���Լ�m����Ԫ��(i,j)����1~n��һ������ʹ�ö���ÿ��(i,j)��i��j��ǰ��
-// �㷨����������ע��m���ܵ���0
+// 题意：输入n和m，以及m个二元组(i,j)，求1~n的一个排列使得对于每个(i,j)，i在j的前面
+// 算法：拓扑排序。注意m可能等于0
 #include<cstdio>
 #include<cstring>
 const int maxn = 1000;
@@ -39,6 +39,6 @@ int main() {
       printf("%d\n", topo[n-1]+1);
     }
     else
-      printf("No\n"); // ��Ŀû˵�޽����ʲô��Ӧ���Ǳ�֤�н��
+      printf("No\n"); // 题目没说无解输出什么，应该是保证有解吧
   }
 }
