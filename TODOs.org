@@ -1,14 +1,6 @@
-* Tasks
-** TODO 队伍训练安排
-SCHEDULED: <2017-04-26 Wed>
-** TODO SRM 713 Div2
-SCHEDULED: <2017-04-27 Thu 09:00-11:00>
-** TODO 算法竞赛入门经典（第二版)
-** TODO [[https://zhuanlan.zhihu.com/p/26001155?utm_source=com.ideashower.readitlater.pro&utm_medium=social][九章算法高频算法题 & 题解]]
-** TODO 周报
-   DEADLINE: <2017-05-01 Mon +1w> SCHEDULED: <2017-05-01 Mon ++1w>
-   :PROPERTIES:
-   :LAST_REPEAT: [2017-04-25 Tue 10:52]
-   :END:
-   - State "DONE"       from "TODO"       [2017-04-25 Tue 10:52]
-   - State "DONE"       from "TODO"       [2017-04-17 Mon 16:47]
+* ICPC
+** [[file+emacs:/Users/Voleking/Documents/Wiki/source/_posts/skill-tree.md][Skill Tree]]
+** [[file+sys:/Users/Voleking/Library/Mobile%20Documents/iCloud~com~apple~iBooks/Documents/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E7%AC%AC2%E7%89%88%20%E7%AE%97%E6%B3%95%E8%89%BA%E6%9C%AF%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AD%A6%E7%AB%9E%E8%B5%9B.epub][算法入门经典]] [[file+emacs:/Users/Voleking/Documents/Learning/CS/ICPC/Reference/aoapc-book/BeginningAlgorithmContests][Beginning Algorithm Contests]] [[http://uhunt.felix-halim.net/id/788605][uHunt :: voleking (voleking)]]
+** [[http://wiki.gyh.me/][WIKI]]
+** [[https://blog.sengxian.com/archives/][Archive | Sengxian's Blog]]
+** [[https://github.com/keon/awesome-bits][keon/awesome-bits: A curated list of awesome bitwise operations and tricks]]
