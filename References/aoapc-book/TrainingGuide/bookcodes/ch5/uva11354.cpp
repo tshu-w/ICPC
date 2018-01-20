@@ -10,18 +10,18 @@ const int INF = 1000000000;
 
 struct LCA {
   int n;
-  int fa[maxn];   // ¸¸Ç×Êı×é
-  int cost[maxn]; // ºÍ¸¸Ç×µÄ·ÑÓÃ
-  int L[maxn];    // ²ã´Î£¨¸ù½Úµã²ã´ÎÎª0£©
-  int anc[maxn][logmaxn];     // anc[p][i]ÊÇ½áµãpµÄµÚ2^i¼¶¸¸Ç×¡£anc[i][0] = fa[i]
-  int maxcost[maxn][logmaxn]; // maxcost[p][i]ÊÇiºÍanc[p][i]µÄÂ·¾¶ÉÏµÄ×î´ó·ÑÓÃ
+  int fa[maxn];   // çˆ¶äº²æ•°ç»„
+  int cost[maxn]; // å’Œçˆ¶äº²çš„è´¹ç”¨
+  int L[maxn];    // å±‚æ¬¡ï¼ˆæ ¹èŠ‚ç‚¹å±‚æ¬¡ä¸º0ï¼‰
+  int anc[maxn][logmaxn];     // anc[p][i]æ˜¯ç»“ç‚¹pçš„ç¬¬2^içº§çˆ¶äº²ã€‚anc[i][0] = fa[i]
+  int maxcost[maxn][logmaxn]; // maxcost[p][i]æ˜¯iå’Œanc[p][i]çš„è·¯å¾„ä¸Šçš„æœ€å¤§è´¹ç”¨
 
-  // Ô¤´¦Àí£¬¸ù¾İfaºÍcostÊı×éÇó³öancºÍmaxcostÊı×é
+  // é¢„å¤„ç†ï¼Œæ ¹æ®faå’Œcostæ•°ç»„æ±‚å‡ºancå’Œmaxcostæ•°ç»„
   void preprocess() {
     for(int i = 0; i < n; i++) {
       anc[i][0] = fa[i]; maxcost[i][0] = cost[i];
       for(int j = 1; (1 << j) < n; j++) anc[i][j] = -1;
-    }   
+    }
     for(int j = 1; (1 << j) < n; j++)
       for(int i = 0; i < n; i++)
         if(anc[i][j-1] != -1) {
@@ -31,7 +31,7 @@ struct LCA {
         }
   }
 
-  // Çópµ½qµÄÂ·¾¶ÉÏµÄ×î´óÈ¨
+  // æ±‚påˆ°qçš„è·¯å¾„ä¸Šçš„æœ€å¤§æƒ
   int query(int p, int q) {
     int tmp, log, i;
     if(L[p] < L[q]) swap(p, q);
@@ -40,9 +40,9 @@ struct LCA {
     int ans = -INF;
     for(int i = log; i >= 0; i--)
       if (L[p] - (1 << i) >= L[q]) { ans = max(ans, maxcost[p][i]); p = anc[p][i];}
-   
-    if (p == q) return ans; // LCAÎªp
-   
+
+    if (p == q) return ans; // LCAä¸ºp
+
     for(int i = log; i >= 0; i--)
       if(anc[p][i] != -1 && anc[p][i] != anc[q][i]) {
         ans = max(ans, maxcost[p][i]); p = anc[p][i];
@@ -51,8 +51,8 @@ struct LCA {
 
     ans = max(ans, cost[p]);
     ans = max(ans, cost[q]);
-    return ans; // LCAÎªfa[p]£¨ËüÒ²µÈÓÚfa[q]£©
-  }  
+    return ans; // LCAä¸ºfa[p]ï¼ˆå®ƒä¹Ÿç­‰äºfa[q]ï¼‰
+  }
 };
 
 LCA solver;
@@ -61,7 +61,7 @@ LCA solver;
 #include<vector>
 
 int pa[maxn];
-int findset(int x) { return pa[x] != x ? pa[x] = findset(pa[x]) : x; } 
+int findset(int x) { return pa[x] != x ? pa[x] = findset(pa[x]) : x; }
 
 vector<int> G[maxn], C[maxn];
 
@@ -94,7 +94,7 @@ int main() {
       scanf("%d%d%d", &x, &y, &d);
       e[i] = (Edge){ x-1, y-1, d };
     }
-    // ×îĞ¡Éú³ÉÊ÷
+    // æœ€å°ç”Ÿæˆæ ‘
     sort(e, e+m);
     for(int i = 0; i < n; i++) { pa[i] = i; G[i].clear(); C[i].clear(); }
     for(int i = 0; i < m; i++) {
@@ -105,7 +105,7 @@ int main() {
         G[y].push_back(x); C[y].push_back(d);
       }
     }
-    // »¯³ÉÓĞ¸ùÊ÷
+    // åŒ–æˆæœ‰æ ¹æ ‘
     solver.n = n;
     dfs(0, -1, 0);
     solver.preprocess();

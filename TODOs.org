@@ -4,3 +4,6 @@
 ** [[http://wiki.gyh.me/][WIKI]]
 ** [[https://blog.sengxian.com/archives/][Archive | Sengxian's Blog]]
 ** [[https://github.com/keon/awesome-bits][keon/awesome-bits: A curated list of awesome bitwise operations and tricks]]
+** 圆面积交
+** 几何板子 反射
+** [[http://www.csie.ntnu.edu.tw/~u91029/index.html][演算法筆記]]

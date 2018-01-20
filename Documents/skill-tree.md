@@ -9,16 +9,16 @@ tags:
 ---
 
 ## Basics
-~~时间复杂度~~，~~暴力~~，DFS，BFS，贪心，~~二分~~，三分，栈，队列，堆，STL，C++11
+~~时间复杂度~~，~~暴力~~，DFS，BFS，贪心，~~二分~~，三分，栈，队列，堆，STL
 
 ## DP
 背包、集合、序列dp，斜率优化，四边形不等式，DP优化（降维、离散化，单调队列，树状数组），区间dp，概率dp，树形dp，状压dp，轮廓线dp，插头dp，数位dp
 
 ## Data Structure
-~~并查集~~，线段树，树状数组，zkw 线段树，LCA && RMQ，K-D tree，主席树，splay，划分树，树链剖分，树分治，左偏树、斜堆
+~~并查集~~，线段树，~~树状数组~~，zkw 线段树，LCA && RMQ，K-D tree，主席树，splay，划分树，树链剖分，树分治，左偏树、斜堆
 
 ## String
-Hash，字符串最小最大表示，KMP，Extend KMP，trie，Manacher，AC自动机，后缀数组，后缀树，后缀自动机，回文自动机
+Hash，字符串最小最大表示，KMP，Extend KMP，shiftAnd/shiftOr, trie，Manacher，AC自动机，后缀数组，后缀树，后缀自动机，回文自动机
 
 ## Graph
 最短路（Floyd，Spfa，Dijstra），最小生成树（Prim，Kruskal）
@@ -35,4 +35,4 @@ GCD，扩展 Euclid 算法，矩阵快速幂，素数相关（素数筛，素数
 Nim 博弈，双人零和矩阵博弈，SG 函数，威佐夫博弈
 
 ## Others
-~~tips~~，位运算，~~cpp读入挂~~，bitset，高精度，Java大数，分快，莫队，树的重心与直径，模拟退火，DLX，∂-ß 剪枝，黄金分割搜索，拟阵，对拍，vim 配置
+~~tips~~，位运算，~~cpp读入挂~~，~~bitset~~，高精度，Java大数，分快，莫队，树的重心与直径，模拟退火，DLX，∂-ß 剪枝，黄金分割搜索，拟阵，对拍，vim 配置

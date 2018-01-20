@@ -1,3 +1,4 @@
+```c++
 #include <cstdio>
 #include <cstring>
 #include <cmath>
@@ -293,7 +294,7 @@ namespace Circular {
     using namespace Vectorial;
     using namespace Triangular;
 
-    /* 直线和原的交点 */
+    /* 直线和圆的交点 */
     int getLineCircleIntersection (Point p, Point q, Circle O, double& t1, double& t2, vector<Point>& sol) {
         Vector v = q - p;
         /* 使用前需清空sol */
@@ -473,3 +474,4 @@ void init () {
         }
     }
 }
+```
