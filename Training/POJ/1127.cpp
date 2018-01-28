@@ -1,4 +1,4 @@
-// written at 14:28 on 23 Jan 2017 
+// written at 14:28 on 23 Jan 2017
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 
@@ -38,7 +38,7 @@ using namespace std;
 
 template <typename T>
 inline T sqr(T a) { return a * a;};
-  
+
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
@@ -53,7 +53,7 @@ const double EPS = 1e-8;
 double add(double a, double b) {
     if (abs(a + b) < EPS * (abs(a) + abs(b))) return 0;
     return a + b;
-} 
+}
 struct P {
     double x, y;
     P() {}
@@ -119,6 +119,6 @@ int main(int argc, char const *argv[])
             --a; --b;
             puts(g[a][b]? "CONNECTED" : "NOT CONNECTED ");
         }
-    }    
+    }
     return 0;
 }

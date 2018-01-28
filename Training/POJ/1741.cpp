@@ -1,4 +1,4 @@
-// written at 11:34 on 11 Mar 2017 
+// written at 11:34 on 11 Mar 2017
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 #include <numeric>
@@ -45,13 +45,11 @@ typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<int, int > Pii;
 
-const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const ll LLINF = LLONG_MAX;
 const int MAX_N = 1e4 + 10;
 
-struct edge { 
-    int to, len; 
+struct edge {
+    int to, len;
     edge(int _to = -1, int _len = 0): to(_to), len(_len) {};
 };
 
@@ -100,11 +98,11 @@ int count_pairs(vector<int> &ds) {
     int res = 0;
     sort(ds.begin(), ds.end());
     int j = ds.size();
-    for (int i = 0; i < ds.size(); i++) {
-        while (j > 0 && ds[i] + ds[j - 1] > K) j--;
-        res += j - (j > i? 1 : 0);
+    for (int i = 0; i + 1 < j; i++) {
+        while (j > i + 1 && ds[i] + ds[j - 1] > K) j--;
+        res += j - i - 1;
     }
-    return res / 2;
+    return res;
 }
 
 void solve_subproblem(int v) {
@@ -151,6 +149,6 @@ int main(int argc, char const *argv[])
             G[v - 1].push_back(edge{u - 1, l});
         }
         solve();
-    } 
+    }
     return 0;
 }

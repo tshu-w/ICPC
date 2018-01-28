@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 #include <numeric>
@@ -101,7 +101,7 @@ ll count(bool flag) {
             top = 0;
         } else {
             int cnt = 0;
-            if ((flag && sa[i] < sl) || (!flag && sa[i] > sl)) {
+            if ((sa[i] < sl) == flag) {
                 ++cnt;
                 tot += lcp[i] - K + 1;
             }
@@ -114,28 +114,20 @@ ll count(bool flag) {
                 st[top][0] = lcp[i];
                 st[top++][1] = cnt;
             }
-            if ((flag && sa[i + 1] > sl) || (!flag && sa[i + 1] < sl)) {
+            if ((sa[i + 1] > sl) == flag) {
                 res += tot;
             }
         }
     }
     return res;
 }
- 
+
 void solve() {
     sl = S.length();
     tl = T.length();
     S += '$' + T;
     construct_sa(S, sa);
     construct_lcp(S, sa, lcp);
-    // for (int i = 0; i <= n; i++) 
-    //     cout << S.substr(sa[i]) << endl;
-    // for (int i = 0; i <= n; i++)
-    //     cout << sa[i] << " ";
-    // cout << endl;
-    // for (int i = 0; i < n; i++) 
-    //     cout << lcp[i] << " ";
-    // cout << endl;
     printf("%lld\n", count(true) + count(false));
 }
 

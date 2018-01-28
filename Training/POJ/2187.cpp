@@ -1,4 +1,4 @@
-// written at 15:43 on 10 Feb 2017 
+
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 
@@ -53,7 +53,7 @@ const double EPS = 1e-8;
 double add(double a, double b) {
     if (abs(a + b) < EPS * (abs(a) + abs(b))) return 0;
     return a + b;
-} 
+}
 struct P {
     double x, y;
     // P() {}

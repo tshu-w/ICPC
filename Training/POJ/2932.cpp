@@ -1,4 +1,4 @@
-// written at 19:09 on 8 Feb 2017 
+// written at 19:09 on 8 Feb 2017
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 
@@ -31,7 +31,7 @@
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".ans", "w", stdout);
 #define resetfile() freopen("/dev/tty", "r", stdin); freopen("/dev/tty", "w", stdout); system("more " filename".ans");
-#define rep(i, j, k) for (int i = j; i < k; ++i)
+#define rep(i, j, k) for (int i = j; i < (int)k; ++i)
 #define irep(i, j, k) for (int i = j - 1; i >= k; --i)
 
 using namespace std;
@@ -44,9 +44,6 @@ typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<double, int > Pdi;
 
-const double pi = acos(-1.0);
-const int INF = INT_MAX;
-const ll LLINF = LLONG_MAX;
 const int MAX_N = 1e5 + 10;
 
 int n;
@@ -58,14 +55,13 @@ bool inside(int i, int j) {
 }
 
 void solve() {
-    vector<Pdi > events;
+    vector<Pdi> events;
     rep(i, 0, n) {
         events.push_back(Pdi(x[i] - r[i], i));
         events.push_back(Pdi(x[i] + r[i], i + n));
     }
     sort(events.begin(), events.end());
-
-    set<Pdi > outers;
+    set<Pdi> outers;
     vector<int> res;
     rep(i, 0, events.size()) {
         int id = events[i].second % n;
@@ -80,11 +76,10 @@ void solve() {
     sort(res.begin(), res.end());
     printf("%d\n", (int)res.size());
     rep(i, 0, res.size())
-        printf("%d%c", res[i] + 1, i + 1 == res.size() ? '\n' : ' ');
+        printf("%d%c", res[i] + 1, i + 1 == (int)res.size() ? '\n' : ' ');
 }
 
-int main(int argc, char const *argv[])
-{
+int main() {
     while(~scanf("%d", &n)) {
         rep(i, 0, n) scanf("%lf%lf%lf", r + i, x + i, y + i);
         solve();

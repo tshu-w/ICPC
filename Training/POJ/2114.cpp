@@ -1,4 +1,4 @@
-// written at 13:00 on 13 Mar 2017 
+// written at 13:00 on 13 Mar 2017
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 #include <numeric>
@@ -45,13 +45,11 @@ typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<int, int > Pii;
 
-const double pi = acos(-1.0);
 const int INF = INT_MAX;
-const ll LLINF = LLONG_MAX;
 const int MAX_N = 1e4 + 10;
 
-struct edge { 
-    int to, len; 
+struct edge {
+    int to, len;
     edge(int _to = -1, int _len = 0): to(_to), len(_len) {};
 };
 
@@ -63,7 +61,7 @@ int subtree_size[MAX_N];
 
 int compute_subtree_size(int v, int p) {
     int c = 1;
-    for (int i = 0; i < G[v].size(); i++) {
+    for (int i = 0; i < (int)G[v].size(); i++) {
         edge e = G[v][i];
         if (e.to == p || centroid[e.to]) continue;
         c += compute_subtree_size(e.to, v);
@@ -74,7 +72,7 @@ int compute_subtree_size(int v, int p) {
 Pii search_centroid(int v, int p, int t) {
     Pii res = Pii(INF, -1);
     int s = 1, m = 0;
-    for (int i = 0; i < G[v].size(); i++) {
+    for (int i = 0; i < (int)G[v].size(); i++) {
         int w = G[v][i].to;
         if (w == p || centroid[w]) continue;
         res = min(res, search_centroid(w, v, t));
@@ -89,7 +87,7 @@ Pii search_centroid(int v, int p, int t) {
 
 void enumerate_paths(int v, int p, int d, vector<int> &ds) {
     ds.push_back(d);
-    for (int i = 0; i < G[v].size(); i++) {
+    for (int i = 0; i < (int)G[v].size(); i++) {
         int w = G[v][i].to;
         if (w == p || centroid[w]) continue;
         enumerate_paths(w, v, d + G[v][i].len, ds);
@@ -100,15 +98,16 @@ int count_pairs(vector<int> &ds) {
     int res = 0;
     sort(ds.begin(), ds.end());
     int j = ds.size();
-    for (int i = 0; i < ds.size(); i++) {
-        while (j > 0 && ds[i] + ds[j - 1] > K) j--;
-        res += j - (j > i? 1 : 0);
+    for (int i = 0; i + 1 < j; i++) {
+        while (j > i + 1 && ds[i] + ds[j - 1] > K) j--;
+        res += j - i - 1;
     }
     j = ds.size();
-    for (int i = 0; i < ds.size(); i++) {
-        while (j > 0 && ds[i] + ds[j - 1] >= K) j--;
-        res -= j - (j > i? 1 : 0);
+    for (int i = 0; i + 1 < j; i++) {
+        while (j > i + 1 && ds[i] + ds[j - 1] >= K) j--;
+        res -= j - i - 1;
     }
+    j = ds.size();
     return res;
 }
 
@@ -117,14 +116,14 @@ bool solve_subproblem(int v) {
     int s = search_centroid(v, -1, subtree_size[v]).second;
     centroid[s] = true;
 
-    for (int i = 0; i < G[s].size(); i++) {
+    for (int i = 0; i < (int)G[s].size(); i++) {
         if (centroid[G[s][i].to]) continue;
         if (solve_subproblem(G[s][i].to)) return true;
     }
 
     static vector<int> ds; ds.clear();
     ds.push_back(0);
-    for (int i = 0; i < G[s].size(); i++) {
+    for (int i = 0; i < (int)G[s].size(); i++) {
         if (centroid[G[s][i].to]) continue;
 
         static vector<int> tds; tds.clear();
@@ -145,8 +144,7 @@ void solve() {
     puts(solve_subproblem(0) ? "AYE" : "NAY");
 }
 
-int main(int argc, char const *argv[])
-{
+int main() {
     while (scanf("%d", &N), N) {
         for (int i = 0; i < N; i++)
             G[i].clear();
@@ -164,6 +162,6 @@ int main(int argc, char const *argv[])
             solve();
         }
         puts(".");
-    } 
+    }
     return 0;
 }
