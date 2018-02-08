@@ -2,7 +2,9 @@
 ** [[file+emacs:/Users/Voleking/Documents/Wiki/source/_posts/skill-tree.md][Skill Tree]]
 ** [[file+sys:/Users/Voleking/Library/Mobile%20Documents/iCloud~com~apple~iBooks/Documents/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E7%AC%AC2%E7%89%88%20%E7%AE%97%E6%B3%95%E8%89%BA%E6%9C%AF%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AD%A6%E7%AB%9E%E8%B5%9B.epub][算法入门经典]] [[file+emacs:/Users/Voleking/Documents/Learning/CS/ICPC/Reference/aoapc-book/BeginningAlgorithmContests][Beginning Algorithm Contests]] [[http://uhunt.felix-halim.net/id/788605][uHunt :: voleking (voleking)]]
 ** [[http://wiki.gyh.me/][WIKI]]
+** [[http://www.csie.ntnu.edu.tw/~u91029/index.html][演算法筆記]]
 ** 圆面积交
 ** 几何板子 反射
-** [[http://www.csie.ntnu.edu.tw/~u91029/index.html][演算法筆記]]
 ** [[http://blog.miskcoo.com/][Miskcoo's Space – 一个数学和计算机爱好者的博客]]
+** TODO [[https://en.wikipedia.org/wiki/Pollard%2527s_rho_algorithm#C++_code_sample][Pollard's rho algorithm - Wikipedia]]
+** [[http://www.matrix67.com/blog/archives/6862][趣题：为什么偏偏是 6 格？ | Matrix67: The Aha Moments]]
