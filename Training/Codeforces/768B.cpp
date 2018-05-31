@@ -1,4 +1,4 @@
-// written at 09:04 on 21 Feb 2017 
+// written at 09:04 on 21 Feb 2017
 #include <bits/stdc++.h>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
@@ -36,13 +36,11 @@ int dfs(ll N, ll l, ll r) {
     if (N == 1) return 1;
     if (N == 0) return 0;
     ll mid = 1ll << (64 - __builtin_clzll(N / 2ll));
-    ll res = 0;
     return dfs(N / 2, l, min(r, mid - 1)) + dfs(N / 2, max(l, mid + 1) - mid, r - mid)
         + ((N % 2 && l <= mid && mid <= r)? 1ll : 0ll);
 }
 
-int main(int argc, char const *argv[])
-{    
+int main(int argc, char const *argv[]) {
     while(cin >> N >> l >> r)
         cout << dfs(N, l, r) << endl;
     return 0;

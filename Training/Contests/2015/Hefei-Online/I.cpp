@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
                 if (i == 0 && j == 0)
                     minsum[i][j] = maxsum[i][j] = a[i][j];
                 else {
-                    if (i == 0) 
+                    if (i == 0)
                         minsum[i][j] = maxsum[i][j] = minsum[i][j - 1] + a[i][j];
                     if (j == 0)
                         minsum[i][j] = maxsum[i][j] = minsum[i - 1][j] + a[i][j];
