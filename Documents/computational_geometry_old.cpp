@@ -1,4 +1,3 @@
-```c++
 #include <cstdio>
 #include <cstring>
 #include <cmath>
@@ -422,7 +421,7 @@ namespace Circular {
             if (dcmp(db-O.r*O.r) <= 0)  return getDirArea(O.o, a, b) * sig;
 
             int k = 0;
-            if (getPLength(sol[0]-b) > getPLength(sol[1]-b)) k = 1;
+            if (n == 2 && getPLength(sol[0]-b) > getPLength(sol[1]-b)) k = 1;
 
             double ret = getArea(O.o, a, sol[k]) + O.getArea(getAngle(sol[k]-O.o, b-O.o));
             double tmp = (a-O.o)^(b-O.o);
@@ -436,10 +435,7 @@ namespace Circular {
             return ret * sig * dcmp(tmp);
         }
 
-
-        double k1 = O.r / getLength(a - O.o), k2 = O.r / getLength(b - O.o);
-        Point p = O.o + (a - O.o) * k1, q = O.o + (b - O.o) * k2;
-        double ret1 = O.getArea(getAngle(p-O.o, q-O.o));
+        double ret1 = O.getArea(getAngle(a-O.o, b-O.o));
         double ret2 = O.getArea(getAngle(sol[0]-O.o, sol[1]-O.o)) - getArea(O.o, sol[0], sol[1]);
         double ret = (ret1 - ret2), tmp = (a-O.o)^(b-O.o);
         return ret * sig * dcmp(tmp);
@@ -474,4 +470,3 @@ void init () {
         }
     }
 }
-```
