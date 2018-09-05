@@ -1,4 +1,4 @@
-// written at 20:37 on 20 Jan 2017 
+// written at 20:37 on 20 Jan 2017
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 
@@ -71,7 +71,7 @@ void bfs(int s) {
                 que.push(e.to);
             }
         }
-    }    
+    }
 }
 int dfs(int v, int t, int f) {
     if (v == t) return f;

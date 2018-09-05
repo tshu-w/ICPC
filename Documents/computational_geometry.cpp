@@ -264,7 +264,7 @@ namespace Polygonal {
     }
 
     /* 去除多边形共线点 */
-    Polygon simplify (const Polygon& poly) {
+    Polygon simplify(const Polygon& poly) {
         Polygon ret;
         int n = poly.size();
         for (int i = 0; i < n; i++) {

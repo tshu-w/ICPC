@@ -1,18 +1,20 @@
 * ICPC
-** WAITING [[https://projecteuler.net/archives][Project Euler]]
+** TODO [[https://projecteuler.net/archives][Project Euler]]
    SCHEDULED: <2018-05-22 Tue ++1d>
    :PROPERTIES:
    :LAST_REPEAT: [2018-05-21 Mon 19:15]
    :END:
+   - State "TODO"       from "WAITING"    [2018-09-02 Sun 23:00]
    - State "SOMEDAY"    from "WAITING"    [2018-05-21 Mon 19:15]
    - State "WAITING"    from "TODO"       [2018-05-11 Fri 15:21]
    - State "DONE"       from "TODO"       [2018-03-16 Fri 09:46]
    - State "DONE"       from "TODO"       [2018-03-15 Thu 10:23]
-** WAITING [[Leetcode][https://leetcode.com/problemset/all/]] [[https://leetcode.com/problems/random-one-question/all][Random]]
+** TODO [[Leetcode][https://leetcode.com/problemset/all/]] [[https://leetcode.com/problems/random-one-question/all][Random]]
    SCHEDULED: <2018-05-22 Tue ++1d>
    :PROPERTIES:
    :LAST_REPEAT: [2018-05-21 Mon 19:15]
    :END:
+   - State "TODO"       from "WAITING"    [2018-09-02 Sun 23:00]
    - State "SOMEDAY"    from "WAITING"    [2018-05-21 Mon 19:15]
    - State "WAITING"    from "TODO"       [2018-05-11 Fri 15:21]
    - State "DONE"       from "TODO"       [2018-03-15 Thu 10:27]
@@ -24,6 +26,16 @@
 ** 牛顿迭代法
 ** [[http://blog.miskcoo.com/][Miskcoo's Space – 一个数学和计算机爱好者的博客]]
 ** [[https://en.wikipedia.org/wiki/Pollard%2527s_rho_algorithm#C++_code_sample][Pollard's rho algorithm - Wikipedia]]
+** [[https://blog.sengxian.com/algorithms/linear-basis][线性基学习笔记 | Sengxian's Blog]]
 ** [[http://www.matrix67.com/blog/archives/6862][趣题：为什么偏偏是 6 格？ | Matrix67: The Aha Moments]]
-** [[https://www.zhihu.com/question/51290443/answer/318376815?utm_source=com.ideashower.readitlater.pro&utm_medium=social][为什么会想到用异或来算SG函数？它的本质是什么？ - 知乎]]
+** [[https://www.zhihu.com/question/51290443/answer/318376815?utm_source=com.ideashower.readitlater.pro&utm_medium=social][为什么会想到用异或来算 SG 函数？它的本质是什么？ - 知乎]]
 ** [[https://leetcode.com/problems/redundant-connection-ii/description/][Redundant Connection II - LeetCode]]
+** [[https://blog.csdn.net/WilliamSun0122/article/details/77926806][线性递推式模板 hdu6198 为例 - CSDN 博客]]
+** [[http://codeforces.com/contest/995/submission/39615335][Submission #39615335 - Codeforces]]
+** [[http://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetTable][Bit Twiddling Hacks]]
+** 圆和多边形交板子
+** [[https://zh.wikipedia.org/wiki/%25E4%25BD%25A9%25E5%25B0%2594%25E6%2596%25B9%25E7%25A8%258B][佩尔方程 - 维基百科，自由的百科全书]]
+** [[https://blog.sengxian.com/algorithms/mod-world][模运算总结 | Sengxian's Blog]]
+** [[https://blog.sengxian.com/algorithms/virtual-tree][虚树学习笔记 | Sengxian's Blog]]
+** [[https://www.google.com/search?newwindow=1&source=hp&ei=4c9VW8ewFZbj-Aa7qpewDA&q=%25E7%25AC%259B%25E5%258D%25A1%25E5%25B0%2594%25E6%25A0%2591&oq=%25E7%25AC%259B%25E5%258D%25A1%25E5%25B0%2594&gs_l=psy-ab.3.4.0l10.751.11582.0.14824.36.18.15.0.0.0.203.1858.0j13j1.15.0....0...1c.1j4.64.psy-ab..8.23.1269.6..35i39k1j0i131k1j0i12k1j33i160k1.117.0BqOVeCKQ8Y][笛卡尔树 - Google 搜索]]
+** 裴蜀定理
