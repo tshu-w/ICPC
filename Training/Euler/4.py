@@ -1,7 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def isPalindrome(n): return str(n) == str(n)[::-1]
+def isPalindrome(n):
+    return str(n) == str(n)[::-1]
 
 ans = 0
 for i in range(100, 1000):
