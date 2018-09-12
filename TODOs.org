@@ -1,19 +1,21 @@
 * ICPC
 ** TODO [[https://projecteuler.net/archives][Project Euler]]
-   SCHEDULED: <2018-05-22 Tue ++1d>
+   SCHEDULED: <2018-09-06 Thu ++1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2018-05-21 Mon 19:15]
+   :LAST_REPEAT: [2018-09-05 Wed 11:43]
    :END:
+   - State "DONE"       from "TODO"       [2018-09-05 Wed 11:43]
    - State "TODO"       from "WAITING"    [2018-09-02 Sun 23:00]
    - State "SOMEDAY"    from "WAITING"    [2018-05-21 Mon 19:15]
    - State "WAITING"    from "TODO"       [2018-05-11 Fri 15:21]
    - State "DONE"       from "TODO"       [2018-03-16 Fri 09:46]
    - State "DONE"       from "TODO"       [2018-03-15 Thu 10:23]
-** TODO [[Leetcode][https://leetcode.com/problemset/all/]] [[https://leetcode.com/problems/random-one-question/all][Random]]
-   SCHEDULED: <2018-05-22 Tue ++1d>
+** TODO [[https://leetcode.com/problemset/all/][Leetcode]]
+   SCHEDULED: <2018-09-06 Thu ++1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2018-05-21 Mon 19:15]
+   :LAST_REPEAT: [2018-09-05 Wed 15:19]
    :END:
+   - State "DONE"       from "TODO"       [2018-09-05 Wed 15:19]
    - State "TODO"       from "WAITING"    [2018-09-02 Sun 23:00]
    - State "SOMEDAY"    from "WAITING"    [2018-05-21 Mon 19:15]
    - State "WAITING"    from "TODO"       [2018-05-11 Fri 15:21]
