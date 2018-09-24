@@ -1,4 +1,4 @@
-// written at 20:37 on 25 Dec 2016 
+// written at 20:37 on 25 Dec 2016
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -73,7 +73,7 @@ mat mat_pow(mat &A, int n) {
         if (n & 1) B = mat_mul(B, A);
         A = mat_mul(A, A);
         n >>= 1;
-    }    
+    }
     return B;
 }
 
@@ -90,6 +90,6 @@ int main(int argc, char const *argv[])
         }
         else printf("%d\n", b[4 - N] % MOD);
 
-    }    
+    }
     return 0;
 }

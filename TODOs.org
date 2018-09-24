@@ -11,10 +11,11 @@
    - State "DONE"       from "TODO"       [2018-03-16 Fri 09:46]
    - State "DONE"       from "TODO"       [2018-03-15 Thu 10:23]
 ** TODO [[https://leetcode.com/problemset/all/][Leetcode]]
-   SCHEDULED: <2018-09-06 Thu ++1d>
+   SCHEDULED: <2018-09-18 Tue ++1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2018-09-05 Wed 15:19]
+   :LAST_REPEAT: [2018-09-17 Mon 14:34]
    :END:
+   - State "DONE"       from "TODO"       [2018-09-17 Mon 14:34]
    - State "DONE"       from "TODO"       [2018-09-05 Wed 15:19]
    - State "TODO"       from "WAITING"    [2018-09-02 Sun 23:00]
    - State "SOMEDAY"    from "WAITING"    [2018-05-21 Mon 19:15]
@@ -32,8 +33,6 @@
 ** [[http://www.matrix67.com/blog/archives/6862][趣题：为什么偏偏是 6 格？ | Matrix67: The Aha Moments]]
 ** [[https://www.zhihu.com/question/51290443/answer/318376815?utm_source=com.ideashower.readitlater.pro&utm_medium=social][为什么会想到用异或来算 SG 函数？它的本质是什么？ - 知乎]]
 ** [[https://leetcode.com/problems/redundant-connection-ii/description/][Redundant Connection II - LeetCode]]
-** [[https://blog.csdn.net/WilliamSun0122/article/details/77926806][线性递推式模板 hdu6198 为例 - CSDN 博客]]
-** [[http://codeforces.com/contest/995/submission/39615335][Submission #39615335 - Codeforces]]
 ** [[http://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetTable][Bit Twiddling Hacks]]
 ** 圆和多边形交板子
 ** [[https://zh.wikipedia.org/wiki/%25E4%25BD%25A9%25E5%25B0%2594%25E6%2596%25B9%25E7%25A8%258B][佩尔方程 - 维基百科，自由的百科全书]]
@@ -41,3 +40,7 @@
 ** [[https://blog.sengxian.com/algorithms/virtual-tree][虚树学习笔记 | Sengxian's Blog]]
 ** [[https://www.google.com/search?newwindow=1&source=hp&ei=4c9VW8ewFZbj-Aa7qpewDA&q=%25E7%25AC%259B%25E5%258D%25A1%25E5%25B0%2594%25E6%25A0%2591&oq=%25E7%25AC%259B%25E5%258D%25A1%25E5%25B0%2594&gs_l=psy-ab.3.4.0l10.751.11582.0.14824.36.18.15.0.0.0.203.1858.0j13j1.15.0....0...1c.1j4.64.psy-ab..8.23.1269.6..35i39k1j0i131k1j0i12k1j33i160k1.117.0BqOVeCKQ8Y][笛卡尔树 - Google 搜索]]
 ** 裴蜀定理
+** [[https://github.com/klb3713/aoapc-book/blob/master/TrainingGuide/bookcodes/ch6/uva10498.cpp][aoapc-book/uva10498.cpp at master · klb3713/aoapc-book]]
+** [[https://blog.csdn.net/WilliamSun0122/article/details/77926806][线性递推式模板 hdu6198 为例 - CSDN 博客]]
+** [[http://codeforces.com/contest/995/submission/39615335][Submission #39615335 - Codeforces]]
+** [[https://www.byvoid.com/zhs/blog/noi-2008-employee#more-916][NOI 2008 志愿者招募 employee - BYVoid]]

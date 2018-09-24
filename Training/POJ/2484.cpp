@@ -1,4 +1,4 @@
-// written at 17:12 on 23 Feb 2017 
+// written at 17:12 on 23 Feb 2017
 #include <cctype>
 #include <cfloat>
 #include <climits>
@@ -17,7 +17,7 @@
 #include <queue>
 #include <set>
 #include <stack>
-#include <vector> 
+#include <vector>
 #include <utility>
 #include <bitset>
 
