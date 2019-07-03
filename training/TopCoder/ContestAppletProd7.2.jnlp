@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<jnlp spec="1.0+" codebase="https://www.topcoder.com" href="https://www.topcoder.com/contest/arena/ContestAppletProd7.2.jnlp">
+   <information> 
+      <title>Competition Arena</title> 
+      <vendor>TopCoder, Inc.</vendor> 
+      <homepage href="https://www.topcoder.com"/> 
+      <description>TopCoder Contest Arena</description> 
+      <icon href="https://www.topcoder.com/images/favicon_new.gif"/> 
+   </information> 
+   <security>
+      <all-permissions/>
+   </security>
+   <resources> 
+      <j2se version="1.6+" max-heap-size="128m"/> 
+      <jar href="https://www.topcoder.com/contest/classes/7.2/arena-client-combined.jar" />
+   </resources> 
+   
+   <application-desc main-class="com.topcoder.client.contestApplet.runner.generic"> 
+      <argument>www.topcoder.com</argument>
+      <argument>5001</argument>
+      <argument>http://tunnel1.topcoder.com/tunnel?dummy</argument>
+      <argument>TopCoder</argument>
+   </application-desc>
+</jnlp>
