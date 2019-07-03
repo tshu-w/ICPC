@@ -55,7 +55,7 @@ int seive(int n) {
     int p = 0;
     fill(isPrime, isPrime + n + 1, true);
     isPrime[0] = isPrime[1] = false;
-    for (int i = 2; i <= n; ++i) 
+    for (int i = 2; i <= n; ++i)
         if (isPrime[i]) {
             prime[p++] = i;
             for (int j = 2 * i; j <= n; j += i) isPrime[j] = false;
@@ -134,7 +134,7 @@ ll Pollard_rho(ll x, ll c) {
         x0 = (mod_mult(x0, x0, x) + c) % x;
         ll d;
         if (y == x0) d = 1;
-        else 
+        else
             if (y > x0)
                 d = gcd(y - x0, x);
             else d = gcd(x0 - y, x);

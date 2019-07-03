@@ -26,7 +26,7 @@
     #define DEBUG(...) printf(__VA_ARGS__)
 #else
     #define DEBUG(...)
-#endif    
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -112,7 +112,7 @@ ll Pollard_rho(ll x, ll c) {
         x0 = (mod_mult(x0, x0, x) + c) % x;
         ll d;
         if (y == x0) d = 1;
-        else 
+        else
             if (y > x0)
                 d = gcd(y - x0, x);
             else d = gcd(x0 - y, x);
@@ -140,7 +140,7 @@ int main(int argc, char const *argv[])
     scanf("%d", &t);
     while (t--) {
         scanf("%lld", &n);
-        if (Miller_Rabin(n)) 
+        if (Miller_Rabin(n))
             printf("Prime\n");
         else {
             // printf("No Prime\n");

@@ -1,3 +1,0 @@
-aoapc-bac2nd ch6
-[[https://vjudge.net/problem/UVA-10410][Tree Reconstruction - UVA 10410 - Virtual Judge]]
-给出树的 DFS 和 BFS 序，还原出一种可能的树

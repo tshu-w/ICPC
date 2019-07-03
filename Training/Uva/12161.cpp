@@ -1,4 +1,4 @@
-// written at 16:31 on 15 Mar 2017 
+// written at 16:31 on 15 Mar 2017
 #include <bits/stdc++.h>
 
 #define IOS std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);
@@ -29,7 +29,7 @@ const int INF = INT_MAX;
 const ll LLINF = LLONG_MAX;
 const int MAX_N = 3e4 + 10;
 
-struct edge { 
+struct edge {
     int to, damage, length, next;
 };
 int G[MAX_N], En, N, M, T;
@@ -148,6 +148,6 @@ int main(int argc, char const *argv[])
             add_edge(v, u, damage, length);
         }
         printf("Case %d: %d\n", _ + 1, solve());
-    } 
+    }
     return 0;
 }

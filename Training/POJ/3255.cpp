@@ -26,7 +26,7 @@
     #define DEBUG(...) printf(__VA_ARGS__)
 #else
     #define DEBUG(...)
-#endif    
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -46,11 +46,10 @@ const int MAX_V = 5000 + 5;
 template <typename T>
 inline T sqr(T a) { return a * a;};
 
-struct edge
-{
-    int u, v, dis;    
+struct edge {
+    int u, v, dis;
 };
-vector<edge> G[MAX_V]; 
+vector<edge> G[MAX_V];
 int N, R, dist[MAX_V], dist2[MAX_V];
 
 void solve() {
@@ -90,6 +89,6 @@ int main(int argc, char const *argv[])
         G[a].push_back(edge{a, b, d});
         G[b].push_back(edge{b, a, d});
     }
-    solve();    
+    solve();
     return 0;
 }
