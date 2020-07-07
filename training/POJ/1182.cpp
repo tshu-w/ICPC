@@ -26,7 +26,7 @@
     #define DEBUG(...) printf(__VA_ARGS__)
 #else
     #define DEBUG(...)
-#endif    
+#endif
 #define filename ""
 #define setfile() freopen(filename".in", "r", stdin); freopen(filename".out", "w", stdout);
 
@@ -75,7 +75,7 @@ void unite(int x, int y) {
     }
 }
 int main(int argc, char const *argv[])
-{    
+{
     cin >> N >> K;
     init(3 * N);
 

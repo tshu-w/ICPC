@@ -1,3 +1,3 @@
-[submodule "Wiki"]
-	path = Wiki
-	url = https://github.com/Voleking/ICPC-Wiki
+[submodule "wiki"]
+	path = wiki
+	url = https://github.com/tshu-w/ICPC-Wiki.git
