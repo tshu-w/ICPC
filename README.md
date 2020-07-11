@@ -2,7 +2,7 @@
 
 > Coding future
 
-ACM-ICPC Training Code Set.
+ACM-ICPC training records.
 
 ## 2019-07-03
 
